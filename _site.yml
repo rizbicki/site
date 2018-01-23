@@ -10,6 +10,8 @@ navbar:
       href: notes.html
     - text: "Students"
       href: students.html
+    - text: "Contact"
+      href: contact.html
 output:
   html_document:
     highlight: textmate

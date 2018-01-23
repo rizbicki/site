@@ -28,13 +28,11 @@ knitr::include_graphics('http://www.small.ufscar.br/img/logo.png')
 <br/>
 <br/>
 
-### Published papers
+### Journal papers
 
 - [Standards for modest Bayesian credences](http://www.journals.uchicago.edu/doi/abs/10.1086/694836?journalCode=phos). *Philosophy of Science*, v. 85, p. 53-78, 2018.
 
 - [Logically-consistent hypothesis testing and the hexagon of oppositions](https://academic.oup.com/jigpal/article-abstract/25/5/741/3979884). *Logic Journal of the IGPL*, v. 25, p. 741-757, 2017.
-
-- [Haphazard intentional allocation and rerandomization to improve covariate balance in experiments](http://aip.scitation.org/doi/abs/10.1063/1.4985356). *AIP Conference Proceedings*, 2017. v. 1853, 2017.
 
 - [Teaching decision theory proof strategies using a crowdsourcing problem](http://amstat.tandfonline.com/doi/abs/10.1080/00031305.2016.1264316). *American Statistician*, v. 71, p. 336-343, 2017.
 
@@ -54,9 +52,15 @@ knitr::include_graphics('http://www.small.ufscar.br/img/logo.png')
 
 - [Statistical information: a Bayesian perspective](http://www.mdpi.com/1099-4300/14/11/2254/htm). *Entropy (Basel. Online)*, v. 14, p. 2254-2264, 2012.
 
+
+### Papers in Conference Proceedings
+
+- [Haphazard intentional allocation and rerandomization to improve covariate balance in experiments](http://aip.scitation.org/doi/abs/10.1063/1.4985356). *AIP Conference Proceedings*, 2017. v. 1853, 2017.
+
 - [A possible foundation for Blackwell's equivalence](http://aip.scitation.org/doi/abs/10.1063/1.3039027). *AIP Conference Proceedings*, v. 1073, p. 90-95, 2008.
 
 - [In defense of Randomization: a subjectivist Bayesian apparoach](http://aip.scitation.org/doi/abs/10.1063/1.3275631). *AIP Conference Proceedings*, v. 1073, p. 8-15, 2008.
+
 
 ### Under development
 
