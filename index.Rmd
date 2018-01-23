@@ -1,13 +1,10 @@
 ---
-title: "Rafael Stern"
+title: "Home"
 ---
 
-Olá! Eu sou Rafael Stern
-
 ```{r echo=FALSE, out.width="300px"}
-knitr::include_graphics("foto_rbstern.png")
+knitr::include_graphics("figures/rbstern.png")
 ```
 
-
-Se você está procurando o Rafael Izbicki, entre em https://rizbicki.wordpress.com/
-
+In case you are looking for Rafael Izbicki,
+his site is: https://rizbicki.wordpress.com/

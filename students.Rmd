@@ -2,4 +2,14 @@
 title: "Students"
 ---
 
-Livro de probabilidade
+### Master's students
+
+- João Poloniato (2017-)
+- Tatyana Zabanova (2016-)
+
+### Undergraduate students
+
+- Gabriela Massoni (2018-)
+- Carolina Thompson (2017-)
+- Márcia Silva (2017-2018)
+- Michelle Massaro (2017-2018)

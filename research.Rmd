@@ -2,4 +2,63 @@
 title: "Research"
 ---
 
-Lattes infinito
+### Research groups
+
+[
+```{r out.width='23%', echo=FALSE} 
+knitr::include_graphics('figures/abj.png')
+```
+](http://www.abj.org.br/)
+[
+```{r out.width='23%', echo=FALSE} 
+knitr::include_graphics('http://www.gis.des.ufscar.br/imagens/group1.png')
+```
+](http://www.gis.des.ufscar.br)
+[
+```{r out.width='23%', echo=FALSE} 
+knitr::include_graphics('http://neuromat.numec.prp.usp.br/sites/default/files/neuromat.png')
+```
+](http://neuromat.numec.prp.usp.br/)
+[
+```{r out.width='23%', echo=FALSE} 
+knitr::include_graphics('http://www.small.ufscar.br/img/logo.png')
+```
+](http://www.small.ufscar.br/)
+
+<br/>
+<br/>
+
+### Published papers
+
+- [Standards for modest Bayesian credences](http://www.journals.uchicago.edu/doi/abs/10.1086/694836?journalCode=phos). *Philosophy of Science*, v. 85, p. 53-78, 2018.
+
+- [Logically-consistent hypothesis testing and the hexagon of oppositions](https://academic.oup.com/jigpal/article-abstract/25/5/741/3979884). *Logic Journal of the IGPL*, v. 25, p. 741-757, 2017.
+
+- [Haphazard intentional allocation and rerandomization to improve covariate balance in experiments](http://aip.scitation.org/doi/abs/10.1063/1.4985356). *AIP Conference Proceedings*, 2017. v. 1853, 2017.
+
+- [Teaching decision theory proof strategies using a crowdsourcing problem](http://amstat.tandfonline.com/doi/abs/10.1080/00031305.2016.1264316). *American Statistician*, v. 71, p. 336-343, 2017.
+
+- [The logical consistency of simultaneous agnostic hypothesis tests](http://www.mdpi.com/1099-4300/18/7/256/htm). *Entropy (Basel. Online)*, v. 18, p. 256, 2016.
+
+- [Sleeping Beauty's credences](http://www.journals.uchicago.edu/doi/abs/10.1086/685741). *Philosophy of Science (East Lansing)*, v. 83, p. 324-347, 2016.
+
+- [Coherence of countably many bets](https://link.springer.com/article/10.1007/s10959-013-0489-9). *Journal of Theoretical Probability*, v.28, p.520-538, 2015.
+
+- [O valor da causa e o valor concedido por danos morais nos JEC](https://bdjur.stj.jus.br/jspui/handle/2011/85172). *Revista de Direito Bancário e do Mercado de Capitais: RDB*, v. 17, p. 225-232, 2014.
+
+- [Exchangeability and the law of maturity](https://link.springer.com/article/10.1007/s11238-014-9441-4). *Theory and Decision*, v. 78, p. 603-615, 2014.
+
+- [Learning with many experts: Model selection and sparsity](http://onlinelibrary.wiley.com/doi/10.1002/sam.11206/full). *Statistical Analysis and Data Mining*, v. 6, p. 565–577, 2013.
+
+- [Pain and suffering quantified: Judge Weinstein's concept of similarity between cases](https://academic.oup.com/lpr/article-abstract/12/1/75/925232). *Law, Probability & Risk (Print)*, v. 12, p. 75-87, 2013.
+
+- [Statistical information: a Bayesian perspective](http://www.mdpi.com/1099-4300/14/11/2254/htm). *Entropy (Basel. Online)*, v. 14, p. 2254-2264, 2012.
+
+- [A possible foundation for Blackwell's equivalence](http://aip.scitation.org/doi/abs/10.1063/1.3039027). *AIP Conference Proceedings*, v. 1073, p. 90-95, 2008.
+
+- [In defense of Randomization: a subjectivist Bayesian apparoach](http://aip.scitation.org/doi/abs/10.1063/1.3275631). *AIP Conference Proceedings*, v. 1073, p. 8-15, 2008.
+
+### Under development
+
+- [Compensating for the loss of a chance](https://arxiv.org/abs/1412.1501)
+

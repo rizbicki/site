@@ -1,5 +1,0 @@
----
-title: "Material"
----
-
-Livro de probabilidade

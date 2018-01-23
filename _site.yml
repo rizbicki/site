@@ -1,19 +1,15 @@
 name: "rbstern"
 navbar:
-  title: "Rafael Bassi Stern"
+  title: "Home"
   left:
-    - text: "Home"
-      href: index.html
     - text: "Teaching"
       href: teaching.html
     - text: "Research"
       href: research.html
-    - text: "Material"
-      href: material.html
+    - text: "Notes"
+      href: notes.html
     - text: "Students"
       href: students.html
-    - text: "About"
-      href: about.html
 output:
   html_document:
     highlight: textmate

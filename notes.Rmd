@@ -1,0 +1,11 @@
+---
+title: "Notes"
+---
+
+## Lecture notes
+
+- [Bayesian inference (portuguese)](https://www.overleaf.com/read/kjbzvjnppgrr)
+
+- [Probability](https://www.overleaf.com/read/fjdsbxwydcnf)
+
+- [Statistical decision theory (incomplete)](https://www.overleaf.com/read/ndcxvbjgvkbx)

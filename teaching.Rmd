@@ -2,4 +2,25 @@
 title: "Teaching"
 ---
 
-Curso XXX
+## Federal University of São Carlos
+
+### Undergraduate courses
+
+- [Probability C (2018)](2018-prob_c.html)
+- Classical inference (2017)
+- Bayesian inference (2017)
+- Probability A (2017)
+- Probability C (2016)
+- Bayesian inference (2016)
+- Introduction to statistical planning (2016)
+
+### Graduate courses
+
+- Decision Theory (2017)
+- Bayesian inference (2016)
+
+## Carnegie Mellon University
+
+### Undergraduate courses
+
+- Introduction to Probability and Random Processes (2013,2014)

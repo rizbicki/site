@@ -1,5 +1,0 @@
----
-title: "About"
----
-
-Sou um cientista de dados apaixonado por R. Não gosto de python.
