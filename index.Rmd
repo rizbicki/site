@@ -1,0 +1,13 @@
+---
+title: "Rafael Stern"
+---
+
+Olá! Eu sou Rafael Stern
+
+```{r echo=FALSE, out.width="300px"}
+knitr::include_graphics("foto_rbstern.png")
+```
+
+
+Se você está procurando o Rafael Izbicki, entre em https://rizbicki.wordpress.com/
+
