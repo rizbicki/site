@@ -20,8 +20,8 @@
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/highlightjs-1.1/textmate.css" rel="stylesheet" />
-<script src="site_libs/highlightjs-1.1/highlight.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -30,10 +30,12 @@
   }
 </style>
 <script type="text/javascript">
-if (window.hljs && document.readyState && document.readyState === "complete") {
-   window.setTimeout(function() {
-      hljs.initHighlighting();
-   }, 0);
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
 }
 </script>
 
@@ -215,54 +217,54 @@ $(document).ready(function () {
 <tr class="header">
 <th align="left">course</th>
 <th align="left">level</th>
-<th align="right">year</th>
+<th align="left">year</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><a href="2018-prob_c.html">Probability C</a></td>
-<td align="left">Graduate</td>
-<td align="right">2018</td>
+<td align="left">Undergraduate</td>
+<td align="left">2018</td>
 </tr>
 <tr class="even">
 <td align="left">Decision Theory</td>
-<td align="left">Undergraduate</td>
-<td align="right">2017</td>
-</tr>
-<tr class="odd">
-<td align="left">Classifical Inference</td>
-<td align="left">Undergraduate</td>
-<td align="right">2017</td>
-</tr>
-<tr class="even">
-<td align="left">Bayesian Inference</td>
-<td align="left">Undergraduate</td>
-<td align="right">2017</td>
-</tr>
-<tr class="odd">
-<td align="left">Bayesian Inference</td>
 <td align="left">Graduate</td>
-<td align="right">2017</td>
+<td align="left">2017</td>
+</tr>
+<tr class="odd">
+<td align="left">Classical Inference</td>
+<td align="left">Undergraduate</td>
+<td align="left">2017</td>
 </tr>
 <tr class="even">
+<td align="left">Bayesian Inference</td>
+<td align="left">Undergraduate</td>
+<td align="left">2017</td>
+</tr>
+<tr class="odd">
 <td align="left">Probability A</td>
 <td align="left">Undergraduate</td>
-<td align="right">2016</td>
+<td align="left">2017</td>
+</tr>
+<tr class="even">
+<td align="left">Bayesian Inference</td>
+<td align="left">Graduate</td>
+<td align="left">2016</td>
 </tr>
 <tr class="odd">
 <td align="left">Probability C</td>
 <td align="left">Undergraduate</td>
-<td align="right">2016</td>
+<td align="left">2016</td>
 </tr>
 <tr class="even">
 <td align="left">Bayesian Inference</td>
 <td align="left">Undergraduate</td>
-<td align="right">2016</td>
+<td align="left">2016</td>
 </tr>
 <tr class="odd">
 <td align="left">Introduction to Statistical Planning</td>
 <td align="left">Undergraduate</td>
-<td align="right">2016</td>
+<td align="left">2016</td>
 </tr>
 </tbody>
 </table>
@@ -274,19 +276,19 @@ $(document).ready(function () {
 <tr class="header">
 <th align="left">course</th>
 <th align="left">level</th>
-<th align="right">year</th>
+<th align="left">year</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left">Introduction to Probability and Random Processes</td>
 <td align="left">Undergraduate</td>
-<td align="right">2014</td>
+<td align="left">2014</td>
 </tr>
 <tr class="even">
 <td align="left">Introduction to Probability and Random Processes</td>
 <td align="left">Undergraduate</td>
-<td align="right">2013</td>
+<td align="left">2013</td>
 </tr>
 </tbody>
 </table>

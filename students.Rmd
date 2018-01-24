@@ -3,33 +3,11 @@ title: "Students"
 ---
 
 ```{r echo = FALSE}
-names = c(
-  "Gabriela Massoni",
-  "João Poloniato",
-  "Carolina Thompson",
-  "Tatyana Zabanova",
-  "Márcia Silva",
-  "Michelle Massaro"
-)
-years = c("2018-",
-          "2017-",
-          "2017-",
-          "2016-",
-          "2016-2017",
-          "2016-2017"
-)
-
-UU = "Undergraduate"
-MM = "Master"
-levels = c(UU,
-           MM,
-           UU,
-           MM,
-           UU,
-           UU
-)
-students_table = tibble::tibble(name=names,
-                                level=levels,
-                                year=years)
-knitr::kable(students_table)
+`%>%` = magrittr::`%>%`
+student_table = yaml::read_yaml("tables/students.yaml") %>% 
+  do.call(rbind, .) %>% 
+  as.data.frame() %>% 
+  tidyr::unnest() %>%
+  tibble::as.tibble()
+knitr::kable(student_table)
 ```

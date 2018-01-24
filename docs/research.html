@@ -20,8 +20,8 @@
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/highlightjs-1.1/textmate.css" rel="stylesheet" />
-<script src="site_libs/highlightjs-1.1/highlight.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -30,10 +30,12 @@
   }
 </style>
 <script type="text/javascript">
-if (window.hljs && document.readyState && document.readyState === "complete") {
-   window.setTimeout(function() {
-      hljs.initHighlighting();
-   }, 0);
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
 }
 </script>
 
@@ -215,27 +217,125 @@ $(document).ready(function () {
 </div>
 <div id="journal-papers" class="section level3">
 <h3>Journal papers</h3>
-<ul>
-<li><p><a href="http://www.journals.uchicago.edu/doi/abs/10.1086/694836?journalCode=phos">Standards for modest Bayesian credences</a>. <em>Philosophy of Science</em>, v. 85, p. 53-78, 2018.</p></li>
-<li><p><a href="https://academic.oup.com/jigpal/article-abstract/25/5/741/3979884">Logically-consistent hypothesis testing and the hexagon of oppositions</a>. <em>Logic Journal of the IGPL</em>, v. 25, p. 741-757, 2017.</p></li>
-<li><p><a href="http://amstat.tandfonline.com/doi/abs/10.1080/00031305.2016.1264316">Teaching decision theory proof strategies using a crowdsourcing problem</a>. <em>American Statistician</em>, v. 71, p. 336-343, 2017.</p></li>
-<li><p><a href="http://www.mdpi.com/1099-4300/18/7/256/htm">The logical consistency of simultaneous agnostic hypothesis tests</a>. <em>Entropy (Basel. Online)</em>, v. 18, p. 256, 2016.</p></li>
-<li><p><a href="http://www.journals.uchicago.edu/doi/abs/10.1086/685741">Sleeping Beauty’s credences</a>. <em>Philosophy of Science (East Lansing)</em>, v. 83, p. 324-347, 2016.</p></li>
-<li><p><a href="https://link.springer.com/article/10.1007/s10959-013-0489-9">Coherence of countably many bets</a>. <em>Journal of Theoretical Probability</em>, v.28, p.520-538, 2015.</p></li>
-<li><p><a href="https://bdjur.stj.jus.br/jspui/handle/2011/85172">O valor da causa e o valor concedido por danos morais nos JEC</a>. <em>Revista de Direito Bancário e do Mercado de Capitais: RDB</em>, v. 17, p. 225-232, 2014.</p></li>
-<li><p><a href="https://link.springer.com/article/10.1007/s11238-014-9441-4">Exchangeability and the law of maturity</a>. <em>Theory and Decision</em>, v. 78, p. 603-615, 2014.</p></li>
-<li><p><a href="http://onlinelibrary.wiley.com/doi/10.1002/sam.11206/full">Learning with many experts: Model selection and sparsity</a>. <em>Statistical Analysis and Data Mining</em>, v. 6, p. 565–577, 2013.</p></li>
-<li><p><a href="https://academic.oup.com/lpr/article-abstract/12/1/75/925232">Pain and suffering quantified: Judge Weinstein’s concept of similarity between cases</a>. <em>Law, Probability &amp; Risk (Print)</em>, v. 12, p. 75-87, 2013.</p></li>
-<li><p><a href="http://www.mdpi.com/1099-4300/14/11/2254/htm">Statistical information: a Bayesian perspective</a>. <em>Entropy (Basel. Online)</em>, v. 14, p. 2254-2264, 2012.</p></li>
-</ul>
+<table>
+<thead>
+<tr class="header">
+<th align="left">title</th>
+<th align="left">journal</th>
+<th align="right">volume</th>
+<th align="left">pages</th>
+<th align="right">year</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><a href="http://www.journals.uchicago.edu/doi/abs/10.1086/694836?journalCode=phos">Standards for modest Bayesian credences</a></td>
+<td align="left"><em>Philosophy of Science</em></td>
+<td align="right">85</td>
+<td align="left">53-78</td>
+<td align="right">2018</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="https://academic.oup.com/jigpal/article-abstract/25/5/741/3979884">Logically-consistent hypothesis testing and the hexagon of oppositions</a></td>
+<td align="left"><em>Logic Journal of the IGPL</em></td>
+<td align="right">25</td>
+<td align="left">741-757</td>
+<td align="right">2017</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="http://amstat.tandfonline.com/doi/abs/10.1080/00031305.2016.1264316">Teaching decision theory proof strategies using a crowdsourcing problem</a></td>
+<td align="left"><em>American Statistician</em></td>
+<td align="right">71</td>
+<td align="left">336-343</td>
+<td align="right">2017</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="http://www.mdpi.com/1099-4300/18/7/256/htm">The logical consistency of simultaneous agnostic hypothesis tests</a></td>
+<td align="left"><em>Entropy (Basel. Online)</em></td>
+<td align="right">18</td>
+<td align="left">256</td>
+<td align="right">2016</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="http://www.journals.uchicago.edu/doi/abs/10.1086/685741">Sleeping Beauty’s credences</a></td>
+<td align="left"><em>Philosophy of Science (East Lansing)</em></td>
+<td align="right">83</td>
+<td align="left">324-347</td>
+<td align="right">2016</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="https://link.springer.com/article/10.1007/s10959-013-0489-9">Coherence of countably many bets</a></td>
+<td align="left"><em>Journal of Theoretical Probability</em></td>
+<td align="right">28</td>
+<td align="left">520-538</td>
+<td align="right">2015</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="https://bdjur.stj.jus.br/jspui/handle/2011/85172">O valor da causa e o valor concedido por danos morais nos JEC</a></td>
+<td align="left"><em>Revista de Direito Bancário e do Mercado de Capitais: RDB</em></td>
+<td align="right">17</td>
+<td align="left">225-232</td>
+<td align="right">2014</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="https://link.springer.com/article/10.1007/s11238-014-9441-4">Exchangeability and the law of maturity</a></td>
+<td align="left"><em>Theory and Decision</em></td>
+<td align="right">78</td>
+<td align="left">603-615</td>
+<td align="right">2014</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="http://onlinelibrary.wiley.com/doi/10.1002/sam.11206/full">Learning with many experts: Model selection and sparsity</a></td>
+<td align="left"><em>Statistical Analysis and Data Mining</em></td>
+<td align="right">6</td>
+<td align="left">565–577</td>
+<td align="right">2013</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="https://academic.oup.com/lpr/article-abstract/12/1/75/925232">Pain and suffering quantified: Judge Weinstein’s concept of similarity between cases</a></td>
+<td align="left"><em>Law, Probability &amp; Risk (Print)</em></td>
+<td align="right">12</td>
+<td align="left">75-87</td>
+<td align="right">2013</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="http://www.mdpi.com/1099-4300/14/11/2254/htm">Statistical information: a Bayesian perspective</a></td>
+<td align="left"><em>Entropy (Basel. Online)</em></td>
+<td align="right">14</td>
+<td align="left">2254-2264</td>
+<td align="right">2012</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div id="papers-in-conference-proceedings" class="section level3">
 <h3>Papers in Conference Proceedings</h3>
-<ul>
-<li><p><a href="http://aip.scitation.org/doi/abs/10.1063/1.4985356">Haphazard intentional allocation and rerandomization to improve covariate balance in experiments</a>. <em>AIP Conference Proceedings</em>, 2017. v. 1853, 2017.</p></li>
-<li><p><a href="http://aip.scitation.org/doi/abs/10.1063/1.3039027">A possible foundation for Blackwell’s equivalence</a>. <em>AIP Conference Proceedings</em>, v. 1073, p. 90-95, 2008.</p></li>
-<li><p><a href="http://aip.scitation.org/doi/abs/10.1063/1.3275631">In defense of Randomization: a subjectivist Bayesian apparoach</a>. <em>AIP Conference Proceedings</em>, v. 1073, p. 8-15, 2008.</p></li>
-</ul>
+<table>
+<thead>
+<tr class="header">
+<th align="left">title</th>
+<th align="left">journal</th>
+<th align="right">year</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><a href="http://aip.scitation.org/doi/abs/10.1063/1.4985356">Haphazard intentional allocation and rerandomization to improve covariate balance in experiments</a></td>
+<td align="left"><em>AIP Conference Proceedings</em></td>
+<td align="right">2017</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="http://aip.scitation.org/doi/abs/10.1063/1.3039027">A possible foundation for Blackwell’s equivalence</a></td>
+<td align="left"><em>AIP Conference Proceedings</em></td>
+<td align="right">2008</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="http://aip.scitation.org/doi/abs/10.1063/1.3275631">In defense of Randomization: a subjectivist Bayesian apparoach</a></td>
+<td align="left"><em>AIP Conference Proceedings</em></td>
+<td align="right">2008</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div id="under-development" class="section level3">
 <h3>Under development</h3>
