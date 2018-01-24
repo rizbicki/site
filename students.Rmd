@@ -2,14 +2,34 @@
 title: "Students"
 ---
 
-### Master's students
+```{r echo = FALSE}
+names = c(
+  "Gabriela Massoni",
+  "João Poloniato",
+  "Carolina Thompson",
+  "Tatyana Zabanova",
+  "Márcia Silva",
+  "Michelle Massaro"
+)
+years = c("2018-",
+          "2017-",
+          "2017-",
+          "2016-",
+          "2016-2017",
+          "2016-2017"
+)
 
-- João Poloniato (2017-)
-- Tatyana Zabanova (2016-)
-
-### Undergraduate students
-
-- Gabriela Massoni (2018-)
-- Carolina Thompson (2017-)
-- Márcia Silva (2017-2018)
-- Michelle Massaro (2017-2018)
+UU = "Undergraduate"
+MM = "Master"
+levels = c(UU,
+           MM,
+           UU,
+           MM,
+           UU,
+           UU
+)
+students_table = tibble::tibble(name=names,
+                                level=levels,
+                                year=years)
+knitr::kable(students_table)
+```
