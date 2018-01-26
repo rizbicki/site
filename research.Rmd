@@ -4,29 +4,19 @@ title: "Research"
 
 ### Research groups
 
-[
-```{r out.width='23%', echo=FALSE} 
-knitr::include_graphics('figures/abj.png')
+```{r echo=FALSE, message=FALSE}
+figs = c(
+"[![](figures/abj.png){width=250px}](http://www.abj.org.br/)",
+"[![](http://www.gis.des.ufscar.br/imagens/group1.png){width=250px}](http://www.gis.des.ufscar.br)",
+"[![](http://neuromat.numec.prp.usp.br/sites/default/files/neuromat.png){width=250px}](http://neuromat.numec.prp.usp.br/)",
+"[![](http://www.small.ufscar.br/img/logo.png){width=250px}](http://www.small.ufscar.br/)"
+)
+descrs = c("Develop applications of statistics to the law.", 
+           "Study inductive statistical methods, with special interest in foundational issues.", 
+           "Develop the new mathematics needed to construct a theory of the brain accounting for the experimental data gathered by neuroscience research.", 
+           "Combine statistics and machine learning to create improved solutions to relevant real-world problems.")
+knitr::kable(tibble::tibble(Group = figs, Goal = descrs))
 ```
-](http://www.abj.org.br/)
-[
-```{r out.width='23%', echo=FALSE} 
-knitr::include_graphics('http://www.gis.des.ufscar.br/imagens/group1.png')
-```
-](http://www.gis.des.ufscar.br)
-[
-```{r out.width='23%', echo=FALSE} 
-knitr::include_graphics('http://neuromat.numec.prp.usp.br/sites/default/files/neuromat.png')
-```
-](http://neuromat.numec.prp.usp.br/)
-[
-```{r out.width='23%', echo=FALSE} 
-knitr::include_graphics('http://www.small.ufscar.br/img/logo.png')
-```
-](http://www.small.ufscar.br/)
-
-<br/>
-<br/>
 
 ### Journal papers
 

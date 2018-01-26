@@ -7,10 +7,10 @@ navbar:
       href: teaching.html
     - text: "Research"
       href: research.html
-    - text: "Notes"
-      href: notes.html
     - text: "Students"
       href: students.html
+    - text: "Resources"
+      href: resources.html
     - text: "Contact"
       href: contact.html
 output:
