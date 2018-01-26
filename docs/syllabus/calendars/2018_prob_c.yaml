@@ -1,0 +1,135 @@
+-
+ date: "07/03"
+ lecture: "Descrição do curso e revisão"
+ 
+-
+ date: "09/03"
+ lecture: "O espaço vetorial das variáveis aleatórias"
+
+-
+ date: "14/03"
+ lecture: "Distribuições de vetores aleatórios"
+ 
+-
+ date: "16/03"
+ lecture: "Exemplos de distribuições sobre vetores aleatórios"
+ 
+-
+ date: "21/03"
+ lecture: "Integrais multivariadas"
+
+-
+ date: "23/03"
+ lecture: "Distribuições condicionais e marginais"
+ 
+-
+ date: "28/03"
+ lecture: "Independência em vetores de variáveis aleatórias"
+ 
+-
+ date: "30/03"
+ lecture: "Feriado"
+
+-
+ date: "04/04"
+ lecture: "Esperança condicional e suas propriedades"
+
+-
+ date: "06/04"
+ lecture: "Variância condicional e suas propriedades"
+ 
+-
+ date: "11/04"
+ lecture: "Revisão"
+
+-
+ date: "13/04"
+ lecture: "**Prova 1**"
+
+-
+ date: "18/04"
+ lecture: "Transformações univariadas"
+
+-
+ date: "20/04"
+ lecture: "Convolução de variáveis aleatórias"
+ 
+-
+ date: "25/04"
+ lecture: "Transformações multivariadas"
+ 
+-
+ date: "27/04"
+ lecture: "Função geradora de momentos multivariada"
+ 
+-
+ date: "02/05"
+ lecture: "Transformações da normal multivariada"
+
+-
+ date: "04/05"
+ lecture: "Transformações no Processo de Poisson"
+ 
+-
+ date: "09/05"
+ lecture: "Revisão"
+ 
+-
+ date: "11/05"
+ lecture: "**Prova 2**"
+
+-
+ date: "16/05"
+ lecture: "Desigualdades de cauda" 
+ 
+-
+ date: "18/05"
+ lecture: "Convergência de eventos "
+
+- 
+ date: "23/05"
+ lecture: "Convergência quase-certa"
+
+- 
+ date: "25/05"
+ lecture: "Convergência em probabilidade"
+ 
+- 
+ date: "30/05"
+ lecture: "Convergência em distribuição"
+ 
+- 
+ date: "01/06"
+ lecture: "Relações entre os tipos de convergência"
+ 
+- 
+ date: "06/06"
+ lecture: "Lei dos Grandes Números"
+
+- 
+ date: "08/06"
+ lecture: "Lei dos Grandes Números"
+ 
+- 
+ date: "13/06"
+ lecture: "Teorema Central do Limite"
+ 
+- 
+ date: "15/06"
+ lecture: "Teorema Central do Limite"
+
+-
+ date: "20/06"
+ lecture: "Convergência da log-verossimilhança"
+ 
+-
+ date: "22/06"
+ lecture: "Convergência do estimador de máxima verossimilhança"
+
+- 
+ date: "27/06"
+ lecture: "Revisão"
+ 
+- 
+ date: "29/06"
+ lecture: "**Prova 3**"

@@ -1,0 +1,32 @@
+---
+title: "(152.159) Probabilidade C (2018)"
+subtitle: "1o semestre de 2018"
+---
+
+```{r echo = FALSE, message = FALSE}
+library(tidyverse)
+n_sim = 10^2
+gen_std_mean = function(n_sim, n_sample) {
+  (rbinom(n_sim, n_sample, 0.5)-0.5*n_sample)/sqrt(n_sample*0.25)
+}
+as.list(c(5, 10, 20, 50, 10^2)) %>% 
+  map_dfr(function(x) data_frame(std_mean = gen_std_mean(n_sim, x), 
+                                 n = rep(x, n_sim))) %>%
+  mutate(n = as.factor(n)) %>%
+  ggplot(aes(x= std_mean, fill = n, colour = n)) +
+  ggtitle("Teorema central do limite para binomiais") +
+  ylab("Densidade") +
+  xlab(expression(frac(sqrt(n)(bar(X)[n]-p), sqrt(p(1-p))))) +
+  geom_density(alpha = 0.1) +
+  stat_function(fun = dnorm, colour = "red")
+```
+
+### Informações sobre o curso
+
+- [**Programa do curso**](syllabus/2018_prob_c.html)
+
+### Listas de exercícios
+
+### Provas passadas
+
+### Notas (anonimizadas)
