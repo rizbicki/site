@@ -25,6 +25,8 @@ as.list(c(5, 10, 20, 50, 10^2)) %>%
 
 - [**Programa do curso**](syllabus/2018_prob_c.html)
 
+- [**Notas de aula**](https://www.overleaf.com/read/fjdsbxwydcnf)
+
 ### Listas de exercícios
 
 ### Provas passadas
