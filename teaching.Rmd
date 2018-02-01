@@ -2,7 +2,11 @@
 title: "Teaching"
 ---
 
-## Federal University of São Carlos
+- [Teaching statement](resources/statement.pdf)
+
+## Courses
+
+### Federal University of São Carlos
 
 ```{r echo = FALSE}
 `%>%` = magrittr::`%>%`
@@ -14,7 +18,7 @@ course_table = yaml::read_yaml("tables/courses_ufscar.yaml") %>%
 knitr::kable(course_table)
 ```
 
-## Carnegie Mellon University
+### Carnegie Mellon University
 
 ```{r echo = FALSE}
 `%>%` = magrittr::`%>%`
