@@ -27,7 +27,10 @@ paper_table = yaml::read_yaml("tables/papers_journal.yaml") %>%
   as.data.frame() %>% 
   tidyr::unnest() %>%
   tibble::as.tibble()
-knitr::kable(paper_table)
+knitr::kable(paper_table, format="html") %>%
+  kableExtra::kable_styling(bootstrap_options = c("striped", 
+                                                  "hover",
+                                                  "responsive"))
 ```
 
 ### Papers in Conference Proceedings
@@ -39,7 +42,10 @@ paper_table = yaml::read_yaml("tables/papers_conference.yaml") %>%
   as.data.frame() %>% 
   tidyr::unnest() %>%
   tibble::as.tibble()
-knitr::kable(paper_table)
+knitr::kable(paper_table, format="html") %>%
+  kableExtra::kable_styling(bootstrap_options = c("striped", 
+                                                  "hover",
+                                                  "responsive"))
 ```
 
 ### Under development

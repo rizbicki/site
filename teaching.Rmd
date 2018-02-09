@@ -15,7 +15,10 @@ course_table = yaml::read_yaml("tables/courses_ufscar.yaml") %>%
   as.data.frame() %>% 
   tidyr::unnest() %>%
   tibble::as.tibble()
-knitr::kable(course_table)
+knitr::kable(course_table, format="html") %>%
+  kableExtra::kable_styling(bootstrap_options = c("striped", 
+                                                  "hover", 
+                                                  "responsive"))
 ```
 
 ### Carnegie Mellon University
@@ -27,5 +30,8 @@ course_table = yaml::read_yaml("tables/courses_cmu.yaml") %>%
   as.data.frame() %>% 
   tidyr::unnest() %>%
   tibble::as.tibble()
-knitr::kable(course_table)
+knitr::kable(course_table, format="html") %>%
+  kableExtra::kable_styling(bootstrap_options = c("striped", 
+                                                  "hover",
+                                                  "responsive"))
 ```
