@@ -1,5 +1,9 @@
 ---
 title: "Teaching"
+output: 
+  html_document:
+    includes:
+       in_header: google_analytics.html
 ---
 
 - [Teaching statement](resources/statement.pdf)

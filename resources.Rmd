@@ -1,5 +1,9 @@
 ---
 title: "Resources"
+output: 
+  html_document:
+    includes:
+       in_header: google_analytics.html
 ---
 
 ## Lecture notes

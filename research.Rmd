@@ -1,5 +1,9 @@
 ---
 title: "Research"
+output: 
+  html_document:
+    includes:
+       in_header: google_analytics.html
 ---
 
 ### Research groups

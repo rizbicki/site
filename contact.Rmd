@@ -1,5 +1,9 @@
 ---
 title: "Contact"
+output: 
+  html_document:
+    includes:
+       in_header: google_analytics.html
 ---
 
 - e-mail: rbstern at gmail.com
