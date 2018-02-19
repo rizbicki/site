@@ -30,11 +30,20 @@ paper_table = yaml::read_yaml("tables/papers_journal.yaml") %>%
   do.call(rbind, .) %>% 
   as.data.frame() %>% 
   tidyr::unnest() %>%
-  tibble::as.tibble()
-knitr::kable(paper_table, format="html") %>%
-  kableExtra::kable_styling(bootstrap_options = c("striped", 
-                                                  "hover",
-                                                  "responsive"))
+  tibble::as.tibble() %>%
+  dplyr::mutate(title = paste0("<a href='",
+                               url,
+                               "'>",
+                               title,
+                               "</a>")) %>%
+  dplyr::select(-url) %>%
+  dplyr::mutate(journal = paste0("<b>",
+                                 journal,
+                                 "</b>"))
+DT::datatable(paper_table,
+              escape = FALSE,
+              options = list(dom = 'ftip'),
+              rownames = FALSE)
 ```
 
 ### Papers in Conference Proceedings
@@ -45,11 +54,20 @@ paper_table = yaml::read_yaml("tables/papers_conference.yaml") %>%
   do.call(rbind, .) %>% 
   as.data.frame() %>% 
   tidyr::unnest() %>%
-  tibble::as.tibble()
-knitr::kable(paper_table, format="html") %>%
-  kableExtra::kable_styling(bootstrap_options = c("striped", 
-                                                  "hover",
-                                                  "responsive"))
+  tibble::as.tibble() %>%
+  dplyr::mutate(title = paste0("<a href='",
+                               url,
+                               "'>",
+                               title,
+                               "</a>")) %>%
+  dplyr::select(-url) %>%
+  dplyr::mutate(proceedings = paste0("<b>",
+                                     proceedings,
+                                     "</b>"))
+DT::datatable(paper_table,
+              escape = FALSE,
+              options = list(dom = 't'),
+              rownames = FALSE)
 ```
 
 ### Under development

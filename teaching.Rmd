@@ -10,32 +10,24 @@ output:
 
 ## Courses
 
-### Federal University of São Carlos
-
 ```{r echo = FALSE}
 `%>%` = magrittr::`%>%`
-course_table = yaml::read_yaml("tables/courses_ufscar.yaml") %>% 
-  do.call(rbind, .) %>% 
-  as.data.frame() %>% 
+course_table = yaml::read_yaml("tables/courses.yaml") %>%
+  do.call(rbind, .) %>%
+  as.data.frame() %>%
   tidyr::unnest() %>%
-  tibble::as.tibble()
-knitr::kable(course_table, format="html") %>%
-  kableExtra::kable_styling(bootstrap_options = c("striped", 
-                                                  "hover", 
-                                                  "responsive"))
-```
-
-### Carnegie Mellon University
-
-```{r echo = FALSE}
-`%>%` = magrittr::`%>%`
-course_table = yaml::read_yaml("tables/courses_cmu.yaml") %>% 
-  do.call(rbind, .) %>% 
-  as.data.frame() %>% 
-  tidyr::unnest() %>%
-  tibble::as.tibble()
-knitr::kable(course_table, format="html") %>%
-  kableExtra::kable_styling(bootstrap_options = c("striped", 
-                                                  "hover",
-                                                  "responsive"))
+  tibble::as.tibble() %>%
+  dplyr::mutate(course = ifelse(
+    url == "NA",
+    course,
+    paste0("<a href='",
+           url,
+           "'>",
+           course,
+           "</a>"))) %>%
+  dplyr::select(-url)
+DT::datatable(course_table,
+              escape = FALSE,
+              options = list(dom = 'ftip'),
+              rownames = FALSE)
 ```

@@ -1,21 +1,24 @@
-name: "rbstern"
-output_dir: "docs"
+name: rbstern
+output_dir: docs
 navbar:
-  title: "Home"
+  title: Home
   left:
-    - text: "Teaching"
-      href: teaching.html
-    - text: "Research"
-      href: research.html
-    - text: "Students"
-      href: students.html
-    - text: "Resources"
-      href: resources.html
-    - text: "Contact"
-      href: contact.html
+  - text: Teaching
+    href: teaching.html
+  - text: Research
+    href: research.html
+  - text: Students
+    href: students.html
+  - text: Resources
+    href: resources.html
+  - text: Contact
+    href: contact.html
 output:
   html_document:
     highlight: textmate
     include:
       after_body: footer.html
     css: styles.css
+    lib_dir: site_libs
+    self_contained: no
+
