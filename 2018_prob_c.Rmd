@@ -1,5 +1,5 @@
 ---
-title: "(152.159) Probabilidade C (2018)"
+title: "(152.159) Probabilidade C"
 subtitle: "1o semestre de 2018"
 output: 
   html_document:

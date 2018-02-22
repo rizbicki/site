@@ -5,6 +5,12 @@
   year: "2018"
   university: "Federal University of São Carlos"
 -
+  course: "Introduction to Experimental Design"
+  url: "2018_ipaee.html"
+  level: "Undergraduate"
+  year: "2018"
+  university: "Federal University of São Carlos"
+-
   course: "Decision Theory"
   url: NA
   level: "Graduate"
@@ -47,7 +53,7 @@
   year: "2016"
   university: "Federal University of São Carlos"
 -
-  course: "Introduction to Statistical Planning"
+  course: "Introduction to Experimental Design"
   url: NA
   level: "Undergraduate"
   year: "2016"

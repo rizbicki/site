@@ -1,0 +1,29 @@
+---
+title: "(150.061) Introdução ao planejamento e à análise estatística de experimentos"
+subtitle: "1o semestre de 2018"
+output: 
+  html_document:
+    includes:
+       in_header: google_analytics.html
+---
+
+```{r echo = FALSE, message = FALSE}
+library(tidyverse)
+plant.df = PlantGrowth
+plant.df$group = factor(plant.df$group,
+                        labels = c("Controle", "Tratamento 1", "Tratamento 2"))
+ggplot(plant.df, aes(x = group, y = weight)) +
+  geom_boxplot(fill = "grey80", colour = c("blue", "red", "purple")) +
+  scale_x_discrete() + xlab("Tratamento") +
+  ylab("Peso drenado das plantas (kg)")
+```
+
+### Informações sobre o curso
+
+- [**Programa do curso**](syllabus/2018_ipaee.html)
+
+### Listas de exercícios
+
+### Provas passadas
+
+### Notas (anonimizadas)

@@ -1,5 +1,5 @@
 ---
-title: "(152.159) Probabilidade C"
+title: "(150.061) Introdução ao planejamento e à análise estatística de experimentos"
 subtitle: "1o semestre de 2018"
 ---
 
@@ -14,10 +14,10 @@ subtitle: "1o semestre de 2018"
    knitr::kable()
 ```
 
-- Aulas : 4a, 10h-12h; e 6a, 16h-18h
+- Aulas : 2a, 14h-16h; e 4a, 14h-16h
 
 - Instruções para o envio de e-mails: 
-Por favor adicione ``[Probabilidade C]'' ao 
+Por favor adicione ``[IPAEE]'' ao 
 tópico de e-mails relacionados a este curso.
 O envio de e-mail deve ser tratado como uma comunicação profissional.
 Evite o uso de abreviações, acrônimos e gírias nos e-mails.
@@ -27,35 +27,34 @@ Evite o uso de abreviações, acrônimos e gírias nos e-mails.
 
 ### Objetivos do curso
 
-- Visualizar vetores de variáveis aleatórias e entender suas propriedades.
-- Calcular a distribuição de transformações de variáveis aleatórias.
-- Identificar e comparar os tipos de convergência de variáveis aleatórias.
-- Compreender os principais resultados de convergência de variáveis aleatórias.
+- Construir e visualizar bancos de dados.
+- Usar aleatorização e controle em experimentos.
+- Traduzir problemas em modelos aleatórios.
+- Testar hipóteses em modelos aleatórios.
+- Usar os principais modelos de planejamento de experimentos.
 
 <br/>
 
 ### Pré-requisitos
 
-- Cálculo e Probabilidades A e B.
+- Cálculo I
 
 ### Material do curso
 
-- [Notas de aula](https://www.overleaf.com/read/fjdsbxwydcnf) estão disponíveis online.
-  Vocês deverão baixar, imprimir e
-  olhar rapidamente o conteúdo antes de cada classe.
+- Notas de aula e listas de exercícios
+  estarão disponíveis online.
   
 - Os seguintes livros são opcionais e 
   fornecem explicações detalhadas,
   tópicos extras, aplicações interessantes e
   exercícios adicionais:
 
-    - A First Course in Probability - Ross.
+    - Diggle, P. J., & Chetwynd, A. G. (2011). Statistics and scientific method: an introduction for students and researchers. Oxford University Press. Chicago
+    
+    - Motulsky, H. (2014). Intuitive biostatistics: a nonmathematical guide to statistical thinking. Oxford University Press, USA. Chicago	
 
-    - Introduction to Probability Models - Ross.
+    - Friedman, L. M., Furberg, C., DeMets, D. L., Reboussin, D., & Granger, C. B. (2015). Fundamentals of clinical trials. Springer-Verlag.
 
-    - An introduction to probability theory and its applications - Feller.
-
-    - Probabilidade: um curso em nível intermediário - James.
 								
 # Atividades do Curso
 								
@@ -107,14 +106,14 @@ vocês não poderão consultar qualquer material durante as provas.
 Exames não poderão ser realizados em outro dia que não a data oficial.
 Exceções devem ser discutidas ao menos uma semana antes comigo.
 
-- **Prova 1**: Ocorrerá no dia 13/04. 
+- **Prova 1**: Ocorrerá no dia 11/04. 
 Incluirá todos os tópicos vistos em aula.
 
-- **Prova 2**: Ocorrerá no dia 11/05. 
+- **Prova 2**: Ocorrerá no dia 16/05. 
 Incluirá todos os tópicos vistos em aula,
 com ênfase no material após a Prova 1.
 
-- **Prova 3**: Ocorrerá no dia 29/06. 
+- **Prova 3**: Ocorrerá no dia 27/06. 
 Incluirá todos os tópicos aprendidos em aula,
 com ênfase no material após a Prova 2.
 
@@ -169,8 +168,8 @@ Isto inclui, por exemplo, o envio de mensagens ou checar o e-mail.
 
 - **Integridade Acadêmica**:
 Você deverá agir com ética em todas as atividades da classe.
-Em particular, é **expressamente proibido** 
-copiar listas de exercícios ou trapacear durante provas. 
+Em particular, é **expressamente proibido** copiar listas de exercícios ou
+trapacear durante provas. 
 Caso você realize estas atividades, poderá sofrer consequências severas,
 como reprovação automática e encaminhamento do seu caso a uma Comissão Disciplinar.
 
@@ -178,7 +177,7 @@ como reprovação automática e encaminhamento do seu caso a uma Comissão Disci
 
 ```{r echo = FALSE}
 `%>%` = magrittr::`%>%`
-calendar_table = yaml::read_yaml("calendars/2018_prob_c.yaml") %>% 
+calendar_table = yaml::read_yaml("calendars/2018_ipaee.yaml") %>% 
   do.call(rbind, .) %>% 
   as.data.frame() %>% 
   tidyr::unnest() %>%
