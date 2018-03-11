@@ -1,6 +1,10 @@
 ---
 title: "(150.061) Introdução ao planejamento e à análise estatística de experimentos"
 subtitle: "1o semestre de 2018"
+output: 
+  html_document:
+    includes:
+       in_header: ../google_analytics.html
 ---
 
 # Contato

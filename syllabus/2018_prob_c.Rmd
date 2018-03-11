@@ -1,16 +1,22 @@
 ---
 title: "(152.159) Probabilidade C"
 subtitle: "1o semestre de 2018"
+output: 
+  html_document:
+    includes:
+       in_header: ../google_analytics.html
 ---
 
 # Contato
 
 ```{r echo = FALSE, message = FALSE}
  library(magrittr)
- keys = c("nome", "email", "tira-dúvidas")
- values = c("Rafael Bassi Stern", "rbstern@gmail.com", "a definir")
- tibble::tibble(variaveis = keys, 
-                Instrutor = values) %>%
+ keys = c("nome", "email", "atendimento")
+ values = c("Rafael Bassi Stern", "rbstern@gmail.com", "Marcar por e-mail")
+ values_mon = c("Taís Ribeiro", "tais_robertaribeiro@hotmail.com", "5a. 13:00-14:00")
+ tibble::tibble(variaveis = keys,
+                Instrutor = values,
+                Monitora  = values_mon) %>%
    knitr::kable()
 ```
 
@@ -99,6 +105,13 @@ dois exercícios no quadro negro.
 A performance neste exercício comporá outra
 parte da nota de participação.
 
+### Testes quinzenais
+
+Serão realizados testes quinzenais de 20 minutos
+no início das aulas de sexta-feira.
+Estes testes avaliarão a sua capacidade de
+resolver exercícios básicos do conteúdo recente.
+
 ### Provas 
 
 As provas serão realizadas na sala de aula.
@@ -107,14 +120,14 @@ vocês não poderão consultar qualquer material durante as provas.
 Exames não poderão ser realizados em outro dia que não a data oficial.
 Exceções devem ser discutidas ao menos uma semana antes comigo.
 
-- **Prova 1**: Ocorrerá no dia 13/04. 
+- **Prova 1**: Ocorrerá no dia 20/04. 
 Incluirá todos os tópicos vistos em aula.
 
 - **Prova 2**: Ocorrerá no dia 11/05. 
 Incluirá todos os tópicos vistos em aula,
 com ênfase no material após a Prova 1.
 
-- **Prova 3**: Ocorrerá no dia 29/06. 
+- **Prova 3**: Ocorrerá no dia 06/07. 
 Incluirá todos os tópicos aprendidos em aula,
 com ênfase no material após a Prova 2.
 
@@ -133,8 +146,13 @@ podendo sua nota aumentar ou diminuir.
 
 ```{r echo = FALSE, message = FALSE}
  library(magrittr)
- keys = c("Participação (geral)", "Participação (exercício)", "Prova 1", "Prova 2", "Prova 3")
- values = c("0.05", "0.05", "0.3", "0.3", "0.3")
+ keys = c("Participação (geral)", 
+          "Participação (exercício)",
+          "Média dos testes",
+          "Prova 1", "Prova 2", "Prova 3")
+ values = c("0.05", "0.05", 
+            "0.2", 
+            "0.2", "0.2", "0.3")
  tibble::tibble(Avaliacao = keys, 
                 Peso = values) %>%
    knitr::kable()

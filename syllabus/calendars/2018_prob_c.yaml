@@ -36,19 +36,19 @@
  
 -
  date: "11/04"
- lecture: "Revisão"
-
--
- date: "13/04"
- lecture: "**Prova 1**"
-
--
- date: "18/04"
  lecture: "Transformações univariadas"
 
 -
- date: "20/04"
+ date: "13/04"
  lecture: "Convolução de variáveis aleatórias"
+
+-
+ date: "18/04"
+ lecture: "Revisão"
+
+-
+ date: "20/04"
+ lecture: "**Prova 1**"
  
 -
  date: "25/04"
@@ -128,4 +128,12 @@
  
 - 
  date: "29/06"
+ lecture: "Revisão"
+
+- 
+ date: "04/07"
+ lecture: "Revisão"
+ 
+- 
+ date: "06/07"
  lecture: "**Prova 3**"
