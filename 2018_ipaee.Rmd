@@ -22,6 +22,11 @@ ggplot(plant.df, aes(x = group, y = weight)) +
 
 - [**Programa do curso**](syllabus/2018_ipaee.html)
 
+
+### Notas de aula
+
+- [Aula 1](https://rbstern.github.io/ipaee/aula_1.html)
+
 ### Listas de exercícios
 
 ### Provas passadas
