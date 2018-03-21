@@ -7,7 +7,7 @@ output:
        in_header: google_analytics.html
 ---
 
-```{r echo = FALSE, message = FALSE}
+```{r echo = FALSE, message = FALSE, warning = FALSE}
 library(tidyverse)
 plant.df = PlantGrowth
 plant.df$group = factor(plant.df$group,
@@ -26,6 +26,8 @@ ggplot(plant.df, aes(x = group, y = weight)) +
 ### Notas de aula
 
 - [Aula 1](https://rbstern.github.io/ipaee/aula_1.html)
+- [Aula 2](https://rbstern.github.io/ipaee/aula_2.html)
+- [Aula 3](https://rbstern.github.io/ipaee/aula_3.html)
 
 ### Listas de exercícios
 
