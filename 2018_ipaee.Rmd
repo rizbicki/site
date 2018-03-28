@@ -30,6 +30,10 @@ ggplot(plant.df, aes(x = group, y = weight)) +
 - [Aulas 3 e 4](https://rbstern.github.io/ipaee/aula_3.html)
 - [Aula 5](https://rbstern.github.io/ipaee/aula_5.html)
 
+### Dados
+
+- [Adubo](https://raw.githubusercontent.com/rbstern/ipaee/master/data/adubo.csv)
+
 ### Listas de exercícios
 
 ### Provas passadas
