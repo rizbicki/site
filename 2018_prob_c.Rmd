@@ -7,7 +7,7 @@ output:
        in_header: google_analytics.html
 ---
 
-```{r echo = FALSE, message = FALSE}
+```{r echo = FALSE, message = FALSE, warning = FALSE}
 library(tidyverse)
 n_sim = 10^2
 gen_std_mean = function(n_sim, n_sample) {
@@ -31,8 +31,4 @@ as.list(c(5, 10, 20, 50, 10^2)) %>%
 
 - [**Notas de aula**](https://www.overleaf.com/read/fjdsbxwydcnf)
 
-### Listas de exercícios
-
-### Provas passadas
-
-### Notas (anonimizadas)
+- [**Notas em avaliações**](notas/2018_1_prob_c.html){target="_blank"}

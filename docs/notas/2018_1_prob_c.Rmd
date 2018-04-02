@@ -1,0 +1,46 @@
+---
+title: "(152.159) Probabilidade C"
+subtitle: "1o semestre de 2018"
+output: 
+  html_document:
+    includes:
+       in_header: ../google_analytics.html
+---
+
+#Notas
+
+- Para manter sua anonimidade,
+as notas estão indexadas pelos 
+4 últimos algarismos do seu número RA.
+
+- Caso o seu número RA esteja marcado com um (*),
+isto indica que você desrespeitou o
+código de conduta desta disciplina e 
+está reprovado. 
+Caso o seu número RA esteja marcado com um (**),
+existe evidência que você desrespeitou o
+código de conduta desta disciplina. Tome cuidado!
+
+```{r echo = FALSE}
+`%>%` = magrittr::`%>%`
+grade_table = yaml::read_yaml("../notas/2018_1_prob_c.yaml") %>%
+  do.call(rbind, .) %>%
+  as.data.frame() %>%
+  tidyr::unnest() %>%
+  tibble::as.tibble() %>%
+  dplyr::arrange(RA)
+DT::datatable(grade_table,
+              escape = FALSE,
+              options = list(dom = 'ftip'),
+              rownames = FALSE)
+```
+
+### Gráficos
+
+```{r echo = FALSE}
+grade_table %>%
+  tidyr::gather(avaliacao, nota, -RA) %>%
+  ggplot2::ggplot(ggplot2::aes(x = avaliacao, y = nota)) +
+  ggplot2::geom_boxplot() +
+  ggplot2::xlab("avaliação")
+```

@@ -13,3 +13,27 @@ output:
 - [Probability](https://www.overleaf.com/read/fjdsbxwydcnf)
 
 - [Statistical decision theory (incomplete)](https://www.overleaf.com/read/ndcxvbjgvkbx)
+
+## Selected talks
+
+```{r echo = FALSE}
+`%>%` = magrittr::`%>%`
+talk_table = yaml::read_yaml("tables/talks.yaml") %>%
+  do.call(rbind, .) %>%
+  as.data.frame() %>%
+  tidyr::unnest() %>%
+  tibble::as.tibble() %>%
+  dplyr::mutate(title = ifelse(
+    url == "NA",
+    title,
+    paste0("<a href='",
+           url,
+           "'>",
+           title,
+           "</a>"))) %>%
+  dplyr::select(-url)
+DT::datatable(talk_table,
+              escape = FALSE,
+              options = list(dom = 'ftip'),
+              rownames = FALSE)
+```
