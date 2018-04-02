@@ -7,7 +7,7 @@ output:
        in_header: google_analytics.html
 ---
 
-```{r echo = FALSE, message = FALSE, warning = FALSE}
+```{r cache = TRUE, echo = FALSE, message = FALSE, warning = FALSE}
 library(tidyverse)
 n_sim = 10^2
 gen_std_mean = function(n_sim, n_sample) {
