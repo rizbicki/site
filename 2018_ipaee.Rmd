@@ -29,6 +29,7 @@ ggplot(plant.df, aes(x = group, y = weight)) +
 - [Aula 2](https://rbstern.github.io/ipaee/aula_2.html)
 - [Aulas 3 e 4](https://rbstern.github.io/ipaee/aula_3.html)
 - [Aula 5](https://rbstern.github.io/ipaee/aula_5.html)
+- [Aula 6](https://rbstern.github.io/ipaee/aula_6.html)
 
 ### Dados
 
