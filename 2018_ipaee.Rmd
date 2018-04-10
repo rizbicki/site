@@ -18,12 +18,12 @@ ggplot(plant.df, aes(x = group, y = weight)) +
   ylab("Peso drenado das plantas (kg)")
 ```
 
-**Aviso importante**: Existem monitorias desta disciplina que ocorrem toda 2a e 4a feira no horário do almoço (a partir das 12:15).
+**Aviso importante**: Existem monitorias desta disciplina que 
+ocorrem toda 2a e 4a feira no horário do almoço (a partir das 12:15).
 
 ### Informações sobre o curso
 
 - [**Programa do curso**](syllabus/2018_ipaee.html)
-
 
 ### Notas de aula
 

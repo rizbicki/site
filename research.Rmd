@@ -22,6 +22,8 @@ descrs = c("Develop applications of statistics to the law.",
 knitr::kable(tibble::tibble(Group = figs, Goal = descrs))
 ```
 
+<br/>
+
 ### Journal papers
 
 ```{r echo = FALSE}
@@ -46,6 +48,8 @@ DT::datatable(paper_table,
               rownames = FALSE)
 ```
 
+<br/>
+
 ### Papers in Conference Proceedings
 
 ```{r echo = FALSE}
@@ -69,6 +73,8 @@ DT::datatable(paper_table,
               options = list(dom = 't'),
               rownames = FALSE)
 ```
+
+<br/>
 
 ### Under development
 
