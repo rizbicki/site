@@ -34,4 +34,4 @@ knitr::include_graphics("figures/rbstern.png")
 <br/>
 
 In case you are looking for Rafael Izbicki,
-his site is: https://rizbicki.wordpress.com/
+his site is [here](https://rizbicki.wordpress.com/).
