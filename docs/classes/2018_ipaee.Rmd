@@ -1,0 +1,43 @@
+---
+title: "(150.061) Introdução ao planejamento e à análise estatística de experimentos"
+subtitle: "1o semestre de 2018"
+output: 
+  html_document:
+    includes:
+       in_header: ../google_analytics.html
+---
+
+```{r echo = FALSE, message = FALSE, warning = FALSE}
+library(tidyverse)
+plant.df = PlantGrowth
+plant.df$group = factor(plant.df$group,
+                        labels = c("Controle", "Tratamento 1", "Tratamento 2"))
+ggplot(plant.df, aes(x = group, y = weight)) +
+  geom_boxplot(fill = "grey80", colour = c("blue", "red", "purple")) +
+  scale_x_discrete() + xlab("Tratamento") +
+  ylab("Peso drenado das plantas (kg)")
+```
+
+**Aviso importante**: Existem monitorias desta disciplina que 
+ocorrem toda 2a e 4a feira no horário do almoço (a partir das 12:15).
+
+### Informações sobre o curso
+
+- [**Programa do curso**](syllabus/2018_ipaee.html)
+
+### Notas de aula
+
+- [Aula 1](https://rbstern.github.io/ipaee/aula_1.html)
+- [Aula 2](https://rbstern.github.io/ipaee/aula_2.html)
+- [Aulas 3 e 4](https://rbstern.github.io/ipaee/aula_3.html)
+- [Aula 5](https://rbstern.github.io/ipaee/aula_5.html)
+- [Aula 6](https://rbstern.github.io/ipaee/aula_6.html)
+
+### Dados
+
+- [Adubo](https://raw.githubusercontent.com/rbstern/ipaee/master/data/adubo.csv)
+
+### Avaliações
+
+- [**Prova 1**](https://rbstern.github.io/ipaee/exams/2018_p1.pdf){target="_blank"}
+- [**Notas em avaliações**](grades/2018_1_ipaee.html){target="_blank"}

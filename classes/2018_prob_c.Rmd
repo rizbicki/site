@@ -4,7 +4,7 @@ subtitle: "1o semestre de 2018"
 output: 
   html_document:
     includes:
-       in_header: google_analytics.html
+       in_header: ../google_analytics.html
 ---
 
 ```{r cache = TRUE, echo = FALSE, message = FALSE, warning = FALSE}
@@ -31,4 +31,4 @@ as.list(c(5, 10, 20, 50, 10^2)) %>%
 
 - [**Notas de aula**](https://www.overleaf.com/read/fjdsbxwydcnf)
 
-- [**Notas em avaliações**](notas/2018_1_prob_c.html){target="_blank"}
+- [**Notas em avaliações**](../grades/2018_1_prob_c.html){target="_blank"}

@@ -4,7 +4,7 @@ subtitle: "1o semestre de 2018"
 output: 
   html_document:
     includes:
-       in_header: google_analytics.html
+       in_header: ../google_analytics.html
 ---
 
 ```{r echo = FALSE, message = FALSE, warning = FALSE}
@@ -23,7 +23,7 @@ ocorrem toda 2a e 4a feira no horário do almoço (a partir das 12:15).
 
 ### Informações sobre o curso
 
-- [**Programa do curso**](syllabus/2018_ipaee.html)
+- [**Programa do curso**](../syllabus/2018_ipaee.html)
 
 ### Notas de aula
 
@@ -37,8 +37,7 @@ ocorrem toda 2a e 4a feira no horário do almoço (a partir das 12:15).
 
 - [Adubo](https://raw.githubusercontent.com/rbstern/ipaee/master/data/adubo.csv)
 
-### Listas de exercícios
+### Avaliações
 
-### Provas passadas
-
-### Notas (anonimizadas)
+- [**Prova 1**](https://rbstern.github.io/ipaee/exams/2018_p1.html){target="_blank"}
+- [**Notas em avaliações**](grades/2018_1_ipaee.html){target="_blank"}
