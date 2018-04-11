@@ -23,7 +23,7 @@ ocorrem toda 2a e 4a feira no horário do almoço (a partir das 12:15).
 
 ### Informações sobre o curso
 
-- [**Programa do curso**](syllabus/2018_ipaee.html)
+- [**Programa do curso**](../syllabus/2018_ipaee.html)
 
 ### Notas de aula
 
@@ -39,5 +39,5 @@ ocorrem toda 2a e 4a feira no horário do almoço (a partir das 12:15).
 
 ### Avaliações
 
-- [**Prova 1**](https://rbstern.github.io/ipaee/exams/2018_p1.pdf){target="_blank"}
+- [**Prova 1**](https://rbstern.github.io/ipaee/exams/2018_p1.html){target="_blank"}
 - [**Notas em avaliações**](grades/2018_1_ipaee.html){target="_blank"}

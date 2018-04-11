@@ -31,4 +31,4 @@ as.list(c(5, 10, 20, 50, 10^2)) %>%
 
 - [**Notas de aula**](https://www.overleaf.com/read/fjdsbxwydcnf)
 
-- [**Notas em avaliações**](grades/2018_1_prob_c.html){target="_blank"}
+- [**Notas em avaliações**](../grades/2018_1_prob_c.html){target="_blank"}
