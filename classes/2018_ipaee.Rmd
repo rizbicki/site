@@ -23,7 +23,7 @@ ocorrem toda 2a e 4a feira no horário do almoço (a partir das 12:15).
 
 ### Informações sobre o curso
 
-- [**Programa do curso**](../syllabus/2018_ipaee.html)
+- [**Programa do curso**](../syllabus/2018_ipaee.html){target="_blank"}
 
 ### Notas de aula
 

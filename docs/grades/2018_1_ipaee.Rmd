@@ -22,7 +22,7 @@ código de ética desta disciplina e você está reprovado.
 
 ```{r echo = FALSE}
 `%>%` = magrittr::`%>%`
-grade_table = yaml::read_yaml("../notas/2018_1_ipaee.yaml") %>%
+grade_table = yaml::read_yaml("../grades/2018_1_ipaee.yaml") %>%
   do.call(rbind, .) %>%
   as.data.frame() %>%
   tidyr::unnest() %>%
