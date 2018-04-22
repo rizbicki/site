@@ -1,0 +1,42 @@
+---
+sidemenu: "true"
+title: "Resources"
+---
+
+## Lecture notes
+
+- [Bayesian inference (portuguese)](https://www.overleaf.com/read/kjbzvjnppgrr){target="_blank"}
+
+- [Probability](https://www.overleaf.com/read/fjdsbxwydcnf){target="_blank"}
+
+- [Statistical decision theory (incomplete)](https://www.overleaf.com/read/ndcxvbjgvkbx){target="_blank"}
+
+## Selected talks
+
+```{r echo = FALSE}
+`%>%` = magrittr::`%>%`
+talk_table = yaml::read_yaml("tables/talks.yaml") %>%
+  do.call(rbind, .) %>%
+  as.data.frame() %>%
+  tidyr::unnest() %>%
+  tibble::as.tibble() %>%
+  dplyr::mutate(title = ifelse(
+    url == "NA",
+    title,
+    paste0("<a href='",
+           url,
+           "' target = '_blank'>",
+           title,
+           "</a>"))) %>%
+  dplyr::select(-url)
+DT::datatable(talk_table,
+              escape = FALSE,
+              options = list(dom = 'ftip'),
+              rownames = FALSE)
+```
+
+## Cool things written by friends
+
+- [Statistical machine learning (portuguese)](https://www.dropbox.com/s/7iyvllj0njsqmjb/main.pdf){target="_blank"}
+
+- [R guide (portuguese)](http://material.curso-r.com/){target="_blank"}

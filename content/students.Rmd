@@ -1,0 +1,16 @@
+---
+sidemenu: "true"
+title: "Students"
+---
+
+```{r echo = FALSE}
+`%>%` = magrittr::`%>%`
+student_table = yaml::read_yaml("tables/students.yaml") %>% 
+  do.call(rbind, .) %>% 
+  as.data.frame() %>% 
+  tidyr::unnest() %>%
+  tibble::as.tibble()
+DT::datatable(student_table,
+              rownames = FALSE,
+              options = list(dom = 'ftip'))
+```

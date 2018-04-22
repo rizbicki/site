@@ -1,0 +1,85 @@
+---
+sidemenu: "true"
+title: "Research"
+---
+
+### Research groups
+
+```{r echo=FALSE, message=FALSE}
+`%>%` = magrittr::`%>%`
+group_table = yaml::read_yaml("tables/research_groups.yaml") %>% 
+  do.call(rbind, .) %>% 
+  as.data.frame() %>% 
+  tidyr::unnest() %>%
+  tibble::as.tibble() %>%
+  dplyr::mutate(Goal = descr,
+                Group = paste0("<a href='",
+                               url,
+                               "' target='_blank'>",
+                               "<img border = '0' src = '",
+                               logo,
+                               "' width = '250'></a>")) %>%
+  dplyr::select(Group, Goal)
+DT::datatable(group_table,
+              escape = FALSE,
+              options = list(dom = 't'),
+              rownames = FALSE)
+```
+
+<br/>
+
+### Journal papers
+
+```{r echo = FALSE}
+`%>%` = magrittr::`%>%`
+paper_table = yaml::read_yaml("tables/papers_journal.yaml") %>% 
+  do.call(rbind, .) %>% 
+  as.data.frame() %>% 
+  tidyr::unnest() %>%
+  tibble::as.tibble() %>%
+  dplyr::mutate(title = paste0("<a href='",
+                               url,
+                               "' target='_blank'>",
+                               title,
+                               "</a>")) %>%
+  dplyr::select(-url) %>%
+  dplyr::mutate(journal = paste0("<b>",
+                                 journal,
+                                 "</b>"))
+DT::datatable(paper_table,
+              escape = FALSE,
+              options = list(dom = 'ftip'),
+              rownames = FALSE)
+```
+
+<br/>
+
+### Papers in Conference Proceedings
+
+```{r echo = FALSE}
+`%>%` = magrittr::`%>%`
+paper_table = yaml::read_yaml("tables/papers_conference.yaml") %>% 
+  do.call(rbind, .) %>% 
+  as.data.frame() %>% 
+  tidyr::unnest() %>%
+  tibble::as.tibble() %>%
+  dplyr::mutate(title = paste0("<a href='",
+                               url,
+                               "' target='_blank'>",
+                               title,
+                               "</a>")) %>%
+  dplyr::select(-url) %>%
+  dplyr::mutate(proceedings = paste0("<b>",
+                                     proceedings,
+                                     "</b>"))
+DT::datatable(paper_table,
+              escape = FALSE,
+              options = list(dom = 't'),
+              rownames = FALSE)
+```
+
+<br/>
+
+### Under development
+
+- [Compensating for the loss of a chance](https://arxiv.org/abs/1412.1501){target="_blank"}
