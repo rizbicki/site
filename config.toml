@@ -15,7 +15,7 @@ paginate = 10
   # Shown in the home page
   brand = "Rafael Stern"
   googleAnalytics = "UA-114310932-1"
-  disqus = "Your Disqus shortname"
+  disqus = "rafaelstern"
   # CSS name for highlight.js
   highlightjs = "androidstudio"
   dateFormat = "02 Jan 2006, 15:04"
