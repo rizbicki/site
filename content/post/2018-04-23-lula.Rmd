@@ -16,7 +16,7 @@ In the following, I translate this text to English.
 
 Brazil's Supreme Federal Court recently 
 [decided](http://www.stf.jus.br/portal/cms/verNoticiaDetalhe.asp?idConteudo=374437) 
-ex-president's Lula *habeas corpus* in a tight vote of
+ex-president Lula's *habeas corpus* in a tight vote of
 5 for and 6 against. In such a situation, 
 some controversy is unavoidable.
 One of the less sophisticated arguments is that
@@ -58,7 +58,7 @@ which can be answered in many ways.
 
 In Lula's trial, a similar question motivated the
 differences between the Ministers of the Supreme Court.
-Each Minister defended a different balance between
+Each Minister defended a particular balance between
 articles of the Constitution.
 One of these articles is translated below:
 
@@ -89,7 +89,7 @@ Hence, it is possible to argue that, if the State were to wait
 until all appeals were judged before punishing the defendant, then
 punishment would take so long that it would be almost equivalent 
 to no punishment at all.
-In this case, public security would be damaged,
+In this case, **public security** would be damaged,
 since it depends partially on proper punishment.
 
 The vote of each Minister searched for a different balance
@@ -106,18 +106,18 @@ not according to the defendant.
 However, despite the validity of their votes,
 it can be hard to understand exactly how each Minister
 develops the balance of constitutional principles.
-How different would have to be the facts so that
-their votes would change?
-This is a hard question because, in order to balance,
-it is necessary to measure.
+How different would the facts need to be so that
+the Minister's votes would change?
+This is a hard question because, <strong> in order to balance,
+it is necessary to measure </strong>.
 How much time must a trial take so that punishment is not efficient?
 How much time does it take to decide each available appeal?
 After what appeal is the trial so long that it compromises public security?
-Although there still exists no single valid answer to these questions,
-by answering them, the judge makes even more transparent
-the rationale of his decision.
+Although there exists no single valid answer to these questions,
+by answering them, the judge makes the rationale of his decision
+even more transparent.
 By combining Statistics to the Law,
-Jurimetrics provides a new valuable tool
+**Jurimetrics** provides a new valuable tool
 for accomplishing this goal.
 In next posts, I plan to discuss some jurimetric arguments that
 were presented by the Ministers in this case.
