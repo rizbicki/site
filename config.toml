@@ -1,4 +1,4 @@
-baseurl = "/"
+baseurl = "https://www.rafaelstern.science/"
 languageCode = "en-us"
 title = "Rafael Bassi Stern"
 theme = "blackburn"
