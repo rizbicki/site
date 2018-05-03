@@ -20,7 +20,7 @@ course_table = yaml::read_yaml("tables/courses.yaml") %>%
     course,
     paste0("<a href='",
            url,
-           "'>",
+           "' target = '_blank'>",
            course,
            "</a>"))) %>%
   dplyr::select(-url)
