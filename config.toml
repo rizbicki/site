@@ -54,7 +54,7 @@ paginate = 10
     url = "/students/"
   [[menu.main]]
     name = "Resources"
-    pre = "<i class='fa fa-file fa-fw'></i>"
+    pre = "<i class='fa fa-folder fa-fw'></i>"
     weight = 6
     identifier = "resources"
     url = "/resources/"
