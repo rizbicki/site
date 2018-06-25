@@ -83,3 +83,4 @@ DT::datatable(paper_table,
 ### Under development
 
 - [Compensating for the loss of a chance](https://arxiv.org/abs/1412.1501){target="_blank"}
+- [Agnostic tests can control the type I and type II errors simultaneously](https://arxiv.org/abs/1805.04620){target="_blank"}
