@@ -18,12 +18,36 @@ código de ética desta disciplina e você está reprovado.
 
 ```{r echo = FALSE}
 `%>%` = magrittr::`%>%`
+`%<>%` = magrittr::`%<>%`
 grade_table = yaml::read_yaml("grades.yaml") %>%
   do.call(rbind, .) %>%
   as.data.frame() %>%
   tidyr::unnest() %>%
   tibble::as.tibble() %>%
-  dplyr::arrange(RA)
+  dplyr::arrange(RA) %>%
+  dplyr::group_by(RA) %>%
+  dplyr::summarise(T1 = T1,
+                   T2 = T2,
+                   T3 = T3,
+                   T4 = T4,
+                   T5 = T5,
+                   T6 = T6,
+                   MT = (T1+T2+T3+T4+T5+T6-min(T1,T2,T3,T4,T5,T6))/5,
+                   P1 = P1,
+                   P2 = P2,
+                   P3 = P3,
+                   PA = PA)
+# Ajustes para alunos com faltas justificadas
+lost_T = which(grade_table$RA == "8072")
+tg_ = grade_table[lost_T,]
+grade_table[lost_T,]$MT = (tg_$T1 + tg_$T3 + tg_$T4  + tg_$T6)/4
+lost_P = which(grade_table$RA == "7870")
+tg_ = grade_table[lost_P,]
+grade_table[lost_P,]$P2 = 0.4*tg_$P1 + 0.6*tg_$P3
+
+grade_table %<>%
+  dplyr::mutate(MF = 0.2*MT + 0.2*P1 + 0.2*P2 + 0.3*P3 + 10*PA)
+
 DT::datatable(grade_table,
               escape = FALSE,
               options = list(dom = 'ftip'),
