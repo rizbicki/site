@@ -1,4 +1,16 @@
 -
+  course: "Probability 1"
+  url: "../classes/2018_2_prob_1/"
+  level: "Undergraduate"
+  year: "2018"
+  university: "Federal University of São Carlos"
+-
+  course: "Introduction to Statistics"
+  url: "../classes/2018_2_etec/"
+  level: "Undergraduate"
+  year: "2018"
+  university: "Federal University of São Carlos"
+-
   course: "Probability C"
   url: "../classes/2018_1_prob_c/"
   level: "Undergraduate"

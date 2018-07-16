@@ -1,0 +1,32 @@
+---
+title: "(XXX.XXX) Probabilidade 1"
+subtitle: "2o semestre de 2018"
+---
+
+#Notas
+
+- Para manter sua anonimidade,
+as notas estão indexadas pelos 
+4 últimos algarismos do seu número RA.
+
+- Caso o seu número RA esteja marcado com um (*),
+isto indica que existe evidência que você desrespeitou o
+código de ética desta disciplina. Tome cuidado!
+Caso o seu número RA esteja marcado com um (**),
+está provado que você desrespeitou o 
+código de ética desta disciplina e você está reprovado.
+
+```{r echo = FALSE}
+#`%>%` = magrittr::`%>%`
+#`%<>%` = magrittr::`%<>%`
+```
+
+### Gráficos
+
+```{r echo = FALSE}
+#grade_table %>%
+#  tidyr::gather(avaliacao, nota, -RA) %>%
+#  ggplot2::ggplot(ggplot2::aes(x = avaliacao, y = nota)) +
+#  ggplot2::geom_boxplot() +
+#  ggplot2::xlab("avaliação")
+```

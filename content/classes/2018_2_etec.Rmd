@@ -1,0 +1,16 @@
+---
+title: "(150.029) Estatística Tecnológica"
+subtitle: "2o semestre de 2018"
+---
+
+```{r cache = TRUE, echo = FALSE, message = FALSE, warning = FALSE}
+library(tidyverse)
+```
+
+### Informações sobre o curso
+
+- [**Programa do curso**](./syllabus/){target="_blank"}
+
+- [**Notas de aula**](https://www.overleaf.com/read/fjdsbxwydcnf)
+
+- [**Notas em avaliações**](./grades/){target="_blank"}

@@ -1,0 +1,131 @@
+-
+ date: "08/08"
+ lecture: "Descrição do curso e revisão"
+
+-
+ date: "14/08"
+ lecture: "Variáveis aleatórias e função de distribuição acumulada"
+ 
+-
+ date: "15/08"
+ lecture: "Feriado municipal"
+ 
+-
+ date: "21/08"
+ lecture: "Função de densidade de probabilidade"
+
+-
+ date: "22/08"
+ lecture: "Esperança"
+ 
+-
+ date: "28/08"
+ lecture: "Mediana e assimetria"
+ 
+-
+ date: "29/08"
+ lecture: "Aula de exercícios"
+
+-
+ date: "04/09"
+ lecture: "Variância"
+
+-
+ date: "05/09"
+ lecture: "Covariância"
+ 
+-
+ date: "11/09"
+ lecture: "Função geradora de momentos"
+ 
+-
+ date: "12/09"
+ lecture: "Função característica"
+
+-
+ date: "18/09"
+ lecture: "<strong> Revisão </strong>"
+
+-
+ date: "19/09"
+ lecture: "<strong> Prova 1 </strong>"
+ 
+-
+ date: "25/09"
+ lecture: "Processo de Bernoulli; Distribuição binomial"
+ 
+-
+ date: "26/09"
+ lecture: "Distribuição normal"
+ 
+-
+ date: "02/10"
+ lecture: "Distribuição hipergeométrica"
+
+-
+ date: "03/10"
+ lecture: "Aula de exercícios"
+
+-
+ date: "09/10"
+ lecture: "Processo de Poisson"
+
+-
+ date: "10/10"
+ lecture: "Distribuições geométrica e exponencial"
+
+-
+ date: "16/10"
+ lecture: "Distribuições binomial negativa e gamma"
+
+-
+ date: "17/10"
+ lecture: "Distribuição Poisson"
+
+- 
+ date: "23/10"
+ lecture: "<strong> Revisão </strong>"
+
+- 
+ date: "24/10"
+ lecture: "<strong> Prova 2 </strong>"
+ 
+- 
+ date: "30/10"
+ lecture: "Distribuição Beta"
+ 
+- 
+ date: "31/10"
+ lecture: "Estatísticas de ordem"
+ 
+- 
+ date: "06/11"
+ lecture: "Estatísticas de ordem"
+
+- 
+ date: "07/11"
+ lecture: "Aula de exercícios"
+ 
+- 
+ date: "13/11"
+ lecture: "Transformações discretas"
+ 
+- 
+ date: "14/11"
+ lecture: "Transformações contínuas"
+
+-
+ date: "20/11"
+ lecture: "Feriado municipal"
+ 
+-
+ date: "21/11"
+ lecture: "Transformações contínuas"
+
+- 
+ date: "27/11"
+ lecture: "<strong> Revisão </strong>"
+ 
+- 
+ date: "28/11"
+ lecture: "<strong> Prova 3 </strong>"
