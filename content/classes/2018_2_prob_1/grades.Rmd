@@ -1,5 +1,5 @@
 ---
-title: "(XXX.XXX) Probabilidade 1"
+title: "(100.1115) Probabilidade 1"
 subtitle: "2o semestre de 2018"
 ---
 
@@ -17,16 +17,17 @@ está provado que você desrespeitou o
 código de ética desta disciplina e você está reprovado.
 
 ```{r echo = FALSE}
-#`%>%` = magrittr::`%>%`
-#`%<>%` = magrittr::`%<>%`
+`%>%` = magrittr::`%>%`
+`%<>%` = magrittr::`%<>%`
 ```
 
 ### Gráficos
 
 ```{r echo = FALSE}
-#grade_table %>%
-#  tidyr::gather(avaliacao, nota, -RA) %>%
-#  ggplot2::ggplot(ggplot2::aes(x = avaliacao, y = nota)) +
-#  ggplot2::geom_boxplot() +
-#  ggplot2::xlab("avaliação")
+grade_table = read.csv("./grades.csv")
+grade_table %>%
+  tidyr::gather(avaliacao, nota, -RA) %>%
+  ggplot2::ggplot(ggplot2::aes(x = avaliacao, y = nota)) +
+  ggplot2::geom_boxplot() +
+  ggplot2::xlab("avaliação")
 ```
