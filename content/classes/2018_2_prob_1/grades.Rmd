@@ -21,10 +21,18 @@ código de ética desta disciplina e você está reprovado.
 `%<>%` = magrittr::`%<>%`
 ```
 
+### Notas
+```{r echo = FALSE}
+grade_table = read.csv("./grades.csv")
+DT::datatable(grade_table,
+              escape = FALSE,
+              options = list(dom = 'ftip'),
+              rownames = FALSE)
+```
+
 ### Gráficos
 
 ```{r echo = FALSE}
-grade_table = read.csv("./grades.csv")
 grade_table %>%
   tidyr::gather(avaliacao, nota, -RA) %>%
   ggplot2::ggplot(ggplot2::aes(x = avaliacao, y = nota)) +
