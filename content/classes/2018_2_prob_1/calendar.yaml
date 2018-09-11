@@ -44,19 +44,19 @@
 
 -
  date: "18/09"
- lecture: "<strong> Revisão </strong>"
+ lecture: "Processo de Bernoulli; Distribuição binomial"
 
 -
  date: "19/09"
- lecture: "<strong> Prova 1 </strong>"
+ lecture: "Distribuição normal"
  
 -
  date: "25/09"
- lecture: "Processo de Bernoulli; Distribuição binomial"
+ lecture: "<strong> Revisão </strong>"
  
 -
  date: "26/09"
- lecture: "Distribuição normal"
+ lecture: "<strong> Prova 1 </strong>"
  
 -
  date: "02/10"
@@ -84,19 +84,19 @@
 
 - 
  date: "23/10"
- lecture: "<strong> Revisão </strong>"
+ lecture: "Distribuição Beta"
 
 - 
  date: "24/10"
- lecture: "<strong> Prova 2 </strong>"
+ lecture: "Estatísticas de ordem"
  
 - 
  date: "30/10"
- lecture: "Distribuição Beta"
+ lecture: "<strong> Revisão </strong>"
  
 - 
  date: "31/10"
- lecture: "Estatísticas de ordem"
+ lecture: "<strong> Prova 2 </strong>"
  
 - 
  date: "06/11"
@@ -122,10 +122,18 @@
  date: "21/11"
  lecture: "Transformações contínuas"
 
-- 
+-
  date: "27/11"
+ lecture: "<strong> Revisão </strong>"
+
+-
+ date: "28/11"
+ lecture: "<strong> Revisão </strong>"
+
+- 
+ date: "03/12"
  lecture: "<strong> Revisão </strong>"
  
 - 
- date: "28/11"
+ date: "04/12"
  lecture: "<strong> Prova 3 </strong>"
