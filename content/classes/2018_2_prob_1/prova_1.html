@@ -1,0 +1,281 @@
+---
+title: "Correção da Prova 1"
+author: "Rafael Stern"
+date: "October 2, 2018"
+output: html_document
+---
+
+
+
+<ol style="list-style-type: decimal">
+<li>Um dado de quatro faces é arremessado duas vezes. Considere que <span class="math inline">\(X\)</span> é a soma dos resultados obtidos em cada lançamento. Determine <span class="math inline">\(f_{X}(x)\)</span>, <span class="math inline">\(F_{X}(x)\)</span> e <span class="math inline">\(\mathbb{V}[X]\)</span>.</li>
+</ol>
+<p><em>Solução</em>:</p>
+<ol style="list-style-type: lower-alpha">
+<li>Se denotarmos por <span class="math inline">\(X_1\)</span> o resultado do primeiro dado, <span class="math inline">\(X_2\)</span> o resultado do segundo dado e definimor <span class="math inline">\(X = X_1 + X_2\)</span>, então obtemos as seguintes possibilidades:</li>
+</ol>
+<pre><code>## Warning: package &#39;stringr&#39; was built under R version 3.4.4</code></pre>
+<pre><code>## Warning: package &#39;knitr&#39; was built under R version 3.4.4</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="right">x1</th>
+<th align="right">x2</th>
+<th align="right">x</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">2</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="right">1</td>
+<td align="right">3</td>
+</tr>
+<tr class="odd">
+<td align="right">3</td>
+<td align="right">1</td>
+<td align="right">4</td>
+</tr>
+<tr class="even">
+<td align="right">4</td>
+<td align="right">1</td>
+<td align="right">5</td>
+</tr>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">2</td>
+<td align="right">3</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="right">2</td>
+<td align="right">4</td>
+</tr>
+<tr class="odd">
+<td align="right">3</td>
+<td align="right">2</td>
+<td align="right">5</td>
+</tr>
+<tr class="even">
+<td align="right">4</td>
+<td align="right">2</td>
+<td align="right">6</td>
+</tr>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">3</td>
+<td align="right">4</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="right">3</td>
+<td align="right">5</td>
+</tr>
+<tr class="odd">
+<td align="right">3</td>
+<td align="right">3</td>
+<td align="right">6</td>
+</tr>
+<tr class="even">
+<td align="right">4</td>
+<td align="right">3</td>
+<td align="right">7</td>
+</tr>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">4</td>
+<td align="right">5</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="right">4</td>
+<td align="right">6</td>
+</tr>
+<tr class="odd">
+<td align="right">3</td>
+<td align="right">4</td>
+<td align="right">7</td>
+</tr>
+<tr class="even">
+<td align="right">4</td>
+<td align="right">4</td>
+<td align="right">8</td>
+</tr>
+</tbody>
+</table>
+<p>Com as possibilidades são equiprováveis, a densidade de <span class="math inline">\(X\)</span> é dada por:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="right">x</th>
+<th align="right">contagem</th>
+<th align="right">P</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">2</td>
+<td align="right">1</td>
+<td align="right">0.0625</td>
+</tr>
+<tr class="even">
+<td align="right">3</td>
+<td align="right">2</td>
+<td align="right">0.1250</td>
+</tr>
+<tr class="odd">
+<td align="right">4</td>
+<td align="right">3</td>
+<td align="right">0.1875</td>
+</tr>
+<tr class="even">
+<td align="right">5</td>
+<td align="right">4</td>
+<td align="right">0.2500</td>
+</tr>
+<tr class="odd">
+<td align="right">6</td>
+<td align="right">3</td>
+<td align="right">0.1875</td>
+</tr>
+<tr class="even">
+<td align="right">7</td>
+<td align="right">2</td>
+<td align="right">0.1250</td>
+</tr>
+<tr class="odd">
+<td align="right">8</td>
+<td align="right">1</td>
+<td align="right">0.0625</td>
+</tr>
+</tbody>
+</table>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>Assim,</li>
+</ol>
+<p><span class="math display">\[
+ \begin{align*}
+  F_{X}(x) = \mathbb{P}(X \leq x)
+  &amp;= \begin{cases}
+   0 &amp; \text{, se } x &lt; 2 \\
+   0.0625 &amp; \text{, se } 2 \leq x &lt; 3 \\
+   0.1875 &amp; \text{, se } 3 \leq x &lt; 4 \\
+   0.3750 &amp; \text{, se } 4 \leq x &lt; 5 \\
+   0.6250 &amp; \text{, se } 5 \leq x &lt; 6 \\
+   0.8125 &amp; \text{, se } 6 \leq x &lt; 7 \\
+   0.9375 &amp; \text{, se } 7 \leq x &lt; 8 \\
+   1 &amp; \text{, se } x \geq 8 \\
+  \end{cases}
+ \end{align*}
+\]</span></p>
+<ol start="3" style="list-style-type: lower-alpha">
+<li>Finalmente, note que: <span class="math display">\[
+\begin{align*}
+ \mathbb{V}[X_i] 
+ &amp;= \mathbb{E}[X_i^2] - \mathbb{E}[X_i]^2 \\
+ &amp;= \frac{1^2+2^2+3^2+4^2}{4} - \left(\frac{1+2+3+4}{4}\right)^2 \\
+ &amp;= \frac{20}{16} = 1.25 \\
+ \mathbb{V}[X]
+ &amp;= \mathbb{V}[X_1 + X_2] \\
+ &amp;= \mathbb{V}[X_1] + \mathbb{V}[X_2] = 2.5
+\end{align*}
+\]</span></li>
+</ol>
+<ol start="2" style="list-style-type: decimal">
+<li>Se <span class="math inline">\(X\)</span> é tal que <span class="math inline">\(f_{X}(x) = cx \mathbb{I}(1 \leq x \leq 2)\)</span>, determine <span class="math inline">\(c\)</span>, <span class="math inline">\(\mathbb{P}(X \leq 1.25 \cup X \geq 1.75)\)</span> e <span class="math inline">\(M_{X}(t)\)</span>.</li>
+</ol>
+<p><em>Solução</em>:</p>
+<ol style="list-style-type: lower-alpha">
+<li></li>
+</ol>
+<p><span class="math display">\[
+ \begin{align*}
+  1 = \mathbb{P}(X \in \mathbb{R})
+  &amp;= \int_{-\infty}^{\infty}f_{X}(x)dx \\
+  &amp;= \int_{-\infty}^{\infty}cx \mathbb{I}(1 \leq x \leq 2)dx \\
+  &amp;= c \int_{1}^{2} x dx \\
+  &amp;= \frac{cx^2}{2}\bigg|_{1}^{2} = \frac{c}{2}(2^2-1) = \frac{3c}{2}
+ \end{align*}
+\]</span> Juntando os lados esquerdo e direito da equação, obtemos <span class="math inline">\(1 = \frac{3c}{2}\)</span>, isto é <span class="math inline">\(c = \frac{2}{3}\)</span>.</p>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>Note que</li>
+</ol>
+<p><span class="math display">\[
+ \begin{align*}
+  \mathbb{P}(X \leq 1.25 \cup X \geq 1.75)
+  &amp;= 1- \mathbb{P}(1.25 &lt; X &lt; 1.75) \\
+  &amp;= 1- \int_{1.25}^{1.75}f_{X}(x)dx \\
+  &amp;= 1- \int_{1.25}^{1.75} \frac{2x}{3} dx \\
+  &amp;= 1- \frac{x^2}{3}\bigg|_{1.25}^{1.75} = 1-\frac{1.75^2 - 1.25^2}{3}
+ \end{align*}
+\]</span></p>
+<ol start="3" style="list-style-type: lower-alpha">
+<li>Finalmente,</li>
+</ol>
+<p><span class="math display">\[
+ \begin{align*}
+  M_{X}(t)
+  &amp;= \mathbb{E}[\exp(tX)] \\
+  &amp;= \int_{-\infty}^{\infty} \exp(tx)f_{X}(x)dx \\
+  &amp;= \int_1^2 \frac{2x\exp(tx)}{3} \\
+  &amp;= \frac{2x\exp(tx)}{3t}\bigg|_1^2 - \int_1^2 \frac{2\exp(tx)}{3t} \\
+  &amp;= \frac{4\exp(2t)-2\exp(t)}{3t} - \frac{2\exp(tx)}{3t^2}\bigg|_1^2 \\
+  &amp;= \frac{4\exp(2t)-2\exp(t)}{3t} - \frac{2(\exp(2t)-\exp(t))}{3t^2}
+ \end{align*}
+\]</span></p>
+<ol start="3" style="list-style-type: decimal">
+<li>Considere que <span class="math inline">\(X_1, \ldots, X_n\)</span> são variáveis independentes e tais que <span class="math inline">\(f_{X_i}(x) = \mathbb{I}(0 \leq x \leq 1)\)</span>, isto é, cada <span class="math inline">\(X_i\)</span> é uma variável uniforme em <span class="math inline">\([0,1]\)</span>. Se <span class="math inline">\(Z = \max(X_1,X_2,\ldots,X_n)\)</span>, determine <span class="math inline">\(F_{Z}(z)\)</span> e <span class="math inline">\(f_{Z}(z)\)</span>.</li>
+</ol>
+<p><em>Solução</em>:</p>
+<p><span class="math display">\[
+ \begin{align*}
+  F_{Z}(z) 
+  &amp;= \mathbb{P}(Z \leq z) \\
+  &amp;= \mathbb{P}(X_1 \leq z \cap \ldots \cap X_n \leq z) \\
+  &amp;= \prod_{i=1}^n \mathbb{P}(X_i \leq z) \\
+  &amp;= \prod_{i=1}^n F_{X_i}(z)
+  = \begin{cases}
+   0 &amp; \text{, se } z \leq 0 \\
+   z^n &amp; \text{, se } 0 &lt; z &lt; 1 \\
+   1 &amp; z \geq 1
+  \end{cases}
+ \end{align*}
+\]</span> Portanto, <span class="math inline">\(f_{Z}(z) = \frac{\partial F_{Z}(z)}{\partial z} = nz^{n-1}\mathbb{I}(0 &lt; z &lt; 1)\)</span>.</p>
+<ol start="4" style="list-style-type: decimal">
+<li>Considere que <span class="math inline">\(\Omega = \{-1,0,1\}\)</span>, <span class="math inline">\(X(\omega) = \omega\)</span> e <span class="math inline">\(Y(\omega) = \omega^2\)</span>.</li>
+</ol>
+<ol style="list-style-type: lower-alpha">
+<li>Determine <span class="math inline">\(Cov[X,Y]\)</span>.</li>
+<li><span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> são independentes?</li>
+</ol>
+<p><em>Solução</em>:</p>
+<ol style="list-style-type: lower-alpha">
+<li>Note que <span class="math inline">\(\mathbb{E}[X] = \frac{-1+0+1}{3} = 0\)</span>. Também, <span class="math inline">\(\mathbb{E}[Y] = \mathbb{E}[X^2] = \frac{2}{3}\)</span>. Finalmente, <span class="math inline">\(\mathbb{E}[XY] = \mathbb{E}[X^3] = \frac{(-1)^3+0^3+1^3}{3} = 0\)</span>. Conclua que:</li>
+</ol>
+<p><span class="math display">\[
+\begin{align*}
+ Cov[X,Y] 
+ &amp;= \mathbb{E}[XY] - \mathbb{E}[X]\mathbb{E}[Y] = 0
+\end{align*}
+\]</span></p>
+<ol start="2" style="list-style-type: lower-alpha">
+<li></li>
+</ol>
+<p><span class="math display">\[
+ \begin{align*}
+  \mathbb{P}(X = 0 \cap Y = 0)
+  &amp;= (X = 0 \cap X^2 = 0) = \frac{1}{3} \\
+  \mathbb{P}(X = 0)\mathbb{P}(Y = 0) 
+  &amp;= \frac{1}{3} \cdot \frac{1}{3} = \frac{1}{9}
+ \end{align*}
+\]</span> Como <span class="math inline">\((X = 0 \cap Y = 0) \neq \mathbb{P}(X = 0)\mathbb{P}(Y = 0)\)</span>, conclua que <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> não são independentes.</p>
+<ol start="5" style="list-style-type: decimal">
+<li>Prove que <span class="math inline">\(\mathbb{V}[X]=0\)</span> se e somente se existe <span class="math inline">\(c\)</span> tal que <span class="math inline">\(\mathbb{P}(X=c)=1\)</span>.</li>
+</ol>
+<p><em>Solução</em>:</p>
+<p>Se <span class="math inline">\(\mathbb{P}(X=c)=1\)</span>, então <span class="math inline">\(\mathbb{E}[X] = c\)</span>, <span class="math inline">\(\mathbb{E}[X^2] = c^2\)</span> e <span class="math inline">\(\mathbb{V}[X] = \mathbb{E}[X^2\mathbb{E}[X]^2=0\)</span>.</p>
+<p>Por outro lado, se <span class="math inline">\(\mathbb{V}[X]=0\)</span>, então <span class="math inline">\(\mathbb{V}[X-\mathbb{E}[X]]=0\)</span>, isto é, <span class="math inline">\(\|X-\mathbb{E}[X]\|^2\)</span>. Conclua que <span class="math inline">\(X-\mathbb{E}[X] = 0\)</span>, isto é, <span class="math inline">\(X = \mathbb{E}[X]\)</span>. Portanto, <span class="math inline">\(X\)</span> é uma constante.</p>

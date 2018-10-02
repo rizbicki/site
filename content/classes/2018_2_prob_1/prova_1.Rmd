@@ -1,0 +1,190 @@
+---
+title: "Correção da Prova 1"
+author: "Rafael Stern"
+date: "October 2, 2018"
+output: html_document
+---
+
+1. Um dado de quatro faces é arremessado duas vezes.
+Considere que $X$ é a soma dos resultados obtidos
+em cada lançamento. Determine 
+$f_{X}(x)$, $F_{X}(x)$ e $\mathbb{V}[X]$.
+
+*Solução*:
+
+a. Se denotarmos por $X_1$ o resultado do primeiro dado,
+$X_2$ o resultado do segundo dado e definimor
+$X = X_1 + X_2$, então obtemos as seguintes possibilidades:
+
+```{r echo = FALSE, message = FALSE}
+library(tidyverse)
+library(knitr)
+x1 = rep(1:4, 4)
+x2 = rep(1:4, each = 4)
+data = tibble(x1 = x1, x2 = x2) %>% 
+  mutate(x = x1 + x2)
+kable(data)
+```
+
+Com as possibilidades são equiprováveis,
+a densidade de $X$ é dada por:
+
+```{r echo = FALSE, message = FALSE, warning = FALSE}
+densidade = data %>%
+  group_by(x) %>% 
+  summarise(contagem = n(), P = n()/16)
+kable(densidade)
+```
+
+b. Assim,
+
+$$
+ \begin{align*}
+  F_{X}(x) = \mathbb{P}(X \leq x)
+  &= \begin{cases}
+   0 & \text{, se } x < 2 \\
+   0.0625 & \text{, se } 2 \leq x < 3 \\
+   0.1875 & \text{, se } 3 \leq x < 4 \\
+   0.3750 & \text{, se } 4 \leq x < 5 \\
+   0.6250 & \text{, se } 5 \leq x < 6 \\
+   0.8125 & \text{, se } 6 \leq x < 7 \\
+   0.9375 & \text{, se } 7 \leq x < 8 \\
+   1 & \text{, se } x \geq 8 \\
+  \end{cases}
+ \end{align*}
+$$
+
+c. Finalmente, note que:
+$$
+\begin{align*}
+ \mathbb{V}[X_i] 
+ &= \mathbb{E}[X_i^2] - \mathbb{E}[X_i]^2 \\
+ &= \frac{1^2+2^2+3^2+4^2}{4} - \left(\frac{1+2+3+4}{4}\right)^2 \\
+ &= \frac{20}{16} = 1.25 \\
+ \mathbb{V}[X]
+ &= \mathbb{V}[X_1 + X_2] \\
+ &= \mathbb{V}[X_1] + \mathbb{V}[X_2] = 2.5
+\end{align*}
+$$
+
+2. Se $X$ é tal que $f_{X}(x) = cx \mathbb{I}(1 \leq x \leq 2)$,
+determine $c$, $\mathbb{P}(X \leq 1.25 \cup X \geq 1.75)$ e $M_{X}(t)$.
+
+*Solução*:
+
+a.
+
+$$
+ \begin{align*}
+  1 = \mathbb{P}(X \in \mathbb{R})
+  &= \int_{-\infty}^{\infty}f_{X}(x)dx \\
+  &= \int_{-\infty}^{\infty}cx \mathbb{I}(1 \leq x \leq 2)dx \\
+  &= c \int_{1}^{2} x dx \\
+  &= \frac{cx^2}{2}\bigg|_{1}^{2} = \frac{c}{2}(2^2-1) = \frac{3c}{2}
+ \end{align*}
+$$
+Juntando os lados esquerdo e direito da equação,
+obtemos $1 = \frac{3c}{2}$, isto é $c = \frac{2}{3}$.
+
+b. Note que
+
+$$
+ \begin{align*}
+  \mathbb{P}(X \leq 1.25 \cup X \geq 1.75)
+  &= 1- \mathbb{P}(1.25 < X < 1.75) \\
+  &= 1- \int_{1.25}^{1.75}f_{X}(x)dx \\
+  &= 1- \int_{1.25}^{1.75} \frac{2x}{3} dx \\
+  &= 1- \frac{x^2}{3}\bigg|_{1.25}^{1.75} = 1-\frac{1.75^2 - 1.25^2}{3}
+ \end{align*}
+$$
+
+c. Finalmente,
+
+$$
+ \begin{align*}
+  M_{X}(t)
+  &= \mathbb{E}[\exp(tX)] \\
+  &= \int_{-\infty}^{\infty} \exp(tx)f_{X}(x)dx \\
+  &= \int_1^2 \frac{2x\exp(tx)}{3} \\
+  &= \frac{2x\exp(tx)}{3t}\bigg|_1^2 - \int_1^2 \frac{2\exp(tx)}{3t} \\
+  &= \frac{4\exp(2t)-2\exp(t)}{3t} - \frac{2\exp(tx)}{3t^2}\bigg|_1^2 \\
+  &= \frac{4\exp(2t)-2\exp(t)}{3t} - \frac{2(\exp(2t)-\exp(t))}{3t^2}
+ \end{align*}
+$$
+
+3. Considere que $X_1, \ldots, X_n$ são
+variáveis independentes e tais que
+$f_{X_i}(x) = \mathbb{I}(0 \leq x \leq 1)$, isto é,
+cada $X_i$ é uma variável uniforme em $[0,1]$.
+Se $Z = \max(X_1,X_2,\ldots,X_n)$, determine
+$F_{Z}(z)$ e $f_{Z}(z)$. 
+
+*Solução*:
+
+$$
+ \begin{align*}
+  F_{Z}(z) 
+  &= \mathbb{P}(Z \leq z) \\
+  &= \mathbb{P}(X_1 \leq z \cap \ldots \cap X_n \leq z) \\
+  &= \prod_{i=1}^n \mathbb{P}(X_i \leq z) \\
+  &= \prod_{i=1}^n F_{X_i}(z)
+  = \begin{cases}
+   0 & \text{, se } z \leq 0 \\
+   z^n & \text{, se } 0 < z < 1 \\
+   1 & z \geq 1
+  \end{cases}
+ \end{align*}
+$$
+Portanto,
+$f_{Z}(z) = \frac{\partial F_{Z}(z)}{\partial z} = nz^{n-1}\mathbb{I}(0 < z < 1)$.
+
+4. Considere que $\Omega = \{-1,0,1\}$,
+$X(\omega) = \omega$ e
+$Y(\omega) = \omega^2$.
+
+ a. Determine $Cov[X,Y]$.
+ b. $X$ e $Y$ são independentes?
+
+*Solução*:
+
+a. Note que $\mathbb{E}[X] = \frac{-1+0+1}{3} = 0$.
+Também, $\mathbb{E}[Y] = \mathbb{E}[X^2] = \frac{2}{3}$.
+Finalmente,
+$\mathbb{E}[XY] = \mathbb{E}[X^3] = \frac{(-1)^3+0^3+1^3}{3} = 0$.
+Conclua que:
+
+$$
+\begin{align*}
+ Cov[X,Y] 
+ &= \mathbb{E}[XY] - \mathbb{E}[X]\mathbb{E}[Y] = 0
+\end{align*}
+$$
+
+b.
+
+$$
+ \begin{align*}
+  \mathbb{P}(X = 0 \cap Y = 0)
+  &= (X = 0 \cap X^2 = 0) = \frac{1}{3} \\
+  \mathbb{P}(X = 0)\mathbb{P}(Y = 0) 
+  &= \frac{1}{3} \cdot \frac{1}{3} = \frac{1}{9}
+ \end{align*}
+$$
+Como $(X = 0 \cap Y = 0) \neq \mathbb{P}(X = 0)\mathbb{P}(Y = 0)$,
+conclua que $X$ e $Y$ não são independentes.
+
+5. Prove que $\mathbb{V}[X]=0$ se e somente se
+existe $c$ tal que $\mathbb{P}(X=c)=1$.
+
+*Solução*:
+
+Se $\mathbb{P}(X=c)=1$, então 
+$\mathbb{E}[X] = c$, 
+$\mathbb{E}[X^2] = c^2$ e
+$\mathbb{V}[X] = \mathbb{E}[X^2\mathbb{E}[X]^2=0$.
+
+Por outro lado, se $\mathbb{V}[X]=0$, 
+então $\mathbb{V}[X-\mathbb{E}[X]]=0$, isto é,
+$\|X-\mathbb{E}[X]\|^2$. Conclua que
+$X-\mathbb{E}[X] = 0$, isto é, $X = \mathbb{E}[X]$.
+Portanto, $X$ é uma constante.
