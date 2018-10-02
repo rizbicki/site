@@ -5,6 +5,15 @@ date: "October 2, 2018"
 output: html_document
 ---
 
+<script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
+<script src="/rmarkdown-libs/jquery/jquery.min.js"></script>
+<link href="/rmarkdown-libs/datatables-css/datatables-crosstalk.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/datatables-binding/datatables.js"></script>
+<link href="/rmarkdown-libs/dt-core/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="/rmarkdown-libs/dt-core/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/dt-core/js/jquery.dataTables.min.js"></script>
+<link href="/rmarkdown-libs/crosstalk/css/crosstalk.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/crosstalk/js/crosstalk.min.js"></script>
 
 
 <ol style="list-style-type: decimal">
@@ -14,146 +23,11 @@ output: html_document
 <ol style="list-style-type: lower-alpha">
 <li>Se denotarmos por <span class="math inline">\(X_1\)</span> o resultado do primeiro dado, <span class="math inline">\(X_2\)</span> o resultado do segundo dado e definimor <span class="math inline">\(X = X_1 + X_2\)</span>, então obtemos as seguintes possibilidades:</li>
 </ol>
-<pre><code>## Warning: package &#39;stringr&#39; was built under R version 3.4.4</code></pre>
-<pre><code>## Warning: package &#39;knitr&#39; was built under R version 3.4.4</code></pre>
-<table>
-<thead>
-<tr class="header">
-<th align="right">x1</th>
-<th align="right">x2</th>
-<th align="right">x</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="right">1</td>
-<td align="right">1</td>
-<td align="right">2</td>
-</tr>
-<tr class="even">
-<td align="right">2</td>
-<td align="right">1</td>
-<td align="right">3</td>
-</tr>
-<tr class="odd">
-<td align="right">3</td>
-<td align="right">1</td>
-<td align="right">4</td>
-</tr>
-<tr class="even">
-<td align="right">4</td>
-<td align="right">1</td>
-<td align="right">5</td>
-</tr>
-<tr class="odd">
-<td align="right">1</td>
-<td align="right">2</td>
-<td align="right">3</td>
-</tr>
-<tr class="even">
-<td align="right">2</td>
-<td align="right">2</td>
-<td align="right">4</td>
-</tr>
-<tr class="odd">
-<td align="right">3</td>
-<td align="right">2</td>
-<td align="right">5</td>
-</tr>
-<tr class="even">
-<td align="right">4</td>
-<td align="right">2</td>
-<td align="right">6</td>
-</tr>
-<tr class="odd">
-<td align="right">1</td>
-<td align="right">3</td>
-<td align="right">4</td>
-</tr>
-<tr class="even">
-<td align="right">2</td>
-<td align="right">3</td>
-<td align="right">5</td>
-</tr>
-<tr class="odd">
-<td align="right">3</td>
-<td align="right">3</td>
-<td align="right">6</td>
-</tr>
-<tr class="even">
-<td align="right">4</td>
-<td align="right">3</td>
-<td align="right">7</td>
-</tr>
-<tr class="odd">
-<td align="right">1</td>
-<td align="right">4</td>
-<td align="right">5</td>
-</tr>
-<tr class="even">
-<td align="right">2</td>
-<td align="right">4</td>
-<td align="right">6</td>
-</tr>
-<tr class="odd">
-<td align="right">3</td>
-<td align="right">4</td>
-<td align="right">7</td>
-</tr>
-<tr class="even">
-<td align="right">4</td>
-<td align="right">4</td>
-<td align="right">8</td>
-</tr>
-</tbody>
-</table>
+<div id="htmlwidget-1" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16"],[1,2,3,4,1,2,3,4,1,2,3,4,1,2,3,4],[1,1,1,1,2,2,2,2,3,3,3,3,4,4,4,4],[2,3,4,5,3,4,5,6,4,5,6,7,5,6,7,8]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>x1<\/th>\n      <th>x2<\/th>\n      <th>x<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <p>Com as possibilidades são equiprováveis, a densidade de <span class="math inline">\(X\)</span> é dada por:</p>
-<table>
-<thead>
-<tr class="header">
-<th align="right">x</th>
-<th align="right">contagem</th>
-<th align="right">P</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="right">2</td>
-<td align="right">1</td>
-<td align="right">0.0625</td>
-</tr>
-<tr class="even">
-<td align="right">3</td>
-<td align="right">2</td>
-<td align="right">0.1250</td>
-</tr>
-<tr class="odd">
-<td align="right">4</td>
-<td align="right">3</td>
-<td align="right">0.1875</td>
-</tr>
-<tr class="even">
-<td align="right">5</td>
-<td align="right">4</td>
-<td align="right">0.2500</td>
-</tr>
-<tr class="odd">
-<td align="right">6</td>
-<td align="right">3</td>
-<td align="right">0.1875</td>
-</tr>
-<tr class="even">
-<td align="right">7</td>
-<td align="right">2</td>
-<td align="right">0.1250</td>
-</tr>
-<tr class="odd">
-<td align="right">8</td>
-<td align="right">1</td>
-<td align="right">0.0625</td>
-</tr>
-</tbody>
-</table>
+<div id="htmlwidget-2" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-2">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7"],[2,3,4,5,6,7,8],[1,2,3,4,3,2,1],[0.0625,0.125,0.1875,0.25,0.1875,0.125,0.0625]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>x<\/th>\n      <th>contagem<\/th>\n      <th>P<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <ol start="2" style="list-style-type: lower-alpha">
 <li>Assim,</li>
 </ol>

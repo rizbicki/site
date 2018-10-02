@@ -16,14 +16,14 @@ a. Se denotarmos por $X_1$ o resultado do primeiro dado,
 $X_2$ o resultado do segundo dado e definimor
 $X = X_1 + X_2$, então obtemos as seguintes possibilidades:
 
-```{r echo = FALSE, message = FALSE}
+```{r echo = FALSE, message = FALSE, warning = FALSE}
 library(tidyverse)
-library(knitr)
+library(DT)
 x1 = rep(1:4, 4)
 x2 = rep(1:4, each = 4)
 data = tibble(x1 = x1, x2 = x2) %>% 
   mutate(x = x1 + x2)
-kable(data)
+datatable(data)
 ```
 
 Com as possibilidades são equiprováveis,
@@ -33,7 +33,7 @@ a densidade de $X$ é dada por:
 densidade = data %>%
   group_by(x) %>% 
   summarise(contagem = n(), P = n()/16)
-kable(densidade)
+datatable(densidade)
 ```
 
 b. Assim,
