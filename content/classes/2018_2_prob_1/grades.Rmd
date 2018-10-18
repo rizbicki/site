@@ -33,9 +33,15 @@ DT::datatable(grade_table,
 ### Gráficos
 
 ```{r echo = FALSE}
-grade_table %>%
+grade_table %>% 
   tidyr::gather(avaliacao, nota, -RA) %>%
-  ggplot2::ggplot(ggplot2::aes(x = avaliacao, y = nota)) +
-  ggplot2::geom_boxplot() +
-  ggplot2::xlab("avaliação")
+  dplyr::filter(nota != 0) %>% 
+  dplyr::group_by(avaliacao) %>% 
+  dplyr::summarise(media = mean(nota), dp = sd(nota)) %>% 
+  ggplot2::ggplot(ggplot2::aes(x = avaliacao, y = media)) +
+  ggplot2::geom_point() +
+  ggplot2::geom_errorbar(ggplot2::aes(ymin = media - dp,
+                                      ymax = media + dp),
+                         width = .1) +
+  ggplot2::xlab("avaliação") + ggplot2::ylab("nota")
 ```
