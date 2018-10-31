@@ -6,17 +6,18 @@ title: "Rafael Bassi Stern"
 ---
 
 I am an Assistant Professor at the
-Federal University of Sao Carlos.
+Federal University of São Carlos.
 I have a B.A. in statistics from
-University of Sao Paulo, 
+University of São Paulo, 
 a B.A. in law from 
-Pontificia Universidade Catolica in Sao Paulo, and
+Pontifícia Universidade Católica in São Paulo, and
 a Ph.D. in statistics from 
 Carnegie Mellon University.
 I am currently a member of the
 Scientific Council of the
-Brazilian Association of Jurimetrics and
-an associate investigator at NeuroMat.
+Brazilian Association of Jurimetrics,
+an associate investigator at NeuroMat and
+a member of the Order of Attorneys of Brazil.
 
 ```{r echo=FALSE, out.width="300px"}
 knitr::include_graphics("/figures/rbstern.png")
