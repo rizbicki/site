@@ -1,0 +1,93 @@
+- 
+ date: "14/03"
+ lecture: "Probabilidade e apostas"
+- 
+ date: "20/03"
+ lecture: "Probabilidade e apostas"
+- 
+ date: "21/03"
+ lecture: "O teorema de Bayes"
+- 
+ date: "27/03"
+ lecture: "Distribuição marginal e preditiva dos dados"
+- 
+ date: "28/03"
+ lecture: "Distribuição marginal e preditiva dos dados"
+- 
+ date: "03/04"
+ lecture: "Permutabilidade"
+- 
+ date: "04/04"
+ lecture: "Permutabilidade"
+- 
+ date: "10/04"
+ lecture: "Distribuições conjugadas"
+- 
+ date: "11/04"
+ lecture: "Distribuições conjugadas"
+- 
+ date: "17/04"
+ lecture: "Revisão"
+- 
+ date: "18/04"
+ lecture: "Prova 1"
+- 
+ date: "24/04"
+ lecture: "Teoria da Decisão"
+- 
+ date: "25/04"
+ lecture: "Teoria da Decisão"
+- 
+ date: "02/05"
+ lecture: "Estimação pontual"
+- 
+ date: "08/05"
+ lecture: "Estimação pontual"
+- 
+ date: "09/05"
+ lecture: "Estimação intervalar"
+- 
+ date: "15/05"
+ lecture: "Testes de hipótese"
+- 
+ date: "16/05"
+ lecture: "Testes de hipótese"
+- 
+ date: "22/05"
+ lecture: "Revisão"
+- 
+ date: "23/05"
+ lecture: "Prova 2"
+- 
+ date: "29/05"
+ lecture: "Modelos hierárquicos"
+- 
+ date: "30/05"
+ lecture: "Cadeias de Markov"
+- 
+ date: "05/06"
+ lecture: "MCMC"
+- 
+ date: "06/06"
+ lecture: "Gibbs"
+- 
+ date: "12/06"
+ lecture: "Monte Carlo Hamiltoniano"
+- 
+ date: "13/06"
+ lecture: "Monte Carlo Hamiltoniano"
+- 
+ date: "19/06"
+ lecture: "Monte Carlo Sequencial"
+- 
+ date: "26/06"
+ lecture: "Bayes variacional"
+- 
+ date: "27/06"
+ lecture: "Bayes variacional"
+- 
+ date: "03/07"
+ lecture: "Seminário"
+- 
+ date: "04/07"
+ lecture: "Seminário"

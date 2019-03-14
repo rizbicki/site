@@ -1,4 +1,16 @@
 -
+  course: "Statistics for Social Scientists"
+  url: "../classes/2019_1_each/"
+  level: "Undergraduate"
+  year: "2019"
+  university: "Federal University of São Carlos"
+-
+  course: "Bayesian Inference"
+  url: "../classes/2019_1_bayes/"
+  level: "Graduate"
+  year: "2019"
+  university: "Federal University of São Carlos"
+-
   course: "Probability 1"
   url: "../classes/2018_2_prob_1/"
   level: "Undergraduate"
