@@ -9,7 +9,8 @@ student_table = yaml::read_yaml("tables/students.yaml") %>%
   do.call(rbind, .) %>% 
   as.data.frame() %>% 
   tidyr::unnest() %>%
-  tibble::as.tibble()
+  tibble::as.tibble() %>% 
+  dplyr::arrange(desc(year), level)
 DT::datatable(student_table,
               rownames = FALSE,
               options = list(dom = 'ftip'))
