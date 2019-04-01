@@ -1,0 +1,252 @@
+---
+title: 'Aula 1 - Construção de bancos de dados'
+author: "Rafael Izbicki e Rafael Bassi Stern"
+date: '2018-08-09'
+bibliography: ipaee.bib
+output: 
+  html_document:
+    toc: true
+    number_sections: true
+editor_options: 
+  chunk_output_type: console
+---
+
+# Software para análise de dados.
+
+- Neste curso, usarei o software **R** para
+realizar a análise de dados.
+
+- O **R** pode ser baixado por exemplo,
+[neste site](https://vps.fmvz.usp.br/CRAN/).
+**Atenção**: No Windows, para instalar o R é necessário
+rodar o instalador em modo administrador.
+
+- O software **Rstudio** torna o uso do **R** 
+ainda mais simples. O **Rstudio** pode ser
+baixado gratuitamente 
+[neste site](https://www.rstudio.com/products/rstudio/download/).
+**Atenção**: Para instalar o **RStudio**,
+é necessário ter instalado antes o **R**.
+
+- Mais informação sobre a instalação destes softwares
+pode ser obtida [neste site](http://material.curso-r.com/instalacao/).
+
+- Dúvidas sobre o **R** poderão ser tiradas em classe.
+Contudo, os primeiros passos para usar o **R** podem ser 
+encontrados [aqui](http://material.curso-r.com/import/) e 
+[aqui](http://material.curso-r.com/rbase/).
+Referências mais avançadas estão 
+[aqui](http://r4ds.had.co.nz/) e
+[aqui](https://adv-r.hadley.nz/).
+
+# Elementos da análise estatística
+
+- A **população** é um conjunto de elementos sobre os quais temos interesse. 
+Por exemplo, se considerarmos as eleições presidencias brasileiras,
+a população é o conjunto de brasileiros com título de eleitor.
+
+- Para aprendermos sobre a população, é comum que observemos
+as características de um subconjunto de seus elementos.
+Este subconjunto é chamado de **amostra**.
+Cada elemento da amostra é chamado de **unidade amostral**.
+No exemplo da eleição, podemos entrevistar indivíduos
+a respeito da sua intenção de voto.
+Neste caso, a amostra é o conjunto de indivíduos entrevistados e
+cada indivíduo entrevistado é uma unidade amostral.
+
+- Em estudos, observamos características de cada unidade amostral.
+Chamamos estas características de **variáveis**.
+No exemplo da eleição, possíveis características seriam
+a intenção de voto e o estado de domicílio de cada eleitor.
+
+- Um **banco de dados** é uma estrutura em que 
+guardamos as observações das características de cada unidade amostral.
+
+- Um **banco de dados Tidy (arrumado)** [@Wickham2014]
+é um banco de dados em formato de matriz em que 
+cada linha corresponde a uma unidade amostral,
+cada coluna corresponde a uma variável, e 
+a posição na intersecção entre a linha "i" 
+e a coluna "j" corresponde à observação da variável "j" para
+a unidade amostral "i".
+Como regra geral, anote todas as variáveis que 
+foram observadas para cada unidade amostral.
+Em geral, é mais fácil remover uma variável inútil 
+do banco de dados do que adicionar 
+uma nova variável que foi esquecida.
+
+- Um **dicionário** é um conjunto de verbetes e descrições que
+indicam o significado de cada variável em um banco de dados e
+os possíveis valores que esta variável pode assumir.
+Como o experimentalista que coleta os dados e 
+os analista de dados podem ser pessoas diferentes,
+o dicionário é uma ferramenta essencial para
+facilitar a comunicação entre eles.
+
+**Atenção**: Para que um banco de dados seja útil, 
+aquele que o compila deve especificar de **antemão**
+os possíveis valores que cada variável pode assumir e
+se ater a estes valores. Por exemplo, digamos que 
+uma variável seja o "número de bactérias observados na urina".
+Observações como "2", "4" e "7" são números e
+estão dentro das especificações.
+Por outro lado, seria prejudicial anotar no banco de dados
+"5, mas também observei uma estrutura que pode ou não ser uma bactéria adicional".
+A inserção de texto em uma variável que deveria ser um número
+quebra padrões e torna muito mais difícil a análise do banco de dados.
+
+## Exemplo de elementos da análise estatística
+
+Em 1936, Edgar Anderson coletou informações 
+sobre flores pertencentes a três espécies do gênero Iris
+(*Iris setosa*, *Iris virginica* e *Iris versicolor*).
+Os dados estão disponíveis em [@Anderson1936].
+Neste caso, consideramos como população
+o conjunto de todas as flores de cada uma das três espécies.
+A amostra é o conjunto de flores que 
+foram observadas e registradas por Anderson.
+As variáveis anotadas foram o tamanho em centímetro das
+sépalas e das pétalas das flores.
+Observe, a seguir, uma representação Tidy das
+primeiras 10 unidades amostrais no
+banco de dados obtido por Anderson:
+
+```{r, message = F, warning = F}
+require(tidyverse)
+data(iris)
+iris = as.tibble(iris)
+print(iris)
+```
+
+Para complementar este banco dados, podemos
+escrever um dicionário como:
+
+- **Sepal.length**: Comprimento em centímetros da sépala. 
+- **Sepal.width**: Largura em centímetro da sépala.
+- **Petal.length**: Comprimento em centímetros da pétala. 
+- **Sepal.width**: Largura em centímetro da pétala.
+- **Species**: Espécie da unidade amostral.
+Pode assumir os valores "setosa", "versicolor" ou "virginica".
+
+
+# Estatística descritiva vs Estatística inferencial
+
+- Análise **descritiva**: 
+    - tem como objetivo 
+descrever a amostra observada (i.e., os dados coletados).
+    - média, mediana, desvio-padrão, gráficos, ...
+    - não há incertezas
+- Análise **inferencial**
+    - com base em uma *amostra*, fazer afirmações sobre uma *população*
+    - *probabilidade*: linguagem usada para descrever incertezas; liga amostras a populações 
+
+
+# Tipos de variáveis
+
+É comum dividirmos as variáveis em 4 categorias.
+Estas categorias são úteis para entendermos que 
+tipos de análise podemos fazer em cada variável.
+Para construir estas categorias, primeiramente
+dividimos as variáveis em **qualitativas** ou **quantitativas**.
+Enquanto variáveis quantitativas são números,
+variáveis qualitativas não o são.
+Por exemplo, peso é uma variável quantitativa e
+fruta favorita é uma variável qualitativa.
+
+Por sua vez, as variáveis qualitativas e quantitativas
+podem ser divididas em categorias mais finas.
+Variáveis qualitativas podem ser
+**nominais** ou **ordinais**.
+
+- Variáveis **nominais**: 
+Assumem como valores nomes próprios, 
+não havendo estrutura entre 
+os possíveis valores assumidos por elas.
+Por exemplo, fruta favorita entre 
+"manga", "goiaba" e "pera" é
+uma variável nominal.
+
+- Variáveis **ordinais**: 
+Existe uma ordem entre os possíveis valores assumidos 
+por estas variáveis.
+Por exemplo, em uma pesquisa de satisfação,
+clientes podem escolher entre as categorias:
+"insatisfeito", "satisfeito" e "muito satisfeito".
+Existe uma ordem entre estes valores, dado que
+"insatisfeito" é menos satisfeito que "satisfeito" que,
+por sua vez, é menos satisfeito que "muito satisfeito".
+
+Variáveis quantitativas podem ser dividas em
+**discretas** ou **contínuas**:
+
+- Variáveis **contínuas**:
+Assumem como valores números tal que,
+entre dois possíveis valores, 
+sempre é possível observar um outro.
+Um típico exemplo é o "peso".
+Por exemplo, é possível observar um peso 
+de 1kg e de 2kg. Entre esses dois valores,
+há o valor de 1.5kg. Por sua vez,
+entre 1kg e 1.5kg há 1.25kg, 
+e assim por diante.
+
+- Variáveis **discretas**: 
+São variáveis que não são contínuas.
+Por exemplo,
+o número de bactérias em uma substância
+pode assumir os valores "0", "1", "2", etc.
+Não há nenhum possível valor entre "0" e "1"
+ou entre "1" e "2". Assim,
+esta variável é discreta.
+
+Estas categorias nem sempre são óbvias e
+podem depender do uso que é
+dado para cada variável. Por exemplo,
+ainda que seja comum considerarmos peso
+como uma variável contínua, o
+instrumento de medição pode 
+observar apenas um número finito de algarismos.
+Assim, pode fazer sentido considerar 
+o peso como variável discreta.
+Mesmo assim, é mais comum considerarmos o
+peso como variável contínua, pois
+esta abstração é útil.
+
+# Dicas para construir bancos de dados
+
+- Os dados de uma determinada variável devem sempre se manter na mesma medida de mensuração
+- Não se deve colocar no campo dos dados a medida de mensuração; essa deverá constar no dicionário do banco de dados.
+- Use sempre o mesmo padrão para as variáveis quantitativas (ex: nada de “Masculino”, “Masc.”, “masculino”)
+- Deixe um espaço em branco para indicar valores faltantes
+
+# Lendo um banco de dados no R
+
+```{r,eval=FALSE}
+require(tidyverse)
+dados <- read_excel("iris.xlsx")
+```
+
+
+# Exercícios
+
+1. No banco de dados de flores de Anderson,
+classifique o tipo de cada uma das variáveis.
+
+2. Dentre uma população de alunos, observamos as
+seguintes variáveis: intenção de voto nas eleições de 2018,
+altura, peso, número de matrícula, filme favorito,
+endereço de residência, coordenadas GPS do endereço de residência,
+média final nas matéria do semestre passado,
+data de nascimento e grau de satisfação com cursos realizados.
+Classifique cada uma das variáveis de acordo com seu tipo.
+
+3. O banco de dados a seguir está "Tidy"? Por quê?
+
+```{r, message = F, warning = F}
+db = tibble(pais = c("Brasil", "Brasil", "Canada", "Canada"),
+            tipo = c("populacao", "territorio", "populacao", "territorio"),
+            valor = c(207.7, 8.514, 36.2, 9.984))
+print(db)
+```
+
+# Referências

@@ -1,0 +1,189 @@
+---
+title: "Aula 3 e Aula 4 - Visualização de dados"
+author: "Rafael Izbicki e Rafael Bassi Stern"
+date: '2018-08-23'
+bibliography: ipaee.bib
+output: 
+  html_document:
+    toc: true
+    number_sections: true
+editor_options: 
+  chunk_output_type: console
+---
+
+
+
+<div id="visualizacao-de-dados" class="section level1">
+<h1>Visualização de dados</h1>
+<p>Além da apresentação de medidas resumo, também é possível resumir a informação nos dados por meio de gráficos. A seguir, discutimos alguns dos principais gráficos usados. Para ilustrar estes gráficos, usaremos o banco de dados <em>iris</em> e o banco de dados <em>adubo</em>.</p>
+<pre class="r"><code>library(tidyverse)
+data(iris)
+adubo = read.csv(&quot;adubo.csv&quot;)
+
+iris = as.tibble(iris)
+adubo = as.tibble(adubo)
+adubo$nitrato = as.factor(adubo$nitrato)
+adubo$fosfato = as.factor(adubo$fosfato)</code></pre>
+<p><em>Observação</em>: No <strong>R</strong>, em geral existem muitas opções para gerar o mesmo gráfico. A seguir, mostraremos como gerar gráficos simples usando as funções de base do <strong>R</strong> e, também, gráficos mais elegantes, usando o pacote <em>ggplot2</em>. Mais informações sobre este pacote estão disponíveis <a href="http://material.curso-r.com/ggplot/">aqui</a>.</p>
+<div id="visualizando-uma-variavel" class="section level2">
+<h2>Visualizando uma variável</h2>
+<div id="strip-chart" class="section level3">
+<h3>Strip chart</h3>
+<p>O <strong>strip chart</strong> é um gráfico para uma variável que é representado em um único eixo e é tal que, cada ponto corresponde ao valor de uma observação. Ainda que para poucas observações este gráfico possa ser informativo, quando há muitas observações ele é de difícil interpretação.</p>
+<p>No <strong>R</strong>, o strip chart pode ser obtido pelo comando <em>stripchart()</em>. Por exemplo, no banco de dados de adubos, obtemos:</p>
+<pre class="r"><code>stripchart(adubo$efeito, xlab=&quot;efeito&quot;)</code></pre>
+<p><img src="/classes/2019_1_each/aula_3_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p>Por exemplo, note que enquanto que 7 das 20 observações, estão concentradas próximo a 1.5, as outras 13 estão dispersas ao redor de 5. O gráfico levanta uma pergunta: O que nestas 7 observações faz com que o efeito da adubação nelas seja tão menor do que o nas demais observações?</p>
+<p>A utilidade do strip chart diminui muito quando existem muitos observações, uma vez que é difícil extrair informação quando há muitos pontos agrupados. A seguir, note como é difícil interpretar um strip chart produzido com 10.000 observações:</p>
+<pre class="r"><code>normais = rnorm(10000)
+stripchart(normais)</code></pre>
+<p><img src="/classes/2019_1_each/aula_3_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p>Em casos como o acima, é necessário resumir as observações para obter informação.</p>
+</div>
+<div id="bar-plot-e-histograma" class="section level3">
+<h3>Bar plot e histograma</h3>
+<p>O <strong>bar plot</strong> e o <strong>histograma</strong> são gráficos que resumem uma variável mais do que o strip chart. Ao invés de apresentarem um ponto para cada observação, estes gráficos indicam a frequência com que cada valor ocorre para uma variável.</p>
+<p>O bar plot é usado para variáveis qualitativas e quantitativas discretas. Ele indica a contagem com que cada valor ocorre para esta variável. Para criar um barplot no <strong>R</strong>, utilizamos primeiramente o comando <em>table()</em>, que conta o número de ocorrências para cada observação. A seguir, a saída do comando table é usada no comando <em>barplot()</em>, que exibe o gráfico. Esta sequência é ilustrada para as espécies do banco de dados iris, a seguir:</p>
+<pre class="r"><code>contagens = table(iris$Species)
+contagens</code></pre>
+<pre><code>## 
+##     setosa versicolor  virginica 
+##         50         50         50</code></pre>
+<pre class="r"><code>barplot(contagens, xlab = &quot;espécie&quot;, ylab = &quot;contagem&quot;)</code></pre>
+<p><img src="/classes/2019_1_each/aula_3_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p>Por sua vez, o histograma é usado para variáveis quantitativas contínuas. Nestas variáveis, não esperamos encontrar duas observações que assumem o mesmo valor. Assim, o bar plot é pouco informativo. Uma alternativa é dividir os possíveis valores em faixas e contar a quantidade de observações em cada uma destas faixas. O gráfico que indica estas faixas se chama histograma. Este gráfico pode ser obtido no <strong>R</strong> pelo comando <em>hist()</em>, conforme ilustrado a seguir:</p>
+<pre class="r"><code>hist(normais, xlab=&quot;valores&quot;, ylab=&quot;contagem&quot;)</code></pre>
+<p><img src="/classes/2019_1_each/aula_3_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p>Lembre que as 10.000 observações acima foram usadas para ilustrar as limitações do strip chart. Ao contrário do strip chart, o histograma evidencia que as observações estão concentradas em torno de 0.</p>
+<p>Às vezes o formato de ``degraus’’ presente no histograma pode ser indesejável. Neste caso, podemos exibir um gráfico de densidade, que cria uma curva continua que suaviza os degraus do histograma. Uma das vantegens desta curva é eliminar do histograma os vãos que são gerados por faixas sem observações. A curva de densidade para 10.000 observações é apresentada em vermelha e sobreposta ao histograma para estas observações na figura a seguir:</p>
+<pre class="r"><code>dados = data.frame(var1 = normais)
+ggplot(aes(x = var1), 
+       data = dados) + 
+  geom_histogram(aes(y=..density..)) +
+  geom_density(color=&quot;red&quot;) +
+  xlab(&quot;valores&quot;) + ylab(&quot;densidade&quot;)</code></pre>
+<p><img src="/classes/2019_1_each/aula_3_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<pre class="r"><code>ggplot(data=iris,aes(x =  Sepal.Length, fill = Species)) +
+  geom_histogram()</code></pre>
+<p><img src="/classes/2019_1_each/aula_3_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<pre class="r"><code>ggplot(data=iris,aes(x =  Sepal.Length)) +
+  geom_histogram()+facet_grid(Species~.)</code></pre>
+<p><img src="/classes/2019_1_each/aula_3_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p>Às vezes, o histograma também não resume suficientemente as observações. Por exemplo, a figura abaixo apresenta histogramas de efeito para adubos com e sem nitrato. Como existe muita justaposição entre os histogramas é difícil comparar o efeito de cada adubo.</p>
+<pre class="r"><code>ggplot(aes(x =  efeito, fill = nitrato),
+       data = adubo) +
+  geom_histogram()</code></pre>
+<p><img src="/classes/2019_1_each/aula_3_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p>Para resolver este problema, veremos a seguir um gráfico que resume as observações ainda mais que o histograma.</p>
+</div>
+<div id="box-plot" class="section level3">
+<h3>Box plot</h3>
+<p>Um <strong>box plot</strong> <span class="citation">(Tukey 1977)</span> é um gráfico para visualizar uma única variável que consiste em apresentar visualmente 5 medidas resumo. Antes de descrever estas medidas, é útil visualizar um boxplot. A seguir, obtemos no <strong>R</strong> um box plot para o comprimento das sépalas no banco de dados <em>iris</em>:</p>
+<pre class="r"><code>boxplot(iris$Sepal.Length, ylab = &quot;Comprimento da sépala&quot;)</code></pre>
+<p><img src="/classes/2019_1_each/aula_3_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p>O box plot contém 5 traços principais. O traço em negrito dentro do retângulo indicam a mediana (Q2) das observações. Os traços nos limites do retângulo indicam o primeiro (Q1) e o terceiro (Q3) quartis. Assim, observamos que cerca de 50% das observações estão dentro do retângulo e que um valor típico para as observações é representado pelo traço em negrito. A seguir, lembre que o intervalo interquartílico (IQR) é definido como <span class="math inline">\(Q3-Q1\)</span>. Definimos o limite superior (LS) e inferior (LI) como, respectivamente, <span class="math inline">\(LS=Q3+1.5*IQR\)</span> e <span class="math inline">\(LI=Q1-1.5*IQR\)</span>. Os limites das linhas superior e inferior no boxplot são, respectivamente, a maior observação menor que LS e a menor observação maior que LI. Esta é uma faixa de valores tal que seria improvável obter uma observação fora dela. Observações fora destes limites são representadas no boxplot por asteriscos e são comumente chamadas de “outliers”.</p>
+<p>Muitas vezes, é útil separar as observações em grupos e construir boxplots para cada um destes. O exemplo a seguir, constrói boxplots para o efeito do adubo quando separamos as observações em 2 grupos: sem ou com nitrato.</p>
+<pre class="r"><code>ggplot(aes(y = efeito, 
+           x = nitrato, 
+           fill = nitrato), 
+       data = adubo) + 
+  geom_boxplot()</code></pre>
+<p><img src="/classes/2019_1_each/aula_3_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p>Note que, ainda que a mediana no grupo com nitrato seja ligeiramente superior à mediana do grupo sem nitrato, a diferença entre estes valores é insignificante em relação à variabilidade dos dados. Esta conclusão é obtida visualmente vendo que os retângulos vermelho e azul estão praticamente sobrepostos. Este é um cenário em que esperamos que não exista diferença nos efeitos dos dois tipos de adubo.</p>
+<p>Por outro lado, podemos separar as observações nos grupos: sem e com fosfato. Neste caso, obtemos as figuras:</p>
+<pre class="r"><code>ggplot(aes(y = efeito, 
+           x = fosfato,
+           fill = fosfato), 
+       data = adubo) + geom_boxplot()</code></pre>
+<p><img src="/classes/2019_1_each/aula_3_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<p>Neste caso, observe que a diferença entre as medianas de cada grupo é grande em relação à variabilidade dos dados. Por exemplo, verificamos que os boxplots não tem sobreposição. Neste caso, é razoável esperar que os adubos com fosfato tenham um efeito maior do que os adubos sem fosfato.</p>
+</div>
+</div>
+<div id="visualizando-duas-variaveis" class="section level2">
+<h2>Visualizando duas variáveis</h2>
+<div id="grafico-de-dispersao-scatter-plot" class="section level3">
+<h3>Gráfico de dispersão (Scatter plot)</h3>
+<p>Por vezes, estamos interessados em visualizar a relação entre duas variáveis contínuas. Neste caso, podemos designar um eixo para cada variável e desenhar um ponto para cada observação. Este tipo de gráfico é chamado de <strong>gráfico de dispersão</strong>.</p>
+<p>No <strong>R</strong> é possível obter o gráfico de dispersão usando o comando <em>plot()</em>. A seguir, ilustramos este comando no banco de dados <em>iris</em> usando como variáveis o comprimento e largura das pétalas.</p>
+<pre class="r"><code>plot(iris$Petal.Length, iris$Petal.Width,
+     xlab=&quot;Comprimento da petala&quot;,
+     ylab=&quot;Largura da petala&quot;)</code></pre>
+<p><img src="/classes/2019_1_each/aula_3_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<p>Note que, em média, quanto maior o comprimento da pétala, maior será a sua largura. Mais do que isso, parece haver uma relação linear entre estas quantidades. É possível ajustar uma reta que aproxima esta relação linear entre as observações usando o seguinte comando no <strong>R</strong>:</p>
+<pre class="r"><code>ggplot(aes(x = Petal.Length , y = Petal.Width),
+       data = iris) +
+  geom_point(color=&#39;blue&#39;) +
+  geom_smooth(method=&#39;lm&#39;, color = &quot;red&quot;) +
+  xlab(&quot;Comprimento da petala&quot;) +
+  ylab(&quot;Largura da petala&quot;)</code></pre>
+<p><img src="/classes/2019_1_each/aula_3_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+</div>
+</div>
+</div>
+<div id="exercicios" class="section level1">
+<h1>Exercícios</h1>
+<ol style="list-style-type: decimal">
+<li><p>Construa um boxplot para os dados: 2.3, 2000, 0.1, 1.5, 0.3, 0.7, 0.2, 1.7 e 1.2.</p></li>
+<li><p>Parece haver uma relação linear entre o comprimento e largura das sépalas no banco de dados <em>iris</em>?</p></li>
+<li><p>No banco de dados <em>iris</em>, parece haver diferença entre o comprimento das sépalas entre as 3 espécies observadas?</p></li>
+<li><p>Uma pesquisadora mediu as alturas de <span class="math inline">\(9\)</span> indivíduos, apresentadas a seguir:</p></li>
+</ol>
+<pre><code>## [1] 149 163 168 169 172 173 175 180 181</code></pre>
+<ul>
+<li><ol style="list-style-type: lower-alpha">
+<li>Calcule a média e a variância das alturas.</li>
+</ol></li>
+<li><ol start="2" style="list-style-type: lower-alpha">
+<li>Verifique se há algum <em>outlier</em> neste banco de dados e descreva o significado deste termo.</li>
+</ol></li>
+</ul>
+<ol start="5" style="list-style-type: decimal">
+<li>Um pesquisador está interessado em estudar como varia o percentual de aproveitamento do petróleo em função da temperatura de alimentação do destilador. Foram consideradas duas diferentes temperaturas (150 ou 300 graus Celsius) e uma amostra de tamanho <span class="math inline">\(9\)</span> para cada uma destas.</li>
+</ol>
+
+<ul>
+<li><ol style="list-style-type: lower-alpha">
+<li>Indique uma medida de centralidade e uma medida de dispersão para cada uma das temperaturas testadas e interprete-as.</li>
+</ol></li>
+<li><ol start="2" style="list-style-type: lower-alpha">
+<li>Esboce um boxplot para o aproveitamento de petróleo para cada temperatura testada. Interprete os boxplots e compare a diferença entre os aproveitamentos para cada temperatura.</li>
+</ol></li>
+</ul>
+<ol start="6" style="list-style-type: decimal">
+<li><p>O boxplot indica a mediana e o intervalo interquartílico de uma variável. Quais são possíveis vantagens destas medidas de centralidade e variabilidade em relação à média e ao desvio padrão?</p></li>
+<li><p>Pesquisadores mediram diversas vezes a quantidade de ozônio em New York. O gráfico abaixo resume estas medições separando-as por mês do ano em que ocorreram. A codificação é tal que o mês 1 é janeiro e os demais são dispostos sequencialmente. <img src="/classes/2019_1_each/aula_3_files/figure-html/unnamed-chunk-16-1.png" width="50%" style="display: block; margin: auto;" /></p></li>
+</ol>
+<ul>
+<li><ol style="list-style-type: lower-alpha">
+<li>Indique de forma aproximada uma medida de centralidade e uma medida de dispersão para a quantidade de ozônio medido em cada mês estudado.</li>
+</ol></li>
+<li><ol start="2" style="list-style-type: lower-alpha">
+<li>Usando as medidas acima e o gráfico apresentado, argumente se há diferenças na quantidade de ozônio medido entre os meses estudados. Qual é o comportamento da quantidade de ozônio no ar ao longo dos meses estudados?</li>
+</ol></li>
+<li><ol start="3" style="list-style-type: lower-alpha">
+<li>Possíveis alternativas ao gráfico apresentado seriam um scatter plot por mês ou um histograma por mês. Estes gráficos facilitariam ou dificultariam a comparação realizada no item anterior?</li>
+</ol></li>
+<li><ol start="4" style="list-style-type: lower-alpha">
+<li>O gráfico apresenta alguns pontos isolados. Explique o significado destes pontos e indique algumas razões que poderiam explicar a existência deles.</li>
+</ol></li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li>Um estudante cria um banco de dados com 2 variáveis. Na primeira variável, para cada dia, o estudante codifica o valor <span class="math inline">\(1\)</span> se ele foi para a aula das <span class="math inline">\(8\)</span> da manhã e <span class="math inline">\(0\)</span> se ele não conseguiu acordar e faltou à aula. A segunda variável consiste no número de acidentes de carro por dia. Considere que o estudante mora em uma região em que há neve no inverno.</li>
+</ol>
+<ul>
+<li><ol style="list-style-type: lower-alpha">
+<li>O estudante verificou que, em geral, os dias em que há mais acidentes de carro são aqueles em que ele não acorda para a aula. Qual você espera que seja a correlação entre a primeira e a segunda variável (<span class="math inline">\(&gt;0\)</span>, <span class="math inline">\(&lt;0\)</span> ou <span class="math inline">\(=0\)</span>)?</li>
+</ol></li>
+<li><ol start="2" style="list-style-type: lower-alpha">
+<li>Baseado nesta observação, o estudante conclui que pode reduzir o número de acidentes de trânsito frequentando mais as aulas das 8 da manhã. Explique a falha no raciocínio do estudante e indique uma possível justificativa para a correlação observada no item anterior.</li>
+</ol></li>
+</ul>
+</div>
+<div id="referencias" class="section level1 unnumbered">
+<h1>Referências</h1>
+<div id="refs" class="references">
+<div id="ref-Tukey1977">
+<p>Tukey, John W. 1977. <em>Exploratory Data Analysis</em>. Addison-Wesley.</p>
+</div>
+</div>
+</div>
