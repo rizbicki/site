@@ -1,0 +1,326 @@
+---
+title: "Aula 5 - Variáveis aleatórias e Probabilidade"
+author: "Rafael Izbicki e Rafael Bassi Stern"
+date: '2018-08-30'
+bibliography: ipaee.bib
+output: 
+  html_document:
+    toc: true
+    number_sections: true
+editor_options: 
+  chunk_output_type: console
+---
+
+# Variáveis aleatórias
+
+É comum que desejemos generalizar 
+as conclusões que obtemos de 
+um banco de dados para uma população. 
+Por exemplo, no banco de dados de adubos, 
+amostras de adubo com fosfato em geral tem
+um efeito maior que
+amostras de adubo sem fosfato.
+Será verdade, fora de nossa amostra,
+que adubos com fosfato tem efeito
+superior a adubos sem fosfato?
+
+Para responder a questões como essa,
+é preciso desenvolver uma ferramenta que 
+ligue as observações realizadas na amostra a
+observações futuras.
+Para realizar esta conexão 
+descrevemos o nosso conhecimento antes de 
+coletar o banco de dados.
+Neste contexto, havia incerteza sobre
+quais dados seriam observados.
+Por exemplo, considere que um experimento
+consiste em medir um objeto 
+10 vezes com um paquímetro.
+Devido aos erros de medição
+diversos valores serão observados.
+Cada medição tem um resultado incerto,
+com vários possíveis valores.
+
+Para designar observações incertas,
+usamos **variáveis aleatórias**.
+Em particular, lembre-se que um 
+banco de dados é uma matriz em que
+as linhas são unidades amostrais e
+as colunas são variáveis.
+Designamos por $X_{i,j}$ 
+o valor observado para a
+$j$-ésima variável da $i$-ésima unidade amostral.
+Como descrevemos nossa incerteza em
+um momento anterior à coleta do banco de dados,
+o valor de $X_{i,j}$ é incerto.
+
+## Proposições
+
+Utilizando variáveis aleatórias, 
+é possível definir **proposições** de interesse.
+Proposições simples envolvem uma única variável
+e são, por exemplo, "$X_{1,3} = 5.2$", 
+"$X_{4,2} \geq 4$" ou "$X_{1,1} \leq 1$".
+Também é possível obter proposições complexas
+unindo proposições simples por meio de conjunções.
+Por exemplo, "$X_{1,1} = 2$ **e** $X_{2,1} = 2$" e 
+"$X_{1,3} = 5$ **ou** $X_{1,3} = 4$".
+
+Se $A$  e $B$ são duas proposições, dizemos que 
+a proposição $A$ **e** $B$ é observada
+se e somente se tanto $A$ quanto $B$ são observadas.
+Por exemplo, "choveu hoje **e** choveu ontem" é observado
+se e somente se "choveu hoje" é observado e também
+"choveu ontem" é observado.
+Similarmente, se $A$  e $B$ são duas proposições, dizemos que 
+a proposição $A$ **ou** $B$ é observada
+se e somente se somente $A$ é obsevada,
+somente $B$ é observada ou 
+tanto $A$ quanto $B$ são observadas.
+Por exemplo, "choveu hoje **ou** choveu ontem"
+somente não é observado se tanto 
+"choveu hoje" não é observado quanto
+"choveu hoje" não é observado.
+A seguir, desenvolvemos uma medida de plausibilidade
+para proposições.
+
+# Probabilidade
+
+A probabilidade de uma proposição é
+uma medida de quão plausível esta proposição é.
+Seja $A$ uma proposição, designamos 
+sua probabilidade por $P(A)$.
+Por exemplo, seja $X_{1,1}$ o peso em kg
+do primeiro boi em um amostra.
+$P(X_{1,1} > 500)$ designa a probabilidade de
+que o peso desse boi seja maior do que 500 kg.
+
+A probabilidade tem certas propriedades que
+ela deve satisfazer. Primeiramente,
+para toda proposição a sua probabilidade deve
+estar entre 0 e 1. 
+Se $P(A) = 0$, $A$ é impossível e
+se $P(A) = 1$, $A$ é certo.
+Para todo outro valor de $P(A)$, $A$ é incerto,
+sendo que, quanto maior o valor de $P(A)$, 
+mais plausível é $A$.
+A seguir, estudaremos algumas propriedades
+adicionais da probabilidade.
+
+## Relações entre proposições
+
+- Dizemos que duas proposições são **mutuamente exclusivas**
+se é impossível que ambas ocorram simultaneamente.
+Isto é, $A$ e $B$ são mutuamente exclusivas 
+se "$A$ **e** $B$" é impossível.
+Por exemplo, se $X$ é uma variável aleatória que
+designa o resultado de uma moeda, então
+"$X$ = cara" e "$X$ = coroa" são mutuamente exclusivas.
+É uma propriedade da probabilidade que,
+se $A$ e $B$ são proposições mutuamente exclusivas, então:
+$$P(A \textbf{ ou } B) = P(A) + P(B).$$
+
+- Dizemos que duas proposições são **independentes** se
+aprender uma proposição não traz informação sobre a outra.
+Por exemplo, considere que $X_{1}$ e $X_{2}$ designam 
+o resultado de dois lançamentos separados de um dado.
+Usualmente, não acreditamos que um lançamento de um dado
+traz informação sobre o outro. Assim, por exemplo,
+$X_{1}=1$ é independente de $X_{2}=3$.
+se $A$ e $B$ são proposições independentes, então:
+$$P(A \textbf{ e } B) = P(A) \cdot P(B).$$
+
+- Dizemos que duas variáveis aleatórias, $X$ e $Y$,
+são independentes se qualquer par de proposições sobre
+$X$ e $Y$ são independentes. Por exemplo, se 
+$X$ e $Y$ são independentes, então 
+$X = 2$ e $Y > 3$ são independentes.
+Para muitos bancos de dados que estudaremos neste curso,
+será comum supormos que, para toda variável, $j$,
+as observações desta variável são independentes para 
+cada unidade amostral. Isto é,
+$X_{1,j}, X_{2,j}, \ldots, X_{n,j}$ são independentes.
+
+- **Atenção**: Exceto em casos extremos,
+um par de proposições nunca é simultaneamente
+"mutuamente exclusivo" e "independente".
+De fato, se $A$ e $B$ são mutuamente exclusivos e
+aprendemos que $A$ ocorreu, então 
+sabemos com certeza que $B$ não ocorreu.
+Isto é, $A$ traz informação sobre $B$.
+Estes conceitos sejam frequentemente confundidos!
+Tome cuidado!
+
+## Interpretações da probabilidade.
+
+### Simetria 
+
+Os conceitos de probabilidade
+iniciaram seu desenvolvimento com 
+o estudo de jogos de azar.
+Isto ocorreu provavelmente porque nestes
+jogos lidamos com incertezas em 
+um ambiente controlado.
+O funcionamento de um dado é 
+relativamente simples em relação
+ao objeto de pesquisas científicas modernas.
+
+Por exemplo, os possíveis resultados do 
+lançamento de um dado (1, 2, 3, 4, 5 e 6)
+são **simétricos** e, assim, 
+todos são igualmente plausíveis.
+Neste caso, obtemos que 
+a probabilidade de cada possibilidade é
+$1$ sobre o número total de possibilidades.
+Por exemplo, se $X$ é uma variável aleatória
+que designa o resultado do dado, então
+$P(X=1) = \frac{1}{6}$. Semelhantemente,
+
+$$P(X=1 \textbf{ ou } X=3) = P(X=1) + P(X=3) = \frac{1}{6} + \frac{1}{6} = \frac{2}{6}$$
+
+### Frequência
+
+Na maior parte de pesquisas científicas modernas,
+nãoé possível usar diretamente o juízo de simetria
+apresentado anteriormente.
+Por exemplo, quando realizamos uma reação química,
+esta pode produzir o efeito desejado ou não.
+Em geral, estas possibilidades não são igualmente plausíveis.
+Assim, é necessário desenvolver um conceito 
+mais abrangente de probabilidade.
+
+Para tal, imaginamos uma sequência de
+experimentos independentes em que
+realizamos a reação química estudada.
+Podemos calcular a proporção de experimentos
+tais que a reação química produziu o efeito desejado.
+Ainda que, para um número finito de experimentos,
+esta proporção apresente variabilidade,
+quando o número o número de experimentos torna-se grande,
+a proporção concentra-se em um valor.
+Segundo a interpretação baseada em **frequências**,
+este valor designa a probabilidade de 
+a reação química produzir o resultado satisfatório.
+Isto é, a probabilidade de que a reação química
+produza um resultado satisfatório é a
+proporção de experimentos independentes em que
+obtemos este resultado, 
+quando realizamos um número muito grande de experimentos.
+
+Por exemplo, a figura abaixo apresenta
+a proporção de vezes que um evento ocorre
+para vários possíveis números de 
+realizações de experimentos independentes.
+Qual a probabilidade de ocorrência do evento?
+
+```{r echo = FALSE}
+n <- 1000
+p <- 0.25
+props = cumsum(rbinom(n,1,p))/(1:n)
+plot(props, 
+     type='l',
+     xlab="Número de experimentos",
+     ylab="Proporção de vezes em que evento ocorreu")
+```
+
+### Apostas 
+
+Existem experimentos tais que não conseguimos 
+imaginar repetições independentes.
+Por exemplo, imagine as eleições presidenciais 
+de 2018 como experimento.
+Existirá uma única eleição presidencial de 2018 e,
+assim, não conseguimos imaginar uma sequência de
+repetições independentes deste experimento.
+Assim, a interpretação frequentista não consegue
+responder a questões como: 
+"Qual a probabilidade de o candidato $A$ vencer
+as eleições presidenciais de 2018?"
+
+Neste sentido, existe uma interpretação alternativa
+de probabilidade baseada em apostas.
+Considere uma aposta em que você ganha R\$1 se
+uma proposição, $A$, ocorrer e R\$0, caso contrário.
+Note que, caso você pague $p$ para participar desta aposta,
+então ganhará R\$(1-p) caso $A$ ocorra e perderá
+R\$p caso $A$ não ocorra.
+Segundo a interpretação baseada em apostas,
+a probabilidade de $A$ é o maior valor que
+você estaria disposto a pagar para participar desta aposta.
+
+Possíveis vantagens da interpretação baseada em apoastas é 
+que ela enfatiza que o juízo de probabilidade é subjetivo e
+que ela pode ser aplicada a experimentos que não podem ser repetidos.
+
+# Exercícios
+
+1. Descreva em suas próprias palavras
+o significado de "mutuamente exclusivos" e "independentes".
+Apresente um exemplo de um par de proposições para cada expressão.
+
+2. Considere as proposições:
+A = "Choverá hoje" e B = "Não choverá hoje". 
+Elas são mutuamente exclusivas? São independentes?
+
+3. Considere as proposições:
+A = "Choverá hoje" e B = "Choverá amanhã".
+Elas são mutuamente exclusivas? São independentes?
+
+4. Um dado de 6 faces é arremessado.
+Qual é a probabilidade de que, $A$, um número par seja sorteado?
+Qual é a probabilidade de que, $B$, o número 3 ou 6 seja sorteado?
+As duas proposições acima são independentes?
+Verifique se $P(A \textbf{ e } B) = P(A) \cdot P(B)$.
+
+5. Dividam-se em grupos e arremessem uma moeda várias vezes.
+Construam um banco de dados juntando todos os seus lançamentos.
+Para este banco de dados, esbocem como a proporção de caras
+varia de acordo com o número de lançamentos.
+
+6. Uma moeda de duas faces simétricas é
+arremessada duas vezes. 
+Seja $A$ a proposição de 
+que o resultado do primeiro lançamento
+foi cara e $B$ a proposição de que
+em ambos os lançamentos ocorreu o mesmo resultado.
+
+* a. Determine $P(A)$, $P(B)$, 
+$P(A \textbf{ ou } B)$ e $P(A \textbf{ e } B)$.
+
+* b. $A$ e $B$ são independentes? 
+São mutuamente exclusivos?
+
+7. Um sistema é composto por 6 componentes que
+falham independentemente com probabilidade $p$.
+O sistema principal é organizado por
+3 subsistemas em paralelo.
+O primeiro subsistema consiste de um único componente,
+o segundo consiste de dois componentes em série e
+o terceiro consiste de três componentes em paralelo.
+Lembre que, enquanto que um sistema em série falha
+se e somente se qualquer um de seus componentes falharem,
+um sistema em paralelo falha se e somente se
+todos seus componentes falharem.
+
+* a. Determine a probabilidade de cada subsistema falhar.
+ 
+* b. Determine a probabilidade do sistema principal falhar.
+
+8. Um sistema tem $n$ componentes
+que falham independentemente com probabilidade $p$.
+
+* a. Considere que o sistema tem os componentes em série,
+isto é, ele falha se qualquer um dos componentes falhar.
+Qual a probabilidade de o sistema falhar?
+
+* b. Considere que o sistema tem os componentes em paralelos,
+isto é, ele falha somente se todos os componentes falharem.
+Qual a probabilidade de o sistema falhar.
+
+* c. Considere que dois sub-sistemas são formados
+a partir de metade dos componentes em série.
+Se o sistema é composto pelos dois sub-sistemas em paralelo,
+qual é a probabilidade de ele falhar?
+Assuma que $n$ é par.
+
+# Referências 
