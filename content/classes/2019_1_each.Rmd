@@ -19,3 +19,4 @@ subtitle: "1o semestre de 2019"
 - [Medidas resumo](./aula_2/){target="_blank"}
 - [Visualização de dados](./aula_3/){target="_blank"}
 - [Probabilidade e Variáveis Aleatórias](./aula_4/){target="_blank"}
+- [Distribuição normal](./aula_5/){target="_blank"}
