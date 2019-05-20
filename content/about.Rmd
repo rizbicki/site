@@ -19,9 +19,11 @@ Brazilian Association of Jurimetrics,
 an associate investigator at NeuroMat and
 a member of the Order of Attorneys of Brazil.
 
+<div style= "float:right;position: relative;">
 ```{r echo=FALSE, out.width="300px"}
 knitr::include_graphics("/figures/rbstern.png")
 ```
+</div>
 
 ## Research interests
 

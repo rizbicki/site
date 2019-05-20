@@ -1,0 +1,22 @@
+---
+sidemenu: "true"
+title: "Research groups"
+---
+
+```{r echo=FALSE, message=FALSE}
+`%>%` = magrittr::`%>%`
+group_table = readr::read_csv("tables/research_groups.csv") %>% 
+  dplyr::mutate(Goal = descr,
+                Group = paste0("<a href='",
+                               url,
+                               "' target='_blank'>",
+                               "<img border = '0' src = '",
+                               logo,
+                               "' width = '250'></a>")) %>%
+  dplyr::select(Group, Goal)
+DT::datatable(group_table,
+              colnames = c("", ""),
+              escape = FALSE,
+              options = list(dom = 't'),
+              rownames = FALSE)
+```

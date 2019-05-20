@@ -25,43 +25,49 @@ paginate = 10
   [[menu.main]]
     name = "About"
     pre = "<i class='fa fa-user fa-fw'></i>"
-    weight = 1
+    weight = 10
     identifier = "about"
     url = "/about/"
   [[menu.main]]
     name = "Research"
     pre = "<i class='fa fa-cogs fa-fw'></i>"
-    weight = 2
+    weight = 20
     identifier = "research"
     url = "/research/"
   [[menu.main]]
+    name = "Groups"
+    pre = "<i class='fa fa-users-cog fa-fw'></i>"
+    weight = 25
+    identifier = "groups"
+    url = "/groups/"
+  [[menu.main]]
     name = "Teaching"
     pre = "<i class='fa fa-university fa-fw'></i>"
-    weight = 3
+    weight = 30
     identifier = "teaching"
     url = "/teaching/"
   [[menu.main]]
     name = "Students"
-    pre = "<i class='fa fa-group fa-fw'></i>"
-    weight = 4
+    pre = "<i class='fa fa-baby fa-fw'></i>"
+    weight = 40
     identifier = "students"
     url = "/students/"
   [[menu.main]]
     name = "Resources"
     pre = "<i class='fa fa-folder fa-fw'></i>"
-    weight = 5
+    weight = 50
     identifier = "resources"
     url = "/resources/"
   [[menu.main]]
     name = "Posts"
     pre = "<i class='fa fa-list fa-fw'></i>"
-    weight = 6
+    weight = 60
     identifier = "post"
     url = "/post/"
   [[menu.main]]
     name = "Contact"
     pre = "<i class='fa fa-phone fa-fw'></i>"
-    weight = 7
+    weight = 70
     url = "/contact/"
 
 [social]

@@ -3,15 +3,11 @@ sidemenu: "true"
 title: "Students"
 ---
 
-```{r echo = FALSE}
+```{r echo = FALSE, message = FALSE}
 `%>%` = magrittr::`%>%`
-student_table = yaml::read_yaml("tables/students.yaml") %>% 
-  do.call(rbind, .) %>% 
-  as.data.frame() %>% 
-  tidyr::unnest() %>%
-  tibble::as.tibble() %>% 
+student_table = readr::read_csv("tables/students.csv") %>% 
   dplyr::arrange(desc(year), level)
 DT::datatable(student_table,
               rownames = FALSE,
-              options = list(dom = 'ftip'))
+              options = list(pageLength = 5, dom = 'ftip'))
 ```

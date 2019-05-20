@@ -8,24 +8,21 @@ title: "Teaching"
 
 ## Courses
 
-```{r echo = FALSE}
+```{r echo = FALSE, message = FALSE, warning = FALSE}
 `%>%` = magrittr::`%>%`
-course_table = yaml::read_yaml("tables/courses.yaml") %>%
-  do.call(rbind, .) %>%
-  as.data.frame() %>%
-  tidyr::unnest() %>%
-  tibble::as.tibble() %>%
+course_table = readr::read_csv("tables/courses.csv") %>%
   dplyr::mutate(course = ifelse(
-    url == "NA",
+    is.na(url),
     course,
     paste0("<a href='",
            url,
            "'>",
            course,
            "</a>"))) %>%
-  dplyr::select(-url)
+  dplyr::select(-url) %>% 
+  dplyr::arrange(desc(semester))
 DT::datatable(course_table,
               escape = FALSE,
-              options = list(dom = 'ftip'),
+              options = list(pageLength = 5, dom = 'ftip'),
               rownames = FALSE)
 ```

@@ -11,15 +11,17 @@ title: "Resources"
 
 - [Statistical decision theory (incomplete)](https://www.overleaf.com/read/ndcxvbjgvkbx){target="_blank"}
 
+## Cool texts written by friends
+
+- [Statistical machine learning (portuguese)](https://www.dropbox.com/s/7iyvllj0njsqmjb/main.pdf){target="_blank"}
+
+- [R guide (portuguese)](http://material.curso-r.com/){target="_blank"}
+
 ## Selected talks
 
-```{r echo = FALSE}
+```{r echo = FALSE, message = FALSE}
 `%>%` = magrittr::`%>%`
-talk_table = yaml::read_yaml("tables/talks.yaml") %>%
-  do.call(rbind, .) %>%
-  as.data.frame() %>%
-  tidyr::unnest() %>%
-  tibble::as.tibble() %>%
+talk_table = readr::read_csv("tables/talks.csv") %>%
   dplyr::mutate(title = ifelse(
     url == "NA",
     title,
@@ -31,12 +33,7 @@ talk_table = yaml::read_yaml("tables/talks.yaml") %>%
   dplyr::select(-url)
 DT::datatable(talk_table,
               escape = FALSE,
-              options = list(dom = 'ftip'),
+              options = list(dom = 't'),
               rownames = FALSE)
 ```
 
-## Cool things written by friends
-
-- [Statistical machine learning (portuguese)](https://www.dropbox.com/s/7iyvllj0njsqmjb/main.pdf){target="_blank"}
-
-- [R guide (portuguese)](http://material.curso-r.com/){target="_blank"}
