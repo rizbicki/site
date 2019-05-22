@@ -30,7 +30,8 @@ talk_table = readr::read_csv("tables/talks.csv") %>%
            "' target = '_blank'>",
            title,
            "</a>"))) %>%
-  dplyr::select(-url)
+  dplyr::select(-url) %>% 
+  dplyr::arrange(desc(year))
 DT::datatable(talk_table,
               escape = FALSE,
               options = list(dom = 't'),
