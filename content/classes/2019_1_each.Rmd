@@ -21,4 +21,5 @@ subtitle: "1o semestre de 2019"
 - [Probabilidade e Variáveis Aleatórias](./aula_4/){target="_blank"}
 - [Distribuição normal](./aula_5/){target="_blank"}
 - [Introdução ao planejamento de experimentos](./aula_6/){target="_blank"}
-- 
+- [Intervalos de confiança](./aula_7/){target="_blank"}
+- [Testes de hipótese](./aula_8/){target="_blank"}

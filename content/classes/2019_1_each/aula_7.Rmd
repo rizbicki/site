@@ -1,0 +1,188 @@
+---
+title: "Aula 7 - Intervalos de confiança"
+author: "Rafael Izbicki e Rafael Bassi Stern"
+date: ''
+bibliography: ipaee.bib
+output: html_document
+---
+
+Um pesquisador observa uma variável de uma
+amostra independente de
+uma determinada população. Por exemplo,
+ele pode selecionar uma amostra aleatória
+de pacientes com distúrbio de atenção e
+medir o quanto tempo elas
+concentram-se em uma determinada tarefa.
+Considere que $X_i$ é o quanto tempo
+o paciente $i$ se concentrou na tarefa.
+Como vimos em aulas anteriores,
+é comum supor que $X_i \sim N(\mu, \sigma^2)$,
+isto é, o tempo deste paciente foi
+obtido de uma população normal com
+média populacional $\mu$ e
+variância populaciona $\sigma^2$.
+
+É comum que o pesquisador esteja interessado em
+compreender melhor o valor da média populacional ($\mu$).
+Isto é, dentre as pessoas com desvio de atenção
+na população, o quanto tempo em média elas
+conseguem concentrar-se na tarefa?
+Vimos que a média amostral, $\bar{X}_n$, satisfaz
+
+$$ \bar{X}_n \sim N\left(\mu, \frac{\sigma^2}{n}\right) $$
+Assim, ainda que a média amostral, $\bar{X}_n$ e
+a média populacional, $\mu$ sejam quantidades diferentes,
+$\bar{X}_n$ torna-se "próximo" de $\mu$ quando
+o tamanho da amostra, $n$, fica é grande.
+Contudo, para cada $n$, 
+o quão próximo $\bar{X}_n$ está de $\mu$?
+Isto é, quais são os valores plausíveis para $\mu$?
+
+Uma das maneiras de responder 
+a esta pergunta é por meio de
+um intervalo de confiança.
+Um intervalo de confiança
+para um parâmetro populacional é
+um procedimento que,
+para cada possível amostra observada,
+determina um intervalo de valores
+plausíveis para o parâmetro.
+Ademais, dizemos que o procedimento tem
+confiança $1-p$ se,
+em infinitas réplicas independentes do experimento,
+a frequência de réplicas em que
+o parâmetro populacional está
+dentro do intervalo gerado
+pelo procedimento é $1-p$.
+
+Por exemplo, considere o caso em que
+$\bar{X}_n \sim N\left(\mu, \frac{\sigma^2}{n}\right)$.
+Neste caso, sabemos pelas propriedades
+da distribuição normal que
+
+$$
+\begin{align*}
+ \mathbb{P}\left(\mu - 2\frac{\sigma}{\sqrt{n}} 
+ \leq \bar{X}_n \leq \mu + 2\frac{\sigma}{\sqrt{n}}\right) &= 0.95 \\
+ \mathbb{P}\left(\bar{X}_n - 2\frac{\sigma}{\sqrt{n}} 
+ \leq \mu \leq \bar{X}_n + 2\frac{\sigma}{\sqrt{n}}\right) &= 0.95 \\
+ \mathbb{P}\left(\mu \in 
+ \left[\bar{X}_n - 2\frac{\sigma}{\sqrt{n}}; \bar{X}_n + 2\frac{\sigma}{\sqrt{n}} \right] \right) &= 0.95
+\end{align*}
+$$
+Isto é, antes de observar a amostra,
+acreditamos com probabilidade 0.95 que
+$\mu$ estará no intervalo 
+$IC(0.95) = \left[\bar{X}_n - 2\frac{\sigma}{\sqrt{n}}; \bar{X}_n + 2\frac{\sigma}{\sqrt{n}} \right]$.
+Isto é, o procedimento que, para cada amostra observada, gera o intervalo 
+$IC(0.95)$ tem confiança $0.95$ para $\mu$.
+Neste contexto, acreditamos que 
+$IC(0.95)$ gerará um intervalo de valores plausíveis para $\mu$.
+Semelhantemente, se $z_{1-\alpha}$ é o $1-\alpha$ percentil
+populacional de uma normal padrão, então
+$IC(1-\alpha) = \left[\bar{X}_n - z_{1-\alpha}\frac{\sigma}{\sqrt{n}}; \bar{X}_n + z_{1-\alpha}\frac{\sigma}{\sqrt{n}} \right]$ é
+um intervalo de confiança $1-\alpha$ para $\mu$.
+
+Contudo, como a variância populacional, $\sigma$, 
+raramente é conhecida é comum que o intervalo acima
+seja substituído por uma aproximação
+utilizando a variância amostral. 
+Especificamente, temos que
+
+$$
+ \begin{align*}
+  \mathbb{P}\left(\mu \in 
+ \left[\bar{X}_n - 2\frac{S}{\sqrt{n}}; \bar{X}_n + 2\frac{S}{\sqrt{n}} \right] \right) &\approx 0.95
+\end{align*}
+$$
+Isto é,
+$\left[\bar{X}_n - 2\frac{S}{\sqrt{n}}; \bar{X}_n + 2\frac{S}{\sqrt{n}} \right]$
+é um intervalo de confiança aproximadamente $0.95$ para $\mu$.
+
+Por exemplo, considere o exemplo em que
+$X_1,\ldots,X_{16} \sim N(\mu,\sigma^2)$ são
+os tempos que cada paciente com desvio de atenção
+concentrou-se em uma determinada tarefa.
+Suponha que os seguintes valores foram observados:
+
+```{r}
+ n = 16
+ x = round(rnorm(16, 10, 2), 2)
+ x
+```
+
+Assim, podemos calcular a média e
+variância amostrais:
+
+```{r}
+ media_amostral = mean(x)
+ desvio_padrao_amostral = sd(x)
+ round(media_amostral, 2)
+ round(desvio_padrao_amostral, 2)
+```
+
+Portanto, o procedimento que vimos anteriormente
+gerará o intervalo:
+
+```{r}
+ LI = media_amostral - 2 * desvio_padrao_amostral/sqrt(n)
+ LS = media_amostral + 2 * desvio_padrao_amostral/sqrt(n)
+ c(round(LI, 2), round(LS, 2))
+```
+
+Note que seria **falso** afirmar que, 
+com probabilidade $0.95$, $\mu$ está entre
+`r round(LI, 2)` e `r round(LS, 2)`.
+A probabilidade de $0.95$ se refere
+ao **procedimento** para gerar este intervalo e
+não ao intervalo efetivamente gerado.
+Dizemos apenas que 
+[`r round(LI, 2)`; `r round(LS, 2)`] tem
+confiança $0.95$ para $\mu$ e
+interpretamos que estes são valores
+plausíveis para o tempo médio que
+a população de pacientes com desvio de atenção
+concentra-se na tarefa proposta.
+
+# Exercícios
+
+1. Considere que $X_1, \ldots, X_n$ é
+   uma amostra independente tal que
+   $X_i \sim N(\mu, \sigma^2)$.
+   Construa um intervalo de confiança
+   aproximadamente $0.95$ quando
+   a amostra observada é:
+
+```{r}
+  x = round(rnorm(9, 4, 1), 2)
+  x
+```
+
+2. A variância populacional de uma determinada variável normal é $25$.
+   Determine o tamanho da amostra independente que
+   é necessário para que o intervalo de confiança de $95\%$ para
+   a média populacional tenha comprimento 1.
+
+3. Sabendo que $99\%$ da probabilidade da 
+   distribuição normal está entre
+   $\mu - 2.58\sigma$ e $\mu + 2.58\sigma$,
+   construa um intervalo de confiança $99\%$ baseado
+   na média amostral de uma amostra independente normal.
+   Aplique este intervalo aos dados do exercício 1.
+
+4. O tempo médio de sobrevida para pacientes com câncer 
+   que usam o remédio $A$ é de 5 anos.
+   Um pesquisador administrou o remédio $B$ a
+   uma amostra de $16$ pacientes e observou que,
+   nesta amostra, o tempo médio
+   médio de sobrevida foi $5.5$ anos.
+   Também, o desvio padrão da amostra foi de $2$ anos.
+   Com base nestes dados, compare a eficácia
+   dos remédios $A$ e $B$.
+
+5. Um pesquisador aprendeu incorretamente que,
+   quanto maior a confiança de um intervalo,
+   melhor ele é. Assim, ele pediu que
+   você construa um intervalo de confiança
+   com confiança $0.999999999$. Explique
+   um possível problema deste intervalo de confiança.

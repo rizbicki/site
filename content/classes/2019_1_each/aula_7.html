@@ -1,0 +1,173 @@
+---
+title: "Aula 7 - Intervalos de confiança"
+author: "Rafael Izbicki e Rafael Bassi Stern"
+date: ''
+bibliography: ipaee.bib
+output: html_document
+---
+
+
+
+<p>Um pesquisador observa uma variável de uma
+amostra independente de
+uma determinada população. Por exemplo,
+ele pode selecionar uma amostra aleatória
+de pacientes com distúrbio de atenção e
+medir o quanto tempo elas
+concentram-se em uma determinada tarefa.
+Considere que <span class="math inline">\(X_i\)</span> é o quanto tempo
+o paciente <span class="math inline">\(i\)</span> se concentrou na tarefa.
+Como vimos em aulas anteriores,
+é comum supor que <span class="math inline">\(X_i \sim N(\mu, \sigma^2)\)</span>,
+isto é, o tempo deste paciente foi
+obtido de uma população normal com
+média populacional <span class="math inline">\(\mu\)</span> e
+variância populaciona <span class="math inline">\(\sigma^2\)</span>.</p>
+<p>É comum que o pesquisador esteja interessado em
+compreender melhor o valor da média populacional (<span class="math inline">\(\mu\)</span>).
+Isto é, dentre as pessoas com desvio de atenção
+na população, o quanto tempo em média elas
+conseguem concentrar-se na tarefa?
+Vimos que a média amostral, <span class="math inline">\(\bar{X}_n\)</span>, satisfaz</p>
+<p><span class="math display">\[ \bar{X}_n \sim N\left(\mu, \frac{\sigma^2}{n}\right) \]</span>
+Assim, ainda que a média amostral, <span class="math inline">\(\bar{X}_n\)</span> e
+a média populacional, <span class="math inline">\(\mu\)</span> sejam quantidades diferentes,
+<span class="math inline">\(\bar{X}_n\)</span> torna-se “próximo” de <span class="math inline">\(\mu\)</span> quando
+o tamanho da amostra, <span class="math inline">\(n\)</span>, fica é grande.
+Contudo, para cada <span class="math inline">\(n\)</span>,
+o quão próximo <span class="math inline">\(\bar{X}_n\)</span> está de <span class="math inline">\(\mu\)</span>?
+Isto é, quais são os valores plausíveis para <span class="math inline">\(\mu\)</span>?</p>
+<p>Uma das maneiras de responder
+a esta pergunta é por meio de
+um intervalo de confiança.
+Um intervalo de confiança
+para um parâmetro populacional é
+um procedimento que,
+para cada possível amostra observada,
+determina um intervalo de valores
+plausíveis para o parâmetro.
+Ademais, dizemos que o procedimento tem
+confiança <span class="math inline">\(1-p\)</span> se,
+em infinitas réplicas independentes do experimento,
+a frequência de réplicas em que
+o parâmetro populacional está
+dentro do intervalo gerado
+pelo procedimento é <span class="math inline">\(1-p\)</span>.</p>
+<p>Por exemplo, considere o caso em que
+<span class="math inline">\(\bar{X}_n \sim N\left(\mu, \frac{\sigma^2}{n}\right)\)</span>.
+Neste caso, sabemos pelas propriedades
+da distribuição normal que</p>
+<p><span class="math display">\[
+\begin{align*}
+ \mathbb{P}\left(\mu - 2\frac{\sigma}{\sqrt{n}} 
+ \leq \bar{X}_n \leq \mu + 2\frac{\sigma}{\sqrt{n}}\right) &amp;= 0.95 \\
+ \mathbb{P}\left(\bar{X}_n - 2\frac{\sigma}{\sqrt{n}} 
+ \leq \mu \leq \bar{X}_n + 2\frac{\sigma}{\sqrt{n}}\right) &amp;= 0.95 \\
+ \mathbb{P}\left(\mu \in 
+ \left[\bar{X}_n - 2\frac{\sigma}{\sqrt{n}}; \bar{X}_n + 2\frac{\sigma}{\sqrt{n}} \right] \right) &amp;= 0.95
+\end{align*}
+\]</span>
+Isto é, antes de observar a amostra,
+acreditamos com probabilidade 0.95 que
+<span class="math inline">\(\mu\)</span> estará no intervalo
+<span class="math inline">\(IC(0.95) = \left[\bar{X}_n - 2\frac{\sigma}{\sqrt{n}}; \bar{X}_n + 2\frac{\sigma}{\sqrt{n}} \right]\)</span>.
+Isto é, o procedimento que, para cada amostra observada, gera o intervalo
+<span class="math inline">\(IC(0.95)\)</span> tem confiança <span class="math inline">\(0.95\)</span> para <span class="math inline">\(\mu\)</span>.
+Neste contexto, acreditamos que
+<span class="math inline">\(IC(0.95)\)</span> gerará um intervalo de valores plausíveis para <span class="math inline">\(\mu\)</span>.
+Semelhantemente, se <span class="math inline">\(z_{1-\alpha}\)</span> é o <span class="math inline">\(1-\alpha\)</span> percentil
+populacional de uma normal padrão, então
+<span class="math inline">\(IC(1-\alpha) = \left[\bar{X}_n - z_{1-\alpha}\frac{\sigma}{\sqrt{n}}; \bar{X}_n + z_{1-\alpha}\frac{\sigma}{\sqrt{n}} \right]\)</span> é
+um intervalo de confiança <span class="math inline">\(1-\alpha\)</span> para <span class="math inline">\(\mu\)</span>.</p>
+<p>Contudo, como a variância populacional, <span class="math inline">\(\sigma\)</span>,
+raramente é conhecida é comum que o intervalo acima
+seja substituído por uma aproximação
+utilizando a variância amostral.
+Especificamente, temos que</p>
+<p><span class="math display">\[
+ \begin{align*}
+  \mathbb{P}\left(\mu \in 
+ \left[\bar{X}_n - 2\frac{S}{\sqrt{n}}; \bar{X}_n + 2\frac{S}{\sqrt{n}} \right] \right) &amp;\approx 0.95
+\end{align*}
+\]</span>
+Isto é,
+<span class="math inline">\(\left[\bar{X}_n - 2\frac{S}{\sqrt{n}}; \bar{X}_n + 2\frac{S}{\sqrt{n}} \right]\)</span>
+é um intervalo de confiança aproximadamente <span class="math inline">\(0.95\)</span> para <span class="math inline">\(\mu\)</span>.</p>
+<p>Por exemplo, considere o exemplo em que
+<span class="math inline">\(X_1,\ldots,X_{16} \sim N(\mu,\sigma^2)\)</span> são
+os tempos que cada paciente com desvio de atenção
+concentrou-se em uma determinada tarefa.
+Suponha que os seguintes valores foram observados:</p>
+<pre class="r"><code> n = 16
+ x = round(rnorm(16, 10, 2), 2)
+ x</code></pre>
+<pre><code>##  [1]  9.61 10.87  9.66 10.04  9.28 10.01  7.29  9.61 12.48  7.19 13.70
+## [12] 12.52 10.67  6.40 12.38 10.02</code></pre>
+<p>Assim, podemos calcular a média e
+variância amostrais:</p>
+<pre class="r"><code> media_amostral = mean(x)
+ desvio_padrao_amostral = sd(x)
+ round(media_amostral, 2)</code></pre>
+<pre><code>## [1] 10.11</code></pre>
+<pre class="r"><code> round(desvio_padrao_amostral, 2)</code></pre>
+<pre><code>## [1] 2.03</code></pre>
+<p>Portanto, o procedimento que vimos anteriormente
+gerará o intervalo:</p>
+<pre class="r"><code> LI = media_amostral - 2 * desvio_padrao_amostral/sqrt(n)
+ LS = media_amostral + 2 * desvio_padrao_amostral/sqrt(n)
+ c(round(LI, 2), round(LS, 2))</code></pre>
+<pre><code>## [1]  9.09 11.12</code></pre>
+<p>Note que seria <strong>falso</strong> afirmar que,
+com probabilidade <span class="math inline">\(0.95\)</span>, <span class="math inline">\(\mu\)</span> está entre
+9.09 e 11.12.
+A probabilidade de <span class="math inline">\(0.95\)</span> se refere
+ao <strong>procedimento</strong> para gerar este intervalo e
+não ao intervalo efetivamente gerado.
+Dizemos apenas que
+[9.09; 11.12] tem
+confiança <span class="math inline">\(0.95\)</span> para <span class="math inline">\(\mu\)</span> e
+interpretamos que estes são valores
+plausíveis para o tempo médio que
+a população de pacientes com desvio de atenção
+concentra-se na tarefa proposta.</p>
+<div id="exercicios" class="section level1">
+<h1>Exercícios</h1>
+<ol style="list-style-type: decimal">
+<li>Considere que <span class="math inline">\(X_1, \ldots, X_n\)</span> é
+uma amostra independente tal que
+<span class="math inline">\(X_i \sim N(\mu, \sigma^2)\)</span>.
+Construa um intervalo de confiança
+aproximadamente <span class="math inline">\(0.95\)</span> quando
+a amostra observada é:</li>
+</ol>
+<pre class="r"><code>  x = round(rnorm(9, 4, 1), 2)
+  x</code></pre>
+<pre><code>## [1] 3.30 3.08 5.20 3.74 3.32 4.08 3.98 3.14 3.81</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li><p>A variância populacional de uma determinada variável normal é <span class="math inline">\(25\)</span>.
+Determine o tamanho da amostra independente que
+é necessário para que o intervalo de confiança de <span class="math inline">\(95\%\)</span> para
+a média populacional tenha comprimento 1.</p></li>
+<li><p>Sabendo que <span class="math inline">\(99\%\)</span> da probabilidade da
+distribuição normal está entre
+<span class="math inline">\(\mu - 2.58\sigma\)</span> e <span class="math inline">\(\mu + 2.58\sigma\)</span>,
+construa um intervalo de confiança <span class="math inline">\(99\%\)</span> baseado
+na média amostral de uma amostra independente normal.
+Aplique este intervalo aos dados do exercício 1.</p></li>
+<li><p>O tempo médio de sobrevida para pacientes com câncer
+que usam o remédio <span class="math inline">\(A\)</span> é de 5 anos.
+Um pesquisador administrou o remédio <span class="math inline">\(B\)</span> a
+uma amostra de <span class="math inline">\(16\)</span> pacientes e observou que,
+nesta amostra, o tempo médio
+médio de sobrevida foi <span class="math inline">\(5.5\)</span> anos.
+Também, o desvio padrão da amostra foi de <span class="math inline">\(2\)</span> anos.
+Com base nestes dados, compare a eficácia
+dos remédios <span class="math inline">\(A\)</span> e <span class="math inline">\(B\)</span>.</p></li>
+<li><p>Um pesquisador aprendeu incorretamente que,
+quanto maior a confiança de um intervalo,
+melhor ele é. Assim, ele pediu que
+você construa um intervalo de confiança
+com confiança <span class="math inline">\(0.999999999\)</span>. Explique
+um possível problema deste intervalo de confiança.</p></li>
+</ol>
+</div>
