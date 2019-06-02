@@ -299,13 +299,13 @@ geom_density(colour="red")
   a chi-quadrado por meio dos comandos
   *dchisq* e *pchisq*.
 
-# Distribui??o T de Student
+# Distribuição T de Student
 
-- Designamos a distribui??o $T$ de Student com
+- Designamos a distribuição $T$ de Student com
 $n$ graus de liberdade por $T_{n}$.
 
-- Se $Z \sim N(0,1)$ e $S^2 \sim \chi^2_n$ s?o
-  vari?veis independentes, ent?o
+- Se $Z \sim N(0,1)$ e $S^2 \sim \chi^2_n$ são
+  variáveis independentes, então
   $\frac{Z}{\sqrt{\frac{S^2}{n}}} \sim T_{n}$.
 
 - No **R**, podemos obter
