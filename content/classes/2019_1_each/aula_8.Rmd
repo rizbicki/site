@@ -1,0 +1,10 @@
+---
+title: "Aula 8 - Testes de hipótese"
+author: "Rafael Izbicki e Rafael Bassi Stern"
+date: ''
+bibliography: ipaee.bib
+output: html_document
+---
+
+library(glmnet)
+?predict.cv.glmnet
