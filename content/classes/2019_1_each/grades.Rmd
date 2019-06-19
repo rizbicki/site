@@ -21,8 +21,6 @@ código de ética desta disciplina e você está reprovado.
 `%<>%` = magrittr::`%<>%`
 ```
 
-1
-
 ### Notas
 ```{r echo = FALSE}
 grade_table = read.csv("./grades.csv")
