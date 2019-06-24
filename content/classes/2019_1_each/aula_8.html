@@ -6,7 +6,237 @@ bibliography: ipaee.bib
 output: html_document
 ---
 
+<script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
+<script src="/rmarkdown-libs/jquery/jquery.min.js"></script>
+<link href="/rmarkdown-libs/datatables-css/datatables-crosstalk.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/datatables-binding/datatables.js"></script>
+<link href="/rmarkdown-libs/dt-core/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="/rmarkdown-libs/dt-core/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/dt-core/js/jquery.dataTables.min.js"></script>
+<link href="/rmarkdown-libs/crosstalk/css/crosstalk.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/crosstalk/js/crosstalk.min.js"></script>
 
 
-<p>library(glmnet)
-?predict.cv.glmnet</p>
+<div id="conceitos-de-testes-de-hipotese" class="section level1">
+<h1>Conceitos de testes de hipótese</h1>
+<p>Em uma amostra, observa-se uma variável
+<span class="math inline">\(X_1, \ldots, X_n\)</span> independentes e tais que
+<span class="math inline">\(X_i \sim N(\mu, \sigma^2)\)</span>.
+É comum que desejemos testar
+hipóteses científicas a respeito
+da população. Por exemplo,
+a variável medida poderia ser
+o peso em uma amostra de ovelhas
+obtidas de uma determinada fazenda.
+Se o peso médio de ovelhas saudáveis é 100kg,
+poderia-se ter interesse em testar
+se o peso médio das ovelhas
+na fazenda inspecionada é de 100kg.
+Em termos do modelo utilizado, isto
+seria equivalente a testar se <span class="math inline">\(\mu = 100\)</span>.
+Também poderia-se testar
+se o peso médio das vacas obtidas está
+acima ou abaixo de 100kg. Isto é,
+se <span class="math inline">\(\mu &gt; 100\)</span> ou <span class="math inline">\(\mu &lt; 100\)</span>.</p>
+<p>Note que no exemplo acima
+as hipóteses são proposições sobre
+parâmetros populacionais. Isto é,
+são afirmações sobre quantidades que
+não observamos. Neste sentido,
+o desafio de testes hipóteses consiste em
+obter conclusões a respeito de
+quantidades que não observamos diretamente.
+Neste sentido, é inevitável que um teste
+leve a conclusões incorretas em alguns casos.
+Contudo, podemos projetá-lo para que
+a probabilidade de erro seja controlada.
+Conceitualmente, existem 2 tipos de erros
+que podem ocorrer, indicados abaixo:</p>
+<div id="htmlwidget-1" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1">{"x":{"filter":"none","data":[["Hipótese verdadeira","Hipótese falsa"],["acerto","erro tipo II"],["erro tipo I","acerto"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Não rejeitamos a hipótese<\/th>\n      <th>Rejeitamos a hipótese<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","order":[],"autoWidth":false,"orderClasses":false,"columnDefs":[{"orderable":false,"targets":0}]}},"evals":[],"jsHooks":[]}</script>
+<p>Por convenção, os testes de hipótese que estudaremos
+controlam a probabilidade de erro tipo I. Isto é,
+controlam a probabilidade de
+que rejeitemos a hipótese de interesse quando
+ela é verdadeira. Como
+a probabilidade de erro tipo I é controlada,
+é razoável escolher a hipótese
+de tal forma que este é o erro mais grave.
+Por exemplo, considere que desejamos testar
+se uma usina nuclear é segura.
+A princípio, poderíamos testar a
+hipótese de que a usina é segura ou
+testar a hipótese de que a usina é insegura.
+Contudo, (i) concluir que
+a usina é segura quando ela é insegura é
+muito mais grave do que (ii) concluir que
+a usina é insegura quando ela é segura.
+Assim, tomaríamos (i) como sendo o erro tipo I.
+A forma de obter este resultado é
+tomar como hipótese que a usina é insegura.
+Neste caso, o erro tipo I seria concluir que
+a rejeitar que a usina é insegura (concluir que é segura)
+quando ela é insegura. Observe que,
+se tomássemos como hipótese a usina ser segura,
+então o erro tipo I seria concluir que ela é
+insegura quando ela é segura e, assim,
+não obteríamos o resultado almejado.</p>
+<p>A hipótese que será testada é comumente chamada
+de hipótese nula. Também, a negação desta hipótese
+é chamada de hipótese alternativa. Assim,
+no exemplo da usina nuclear, a hipótese nula
+é a de que a usina é insegura e
+a hipótese alternativa é a de que a usina é segura.</p>
+<p>Uma vez desenvolvidos os principais conceitos
+de testes de hipótese, podemos apresentar
+alguns testes que são comumente utilizados.</p>
+</div>
+<div id="testes-de-hipotese-para-uma-populacao" class="section level1">
+<h1>Testes de hipótese para uma população</h1>
+<p>Considere que <span class="math inline">\(X_1, \ldots X_n\)</span> são independentes
+e tais que <span class="math inline">\(X_i \sim N(\mu, \sigma^2)\)</span> e
+<span class="math inline">\(\mu_0\)</span> algum valhor conhecido. Algumas
+hipótese comumente testadas são <span class="math inline">\(\mu = \mu_0\)</span>,
+<span class="math inline">\(\mu &gt; \mu_0\)</span> e <span class="math inline">\(\mu &lt; \mu_0\)</span>. Assim, no
+exemplo das ovelhas anteriormente discutido,
+<span class="math inline">\(\mu_0\)</span> seria <span class="math inline">\(100\)</span>. Nesta seção estudaremos
+como testar como uma destas hipóteses.</p>
+<div id="teste-bilateral" class="section level2">
+<h2>Teste bilateral</h2>
+<p>Considere que desejamos testar <span class="math inline">\(\mu = \mu_0\)</span>.
+Lembre que a média amostral, <span class="math inline">\(\bar{X}\)</span>,
+em geral assume valors próximos de <span class="math inline">\(\mu\)</span>.
+Assim, se a hipótese nula fosse verdadeira,
+teríamos que <span class="math inline">\(\bar{X}\)</span> estaria próximo de <span class="math inline">\(\mu_0\)</span>.
+Em outras palavras, se <span class="math inline">\(\bar{X}\)</span> estiver
+longe de <span class="math inline">\(\mu_0\)</span>, então teremos bons indícios
+para rejeitar a hipótese nula. Dizer que
+<span class="math inline">\(\bar{X}\)</span> está longe de <span class="math inline">\(\mu_0\)</span> pode ser
+interpretado como <span class="math inline">\(|\bar{X}-\mu_0| &gt; k\)</span>,
+para algum <span class="math inline">\(k\)</span> grande. Assim,
+resta determinar qual <span class="math inline">\(k\)</span> é suficientemente grande
+para que, sob a hipótese nula,
+a probabilidade de <span class="math inline">\(|\bar{X}-\mu_0| &gt; k\)</span> acontecer
+seja baixa, isto é, a probabilidade do erro tipo I
+seja pequena.</p>
+<p>Para controlar esta probabilidade de erro,
+utilizamos o Teorema do Limite Central
+para constatar que
+<span class="math inline">\(\frac{\sqrt{n}(\bar{X}-\mu)}{S} \approx N(0,1)\)</span>.
+Assim, se rejeitarmos a hipótese nula quando</p>
+<p><span class="math display">\[
+|\bar{X}-\mu| &gt; \frac{2 \cdot S}{\sqrt{n}},
+\]</span>
+então a probabilidade de erro tipo I será inferior a 5%.
+De forma mais geral, se <span class="math inline">\(z_{1-0.5\alpha}\)</span> é o
+<span class="math inline">\(1-0.5\alpha\)</span> percentil da distribuição normal,
+então controlamos a probabilidade de erro tipo I
+por <span class="math inline">\(\alpha\)</span> se rejeitarmos a hipótese nula quando
+<span class="math inline">\(|\bar{X}-\mu| &gt; \frac{z_{1-0.5\alpha}S}{\sqrt{n}}\)</span>.</p>
+<p>É importante notar que, ainda que historicamente
+o controle do erro tipo I por 5% tenha sido
+considerado adequado e usado como padrão,
+este nem sempre é o caso. Por exemplo,
+considere o caso em que estamos testando se
+uma usina nuclear é insegura. Neste caso,
+controlar o erro tipo I en 5% equivale
+a concluir incorretamente que
+uma usina nuclear é segura a
+cada 20 usinas inseguras testadas. Semelhantemente,
+se um juiz está testando
+a hipótese de que um réu é inocente,
+controlar o erro tipo I em 5% equivale
+a condenar 1 a cada 20 inocentes julgados.
+Estes casos evidenciam que, ainda que
+erros sejam inevitáveis num teste de hipótese,
+talvez o controle de 5% seja inadequado
+em muitas situações práticas.
+Com base em quão grave é o erro tipo I em
+relação ao erro tipo II,
+vocês terão de decidir qual é o controle
+adequado da probabilidade de cometer este erro.</p>
+</div>
+<div id="testes-unilaterais" class="section level2">
+<h2>Testes unilaterais</h2>
+<div id="mu-mu_0" class="section level3">
+<h3>- <span class="math inline">\(\mu &gt; \mu_0\)</span></h3>
+<p>Considere que desejamos testar <span class="math inline">\(\mu &gt; \mu_0\)</span>.
+Sob a hipótese nula, esperamos que <span class="math inline">\(\bar{X}\)</span>
+assuma valores maiores ou iguais a <span class="math inline">\(\mu_0\)</span>.
+Assim, temos evidências contrários a este hipótese
+quando <span class="math inline">\(\bar{X}\)</span> assume valores pequenos, isto é,
+quando <span class="math inline">\(\bar{X} &lt; \mu_0 - k\)</span>. Semelhantemente
+ao caso do teste bilateral, podemos utilizar
+o Teorema do Limite Central para
+concluir que controlamos o erro tipo I em 5%
+se rejeitarmos a hipótese nula quando</p>
+<p><span class="math display">\[
+\bar{X} &lt; \mu_0 - \frac{1,64 \cdot S}{\sqrt{n}}.
+\]</span></p>
+<p>Note que, enquanto que o teste bilateral usa
+a constante <span class="math inline">\(2\)</span>, o teste unilateral usa
+a constante <span class="math inline">\(1,64\)</span>. Isto ocorre pois,
+enquanto que o teste bilateral distribui
+a probabilidade de erro tipo I tanto para
+valores pequenos quanto para valores grandes de <span class="math inline">\(\bar{X}\)</span>,
+o teste unilateral apresentado distribui a probabilidade
+de erro tipo I apenas para valores pequenos de <span class="math inline">\(\bar{X}\)</span>.
+Assim, uma variedade maior de valores pequenos de <span class="math inline">\(\bar{X}\)</span>
+levam à rejeição de <span class="math inline">\(\bar{X} &lt; \mu_0\)</span>.</p>
+<p>De forma mais geral, se quisermos controlar
+a probabilidade de erro tipo I em <span class="math inline">\(\alpha\)</span>,
+então a hipótese nula é rejeitada quando
+<span class="math inline">\(\bar{X} &lt; \mu_0 - \frac{z_{1-\alpha} \cdot S}{\sqrt{n}}\)</span>.</p>
+</div>
+<div id="mu-mu_0-1" class="section level3">
+<h3>- <span class="math inline">\(\mu &lt; \mu_0\)</span></h3>
+<p>Para testarmos a hipótese <span class="math inline">\(\mu &gt; \mu_0\)</span>,
+aplicamos um raciocínio espelhado àquele
+que empregamos para <span class="math inline">\(\mu &lt; \mu_0\)</span>. Assim,
+controlamos a probabilidade de erro tipo I em 5%
+se rejeitarmos a hipótese quando</p>
+<p><span class="math display">\[
+\bar{X} &gt; \mu_0 + \frac{1,64 \cdot S}{\sqrt{n}}.
+\]</span>
+De forma mais geral, controlamos
+a probabilidade de erro tipo I em <span class="math inline">\(\alpha\)</span> se
+rejeitarmos a hipótese nula quando
+<span class="math inline">\(\bar{X} &gt; \mu_0 + \frac{z_{1-\alpha} \cdot S}{\sqrt{n}}\)</span>.</p>
+</div>
+</div>
+</div>
+<div id="exercicios" class="section level1">
+<h1>Exercícios</h1>
+<ol style="list-style-type: decimal">
+<li><p>Um juiz deseja testar se um réu é
+inocente ou se ele é culpado por
+cometer um determinado crime.
+Para tal, contempla as hipóteses
+“o réu é inocente” e
+“o réu é culpado”.
+Argumente à luz dos conceitos
+de testes de hipótese qual
+hipótese deve ser testada.</p></li>
+<li><p>Considere que o mesmo juiz decide que
+é inaceitável condenar um inocente.
+Assim, ele determina que a
+probabilidade de condenar um réu quando
+ele é inocente deve ser <span class="math inline">\(0\)</span>.
+Explique a este juiz possíveis problemas
+que podem ocorrer ao tomar
+uma probabildade de erro tipo I tão baixa.</p></li>
+<li><p>Ainda no exemplo do juiz,
+qual probabilidade de erro tipo I
+você acredita que seja adequada?</p></li>
+<li><p>A água de um rio é própria para
+consumo se a concentração de uma
+determinada substância tóxica for inferior a
+<span class="math inline">\(1 mg/L\)</span>. 16 amostras de água deste rio foram
+tomadas e observou-se as seguintes
+concentrações da substância tóxica:</p></li>
+</ol>
+<pre><code>##  [1] 0.92 0.65 0.39 0.53 0.60 0.51 0.85 0.61 0.54 0.52 0.74 0.59 0.72 0.79
+## [15] 0.89 0.75</code></pre>
+<p>Determine qual hipótese deve ser testada
+pelo pesquisador e aplique o teste adequado.</p>
+</div>
