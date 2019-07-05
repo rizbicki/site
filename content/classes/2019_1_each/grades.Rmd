@@ -23,7 +23,9 @@ código de ética desta disciplina e você está reprovado.
 
 ### Notas
 ```{r echo = FALSE}
-grade_table = read.csv("./grades.csv")
+grade_table = read.csv("./grades.csv") %>% 
+  dplyr::mutate(MT = round((T1+T2+T3+T4+T5+T6 - 
+                              pmin(T1,T2,T3,T4,T5,T6))/5, 1))
 DT::datatable(grade_table,
               escape = FALSE,
               options = list(dom = 'ftip'),
