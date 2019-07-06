@@ -1,0 +1,47 @@
+---
+title: "(100.1115) Probabilidade 1"
+subtitle: "2o semestre de 2019"
+---
+
+#Notas
+
+- Para manter sua anonimidade,
+as notas estão indexadas pelos 
+4 últimos algarismos do seu número RA.
+
+- Caso o seu número RA esteja marcado com um (*),
+isto indica que existe evidência que você desrespeitou o
+código de ética desta disciplina. Tome cuidado!
+Caso o seu número RA esteja marcado com um (**),
+está provado que você desrespeitou o 
+código de ética desta disciplina e você está reprovado.
+
+```{r echo = FALSE}
+# `%>%` = magrittr::`%>%`
+# `%<>%` = magrittr::`%<>%`
+```
+
+### Notas
+```{r echo = FALSE}
+# grade_table = read.csv("./grades.csv")
+# DT::datatable(grade_table,
+#               escape = FALSE,
+#               options = list(dom = 'ftip'),
+#               rownames = FALSE)
+```
+
+### Gráficos
+
+```{r echo = FALSE}
+# grade_table %>% 
+#   tidyr::gather(avaliacao, nota, -RA) %>%
+#   dplyr::filter(nota != 0) %>% 
+#   dplyr::group_by(avaliacao) %>% 
+#   dplyr::summarise(media = mean(nota), dp = sd(nota)) %>% 
+#   ggplot2::ggplot(ggplot2::aes(x = avaliacao, y = media)) +
+#   ggplot2::geom_point() +
+#   ggplot2::geom_errorbar(ggplot2::aes(ymin = media - dp,
+#                                       ymax = media + dp),
+#                          width = .1) +
+#   ggplot2::xlab("avaliação") + ggplot2::ylab("nota")
+```
