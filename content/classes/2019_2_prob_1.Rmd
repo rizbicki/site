@@ -3,6 +3,14 @@ title: "(100.1115) Probabilidade 1"
 subtitle: "2o semestre de 2019"
 ---
 
+### Informações sobre o curso
+
+- [**Programa do curso**](./syllabus/){target="_blank"}
+
+- [**Notas de aula**](https://www.overleaf.com/read/fjdsbxwydcnf)
+
+- [**Notas em avaliações**](./grades/){target="_blank"}
+
 ```{r cache = TRUE, echo = FALSE, message = FALSE, warning = FALSE}
 library(tidyverse)
 x = rbinom(1000, 10, 0.5)
@@ -14,12 +22,3 @@ data %>% ggplot(aes(x = x)) +
   ggtitle("Frequência em 1000 experimentos do número de caras observado 
 em 10 lançamentos de uma moeda.")
 ```
-
-### Informações sobre o curso
-
-- [**Programa do curso**](./syllabus/){target="_blank"}
-
-- [**Notas de aula**](https://www.overleaf.com/read/fjdsbxwydcnf)
-
-- [**Notas em avaliações**](./grades/){target="_blank"}
-

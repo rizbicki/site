@@ -1,0 +1,8 @@
+---
+title: "(EST802) Inferência Avançada"
+subtitle: "2o semestre de 2019"
+---
+  
+### Informações sobre o curso
+
+- [**Notas de aula**](https://www.overleaf.com/read/ndcxvbjgvkbx)
