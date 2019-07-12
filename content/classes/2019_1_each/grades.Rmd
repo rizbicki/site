@@ -3,7 +3,7 @@ title: "(151.262) Estatística aplicada às ciências humanas"
 subtitle: "1o semestre de 2019"
 ---
 
-#Notas
+# Notas
 
 - Para manter sua anonimidade,
 as notas estão indexadas pelos 
@@ -25,7 +25,9 @@ código de ética desta disciplina e você está reprovado.
 ```{r echo = FALSE}
 grade_table = read.csv("./grades.csv") %>% 
   dplyr::mutate(MT = round((T1+T2+T3+T4+T5+T6 - 
-                              pmin(T1,T2,T3,T4,T5,T6))/5, 1))
+                              pmin(T1,T2,T3,T4,T5,T6))/5, 1),
+                MF = round(0.65*MT + 0.3*Prova + Part, 1)) %>% 
+  dplyr::select(-Part)
 DT::datatable(grade_table,
               escape = FALSE,
               options = list(dom = 'ftip'),
