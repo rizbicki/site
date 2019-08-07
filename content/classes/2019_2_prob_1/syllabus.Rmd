@@ -120,16 +120,8 @@ vocês não poderão consultar qualquer material durante as provas.
 Exames não poderão ser realizados em outro dia que não a data oficial.
 Exceções devem ser discutidas ao menos uma semana antes comigo.
 
-- **Prova 1**: Ocorrerá no dia 11/09. 
-Incluirá todos os tópicos vistos em aula.
-
-- **Prova 2**: Ocorrerá no dia 23/10. 
-Incluirá todos os tópicos vistos em aula,
-com ênfase no material após a Prova 1.
-
-- **Prova 3**: Ocorrerá no dia 27/11
-Incluirá todos os tópicos aprendidos em aula,
-com ênfase no material após a Prova 2.
+- **Prova 1**: Ocorrerá no dia 27/11
+Incluirá todos os tópicos aprendidos durante o curso.
 
 **Política de re-avaliação**: Você poderá requerer uma nova correção
 de uma prova até 5 dias após a devolução desta.

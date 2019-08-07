@@ -24,19 +24,19 @@
 
 -
  date: "02/09"
- lecture: "Funções geradora de momentos e característica" 
+ lecture: "Funções geradora de momentos" 
 
 -
  date: "04/09"
- lecture: "Covariância"
+ lecture: "Função característica"
  
 -
  date: "09/09"
- lecture: "<strong> Revisão </strong>"
+ lecture: "Covariância"
  
 -
  date: "11/09"
- lecture: "<strong> Prova 1 </strong>"
+ lecture: "Aula de exercícios"
 
 -
  date: "16/09"
@@ -60,31 +60,31 @@
 
 -
  date: "02/10"
- lecture: "Distribuições binomial negativa e gamma"
+ lecture: "Distribuições binomial negativa"
 
 -
  date: "07/10"
- lecture: "Distribuição Poisson"
+ lecture: "Distribuição Gamma"
 
 -
  date: "09/10"
- lecture: "Aula de exercícios"
+ lecture: "Distribuição Poisson"
 
 -
  date: "14/10"
- lecture: "Distribuição Beta"
+ lecture: "Aula de exercícios"
 
 -
  date: "16/10"
- lecture: "Estatísticas de ordem"
+ lecture: "Distribuição Beta"
 
 - 
  date: "21/10"
- lecture: "<strong> Revisão </strong>"
+ lecture: "Estatísticas de ordem"
 
 - 
  date: "23/10"
- lecture: "<strong> Prova 2 </strong>"
+ lecture: "Aula de exercícios"
  
 - 
  date: "28/10"
@@ -124,5 +124,5 @@
 
 -
  date: "27/11"
- lecture: "<strong> Prova 3 </strong>"
+ lecture: "<strong> Prova </strong>"
 
