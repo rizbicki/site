@@ -138,10 +138,8 @@ podendo sua nota aumentar ou diminuir.
 
 ```{r echo = FALSE, message = FALSE}
 library(magrittr)
-keys = c("Participação", "Média dos testes",
-         "Prova 1", "Prova 2", "Prova 3")
-values = c("0.05", "0.35", 
-           "0.2", "0.2", "0.2")
+keys = c("Participação", "Média dos testes", "Prova")
+values = c("0.05", "0.65", "0.3")
 pesos = tibble::tibble(Avaliacao = keys, 
                        Peso = values)
 DT::datatable(pesos,
