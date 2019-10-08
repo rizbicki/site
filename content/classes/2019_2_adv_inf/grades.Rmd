@@ -3,8 +3,6 @@ title: "(EST802) Inferência Avançada"
 subtitle: "2o semestre de 2019"
 ---
 
-#Notas
-
 - Para manter sua anonimidade,
 as notas estão indexadas pelos 
 4 últimos algarismos do seu número USP.
