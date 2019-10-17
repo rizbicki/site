@@ -36,3 +36,4 @@ grade_table %>%
                          width = .1) +
   ggplot2::xlab("avaliação") + ggplot2::ylab("nota")
 ```
+
