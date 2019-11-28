@@ -28,8 +28,7 @@ código de ética desta disciplina e você está reprovado.
   dplyr::arrange(RA) %>%
   dplyr::mutate(MT = round((T1 + T2 + T3 + T4 + T5 + T6 + T7 -
                      pmin(T1, T2, T3, T4, T5, T6, T7))/6, 2),
-                P1 = 0,
-                MF = round(0.65*MT + 0.3*P1 + Part, 2)
+                MF = round(0.65*MT + 0.3*P1 + Part, 1) 
   )
   
  DT::datatable(grade_table,
@@ -54,5 +53,3 @@ grade_table %>%
                          width = .1) +
   ggplot2::xlab("avaliação") + ggplot2::ylab("nota")
 ```
-
-
