@@ -7,3 +7,4 @@ subtitle: "2o semestre de 2019"
 
 - [**Notas de aula**](https://www.overleaf.com/read/ndcxvbjgvkbx)
 - [**Notas em avaliações**](./grades/){target="_blank"}
+- [**Lista 1**](./lista_1.pdf){target="_blank"}
