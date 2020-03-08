@@ -1,0 +1,120 @@
+-
+ date: "16/03"
+ lecture: "Descrição do curso e modelo estatístico"
+
+-
+ date: "18/03"
+ lecture: "Risco e admissibilidade"
+
+-
+ date: "23/03"
+ lecture: "Estatística suficiente e Rao-Blackwell"
+
+-
+ date: "25/03"
+ lecture: "Família exponencial"
+
+-
+ date: "30/03"
+ lecture: "Decisão de Bayes"
+
+-
+ date: "01/04"
+ lecture: "Distribuição a posteriori"
+
+-
+ date: "06/04"
+ lecture: "Forma extensiva do problema de decisão"
+
+-
+ date: "08/04"
+ lecture: "Decisão minimax"
+
+-
+ date: "13/04"
+ lecture: "Teorema minimax"
+
+-
+ date: "15/04"
+ lecture: "Teorema da classe completa"
+
+-
+ date: "22/04"
+ lecture: "Revisão"
+
+-
+ date: "27/04"
+ lecture: "<strong> Prova 1 </strong>"
+
+-
+ date: "29/04"
+ lecture: "Estimação, consistência e EQM"
+
+-
+ date: "04/05"
+ lecture: "Estimação por momentos"
+
+-
+ date: "06/05"
+ lecture: "Estimação de máxima verossimilhança"
+
+-
+ date: "11/05"
+ lecture: "Estimação não-viesada"
+
+-
+ date: "13/05"
+ lecture: "Estimação Bayesiana"
+
+-
+ date: "18/05"
+ lecture: "Estimação minimax"
+
+-
+ date: "20/05"
+ lecture: "Estimador plugin"
+
+-
+ date: "25/05"
+ lecture: "Teorema de Glivenko-Cantelli"
+
+-
+ date: "27/05"
+ lecture: "Estimação em alta dimensionalidade"
+
+-
+ date: "01/06"
+ lecture: "Revisão"
+
+-
+ date: "03/06"
+ lecture: "<strong> Prova 2 </strong>"
+
+-
+ date: "08/06"
+ lecture: "Intervalos de confiança"
+
+-
+ date: "10/06"
+ lecture: "Quantidades pivotais"
+
+-
+ date: "15/06"
+ lecture: "Intervalo assintótico por máxima verossimilhança"
+
+-
+ date: "17/06"
+ lecture: "Interlo assintótico por equações de estimação"
+
+-
+ date: "22/06"
+ lecture: "Bootstrap"
+
+-
+ date: "24/06"
+ lecture: "Revisão"
+
+-
+ date: "29/06"
+ lecture: "<strong> Prova 3 </strong>"
+
