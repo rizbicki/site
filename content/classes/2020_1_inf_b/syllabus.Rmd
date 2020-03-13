@@ -1,7 +1,7 @@
 ---
 sidemenu: "true"
 subtitle: "1o semestre de 2020"
-title: "(153.400) Inferência A"
+title: "(153.419) Inferência B"
 ---
 
 # Contato
@@ -20,10 +20,10 @@ DT::datatable(contato,
               rownames = FALSE)
 ```
 
-- Aulas : 2a, 16h-18h; e 4a, 16h-18h
+- Aulas : 2a, 14h-16h; e 4a, 14h-16h
 
 - Instruções para o envio de e-mails: 
-Por favor adicione ``[Inferência A]'' ao 
+Por favor adicione ``[Inferência B]'' ao 
 tópico de e-mails relacionados a este curso.
 O envio de e-mail deve ser tratado como uma comunicação profissional.
 Evite o uso de abreviações, acrônimos e gírias nos e-mails.
@@ -55,13 +55,13 @@ olhar rapidamente o conteúdo antes de cada classe.
   tópicos extras, aplicações interessantes e
   exercícios adicionais:
 
-  -- DeGroot, M.; Probability and Statistics.
-  
-  -- Wasserman, L.; All of Statistics.
-  
-  -- Bickel, P. and Doksum, K.; Mathematical Statistics.
-  
-  -- Casella, G. and Berger, R.; Statistical Inference.
+ -- DeGroot, M. - Probability and Statistics.
+ 
+ -- Wasserman, L. - Al of Statistics.
+ 
+ -- Bickel, P. and Doksum, K. - Mathematical Statistics.
+ 
+ -- Casella, G. and Berger, R. - Statistical Inference.
 								
 # Atividades do Curso
 								
@@ -120,7 +120,7 @@ vocês não poderão consultar qualquer material durante as provas.
 Exames não poderão ser realizados em outro dia que não a data oficial.
 Exceções devem ser discutidas ao menos uma semana antes comigo.
 
-- **Prova 1**: Ocorrerá no dia 27/04
+- **Prova 1**: Ocorrerá no dia 29/04
 Incluirá todos os tópicos cobertos até a prova 1.
 
 - **Prova 2**: Ocorrerá no dia 03/06
@@ -147,7 +147,7 @@ podendo sua nota aumentar ou diminuir.
 library(magrittr)
 keys = c("Participação", "Média dos testes", 
          "Prova 1", "Prova 2", "Prova 3")
-values = c("0.05", "0.35", "0.15", "0.2", "0.25")
+values = c("0.05", "0.35", "0.2", "0.2", "0.2")
 pesos = tibble::tibble(Avaliacao = keys, 
                        Peso = values)
 DT::datatable(pesos,

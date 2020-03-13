@@ -1,0 +1,13 @@
+---
+title: "(153.419) Inferência B"
+subtitle: "1o semestre de 2020"
+---
+      
+### Informações sobre o curso
+      
+- [**Programa do curso**](./syllabus/){target="_blank"}
+
+- [**Notas de aula**](https://www.overleaf.com/read/ndcxvbjgvkbx
+)
+
+- [**Notas em avaliações**](./grades/){target="_blank"}
