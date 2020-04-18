@@ -11,3 +11,5 @@ subtitle: "1o semestre de 2020"
 )
 
 - [**Notas em avaliações**](./grades/){target="_blank"}
+
+- [**Notas em avaliações**](./lista_1.pdf){target="_blank"}

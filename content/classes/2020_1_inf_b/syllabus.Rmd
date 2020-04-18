@@ -34,9 +34,8 @@ Evite o uso de abreviações, acrônimos e gírias nos e-mails.
 ### Objetivos do curso
 
 - Usar dados para aprender sobre quantidades desconhecidas.
-- Comparar critérios para tomada de decisões.
-- Estimar parâmetros do modelo estatístico.
-- Construir intervalos de confiança para estes parâmetros. 
+- Testar hipóteses estatísticas.
+- Aplicar conceitos da inferência a modelos lineares.
 
 <br/>
 
