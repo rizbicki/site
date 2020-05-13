@@ -22,7 +22,7 @@ Um destes grupos é a
 [Tropa da Garoa](https://garoa.net.br/wiki/Tropa_da_Garoa), 
 que confeciona escudos faciais.
 Para fazer estes escudos,
-impressoras 3d montam 
+Luis Eneas usa impressoras 3d para criar
 [tiaras](http://e-nablebrasil.org/wp/impressaomontagem/),
 que são encaixadas a uma 
 folha de acetato perfurada e a um elástico.
@@ -44,6 +44,7 @@ o que é consideravelmente mais barato
 que [o preço comercial adotado](https://www.google.com/search?q=compra+escudo+facial&sxsrf=ALeKk03t40oyajuFZEMuEJkP23pmGqE5vg:1589388305927&source=lnms&tbm=shop&sa=X&ved=2ahUKEwjcwYnrpLHpAhWiB9QKHbyYCLcQ_AUoAnoECAsQBA&biw=1299&bih=588#spd=13666652357308234092).
 Para continuar a confeccionar estas máscaras,
 a Tropa da Garoa agradece quaisquer doações
+diretamente no PicPay \@rafael.stern ou
 por meio do contato a Yumi Ambriola no Facebook
 ou \@yumizinha no Telegram.
 
@@ -133,3 +134,4 @@ Em 08/04/2020 montamos
 ![](../figures/garoa_2020_04_08_2.jpeg){width=50% height=50%}
 ![](../figures/garoa_2020_04_08_1.jpg){width=50% height=50%}
 </p>
+
