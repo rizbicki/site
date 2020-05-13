@@ -48,3 +48,4 @@ DT::datatable(paper_table,
               options = list(dom = 't'),
               rownames = FALSE)
 ```
+
