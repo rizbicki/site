@@ -1,0 +1,123 @@
+-
+ date: "01/09"
+ lecture: "Descrição do curso e revisão"
+
+-
+ date: "03/09"
+ lecture: "Distribuições de vetores aleatórios"
+ 
+-
+ date: "08/09"
+ lecture: "Exemplos de distribuições sobre vetores aleatórios"
+ 
+-
+ date: "10/09"
+ lecture: "Integrais multivariadas"
+ 
+-
+ date: "15/09"
+ lecture: "Integrais multivariadas"
+
+-
+ date: "17/09"
+ lecture: "Distribuições marginais e condicionais"
+
+-
+ date: "22/09"
+ lecture: "Indepedência em vetores aleatórios"
+ 
+-
+ date: "24/09"
+ lecture: "Função geradora de momentos multivariada"
+ 
+-
+ date: "29/09"
+ lecture: "Esperança condicional e suas propriedades"
+ 
+-
+ date: "01/10"
+ lecture: "Variância condicional"
+ 
+-
+ date: "06/10"
+ lecture: "Revisão"
+
+-
+ date: "08/10"
+ lecture: "<strong> Prova 1 </strong>"
+ 
+-
+ date: "13/10"
+ lecture: "Transformações univariadas"
+ 
+-
+ date: "15/10"
+ lecture: "Convolução de variáveis aleatórias"
+ 
+-
+ date: "20/10"
+ lecture: "Transformações multivariadas"
+ 
+-
+ date: "22/10"
+ lecture: "Transformações no processo de Poisson"
+
+-
+ date: "27/10"
+ lecture: "Transformações da normal multivariada 1"
+ 
+-
+ date: "29/10"
+ lecture: "Transformações da normal multivariada 2"
+ 
+-
+ date: "03/11"
+ lecture: "Revisão"
+ 
+-
+ date: "05/11"
+ lecture: "Desigualdades de cauda"
+ 
+-
+ date: "10/11"
+ lecture: "Convergência de eventos"
+
+-
+ date: "12/11"
+ lecture: "Convergência quase-certa"
+ 
+-
+ date: "17/11"
+ lecture: "Convergência em probabilidade"
+ 
+-
+ date: "19/11"
+ lecture: "Convergência em distribuição"
+ 
+-
+ date: "24/11"
+ lecture: ""
+ 
+-
+ date: "26/11"
+ lecture: "Relações entre os tipos de convergência"
+
+-
+ date: "01/12"
+ lecture: "Lei dos Grandes Números"
+ 
+-
+ date: "03/12"
+ lecture: "Lei dos Grandes Números"
+ 
+-
+ date: "08/12"
+ lecture: "Teorema Central do Limite"
+ 
+-
+ date: "10/12"
+ lecture: "Teorema Central do Limite"
+
+- 
+ date: "15/12"
+ lecture: "<strong> Prova 2 </strong>"

@@ -1,7 +1,7 @@
 ---
 sidemenu: "true"
-subtitle: "1o semestre de 2020"
-title: "(153.419) Inferência B"
+subtitle: "2o semestre de 2020"
+title: "(1001.449) Probabilidade 2"
 ---
 
 # Contato
@@ -9,21 +9,19 @@ title: "(153.419) Inferência B"
 ```{r echo = FALSE, message = FALSE}
 library(magrittr)
 keys = c("nome", "email", "atendimento")
-values = c("Rafael Bassi Stern", "rbstern@gmail.com", "Marcar por e-mail")
-values_mon = c("", "", "")
+values = c("Rafael Bassi Stern", "rbstern@gmail.com", "3a às 16h")
 contato = tibble::tibble(variaveis = keys,
-                         Instrutor = values,
-                         Monitor  = values_mon)
+                         Instrutor = values)
 DT::datatable(contato,
               escape = FALSE,
               options = list(dom = 't'),
               rownames = FALSE)
 ```
 
-- Aulas : 2a, 14h-16h; e 4a, 14h-16h
+- Aulas: 3as às 16h e 5as às 14h.
 
 - Instruções para o envio de e-mails: 
-Por favor adicione ``[Inferência B]'' ao 
+Por favor adicione ``[Probabilidade 2]'' ao 
 tópico de e-mails relacionados a este curso.
 O envio de e-mail deve ser tratado como uma comunicação profissional.
 Evite o uso de abreviações, acrônimos e gírias nos e-mails.
@@ -33,44 +31,45 @@ Evite o uso de abreviações, acrônimos e gírias nos e-mails.
 
 ### Objetivos do curso
 
-- Usar dados para aprender sobre quantidades desconhecidas.
-- Testar hipóteses estatísticas.
-- Aplicar conceitos da inferência a modelos lineares.
+- Visualizar vetores de variáveis aleatórias e entender suas propriedades.
+- Calcular a distribuição de transformações de variáveis aleatórias.
+- Identificar e comparar os tipos de convergência de variáveis aleatórias.
+- Compreender os principais resultados de convergência de variáveis aleatórias.
 
 <br/>
 
 ### Pré-requisitos
 
-- Cálculo (I e II) e Probabilidade (A e B).
+- Cálculo e Probabilidades A e B.
 
 ### Material do curso
 
-- [Notas de aula](https://www.overleaf.com/read/ndcxvbjgvkbx
-) estão disponíveis online. Vocês deverão baixar, imprimir e
-olhar rapidamente o conteúdo antes de cada classe.
+- As aulas serão gravadas e 
+  disponibilizadas no Google Classroom.
+  Este também terá notas de aula escritas.
   
 - Os seguintes livros são opcionais e 
   fornecem explicações detalhadas,
   tópicos extras, aplicações interessantes e
   exercícios adicionais:
 
- -- DeGroot, M. - Probability and Statistics.
- 
- -- Wasserman, L. - Al of Statistics.
- 
- -- Bickel, P. and Doksum, K. - Mathematical Statistics.
- 
- -- Casella, G. and Berger, R. - Statistical Inference.
+    - A First Course in Probability - Ross.
+
+    - Introduction to Probability Models - Ross.
+
+    - An introduction to probability theory and its applications - Feller.
+
+    - Probabilidade: um curso em nível intermediário - James.
 								
 # Atividades do Curso
 								
-Neste curso você fará listas de exercícios, 
-resolverá exercícios em classe,
+Neste curso você fará
+listas de exercícios, resolverá exercícios em classe,
 participará das aulas e realizará três provas.
 O objetivo destas atividades é que você pratique
 as idéias e técnicas abordadas em aula.
-Desta forma, é essencial que você sempre indique 
-claramente a sua linha de raciocínio.
+Desta forma, é essencial que você sempre indique claramente
+a sua linha de raciocínio.
 Utilizar o método adequado sempre será mais importante
 do que chegar à resposta final correta. 
 Assim, uma resposta final correta
@@ -83,9 +82,6 @@ sem a sua respectiva linha de raciocínio
 
 - **Geral**: Os alunos são incentivados a 
 discutir comigo e entre si as listas de exercícios.
-
-- Ainda que as listas de exercícios não sejam corrigidas,
-apresentarão questões essenciais para o bom desempenho no curso.
 
 ### Participação
 
@@ -101,15 +97,8 @@ a performance nestes exercícios.
 - Em particular, todo aluno apresentará
 durante o semestre a solução de 
 dois exercícios no quadro negro.
-A performance neste exercício comporá a 
-nota de participação.
-
-### Testes quinzenais
-
-Serão realizados testes quinzenais de 20 minutos
-no início das aulas de segunda-feira.
-Estes testes avaliarão a sua capacidade de
-resolver exercícios básicos do conteúdo recente.
+A performance neste exercício comporá outra
+parte da nota de participação.
 
 ### Provas 
 
@@ -119,15 +108,12 @@ vocês não poderão consultar qualquer material durante as provas.
 Exames não poderão ser realizados em outro dia que não a data oficial.
 Exceções devem ser discutidas ao menos uma semana antes comigo.
 
-- **Prova 1**: Ocorrerá no dia 29/04
-Incluirá todos os tópicos cobertos até a prova 1.
+- **Prova 1**: Ocorrerá no dia 08/10. 
+Incluirá todos os tópicos vistos em aula.
 
-- **Prova 2**: Ocorrerá no dia 03/06
-Incluirá todos os tópicos aprendidos entre
-as provas 1 e 2.
-
-- **Prova 3**: Ocorrerá no dia 29/06
-Incluirá todos os tópicos aprendidos durante o curso.
+- **Prova 2**: Ocorrerá no dia 15/12. 
+Incluirá todos os tópicos vistos em aula,
+com ênfase no material após a Prova 1.
 
 **Política de re-avaliação**: Você poderá requerer uma nova correção
 de uma prova até 5 dias após a devolução desta.
@@ -144,9 +130,13 @@ podendo sua nota aumentar ou diminuir.
 
 ```{r echo = FALSE, message = FALSE}
 library(magrittr)
-keys = c("Participação", "Média dos testes", 
-         "Prova 1", "Prova 2", "Prova 3")
-values = c("0.05", "0.35", "0.2", "0.2", "0.2")
+keys = c("Participação (geral)", 
+         "Participação (exercício)",
+         "Média das listas",
+         "Prova 1", "Prova 2")
+values = c("0.05", "0.05", 
+           "0.6", 
+           "0.15", "0.15")
 pesos = tibble::tibble(Avaliacao = keys, 
                        Peso = values)
 DT::datatable(pesos,
@@ -167,21 +157,6 @@ Perguntas relativas ao material atual receberão prioridade.
 Faça perguntas sobre material futuro ou 
 tópicos adicionais após a aula ou durante o período de atendimento.
 
-- **Computadores**: Espera-se que vocês participem das aulas.
-Vocês podem utilizar notebooks ou tablets para 
-tomar notas ou durante laboratórios de computação.
-Do contrário, o uso destes aparelhos é proibido, 
-exceto se você tiver necessidades especiais que 
-exijam o suporte destes equipamentos.
-Contate-me se você acredita que este é o seu caso.
-
-- **Celulares e outros aparelhos eletrônicos**: 
-Durante as aulas, você deverá silenciar ou desligar 
-quaisquer aparelhos eletrônicos que façam barulho.
-Espera-se que vocês participem das aulas e, 
-em particular, o uso de celulares é expressamente proibido.
-Isto inclui, por exemplo, o envio de mensagens ou checar o e-mail.
-
 - **Integridade Acadêmica**:
 Você deverá agir com ética em todas as atividades da classe.
 Em particular, é **expressamente proibido** 
@@ -191,13 +166,13 @@ como reprovação automática e encaminhamento do seu caso a uma Comissão Disci
 
 # Calendário
 
-```{r echo = FALSE, warning = FALSE}
+```{r echo = FALSE}
 `%>%` = magrittr::`%>%`
 calendar_table = yaml::read_yaml("calendar.yaml") %>% 
   do.call(rbind, .) %>% 
   as.data.frame() %>% 
   tidyr::unnest() %>%
-  tibble::as_tibble() %>%
+  tibble::as.tibble() %>%
   dplyr::rename(aula = lecture, data = date)
 DT::datatable(calendar_table,
               escape = FALSE,
