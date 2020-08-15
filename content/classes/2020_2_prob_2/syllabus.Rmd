@@ -179,3 +179,4 @@ DT::datatable(calendar_table,
               options = list(dom = 't', pageLength = 50),
               rownames = FALSE)
 ```
+
