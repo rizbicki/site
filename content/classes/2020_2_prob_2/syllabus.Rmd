@@ -166,13 +166,13 @@ como reprovação automática e encaminhamento do seu caso a uma Comissão Disci
 
 # Calendário
 
-```{r echo = FALSE}
+```{r echo = FALSE, warning = FALSE}
 `%>%` = magrittr::`%>%`
 calendar_table = yaml::read_yaml("calendar.yaml") %>% 
   do.call(rbind, .) %>% 
   as.data.frame() %>% 
-  tidyr::unnest() %>%
-  tibble::as.tibble() %>%
+  tidyr::unnest(cols = c(date, lecture)) %>%
+  tibble::as_tibble() %>%
   dplyr::rename(aula = lecture, data = date)
 DT::datatable(calendar_table,
               escape = FALSE,
