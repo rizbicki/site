@@ -1,0 +1,16 @@
+---
+title: "Inferência Bayesiana"
+subtitle: "1o semestre de 2021"
+---
+
+```{r cache = TRUE, echo = FALSE, message = FALSE, warning = FALSE}
+
+```
+
+### Informações sobre o curso
+
+- Sala de aula virtual no Google Classroom: zk2gnjb
+
+- [**Programa do curso**](./syllabus/){target="_blank"}
+
+- [**Notas de aula**](https://raw.githubusercontent.com/rbstern/bayesian_inference_book/gh-pages/book.pdf)

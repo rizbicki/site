@@ -26,5 +26,3 @@ as.list(c(5, 10, 20, 50, 10^2)) %>%
 - Sala de aula virtual no Google Classroom: qubt6tp
 
 - [**Programa do curso**](./syllabus/){target="_blank"}
-
-- [**Notas em avaliações**](./grades/){target="_blank"}
