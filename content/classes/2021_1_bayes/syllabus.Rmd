@@ -185,7 +185,7 @@ calendar_table = yaml::read_yaml("calendar.yaml") %>%
   do.call(rbind, .) %>% 
   as.data.frame() %>% 
   tidyr::unnest() %>%
-  tibble::as.tibble() %>%
+  tibble::as_tibble() %>%
   dplyr::rename(aula = lecture, data = date)
 DT::datatable(calendar_table,
               escape = FALSE,
