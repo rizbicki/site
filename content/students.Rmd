@@ -11,3 +11,4 @@ DT::datatable(student_table,
               rownames = FALSE,
               options = list(pageLength = 5, dom = 'ftip'))
 ```
+
