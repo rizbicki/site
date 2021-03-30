@@ -44,8 +44,6 @@ paper_table = readr::read_csv("tables/papers_conference.csv") %>%
    dplyr::select(-url)
 DT::datatable(paper_table,
               escape = FALSE,
-              
               options = list(dom = 't'),
               rownames = FALSE)
 ```
-
