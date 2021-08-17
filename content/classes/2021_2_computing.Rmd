@@ -1,0 +1,13 @@
+---
+title: "Métodos computacionalmente intensivos"
+subtitle: "2o semestre de 2021"
+---
+
+### Informações sobre o curso
+
+- [**Programa do curso**](./syllabus/){target="_blank"}
+
+- Sala de aula virtual no Google Classroom: orz5mk3
+
+```{r cache = TRUE, echo = FALSE, message = FALSE, warning = FALSE, out.width="50%"}
+```
