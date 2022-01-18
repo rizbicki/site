@@ -1,0 +1,13 @@
+---
+title: "Métodos computacionalmente intensivos"
+subtitle: "1o semestre de 2022"
+---
+
+### Informações sobre o curso
+
+- [**Programa do curso**](./syllabus/){target="_blank"}
+
+- Sala de aula virtual no Google Classroom: nyedj3f
+
+```{r cache = TRUE, echo = FALSE, message = FALSE, warning = FALSE, out.width="50%"}
+```

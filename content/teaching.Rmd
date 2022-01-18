@@ -26,4 +26,4 @@ DT::datatable(course_table,
               options = list(pageLength = 5, dom = 'ftip'),
               rownames = FALSE)
 ```
-
+ 
