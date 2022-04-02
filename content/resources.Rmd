@@ -5,7 +5,7 @@ title: "Resources"
 
 ## Lecture notes
 
-- [Bayesian inference (portuguese)](https://github.com/rbstern/bayesian_inference_book/raw/gh-pages/book.pdf){target="_blank"}
+- [Bayesian inference (portuguese)](https://github.com/rbstern/bayesian_inference_book/raw/master/book.pdf){target="_blank"}
 
 - [Probability](https://www.overleaf.com/read/fjdsbxwydcnf){target="_blank"}
 
@@ -37,4 +37,4 @@ DT::datatable(talk_table,
               options = list(dom = 't'),
               rownames = FALSE)
 ```
-
+ 

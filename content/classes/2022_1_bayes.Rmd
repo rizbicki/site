@@ -9,6 +9,6 @@ subtitle: "1o semestre de 2022"
 
 ### Informações sobre o curso
 
-- [**Notas de aula**](https://gitlab.com/rbstern/lecture_notes/-/jobs/102465405/artifacts/raw/bayesiana.pdf?inline=false)
+- [**Notas de aula**](https://github.com/rbstern/bayesian_inference_book/raw/master/book.pdf)
 
 - Sala de aula virtual no Google Classroom: f5g6yna
