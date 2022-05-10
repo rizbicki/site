@@ -37,4 +37,4 @@ DT::datatable(talk_table,
               options = list(dom = 't'),
               rownames = FALSE)
 ```
- 
+
