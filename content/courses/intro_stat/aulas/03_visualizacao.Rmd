@@ -1,0 +1,373 @@
+---
+title: "Visualização de Dados"
+author: "Rafael B. Stern"
+highlight: true
+date: ""
+output: html_document
+type: book
+weight: 30
+bibliography: refs.bib
+---
+
+# Visualização de dados
+
+Além da apresentação de medidas resumo,
+também é possível resumir a informação
+nos dados por meio de gráficos.
+A seguir, discutimos alguns dos
+principais gráficos usados.
+Para ilustrar estes gráficos,
+usaremos o banco de dados *iris* e
+o banco de dados *adubo*.
+
+```{r, message = FALSE, warning = FALSE}
+library(tidyverse)
+data(iris)
+adubo = read.csv("./data/adubo.csv")
+
+iris = as.tibble(iris)
+adubo = as.tibble(adubo)
+adubo$nitrato = as.factor(adubo$nitrato)
+adubo$fosfato = as.factor(adubo$fosfato)
+```
+
+*Observação*: No **R**, em geral
+existem muitas opções para
+gerar o mesmo gráfico. A seguir,
+mostraremos como gerar gráficos simples
+usando as funções de base do **R** e,
+também, gráficos mais elegantes,
+usando o pacote *ggplot2*.
+Mais informações sobre este pacote estão
+disponíveis [aqui](http://material.curso-r.com/ggplot/).
+
+## Visualizando uma variável
+
+### Strip chart
+
+O **strip chart** é um gráfico para uma variável
+que é representado em um único eixo e é tal que,
+cada ponto corresponde ao valor de uma observação.
+Ainda que para poucas observações este gráfico
+possa ser informativo, quando 
+há muitas observações ele é de difícil interpretação.
+
+No **R**, o strip chart pode ser obtido
+pelo comando *stripchart()*.
+Por exemplo, no banco de dados de adubos, obtemos:
+
+```{r}
+stripchart(adubo$efeito, xlab="efeito")
+```
+
+Por exemplo, note que
+enquanto que 7 das 20 observações, 
+estão concentradas próximo a 1.5,
+as outras 13 estão 
+dispersas ao redor de 5.
+O gráfico levanta uma pergunta:
+O que nestas 7 observações faz com
+que o efeito da adubação nelas
+seja tão menor do que 
+o nas demais observações?
+
+A utilidade do strip chart diminui
+muito quando existem muitos observações,
+uma vez que é difícil extrair informação quando
+há muitos pontos agrupados.
+A seguir, note como é difícil
+interpretar um strip chart produzido
+com 10.000 observações:
+
+```{r}
+normais = rnorm(10000)
+stripchart(normais)
+```
+
+Em casos como o acima, é
+necessário resumir 
+as observações para obter informação.
+
+### Bar plot e histograma
+
+O **bar plot** e o **histograma** 
+são gráficos que resumem uma variável mais
+do que o strip chart.
+Ao invés de apresentarem um ponto para cada observação,
+estes gráficos indicam a frequência com que 
+cada valor ocorre para uma variável.
+
+O bar plot é usado para variáveis
+qualitativas e quantitativas discretas.
+Ele indica a contagem com que
+cada valor ocorre para esta variável.
+Para criar um barplot no **R**, 
+utilizamos primeiramente o comando *table()*,
+que conta o número de ocorrências para cada observação.
+A seguir, a saída do comando table é
+usada no comando *barplot()*, que exibe o gráfico.
+Esta sequência é ilustrada para as espécies
+do banco de dados iris, a seguir:
+
+```{r}
+contagens = table(iris$Species)
+contagens
+barplot(contagens, xlab = "espécie", ylab = "contagem")
+```
+
+Por sua vez, o histograma é
+usado para variáveis quantitativas contínuas.
+Nestas variáveis, não esperamos encontrar
+duas observações que assumem o mesmo valor.
+Assim, o bar plot é pouco informativo.
+Uma alternativa é dividir os possíveis valores
+em faixas e contar a quantidade de observações
+em cada uma destas faixas.
+O gráfico que indica estas faixas 
+se chama histograma.
+Este gráfico pode ser obtido no **R**
+pelo comando *hist()*,
+conforme ilustrado a seguir:
+
+```{r}
+hist(normais, xlab="valores", ylab="contagem")
+```
+
+Lembre que as 10.000 observações acima
+foram usadas para ilustrar as
+limitações do strip chart.
+Ao contrário do strip chart, 
+o histograma evidencia que
+as observações estão concentradas
+em torno de 0.
+
+Às vezes o formato de ``degraus''
+presente no histograma pode ser indesejável.
+Neste caso, podemos exibir um gráfico de densidade,
+que cria uma curva continua que suaviza 
+os degraus do histograma.
+Uma das vantegens desta curva é 
+eliminar do histograma os vãos que
+são gerados por  faixas sem observações.
+A curva de densidade para 10.000 observações
+é apresentada em vermelha e sobreposta 
+ao histograma para estas observações
+na figura a seguir:
+
+```{r, message = FALSE, warning = FALSE}
+dados = data.frame(var1 = normais)
+ggplot(aes(x = var1), 
+       data = dados) + 
+geom_histogram(aes(y=..density..)) +
+geom_density(color="red") +
+xlab("valores") + ylab("densidade")
+```
+
+Às vezes, o histograma também não
+resume suficientemente as observações.
+Por exemplo, a figura abaixo apresenta
+histogramas de efeito para 
+adubos com e sem nitrato.
+Como existe muita justaposição entre
+os histogramas é difícil
+comparar o efeito de cada adubo.
+
+```{r, message = FALSE, warning = FALSE}
+ggplot(aes(x =  efeito, color = nitrato),
+       data = adubo) +
+geom_histogram()
+```
+
+Para resolver este problema,
+veremos a seguir um gráfico que
+resume as observações ainda mais
+que o histograma.
+
+### Box plot
+
+Um **box plot** [@Tukey1977] é 
+um gráfico para visualizar 
+uma única variável que
+consiste em apresentar visualmente
+5 medidas resumo.
+Antes de descrever estas medidas,
+é útil visualizar um boxplot.
+A seguir, obtemos no **R** um
+box plot para o comprimento das
+sépalas no banco de dados *iris*:
+
+```{r}
+boxplot(iris$Sepal.Length, ylab = "Comprimento da sépala")
+```
+
+O box plot contém 5 traços principais.
+O traço em negrito dentro do retângulo indicam
+a mediana (Q2) das observações.
+Os traços nos limites do retângulo indicam
+o primeiro (Q1) e o terceiro (Q3) quartis.
+Assim, observamos que cerca de 50\%
+das observações estão dentro do retângulo e
+que um valor típico para as observações é
+representado pelo traço em negrito.
+A seguir, lembre que o intervalo interquartílico
+(IQR) é definido como $Q3-Q1$.
+Definimos o limite superior (LS) e inferior (LI) como,
+respectivamente, $LS=Q3+1.5*IQR$ e $LI=Q1-1.5*IQR$.
+Os limites das linhas superior e inferior no boxplot
+são, respectivamente, a maior observação menor que LS e
+a menor observação maior que LI.
+Esta é uma faixa de valores tal que seria improvável
+obter uma observação fora dela.
+Observações fora destes limites são representadas
+no boxplot por asteriscos e são comumente chamadas de
+"outliers".
+
+Muitas vezes, é útil separar as observações em grupos e 
+construir boxplots para cada um destes.
+O exemplo a seguir, constrói boxplots para
+o efeito do adubo quando separamos as observações
+em 2 grupos: sem ou com nitrato.
+
+```{r}
+ggplot(aes(y = efeito, 
+           x = nitrato, 
+           color = nitrato), 
+       data = adubo) + 
+geom_boxplot()
+```
+
+Note que, ainda que a mediana no grupo com
+nitrato seja ligeiramente superior à mediana
+do grupo sem nitrato, a diferença entre 
+estes valores é insignificante em relação
+à variabilidade dos dados.
+Esta conclusão é obtida visualmente vendo que
+os retângulos vermelho e azul estão praticamente sobrepostos.
+Este é um cenário em que esperamos que
+não exista diferença nos efeitos dos
+dois tipos de adubo.
+
+Por outro lado, podemos separar as
+observações nos grupos: sem e com fosfato.
+Neste caso, obtemos as figuras:
+
+```{r}
+ggplot(aes(y = efeito, 
+           x = fosfato,
+           color = fosfato), 
+       data = adubo) + geom_boxplot()
+```
+
+Neste caso, observe que a diferença entre
+as medianas de cada grupo é grande em
+relação à variabilidade dos dados.
+Por exemplo, verificamos que 
+os boxplots não tem sobreposição.
+Neste caso, é razoável esperar que
+os adubos com fosfato tenham um efeito maior
+do que os adubos sem fosfato.
+
+## Visualizando duas variáveis
+
+### Scatter plot
+
+Por vezes, estamos interessados em
+visualizar a relação entre duas variáveis contínuas.
+Neste caso, podemos designar um eixo para cada variável
+e desenhar um ponto para cada observação.
+Este tipo de gráfico é chamado de **scatter plot**.
+
+No **R** é possível obter o scatter plot
+usando o comando *plot()*.
+A seguir, ilustramos este comando no
+banco de dados *iris* usando como variáveis
+o comprimento e largura das pétalas.
+
+```{r}
+plot(iris$Petal.Length, iris$Petal.Width,
+     xlab="Comprimento da petala",
+     ylab="Largura da petala")
+```
+
+Note que, em média,
+quanto maior o comprimento da pétala,
+maior será a sua largura.
+Mais do que isso, parece haver
+uma relação linear entre estas quantidades.
+É possível ajustar uma reta que aproxima
+esta relação linear entre as observações
+usando o seguinte comando no **R**:
+
+```{r}
+ggplot(aes(x = Petal.Length , y = Petal.Width),
+       data = iris) +
+geom_point(color='blue') +
+geom_smooth(method='lm', color = "red") +
+xlab("Comprimento da petala") +
+ylab("Largura da petala")
+```
+
+# Exercícios
+
+1. Construa um boxplot para os dados: 
+2.3, 2000, 0.1, 1.5, 0.3, 0.7, 0.2, 1.7 e 1.2.
+
+2. Parece haver uma relação linear entre o
+comprimento e largura das sépalas
+no banco de dados *iris*? 
+
+3. No banco de dados *iris*, parece
+haver diferença entre o comprimento das sépalas
+entre as 3 espécies observadas?
+
+4. Uma pesquisadora mediu as alturas de $9$ indivíduos,
+apresentadas a seguir:
+
+```{r echo = FALSE, message = FALSE, warning = FALSE}
+alturas = c(149, 163, 168, 169, 172, 173, 175, 180, 181)
+print(alturas)
+```
+
+ a. Calcule a média e a variância das alturas.
+ 
+ b. Verifique se há algum *outlier* neste
+ banco de dados e descreva o significado
+ deste termo.
+
+5. Um pesquisador está interessado em estudar como 
+varia o percentual de aproveitamento do petróleo em 
+função da temperatura de alimentação do destilador.
+Foram consideradas duas diferentes temperaturas 
+(150 ou 300 graus Celsius) e uma amostra de tamanho $9$ 
+para cada uma destas.
+
+\begin{table}[h]
+ \centering
+ \begin{tabular}{|c|ccccccccc|}
+  \hline
+  Temperatura	& Dados & & & & & & & & \\
+	\hline
+	150 &	8.7 & 20.1 & 7.4 & 6.3 & 10.2 & 6.1 & 7.3 & 6.7 & 7.1 \\
+  300 &	90.1 & 87.7 & 86.5 & 85.4 & 89.9 & 90.3 & 88.4 & 85.2 & 90.4 \\
+  \hline
+ \end{tabular}
+\end{table}
+
+ a. Indique uma medida de centralidade e 
+ uma medida de dispersão para cada
+ uma das temperaturas testadas e interprete-as.
+	
+ b. Esboce um boxplot para
+ o aproveitamento de petróleo para 
+ cada temperatura testada.
+ Interprete os boxplots e compare
+ a diferença entre os aproveitamentos
+ para cada temperatura.
+
+6. O boxplot indica a mediana e
+o intervalo interquartílico de uma variável.
+Quais são possíveis vantagens destas 
+medidas de centralidade e variabilidade em
+relação à média e ao desvio padrão?
+
+# Referências 

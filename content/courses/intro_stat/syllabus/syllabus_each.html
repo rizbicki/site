@@ -1,0 +1,510 @@
+---
+date: "2022-06-06"
+title: "Estatística aplicada às ciências humanas"
+highlight: true
+output: html_document
+type: book
+---
+
+<script src="/rmarkdown-libs/kePrint/kePrint.js"></script>
+<link href="/rmarkdown-libs/lightable/lightable.css" rel="stylesheet" />
+
+
+<div id="contato" class="section level1">
+<h1>Contato</h1>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+variaveis
+</th>
+<th style="text-align:left;">
+Instrutor
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+nome
+</td>
+<td style="text-align:left;">
+Rafael Bassi Stern
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+email
+</td>
+<td style="text-align:left;">
+<a href="mailto:rbstern@gmail.com" class="email">rbstern@gmail.com</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+tira-dúvidas
+</td>
+<td style="text-align:left;">
+a definir
+</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>Aulas : 3a, 10h-12h; e 4a, 10h-12h</p></li>
+<li><p>Instruções para o envio de e-mails:
+Por favor adicione ``[EACH]’’ ao
+tópico de e-mails relacionados a este curso.
+O envio de e-mail deve ser tratado como uma comunicação profissional.
+Evite o uso de abreviações, acrônimos e gírias nos e-mails.
+<strong>Não garanto que lerei e-mails fora destas especificações!</strong></p></li>
+</ul>
+</div>
+<div id="informações-do-curso" class="section level1">
+<h1>Informações do Curso</h1>
+<div id="objetivos-do-curso" class="section level3">
+<h3>Objetivos do curso</h3>
+<ul>
+<li>Construir e visualizar bancos de dados.</li>
+<li>Usar aleatorização e controle em experimentos.</li>
+<li>Traduzir problemas em modelos aleatórios.</li>
+<li>Testar hipóteses em modelos aleatórios.</li>
+<li>Usar os principais modelos de planejamento de experimentos.</li>
+</ul>
+<p><br/></p>
+</div>
+<div id="material-do-curso" class="section level3">
+<h3>Material do curso</h3>
+<ul>
+<li><p>Notas de aula e listas de exercícios
+estarão disponíveis online.</p></li>
+<li><p>Os seguintes livros são opcionais e
+fornecem explicações detalhadas,
+tópicos extras, aplicações interessantes e
+exercícios adicionais:</p>
+<ul>
+<li><p>Diggle, P. J., &amp; Chetwynd, A. G. (2011). Statistics and scientific method: an introduction for students and researchers. Oxford University Press. Chicago</p></li>
+<li><p>Motulsky, H. (2014). Intuitive biostatistics: a nonmathematical guide to statistical thinking. Oxford University Press, USA. Chicago</p></li>
+<li><p>Friedman, L. M., Furberg, C., DeMets, D. L., Reboussin, D., &amp; Granger, C. B. (2015). Fundamentals of clinical trials. Springer-Verlag.</p></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="atividades-do-curso" class="section level1">
+<h1>Atividades do Curso</h1>
+<p>Neste curso você fará
+listas de exercícios, resolverá exercícios em classe,
+participará das aulas e realizará três provas.
+O objetivo destas atividades é que você pratique
+as idéias e técnicas abordadas em aula.
+Desta forma, é essencial que você sempre indique claramente
+a sua linha de raciocínio.
+Utilizar o método adequado sempre será mais importante
+do que chegar à resposta final correta.
+Assim, uma resposta final correta
+sem a sua respectiva linha de raciocínio
+<strong>terá nota final nula</strong>.</p>
+<div id="listas-de-exercícios" class="section level3">
+<h3>Listas de exercícios</h3>
+<ul>
+<li><p><strong>Frequência</strong>: quinzenal.</p></li>
+<li><p><strong>Geral</strong>: Os alunos são incentivados a
+discutir comigo e entre si as listas de exercícios.</p></li>
+<li><p>Ainda que as listas de exercícios não sejam corrigidas,
+apresentarão questões essenciais para o bom desempenho no curso.</p></li>
+</ul>
+</div>
+<div id="participação" class="section level3">
+<h3>Participação</h3>
+<ul>
+<li>Para obter maestria dos conceitos vistos em aula,
+você deverá resolver exercícios.
+Durante a aula, você será regularmente instruído
+a resolver exercícios simples, individualmente ou em grupo.
+Estes exercícios são projetados para que você possa
+rapidamente idenficar dúvidas sobre os conceitos aprendidos naquele dia.
+Participação em classe será determinada de acordo com
+a performance nestes exercícios.</li>
+</ul>
+</div>
+<div id="provas" class="section level3">
+<h3>Provas</h3>
+<p>As provas serão realizadas na sala de aula.
+A não ser que seja dito o contrário,
+vocês não poderão consultar qualquer material durante as provas.
+Exames não poderão ser realizados em outro dia que não a data oficial.
+Exceções devem ser discutidas ao menos uma semana antes comigo.</p>
+<ul>
+<li><p><strong>Prova 1</strong>: Ocorrerá no dia 06/07.
+Incluirá todos os tópicos vistos em aula.</p></li>
+<li><p><strong>Prova 2</strong>: Ocorrerá no dia 10/08.
+Incluirá todos os tópicos vistos em aula,
+com ênfase no material após a Prova 1.</p></li>
+<li><p><strong>Prova 3</strong>: Ocorrerá no dia 27/09.
+Incluirá todos os tópicos aprendidos em aula,
+com ênfase no material após a Prova 2.</p></li>
+</ul>
+<p><strong>Política de re-avaliação</strong>: Você poderá requerer uma nova correção
+de uma prova até 5 dias após a devolução desta.
+Se você estiver ausente no dia de entrega da lista de exercícios,
+o prazo não será extendido.
+Para requerer avaliação informe as questões que
+você acredita que foram corrigidas erroneamente e
+a motivação para o seu raciocínio.
+As questões serão corrigidas novamente,
+levando em consideração os seus comentários,
+podendo sua nota aumentar ou diminuir.</p>
+<p><strong>Nota final</strong>: Será calculada segundo os seguintes pesos:</p>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Avaliacao
+</th>
+<th style="text-align:left;">
+Peso
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Participação (geral)
+</td>
+<td style="text-align:left;">
+0.05
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Prova 1
+</td>
+<td style="text-align:left;">
+0.3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Prova 2
+</td>
+<td style="text-align:left;">
+0.3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Prova 3
+</td>
+<td style="text-align:left;">
+0.3
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="atitude-esperada" class="section level1">
+<h1>Atitude esperada</h1>
+<p>As seguintes atitudes são esperadas de todos os alunos durantes as aulas.
+Falhas em seguí-las poderão acarretar perda de nota de participação.</p>
+<ul>
+<li><p><strong>Perguntas em classe</strong>:
+Se você tiver perguntas relativas ao material atual ou pretérito,
+elas serão sempre bem-vindas e encorajadas.
+Perguntas relativas ao material atual receberão prioridade.
+Faça perguntas sobre material futuro ou
+tópicos adicionais após a aula ou durante o período de atendimento.</p></li>
+<li><p><strong>Computadores</strong>: Espera-se que vocês participem das aulas.
+Vocês podem utilizar notebooks ou tablets para
+tomar notas ou durante laboratórios de computação.
+Do contrário, o uso destes aparelhos é proibido,
+exceto se você tiver necessidades especiais que
+exijam o suporte destes equipamentos.
+Contate-me se você acredita que este é o seu caso.</p></li>
+<li><p><strong>Celulares e outros aparelhos eletrônicos</strong>:
+Durante as aulas, você deverá silenciar ou desligar
+quaisquer aparelhos eletrônicos que façam barulho.
+Espera-se que vocês participem das aulas e,
+em particular, o uso de celulares é expressamente proibido.
+Isto inclui, por exemplo, o envio de mensagens ou checar o e-mail.</p></li>
+<li><p><strong>Integridade Acadêmica</strong>:
+Você deverá agir com ética em todas as atividades da classe.
+Em particular, é <strong>expressamente proibido</strong> copiar listas de exercícios ou
+trapacear durante provas.
+Caso você realize estas atividades, poderá sofrer consequências severas,
+como reprovação automática e encaminhamento do seu caso a uma Comissão Disciplinar.</p></li>
+</ul>
+</div>
+<div id="calendário" class="section level1">
+<h1>Calendário</h1>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+data
+</th>
+<th style="text-align:left;">
+aula
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+07/06
+</td>
+<td style="text-align:left;">
+Descrição do curso
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+08/06
+</td>
+<td style="text-align:left;">
+Introdução ao R
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+14/06
+</td>
+<td style="text-align:left;">
+Construção de bancos de dados
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+15/06
+</td>
+<td style="text-align:left;">
+Medidas resumo
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+21/06
+</td>
+<td style="text-align:left;">
+Visualização de dados
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+22/06
+</td>
+<td style="text-align:left;">
+Visualização de dados
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+28/06
+</td>
+<td style="text-align:left;">
+Probabilidade e variáveis aleatórias
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+29/06
+</td>
+<td style="text-align:left;">
+Distribuições normal e chi-quadrado
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+05/07
+</td>
+<td style="text-align:left;">
+Revisão
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+06/07
+</td>
+<td style="text-align:left;">
+<strong> Prova 1 </strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+12/07
+</td>
+<td style="text-align:left;">
+Intervalos de confiança
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+13/07
+</td>
+<td style="text-align:left;">
+Conceitos de testes de hipótese
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+19/07
+</td>
+<td style="text-align:left;">
+Experimentos com uma população
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20/07
+</td>
+<td style="text-align:left;">
+Experimentos com uma população
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+26/07
+</td>
+<td style="text-align:left;">
+Experimentos com duas populações
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+27/07
+</td>
+<td style="text-align:left;">
+Análise de regressão
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+02/08
+</td>
+<td style="text-align:left;">
+Análise de regressão
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+03/08
+</td>
+<td style="text-align:left;">
+Análise de regressão
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+09/08
+</td>
+<td style="text-align:left;">
+Revisão
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+10/08
+</td>
+<td style="text-align:left;">
+<strong> Prova 2 </strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+16/08
+</td>
+<td style="text-align:left;">
+Conceitos de planejamento de experimentos
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+17/08
+</td>
+<td style="text-align:left;">
+Análise de variância com um fator
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+23/08
+</td>
+<td style="text-align:left;">
+Blocos no planejamento de experimentos
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+24/08
+</td>
+<td style="text-align:left;">
+Análise de variância com vários fatores
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+30/08
+</td>
+<td style="text-align:left;">
+Análise de variância com vários fatores
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+31/08
+</td>
+<td style="text-align:left;">
+Maldição da dimensionalidade
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+06/09
+</td>
+<td style="text-align:left;">
+Modelos de efeito aleatório
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+13/09
+</td>
+<td style="text-align:left;">
+Modelos de efeito aleatório
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+14/09
+</td>
+<td style="text-align:left;">
+A definir
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20/09
+</td>
+<td style="text-align:left;">
+A definir
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+21/09
+</td>
+<td style="text-align:left;">
+Revisão
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+27/09
+</td>
+<td style="text-align:left;">
+<strong> Prova 3 </strong>
+</td>
+</tr>
+</tbody>
+</table>
+</div>

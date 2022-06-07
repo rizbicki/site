@@ -1,0 +1,26 @@
+---
+# An instance of the Featured widget.
+# Documentation: https://wowchemy.com/docs/page-builder/
+widget: blank
+
+# This file represents a page section.
+headless: true
+
+# Order that this section appears on the page.
+weight: 80
+
+title: Students
+subtitle: ''
+
+---
+
+```{r echo = FALSE, message = FALSE}
+`%>%` = magrittr::`%>%`
+student_table = readr::read_csv("tables/students.csv") %>% 
+  dplyr::arrange(desc(year), level)
+knitr::kable(student_table,
+             col.names = c("", "", "", ""),
+             row.names = FALSE,
+             options = list(pageLength = 5, dom = 'ftip')) %>% 
+kableExtra::kable_styling()
+```

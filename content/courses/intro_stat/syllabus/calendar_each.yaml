@@ -1,0 +1,127 @@
+-
+ date: "07/06"
+ lecture: "Descrição do curso"
+ 
+-
+ date: "08/06"
+ lecture: "Introdução ao R"
+ 
+-
+ date: "14/06"
+ lecture: "Construção de bancos de dados"
+
+-
+ date: "15/06"
+ lecture: "Medidas resumo"
+ 
+-
+ date: "21/06"
+ lecture: "Visualização de dados"
+ 
+-
+ date: "22/06"
+ lecture: "Visualização de dados"
+
+-
+ date: "28/06"
+ lecture: "Probabilidade e variáveis aleatórias"
+
+-
+ date: "29/06"
+ lecture: "Distribuições normal e chi-quadrado"
+ 
+-
+ date: "05/07"
+ lecture: "Revisão"
+
+-
+ date: "06/07"
+ lecture: "<strong> Prova 1 </strong>"
+
+-
+ date: "12/07"
+ lecture: "Intervalos de confiança"
+
+-
+ date: "13/07"
+ lecture: "Conceitos de testes de hipótese" 
+ 
+-
+ date: "19/07"
+ lecture: "Experimentos com uma população"
+ 
+-
+ date: "20/07"
+ lecture: "Experimentos com uma população"
+ 
+-
+ date: "26/07"
+ lecture: "Experimentos com duas populações"
+
+-
+ date: "27/07"
+ lecture: "Análise de regressão"
+ 
+-
+ date: "02/08"
+ lecture: "Análise de regressão"
+ 
+-
+ date: "03/08"
+ lecture: "Análise de regressão"
+
+-
+ date: "09/08"
+ lecture: "Revisão"
+ 
+-
+ date: "10/08"
+ lecture: "<strong> Prova 2 </strong>"
+
+- 
+ date: "16/08"
+ lecture: "Conceitos de planejamento de experimentos"
+
+- 
+ date: "17/08"
+ lecture: "Análise de variância com um fator"
+ 
+- 
+ date: "23/08"
+ lecture: "Blocos no planejamento de experimentos"
+ 
+- 
+ date: "24/08"
+ lecture: "Análise de variância com vários fatores"
+ 
+- 
+ date: "30/08"
+ lecture: "Análise de variância com vários fatores"
+
+- 
+ date: "31/08"
+ lecture: "Maldição da dimensionalidade"
+ 
+- 
+ date: "06/09"
+ lecture: "Modelos de efeito aleatório"
+ 
+- 
+ date: "13/09"
+ lecture: "Modelos de efeito aleatório"
+
+-
+ date: "14/09"
+ lecture: "A definir"
+ 
+-
+ date: "20/09"
+ lecture: "A definir"
+
+- 
+ date: "21/09"
+ lecture: "Revisão"
+ 
+- 
+ date: "27/09"
+ lecture: "<strong> Prova 3 </strong>"

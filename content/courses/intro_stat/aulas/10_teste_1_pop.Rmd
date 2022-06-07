@@ -1,0 +1,199 @@
+---
+title: "Testes para uma população"
+author: "Rafael B. Stern"
+highlight: true
+date: ""
+output: html_document
+type: book
+weight: 100
+bibliography: refs.bib
+---
+
+# Testes para uma população ($\sigma^2$ desconhecido)
+
+Considere uma amostra independente,
+$X_{1}, \ldots, X_{n}$ tal que
+$X_{i} \sim N(\mu, \sigma^2)$,
+onde $\mu$ e $\sigma^2$ são desconhecidos.
+Note que, ao contrário das aulas anteriores,
+consideramos que $\sigma^2$ é desconhecido.
+Neste contexto, comumente estamos interessados
+em testar as hipóteses:
+$$
+\begin{align*}
+ H_0:
+ \begin{cases}
+  (a) \text{ } \mu \leq \mu_0 & \\
+  (b) \text{ } \mu \geq \mu_0 & \\
+  (c) \text{ } \mu = \mu_0 &
+ \end{cases}
+\end{align*}
+$$
+
+## Regiões críticas
+
+Similarmente às aulas passadas,
+desejamos rejeitar $H_0$ para
+os casos (a), (b) e (c) quando, respectivamente,
+$$
+\begin{cases}
+(a) \text{ } \bar{X}-\mu_0 > k_{a} & \\
+(b) \text{ } \bar{X}-\mu_0 < k_{b} & \\
+(c) \text{ } |\bar{X}-\mu_{0}| > k_{c}
+\end{cases}
+$$
+
+Nestes testes,
+determinamos os valores de
+$k_{a}$, $k_{b}$ e $k_{c}$ utilizando
+a condição de que a probabilidade
+de erro tipo $I$ é $\alpha$.
+Para usar esta condição,
+em aulas anteriores padronizamos
+a quantidade $\bar{X}-\mu_0$ 
+dividindo-a por $\frac{\sigma}{n}$.
+Contudo, agora consideramos que 
+$\sigma$ é desconhecido e, portanto,
+não é possível realizar esta padronização.
+Ao contrário, utilizamos a padronização
+alternativa de que, quando $\mu = \mu_0$,
+$\frac{\sqrt{n-1}(\bar{X}-\mu_0)}{S} \sim T_{n-1}$.
+Assim, tomando $\mu = \mu_0$, calculamos a
+probabilidade de erro tipo I da seguinte forma
+$$
+ \begin{align*}
+ P(\bar{X}-\mu_0 > k_a)
+ &= P\left(\frac{\sqrt{n-1}(\bar{X}-\mu_0)}{S} > \frac{\sqrt{n-1}k_a}{S}\right) \\
+ &= P\left(T_{n-1} > \frac{\sqrt{n-1}k_a}{S} \right) \\
+ &= 1- pt\left(\frac{\sqrt{n-1}k_a}{S}, df = n-1\right)
+ \end{align*}
+$$
+Semelhamentemente, obtemos
+$$
+\begin{align*}
+ P(\bar{X}-\mu_0 < k_b)
+ &= pt\left(\frac{\sqrt{n-1}k_b}{S}, df = n-1\right) \\
+ P(|\bar{X}-\mu_0| > k_c)
+ &= 2pt\left(-\frac{\sqrt{n-1}k_c}{S}, df = n-1\right)
+\end{align*}
+$$
+Os valores de $k_a$, $k_b$ e $k_C$
+são determinados de forma que,
+sob a hipótese nula, a
+probabilidade de rejeição seja $\alpha$.
+Assim, por exemplo, para $H_0: \mu \leq \mu_0$, 
+obtemos a equação
+$$
+\begin{align*}
+ 1- pt\left(\frac{\sqrt{n-1}k_a}{S}, df = n-1\right) &= \alpha \\
+ pt\left(\frac{\sqrt{n-1}k_a}{S}, df = n-1\right) &= 1-\alpha \\
+ \frac{\sqrt{n-1}k_a}{S} &= qt(1-\alpha, df=n-1) \\
+ k_a &= \frac{qt(1-\alpha, df=n-1) S}{\sqrt{n-1}}
+\end{align*}
+$$
+Similarmente, obtemos
+$$
+\begin{align*}
+ k_b &= \frac{qt(\alpha, df=n-1) S}{\sqrt{n-1}} \\
+ k_c &= \frac{qt(1-0.5\alpha, df=n-1) S}{\sqrt{n-1}}
+\end{align*}
+$$
+Portanto, as hipóteses em (a), (b) e (c)
+são rejeitadas, respectivamente, quando
+$$
+\begin{cases}
+ \text{(a) } \bar{X}-\mu_0 > \frac{qt(1-\alpha, df=n-1) S}{\sqrt{n-1}} \\
+ \text{(b) } \bar{X}-\mu_0 < \frac{qt(\alpha, df=n-1) S}{\sqrt{n-1}} \\
+ \text{(c) } |\bar{X}-\mu_0| > \frac{qt(1-0.5\alpha, df=n-1) S}{\sqrt{n-1}}
+\end{cases}
+$$
+
+## Exemplo
+
+Considere que um pesquisador inexperiente com o paquímetro
+mede um objeto $9$ vezes e observa os valores em milímetros:
+```{r}
+dados = c(1.1, 1.3, 1.3, 1.4, 1.6, 1.8, 1.8, 1.9, 2.2)
+```
+Considere que o pesquisador deseja testar 
+a um nível de $\alpha = 0.01$ se
+o cumprimento do objeto é 1.5 milímetros, isto é,
+$H_0: \mu_0 = 1.5$. Para tal, ele usará 
+a região critica identificada em (c),
+que pode ser calculada no R da seguinte forma
+```{r}
+ mu_0 = 1.5
+ alpha = 0.01
+ n = length(dados)
+ S = sd(dados) * sqrt(n-1)/sqrt(n)
+ media = mean(dados)
+ lado_esquerdo = abs(media - mu_0)
+ lado_esquerdo
+ lado_direito = qt(1-0.5*alpha, df=n-1)*S/sqrt(n-1)
+ lado_direito
+ lado_esquerdo > lado_direito
+```
+
+Note que o cálculo em *lado_esquerdo* no código
+corresponde a $|\bar{X}-\mu_0|$ e o *lado_direito*
+no código corresponde a 
+$\frac{qt(1-0.5\alpha, df=n-1) S}{\sqrt{n-1}}$.
+Como obtemos que é falso que o lado esquerdo é
+maior que o lado direito, não rejeitamos
+a hipótese nula.
+
+Este teste também já está implementado no
+**R** e podemos obter o resultado que buscamos
+digitando diretamente
+
+```{r}
+t.test(dados, 
+       alternative = "two.sided", 
+       mu = 1.5, 
+       conf.level = 1-alpha)
+```
+Como o p-valor é $0.42$ e
+$\alpha = 0.05$ é menor que o p-valor,
+não rejeitamos a hipótese de que
+$H_0: \mu = 1.5$.
+
+# Exercícios
+
+1. Para que um rio tenha água salubre,
+a concentração de uma determinada substância deve
+ser inferior a 10 mg/L. Uma amostra de água foi
+tomada em $9$ pontos distintos do rio,
+observando-se concentrações da substância em
+mg/L de: 2, 2, 5, 6, 6, 7, 8, 8, 12.
+Deseja-se testar se a água do rio e salubre.
+
+  a. Descreve os erros que podem ser cometidos neste teste. Qual o mais grave?
+  b. Qual a hipótese nula a ser testada?
+  c. Teste a hipótese nula a um nível de significância de $\alpha = 0.05$.
+  d. Calcule o p-valor deste teste.
+
+```{r echo = FALSE, message = FALSE, warning = FALSE}
+alpha = c(0.025, 0.05, 0.95, 0.975)
+valores = data.frame(alpha = alpha, qt = round(qt(alpha, df = 8),2))
+DT::datatable(valores, rownames = FALSE, options = list(dom = 't'))
+```
+
+2. Considere que $X_{1},\ldots,X_{n}$ são independentes e
+$X_{i} \sim N(\mu,\sigma_0^2)$, onde $\sigma_0^2$ é conhecido.
+Desejamos testar a hipótese $H_0: \mu \leq \mu_0$.
+Note que, a princípio, poderíamos aplicar
+tanto o teste com variância populacional conhecida,
+quanto o teste com variância populacional desconhecida.
+Qual é a vantagem de aplicar o teste com
+variância populacional conhecida?
+Você pode utilizar a seguinte amostra
+onde $\sigma_0^2 = 1$ e $\mu_0 = 0.5$
+para embasar a sua resposta considere que $S = 1$.
+Os seguintes valores podem ser úteis:
+```{r echo = FALSE}
+alpha = c(0.025, 0.05, 0.95, 0.975)
+valores = data.frame(alpha = alpha, qnorm = round(qnorm(alpha), 2))
+DT::datatable(valores, rownames = FALSE, options = list(dom = 't'))
+valores = data.frame(alpha = alpha, qt = round(qt(alpha, df = 8), 2))
+DT::datatable(valores, rownames = FALSE, options = list(dom = 't'))
+```

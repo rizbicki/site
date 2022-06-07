@@ -1,0 +1,98 @@
+---
+title: "Testes para duas populações"
+author: "Rafael B. Stern"
+highlight: true
+date: ""
+output: html_document
+type: book
+weight: 120
+bibliography: refs.bib
+---
+
+# Testes para duas populações
+
+É comum que testarmos relações entre duas populações.
+Por exemplo, considere que gado pode ser alimentado
+por dois tipos de ração: $A$ ou $B$. Neste caso,
+poderíamos testar, por exemplo, se o gado alimentado
+com a ração $B$ é, em média, mais pesado que aquele
+alimentado com a ração $A$.
+
+Para testarmos este tipo de hipótese,
+obtemos uma amostra de cada uma das populações.
+Formalmente, consideramos que 
+$X_{1,1},\ldots,X_{1,n}$ são independentes e 
+$X_{1,i} \sim N(\mu_1,\sigma^2_1)$ e
+$X_{2,1},\ldots,X_{2,m}$ são independentes e 
+$X_{2,i} \sim N(\mu_2, \sigma^2_2)$.
+Cada $X_{1,i}$ é uma observação
+da primeira observação e cada $X_{2,i}$ é
+uma observação da segunda população.
+Neste contexto, é comum testarmos
+$$
+\begin{align*}
+ H_0: &
+ \begin{cases}
+  \text{(a) } \mu_1 - \mu_2 \leq 0 & \\
+  \text{(b) } \mu_1 - \mu_2 \geq 0 & \\
+  \text{(c) } \mu_1 - \mu_2 = 0 &
+ \end{cases}
+\end{align*}
+$$
+O teste a ser realizado depende das 
+suposições sobre as populações.
+A seguir, estudamos algumas 
+suposições que são utilizadas com frequência
+
+## Populações independentes com mesma variância
+
+Considere que as observações da primeira população
+são independentes das observações da segunda população.
+Além disso, também suponha que ambas as populações tem
+a mesma variância, isto é, $\sigma_1^2 = \sigma_2^2 = \sigma^2$.
+Neste caso, é razoável rejeitarmos as hipóteses em (a), (b) e (c),
+quando, respectivamente,
+$$
+\begin{cases}
+ \text{(a) } \bar{X}_1 - \bar{X}_2 > k_a \\
+ \text{(b) } \bar{X}_1 - \bar{X}_2 < k_b \\
+ \text{(c) } |\bar{X}_1 - \bar{X}_2| > k_c
+\end{cases}
+$$
+Para controlar o erro tipo I em $\alpha$, note que
+$\bar{X}_1-\bar{X}_2 \sim N\left(\mu_1-\mu_2,\frac{\sigma^2}{n}+\frac{\sigma^2}{m}\right)$.
+Portanto, se definirmos 
+$$
+\begin{align*}
+\bar{X} &= \frac{X_{1,1}+\ldots,X_{1,n}+X_{2,1}+\ldots+X_{2,m}}{n+m} \\
+S^2 &= \frac{(X_{1,1}-\bar{X})^2+\ldots+(X_{1,n}-\bar{X})^2
++(X_{2,1}-\bar{X})^2+\ldots+(X_{2,n}-\bar{X})^2}{n+m}
+\end{align*}
+$$
+então obtemos que, sob $\mu_1 = \mu_2$,
+$$
+ \frac{\sqrt{nm(n+m-1)}(\bar{X}_1-\bar{X}_2)}{(n+m)S} \sim T_{n+m-1}
+$$
+Assim, o erro tipo I é controlado 
+em $\alpha$ se rejeitamos $H_0$
+nas situações (a), (b) e (c), 
+respectivamente quando
+$$
+\begin{cases}
+ \text{(a) } \bar{X}_1 - \bar{X}_2 > \frac{qt(1-\alpha, df=n+m-1)S(n+m)}{\sqrt{nm(n+m-1)}} \\
+ \text{(b) } \bar{X}_1 - \bar{X}_2 < \frac{qt(\alpha, df=n+m-1)S(n+m)}{\sqrt{nm(n+m-1)}} \\
+ \text{(c) } |\bar{X}_1 - \bar{X}_2| > \frac{qt(1-0.5\alpha, df=n+m-1)S(n+m)}{\sqrt{nm(n+m-1)}}
+\end{cases}
+$$
+
+## Populações independentes com variâncias diferentes
+
+Se $\sigma_1^2 \neq \sigma_2^2$, 
+então não é possível combinar as
+amostras de cada população para
+realizar uma única estimativa da variância.
+
+## Populações dependentes pareadas
+
+# Exercícios
+

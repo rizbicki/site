@@ -1,0 +1,101 @@
+---
+title: "Testes para duas populações"
+author: "Rafael B. Stern"
+highlight: true
+date: ""
+output: html_document
+type: book
+weight: 120
+bibliography: refs.bib
+---
+
+
+
+<div id="testes-para-duas-populações" class="section level1">
+<h1>Testes para duas populações</h1>
+<p>É comum que testarmos relações entre duas populações.
+Por exemplo, considere que gado pode ser alimentado
+por dois tipos de ração: <span class="math inline">\(A\)</span> ou <span class="math inline">\(B\)</span>. Neste caso,
+poderíamos testar, por exemplo, se o gado alimentado
+com a ração <span class="math inline">\(B\)</span> é, em média, mais pesado que aquele
+alimentado com a ração <span class="math inline">\(A\)</span>.</p>
+<p>Para testarmos este tipo de hipótese,
+obtemos uma amostra de cada uma das populações.
+Formalmente, consideramos que
+<span class="math inline">\(X_{1,1},\ldots,X_{1,n}\)</span> são independentes e
+<span class="math inline">\(X_{1,i} \sim N(\mu_1,\sigma^2_1)\)</span> e
+<span class="math inline">\(X_{2,1},\ldots,X_{2,m}\)</span> são independentes e
+<span class="math inline">\(X_{2,i} \sim N(\mu_2, \sigma^2_2)\)</span>.
+Cada <span class="math inline">\(X_{1,i}\)</span> é uma observação
+da primeira observação e cada <span class="math inline">\(X_{2,i}\)</span> é
+uma observação da segunda população.
+Neste contexto, é comum testarmos
+<span class="math display">\[
+\begin{align*}
+H_0: &amp;
+\begin{cases}
+  \text{(a) } \mu_1 - \mu_2 \leq 0 &amp; \\
+  \text{(b) } \mu_1 - \mu_2 \geq 0 &amp; \\
+  \text{(c) } \mu_1 - \mu_2 = 0 &amp;
+\end{cases}
+\end{align*}
+\]</span>
+O teste a ser realizado depende das
+suposições sobre as populações.
+A seguir, estudamos algumas
+suposições que são utilizadas com frequência</p>
+<div id="populações-independentes-com-mesma-variância" class="section level2">
+<h2>Populações independentes com mesma variância</h2>
+<p>Considere que as observações da primeira população
+são independentes das observações da segunda população.
+Além disso, também suponha que ambas as populações tem
+a mesma variância, isto é, <span class="math inline">\(\sigma_1^2 = \sigma_2^2 = \sigma^2\)</span>.
+Neste caso, é razoável rejeitarmos as hipóteses em (a), (b) e (c),
+quando, respectivamente,
+<span class="math display">\[
+\begin{cases}
+\text{(a) } \bar{X}_1 - \bar{X}_2 &gt; k_a \\
+\text{(b) } \bar{X}_1 - \bar{X}_2 &lt; k_b \\
+\text{(c) } |\bar{X}_1 - \bar{X}_2| &gt; k_c
+\end{cases}
+\]</span>
+Para controlar o erro tipo I em <span class="math inline">\(\alpha\)</span>, note que
+<span class="math inline">\(\bar{X}_1-\bar{X}_2 \sim N\left(\mu_1-\mu_2,\frac{\sigma^2}{n}+\frac{\sigma^2}{m}\right)\)</span>.
+Portanto, se definirmos
+<span class="math display">\[
+\begin{align*}
+\bar{X} &amp;= \frac{X_{1,1}+\ldots,X_{1,n}+X_{2,1}+\ldots+X_{2,m}}{n+m} \\
+S^2 &amp;= \frac{(X_{1,1}-\bar{X})^2+\ldots+(X_{1,n}-\bar{X})^2
++(X_{2,1}-\bar{X})^2+\ldots+(X_{2,n}-\bar{X})^2}{n+m}
+\end{align*}
+\]</span>
+então obtemos que, sob <span class="math inline">\(\mu_1 = \mu_2\)</span>,
+<span class="math display">\[
+\frac{\sqrt{nm(n+m-1)}(\bar{X}_1-\bar{X}_2)}{(n+m)S} \sim T_{n+m-1}
+\]</span>
+Assim, o erro tipo I é controlado
+em <span class="math inline">\(\alpha\)</span> se rejeitamos <span class="math inline">\(H_0\)</span>
+nas situações (a), (b) e (c),
+respectivamente quando
+<span class="math display">\[
+\begin{cases}
+\text{(a) } \bar{X}_1 - \bar{X}_2 &gt; \frac{qt(1-\alpha, df=n+m-1)S(n+m)}{\sqrt{nm(n+m-1)}} \\
+\text{(b) } \bar{X}_1 - \bar{X}_2 &lt; \frac{qt(\alpha, df=n+m-1)S(n+m)}{\sqrt{nm(n+m-1)}} \\
+\text{(c) } |\bar{X}_1 - \bar{X}_2| &gt; \frac{qt(1-0.5\alpha, df=n+m-1)S(n+m)}{\sqrt{nm(n+m-1)}}
+\end{cases}
+\]</span></p>
+</div>
+<div id="populações-independentes-com-variâncias-diferentes" class="section level2">
+<h2>Populações independentes com variâncias diferentes</h2>
+<p>Se <span class="math inline">\(\sigma_1^2 \neq \sigma_2^2\)</span>,
+então não é possível combinar as
+amostras de cada população para
+realizar uma única estimativa da variância.</p>
+</div>
+<div id="populações-dependentes-pareadas" class="section level2">
+<h2>Populações dependentes pareadas</h2>
+</div>
+</div>
+<div id="exercícios" class="section level1">
+<h1>Exercícios</h1>
+</div>

@@ -1,0 +1,237 @@
+---
+authors:
+- admin
+categories:
+- COVID-19
+- Tropa da Garoa
+date: "2020-05-13T00:00:00Z"
+draft: false
+featured: false
+image:
+  caption: ''
+  focal_point: ""
+  placement: 2
+  preview_only: false
+lastmod: "2020-05-13T00:00:00Z"
+projects: []
+summary: "Descrição das atividades da Tropa da Garoa na produção e doação de equipamentos de proteção individual durante a pandemia COVID-19."
+tags:
+- COVID-19
+- Tropa da Garoa
+title: "Doação de equipamento de proteção para hospitais"
+---
+
+# Tropa da Garoa
+
+Durante a pandemia do COVID-19,
+[faltam equipamentos de proteção individual](http://radardasaude.com.br/) (EPI's)
+em diversos hospitais e postos de saúde.
+Os EPI's são essenciais para que 
+profissionais da saúde continuem atuando,
+não sejam contaminados e não propaguem a doença.
+Para ajudar, [vários grupos](https://maskmakers.com.br/sp/) 
+estão confeccionando e
+doando EPI's.
+
+Um destes grupos é a 
+[Tropa da Garoa](https://garoa.net.br/wiki/Tropa_da_Garoa), 
+que confecciona escudos faciais.
+Para fazer estes escudos,
+Luis Eneas usa impressoras 3d para criar
+[tiaras](http://e-nablebrasil.org/wp/impressaomontagem/),
+que são encaixadas a uma 
+folha de acetato perfurada e a um elástico.
+O espaçamento da tiara impede que
+a respiração embace o acetato.
+Os escudos podem ser reutilizados várias vezes,
+desde que higienizados entre os usos.
+
+<p align="center"> 
+![](./figures/garoa_shield.jpeg){width=30% height=30%}
+</p>
+<center> <b> Escudo facial </b> </center>
+
+Até o momento, a Tropa da Garoa já doou
+mais de 1,000 escudos faciais.
+O material destes escudos custa
+cerca de R\$4,00 por unidade, 
+o que é consideravelmente mais barato
+que [o preço comercial adotado](https://www.google.com/search?q=compra+escudo+facial&sxsrf=ALeKk03t40oyajuFZEMuEJkP23pmGqE5vg:1589388305927&source=lnms&tbm=shop&sa=X&ved=2ahUKEwjcwYnrpLHpAhWiB9QKHbyYCLcQ_AUoAnoECAsQBA&biw=1299&bih=588#spd=13666652357308234092).
+Para continuar a confeccionar estas máscaras,
+a Tropa da Garoa agradece imensamente 
+quaisquer doações diretamente no PicPay 
+\@rafael.stern ou por meio do contato 
+a Yumi Ambriola no Facebook
+ou \@yumizinha no Telegram.
+
+## Hospital do Rim
+
+Em 03/06/2020 doamos 50 escudos faciais
+ao [Hospital do Rim](http://www.hrim.com.br/).
+
+<p align="center"> 
+![](./figures/garoa_2020_06_03.jpg){width=50% height=50%}
+</p>
+
+## Pronto Socorro municipal de Suzano
+
+Em 02/06/2020 doamos 200 escudos faciais
+ao [Pronto Socorro municipal de Suzano](https://www.facebook.com/pages/Pronto-Socorro-Municipal-de-Suzano/185213691557898).
+
+<p align="center"> 
+![](./figures/garoa_2020_06_02.jpg){width=50% height=50%}
+</p>
+
+## UBS Jardim Novo Pantanal
+
+Em 01/06/2020 doamos 75 escudos faciais
+ao [UBS Jardim Novo Pantanal](http://www.ossantacatarina.org.br/index.php/ubsesf-jardim-novo-pantanal-pedreira/).
+
+<p align="center"> 
+![](./figures/garoa_2020_06_01.jpg){width=50% height=50%}
+</p>
+
+## Montagem de escudos faciais
+
+Em 30/05/2020 montamos
+275 escudos faciais.
+
+## Centro de Saúde Escola Geraldo de Paula Souza
+
+Em 20/05/2020, doamos 30 escudos faciais
+ao [Centro de Saúde Escola Geraldo de Paula Souza](http://www.fsp.usp.br/csegps/).
+
+## Santa Casa de Santo Amaro
+
+Em 19/05/2020, doamos 75 escudos faciais
+à [UBS Hélio Moreira Sales](https://www.facebook.com/gruposheliomoreirasalles) e 25 escudos faciais à UBS Santa Madalena.
+
+<p align="center"> 
+![](./figures/garoa_2020_05_19.jpg){width=50% height=50%}
+</p>
+
+## Santa Casa de Santo Amaro
+
+Em 18/05/2020, doamos 100 escudos faciais
+ao [Santa Casa de Santo Amaro](https://santacasasantoamaro.org.br/).
+
+<p align="center"> 
+![](./figures/garoa_2020_05_18.jpg){width=50% height=50%}
+</p>
+
+## Instituto do Câncer
+
+Em 16/05/2020, doamos 25 escudos faciais
+ao [Instituto do Câncer](http://www.icesp.org.br/).
+
+<p align="center"> 
+![](./figures/garoa_2020_05_16_2.jpg){width=50% height=50%}
+</p>
+
+## Rede Coletiva de Apoio
+
+Em 16/05/2020, doamos 10 escudos faciais
+à [Rede Coletiva de Apoio](https://www.facebook.com/redecoletivadeapoio).
+
+<p align="center"> 
+![](./figures/garoa_2020_05_16_1.jpg){width=50% height=50%}
+</p>
+
+## Montagem de escudos faciais
+
+Em 15/05/2020 montamos
+270 escudos faciais.
+
+<p align="center"> 
+![](./figures/garoa_2020_05_15_1.jpeg){width=50% height=50%}
+![](./figures/garoa_2020_05_15_2.jpeg){width=50% height=50%}
+![](./figures/garoa_2020_05_15_3.jpeg){width=50% height=50%}
+</p>
+
+## UBS São Jorge
+
+Em 08/05/2020, doamos 100 escudos faciais
+à [Unidade Básica de Saúde Integrada Jardim São Jorge](http://www.ubsbrasil.org/sobre/ubs-jd-sao-jorge).
+
+<p align="center"> 
+![](./figures/garoa_2020_05_08.jpg){width=50% height=50%}
+</p>
+
+## Hospital da Polícia Militar
+
+Em 08/05/2020, doamos 
+150 escudos faciais ao Hospital da 
+[Polícia Militar](http://www.policiamilitar.sp.gov.br/) (HPM).
+Os escudos foram entregues a policiais militares,
+que gentilmente levaram-nos ao HPM.
+
+<p align="center"> 
+![](./figures/garoa_2020_05_08_2.jpg){width=50% height=50%}
+</p>
+
+## Montagem de escudos faciais
+
+Em 06/05/2020 montamos
+250 escudos faciais.
+
+<p align="center"> 
+![](./figures/garoa_2020_05_06_0.jpeg){width=50% height=50%}
+![](./figures/garoa_2020_05_06_2.jpeg){width=50% height=50%}
+![](./figures/garoa_2020_05_06_1.jpeg){width=50% height=50%}
+![](./figures/garoa_2020_05_06_3.jpeg){width=50% height=50%}
+</p>
+
+## Hospital Universitário da USP
+
+Em 24/04/04 doamos 
+115 escudos faciais ao
+[Hospital Universitário](http://www.hu.usp.br/) da
+[Universidade de São Paulo](https://www5.usp.br/).
+
+<p align="center"> 
+![](./figures/garoa_2020_04_24.jpeg){width=50% height=50%}
+</p>
+
+## Hospital Santa Casa de Cruzeiro
+
+Em 24/04/04 doamos 
+50 escudos faciais ao 
+[Hospital Santa Casa de Cruzeiro](http://www.santacasacruzeiro.com.br/).
+
+<p align="center"> 
+![](./figures/garoa_2020_04_24_2.jpeg){width=50% height=50%}
+</p>
+
+## Montagem de escudos faciais
+
+Em 23/04/2020 montamos 
+no [Garoa Hacker Clube](https://garoa.net.br/)
+165 escudos faciais.
+
+<p align="center"> 
+![](./figures/garoa_2020_04_23_1.jpg){width=50% height=50%}
+![](./figures/garoa_2020_04_23_2.jpg){width=50% height=50%}
+![](./figures/garoa_2020_04_23_3.jpg){width=50% height=50%}
+![](./figures/garoa_2020_04_23_4.jpg){width=50% height=50%}
+</p>
+
+# Hospital do Servidor Público
+
+Em 08/04/2020 doamos 
+70 escudos faciais ao 
+[Instituto de Assistência Médica ao Servidor Público Estadual](http://www.iamspe.sp.gov.br/).
+
+<p align="center"> 
+![](./figures/garoa_2020_04_08_3.jpeg){width=50% height=50%}
+</p>
+
+# Montagem de escudos faciais
+
+Em 08/04/2020 [montamos 
+70 escudos faciais](http://www.tjsp.jus.br/Noticias/Noticia?codigoNoticia=60869).
+
+<p align="center"> 
+![](./figures/garoa_2020_04_08_2.jpeg){width=50% height=50%}
+![](./figures/garoa_2020_04_08_1.jpg){width=50% height=50%}
+</p>
+

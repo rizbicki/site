@@ -1,0 +1,37 @@
+---
+title: "Introdução à ANOVA"
+author: "Rafael B. Stern"
+highlight: true
+date: ""
+output: html_document
+type: book
+weight: 130
+bibliography: refs.bib
+---
+
+```{r, message = FALSE, warning = FALSE}
+library(tidyverse)
+milho = read.csv("./data/milho.csv")
+milho = as_tibble(milho)
+
+teste_aov = aov(Colheita ~ Variedade, data = milho)
+teste_aov
+
+teste_tukey = TukeyHSD(x = teste_aov,
+                       c("Variedade"),
+                       conf.level=0.9)
+teste_tukey
+```
+
+```{r}
+agua = read.csv("./data/agua.csv")
+agua = as.tibble(agua)
+
+teste_aov = aov(Tempo ~ Tipo, data = agua)
+teste_aov
+
+#teste_tukey = TukeyHSD(x = teste_aov,
+#                       c("Variedade"),
+#                       conf.level=0.9)
+#teste_tukey
+```
