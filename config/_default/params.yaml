@@ -20,8 +20,8 @@ marketing:
     org_name: ''
     description: 'Personal site for Rafael Bassi Stern.'
   analytics:
-    google_analytics: 'G-9ZYJWCKLZE'
-    google_tag_manager: ''
+    google_analytics: 'UA-114310932-1'
+    google_tag_manager: 'G-9ZYJWCKLZE'
   verification:
     google: ''
     baidu: ''
