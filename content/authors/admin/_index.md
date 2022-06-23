@@ -77,7 +77,7 @@ I'm an Assistant Professor at the Department of Statistics of the Federal Univer
 
 I’m interested in theory, methodology, applications, and foundations of statististics and machine learning.
 
-Research groups:
+I am a member of the following research groups:
 
 <a href="http://www.small.ufscar.br/"><img src="http://www.small.ufscar.br/figures/logo.png" alt="drawing"   width="200px" style="float: left"/></a>
 
