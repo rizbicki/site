@@ -11,7 +11,7 @@
 {{ if eq $item.Type "event" }}
   {{ $show_authors_only = true }}
 {{ else if eq $item.Type "publication" }}
-  {{ $show_authors_only = true }}
+  {{ $show_authors_only = false }}
 {{ else if eq $item.Type "project" }}
   {{ $show_authors_only = true }}
 {{ end }}
