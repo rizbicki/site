@@ -63,7 +63,7 @@ url_preprint : "https://arxiv.org/pdf/1805.05480.pdf"
 #   Uncomment line below to enable. For multiple links, use the form `[{...}, {...}, {...}]`.
 #url_custom = [{name = "Custom Link", url = "http://example.org"}]
 
-summary: We show how a nonparametric conditional density estimation (CDE) framework,  which we refer to as ABC-CDE, help address three nontrivial challenges in ABC: (i) how to efficiently estimate the posterior distribution with limited simulations and different types of data, (ii) how to tune and compare the performance of ABC and related methods in estimating the posterior itself, rather than just certain properties of the density, and (iii) how to efficiently choose among a large set of summary statistics based on a CDE surrogate loss. 
+summary: We show how a nonparametric conditional density estimation (CDE) framework helps address three nontrivial challenges in ABC. (i) how to efficiently estimate the posterior distribution with limited simulations and different types of data,  (ii) how to tune and compare the performance of ABC and related methods in estimating the posterior itself, rather than just certain properties of the density, and (iii) how to efficiently choose among a large set of summary statistics based on a CDE surrogate loss. 
 
 # Does this page contain LaTeX math? (true/false)
 math: true

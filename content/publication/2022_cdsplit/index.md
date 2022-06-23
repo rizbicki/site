@@ -11,8 +11,8 @@ image:
   caption: ''
   focal_point: ""
   preview_only: false
-publication: In *Journal of Machine Learning Research*
-publication_short: In *Journal of Machine Learning Research*
+publication: "Journal of Machine Learning Research"
+#publication_short: In *Journal of Machine Learning Research*
 publication_types:
 - "2"
 publishDate: "2022-05-01T00:00:00Z"

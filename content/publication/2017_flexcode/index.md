@@ -47,7 +47,7 @@ tags : ["Nonparametric Statistics","Conditional Density Estimation","High-Dimens
 
 # Links (optional).
 #url_pdf : ""
-url_pdf :"https://projecteuclid.org/euclid.ejs/1499133755"
+url_pdf : "https://projecteuclid.org/euclid.ejs/1499133755"
 url_preprint : "https://arxiv.org/pdf/1704.08095.pdf"
 url_code : "https://github.com/rizbicki/FlexCoDE"
 #url_code = ""
