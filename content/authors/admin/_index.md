@@ -3,14 +3,14 @@ bio: I'm an Assistant Professor at the Department of Statistics of the Federal U
 education:
   courses:
     - course: PhD in Statistics 
-institution: Carnegie Mellon University
-year: 2014
+      institution: Carnegie Mellon University
+      year: 2014
     - course: Master in Statistics 
-institution: University of São Paulo
-year: 2010
+      institution: University of São Paulo
+      year: 2010
     - course: BSc in Statistics
-institution: University of São Paulo
-year: 2009
+      institution: University of São Paulo
+      year: 2009
 email: ""
 highlight_name: true
 interests:
@@ -26,18 +26,18 @@ organizations:
 role: Professor of Statistics
 social:
   - icon: envelope
-icon_pack: fa
-link: 'mailto:rafaelizbicki@gmail.com'  # For a direct email link, use "mailto:test@example.org".
-- icon: google-scholar
-icon_pack: ai
-link: https://scholar.google.com/citations?user=IldCv5AAAAAJ&hl=en
-- icon: lattes
-icon_pack: ai
-link: http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4269225J9
-- icon: github
-icon_pack: fab
-link: https://github.com/rizbicki
-superuser: true
+    icon_pack: fa
+    link: 'mailto:rafaelizbicki@gmail.com'  # For a direct email link, use "mailto:test@example.org".
+  - icon: google-scholar
+    icon_pack: ai
+    link: https://scholar.google.com/citations?user=IldCv5AAAAAJ&hl=en
+  - icon: lattes
+    icon_pack: ai
+    link: http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4269225J9
+  - icon: github
+    icon_pack: fab
+    link: https://github.com/rizbicki
+    superuser: true
 title: Rafael Izbicki
 ---
 
