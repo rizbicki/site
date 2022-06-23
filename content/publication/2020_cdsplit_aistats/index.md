@@ -3,8 +3,8 @@ abstract: "Conformal methods create prediction bands that control average covera
 
 authors:
 - Gilson Shimizu
-- Rafael Izbicki
 - admin
+- Rafael B. Stern
 date: "2020-04-01T00:00:00Z"
 doi: ""
 featured: false

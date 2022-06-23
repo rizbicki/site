@@ -3,9 +3,9 @@ abstract: "This paper introduces pragmatic hypotheses and relates this concept t
 
 authors:
 - Luís G. Esteves
-- Rafael Izbicki
-- Julio M. Stern
 - admin
+- Julio M. Stern
+- Rafael B. Stern
 
 date: "2019-09-01T00:00:00Z"
 doi: "10.3390/e21090883"

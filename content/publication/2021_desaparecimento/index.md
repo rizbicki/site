@@ -3,8 +3,8 @@ abstract: Este artigo estuda as causas de desaparecimento no estado de São Paul
 
 authors:
 - Mateus B. Comito
-- Rafael Izbicki
 - admin
+- Rafael B. Stern
 - Julio A. Z. Trecenti
 date: "2021-02-19T00:00:00Z"
 doi: ""

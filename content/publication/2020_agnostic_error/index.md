@@ -3,8 +3,8 @@ abstract: Despite its common practice, statistical hypothesis testing presents c
 
 authors:
 - Victor Coscrato
-- Rafael Izbicki
 - admin
+- Rafael B. Stern
 date: "2020-05-01T00:00:00Z"
 doi: "10.1214/19-BJPS431"
 featured: false

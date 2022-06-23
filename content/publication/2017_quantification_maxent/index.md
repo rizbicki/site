@@ -3,8 +3,8 @@ abstract: "Several machine learning applications use classifiers as a way of qua
 
 authors:
 - Afonso F. Vaz
-- Rafael Izbicki
 - admin
+- Rafael B. Stern
 date: "2017-05-01T00:00:00Z"
 doi: ""
 featured: false

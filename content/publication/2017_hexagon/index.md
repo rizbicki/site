@@ -3,9 +3,9 @@ abstract: "Although logical consistency is desirable in scientific research, sta
 
 authors:
 - Julio M. Stern
-- Rafael Izbicki
-- Luís G. Esteves
 - admin
+- Luís G. Esteves
+- Rafael B. Stern
 
 date: "2017-06-01T00:00:00Z"
 doi: "10.1093/jigpal/jzx024"

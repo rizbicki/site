@@ -3,8 +3,8 @@ abstract: "Teaching how to derive minimax decision rules can be challenging beca
 
 authors:
 - Luís G. Esteves
-- Rafael Izbicki
 - admin
+- Rafael B. Stern
 
 date: "2018-01-01T00:00:00Z"
 doi: "10.1080/00031305.2016.1264316"
