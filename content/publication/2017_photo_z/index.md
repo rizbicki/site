@@ -25,11 +25,12 @@ publication: "The Annals of Applied Statistics"
 # Abstract and optional shortened version.
 
 # Featured image thumbnail (optional)
+featured: true
 image:
   caption: ''
   focal_point: ""
   preview_only: false
-
+  
 # Is this a selected publication? (true/false)
 featured: true
 

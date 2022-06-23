@@ -25,6 +25,7 @@ publication: "Journal of Computational and Graphical Statistics"
 # Abstract and optional shortened version.
 
 # Featured image thumbnail (optional)
+featured: true
 image:
   caption: ''
   focal_point: ""
