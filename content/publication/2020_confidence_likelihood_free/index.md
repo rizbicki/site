@@ -4,7 +4,10 @@ date = 2020-02-05T00:03:00
 draft = false
 
 # Authors. Comma separated list, e.g. `["Bob Smith", "David Jones"]`.
-authors = ["Dalmasso, N.","Izbicki, R.","Lee, A. B."]
+authors:
+- Niccolò Dalmasso
+- admin
+- Ann B. Lee
   
 # Publication type.
 # Legend:
@@ -26,7 +29,10 @@ abstract = ""
 abstract_short = ""
 
 # Featured image thumbnail (optional)
-image_preview = ""
+image:
+  caption: ''
+  focal_point: ""
+  preview_only: false
 
 # Is this a selected publication? (true/false)
 featured = true
@@ -57,6 +63,8 @@ url_preprint = "https://arxiv.org/pdf/2002.10399.pdf"
 # Custom links (optional).
 #   Uncomment line below to enable. For multiple links, use the form `[{...}, {...}, {...}]`.
 #url_custom = [{name = "Custom Link", url = "http://example.org"}]
+
+summary: Parameter estimation, statistical tests and confidence sets are the cornerstones of classical statistics that allow scientists to make inferences about the underlying process that generated the observed data. A key question is whether one can still construct hypothesis tests and confidence sets with proper coverage and high power in a so-called likelihood-free inference (LFI) setting; that is, a setting where the likelihood is not explicitly known but one can forward-simulate observable data according to a stochastic model. We present ACORE, a frequentist approach to LFI that first formulates the classical likelihood ratio test (LRT) as a parametrized classification problem, and then uses the equivalence of tests and confidence sets to build confidence regions for parameters of interest. We also present a goodness-of-fit procedure for checking whether the constructed tests and confidence regions are valid. 
 
 # Does this page contain LaTeX math? (true/false)
 math = true
