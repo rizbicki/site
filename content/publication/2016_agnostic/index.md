@@ -2,9 +2,9 @@
 abstract: "Simultaneous hypothesis tests can fail to provide results that meet logical requirements. For example, if A and B are two statements such that A implies B, there exist tests that, based on the same data, reject B but not A. Such outcomes are generally inconvenient to statisticians (who want to communicate the results to practitioners in a simple fashion) and non-statisticians (confused by conflicting pieces of information). Based on this inconvenience, one might want to use tests that satisfy logical requirements. However, Izbicki and Esteves shows that the only tests that are in accordance with three logical requirements (monotonicity, invertibility and consonance) are trivial tests based on point estimation, which generally lack statistical optimality. As a possible solution to this dilemma, this paper adapts the above logical requirements to agnostic tests, in which one can accept, reject or remain agnostic with respect to a given hypothesis. Each of the logical requirements is characterized in terms of a Bayesian decision theoretic perspective. Contrary to the results obtained for regular hypothesis tests, there exist agnostic tests that satisfy all logical requirements and also perform well statistically. In particular, agnostic tests that fulfill all logical requirements are characterized as region estimator-based tests. Examples of such tests are provided."
 authors:
 - Luís G. Esteves
-- Rafael Izbicki
-- Julio M. Stern
 - admin
+- Julio M. Stern
+- Rafael B. Stern
 date: "2016-07-01T00:00:00Z"
 doi: ""
 featured: true
