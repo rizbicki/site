@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Biology | Rafael Izbicki | PhD</title>
+    <link>http://www.rizbicki.ufscar.br/tag/biology/</link>
+      <atom:link href="http://www.rizbicki.ufscar.br/tag/biology/index.xml" rel="self" type="application/rss+xml" />
+    <description>Biology</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 01 Jan 2019 00:00:01 +0000</lastBuildDate>
+    <image>
+      <url>http://www.rizbicki.ufscar.br/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_3.png</url>
+      <title>Biology</title>
+      <link>http://www.rizbicki.ufscar.br/tag/biology/</link>
+    </image>
+    
+    <item>
+      <title>Avian haemosporidians in the cattle egret (Bubulcus ibis) from central-western and southern Africa: high diversity and prevalence</title>
+      <link>http://www.rizbicki.ufscar.br/publication/africa/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:01 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/africa/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Considerations for monitoring population trends of colonial waterbirds using the effective number of breeders and census estimates </title>
+      <link>http://www.rizbicki.ufscar.br/publication/water_birds/</link>
+      <pubDate>Sun, 01 Apr 2018 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/water_birds/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

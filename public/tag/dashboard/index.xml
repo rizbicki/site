@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dashboard | Rafael Izbicki | PhD</title>
+    <link>http://www.rizbicki.ufscar.br/tag/dashboard/</link>
+      <atom:link href="http://www.rizbicki.ufscar.br/tag/dashboard/index.xml" rel="self" type="application/rss+xml" />
+    <description>Dashboard</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sat, 02 May 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>http://www.rizbicki.ufscar.br/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_3.png</url>
+      <title>Dashboard</title>
+      <link>http://www.rizbicki.ufscar.br/tag/dashboard/</link>
+    </image>
+    
+    <item>
+      <title>Evolução da Covid-19 no Brasil</title>
+      <link>http://www.rizbicki.ufscar.br/post/app_covid_localidade/</link>
+      <pubDate>Sat, 02 May 2020 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/post/app_covid_localidade/</guid>
+      <description>
+
+
+&lt;p&gt;Fiz um dashboard que mostra a evolução do coronavírus por município e estado brasileiro, pois senti falta de alguns gráficos para descrever essa dinâmica de forma mais localizada:&lt;/p&gt;
+&lt;p&gt;Ele é útil não só para ver cada município separadamente, mas também para entender como o vírus está se espalhando no Brasil.
+Ele também mostra a evolução por semana, que acho ser mais robusta por remover o efeito que os finais de semana têm no sistema de notificação. Além disso, também inclui a evolução normalizada por data de início (medida pelo dia do 15º óbito). Adicionei também informação sobre a variação no número de casos/óbitos por município.&lt;/p&gt;
+&lt;p&gt;Ele está disponível em &lt;a href=&#34;https://rizbicki.shinyapps.io/covid_por_localidade/&#34; class=&#34;uri&#34;&gt;https://rizbicki.shinyapps.io/covid_por_localidade/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../img/mapa.jpg&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

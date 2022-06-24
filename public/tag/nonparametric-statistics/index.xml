@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nonparametric Statistics | Rafael Izbicki | PhD</title>
+    <link>http://www.rizbicki.ufscar.br/tag/nonparametric-statistics/</link>
+      <atom:link href="http://www.rizbicki.ufscar.br/tag/nonparametric-statistics/index.xml" rel="self" type="application/rss+xml" />
+    <description>Nonparametric Statistics</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Thu, 02 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>http://www.rizbicki.ufscar.br/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_3.png</url>
+      <title>Nonparametric Statistics</title>
+      <link>http://www.rizbicki.ufscar.br/tag/nonparametric-statistics/</link>
+    </image>
+    
+    <item>
+      <title>Conditional Density Estimation Tools in Python and R with Applications to Photometric Redshifts and Likelihood-Free Cosmological Inference</title>
+      <link>http://www.rizbicki.ufscar.br/publication/cde_tools/</link>
+      <pubDate>Thu, 02 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/cde_tools/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>WIKS: A general Bayesian nonparametric index for quantifying differences between two populations</title>
+      <link>http://www.rizbicki.ufscar.br/publication/wiks/</link>
+      <pubDate>Wed, 01 Jan 2020 10:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/wiks/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Evaluation of probabilistic photometric redshift estimation approaches for The Rubin Observatory Legacy Survey of Space and Time (LSST)</title>
+      <link>http://www.rizbicki.ufscar.br/publication/desc/</link>
+      <pubDate>Wed, 01 Jan 2020 01:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/desc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ABC-CDE: Toward Approximate Bayesian Computation with Complex High-Dimensional Data and Limited Simulations</title>
+      <link>http://www.rizbicki.ufscar.br/publication/2019_abccde/</link>
+      <pubDate>Tue, 05 Feb 2019 00:03:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/2019_abccde/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Comparing two populations using Bayesian Fourier series density estimation</title>
+      <link>http://www.rizbicki.ufscar.br/publication/density_fourier/</link>
+      <pubDate>Sun, 01 Jul 2018 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/density_fourier/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Conditional density estimation using Fourier series and neural networks</title>
+      <link>http://www.rizbicki.ufscar.br/publication/flexcode_nnets/</link>
+      <pubDate>Mon, 28 May 2018 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/flexcode_nnets/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Converting High-Dimensional Regression to High-Dimensional Conditional Density Estimation</title>
+      <link>http://www.rizbicki.ufscar.br/publication/2017_flexcode/</link>
+      <pubDate>Sun, 05 Nov 2017 00:03:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/2017_flexcode/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A unified framework for constructing, tuning and assessing photometric redshift density estimates in a selection bias setting</title>
+      <link>http://www.rizbicki.ufscar.br/publication/mnras_bias/</link>
+      <pubDate>Mon, 30 Oct 2017 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/mnras_bias/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Photo-z estimation: An example of nonparametric conditional density estimation under selection bias</title>
+      <link>http://www.rizbicki.ufscar.br/publication/2017_photo_z/</link>
+      <pubDate>Sun, 05 Feb 2017 00:03:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/2017_photo_z/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nonparametric Conditional Density Estimation in a High-Dimensional Regression Setting.</title>
+      <link>http://www.rizbicki.ufscar.br/publication/spec_series_cde/</link>
+      <pubDate>Wed, 02 Nov 2016 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/spec_series_cde/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A Spectral Series Approach to High-Dimensional Nonparametric Regression.</title>
+      <link>http://www.rizbicki.ufscar.br/publication/spec_series_reg/</link>
+      <pubDate>Tue, 01 Nov 2016 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/spec_series_reg/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>High-Dimensional density ratio estimation with extensions to approximate likelihood computation</title>
+      <link>http://www.rizbicki.ufscar.br/publication/aistats_2014/</link>
+      <pubDate>Mon, 01 Dec 2014 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/aistats_2014/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Recent &amp; Upcoming Talks | Rafael Izbicki | PhD</title>
+    <link>http://www.rizbicki.ufscar.br/event/</link>
+      <atom:link href="http://www.rizbicki.ufscar.br/event/index.xml" rel="self" type="application/rss+xml" />
+    <description>Recent &amp; Upcoming Talks</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 01 Jun 2021 13:00:00 +0000</lastBuildDate>
+    <image>
+      <url>http://www.rizbicki.ufscar.br/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_3.png</url>
+      <title>Recent &amp; Upcoming Talks</title>
+      <link>http://www.rizbicki.ufscar.br/event/</link>
+    </image>
+    
+    <item>
+      <title>Indemnity for a lost chance</title>
+      <link>http://www.rizbicki.ufscar.br/talk/indemnity-for-a-lost-chance/</link>
+      <pubDate>Tue, 01 Jun 2021 13:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/talk/indemnity-for-a-lost-chance/</guid>
+      <description>
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/ZvsyHgo_eXs&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+</description>
+    </item>
+    
+    <item>
+      <title>A model for the evolution of languages</title>
+      <link>http://www.rizbicki.ufscar.br/talk/a-model-for-the-evolution-of-languages/</link>
+      <pubDate>Thu, 01 Jun 2017 13:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/talk/a-model-for-the-evolution-of-languages/</guid>
+      <description>
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/lw95--eb1FM&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+</description>
+    </item>
+    
+    <item>
+      <title>Teoria da decisão e aplicações ao Direito</title>
+      <link>http://www.rizbicki.ufscar.br/talk/teoria-da-decisao-e-aplicacoes-ao-direito/</link>
+      <pubDate>Thu, 01 Jun 2017 13:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/talk/teoria-da-decisao-e-aplicacoes-ao-direito/</guid>
+      <description>
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/AmOisEZZPZ8&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+</description>
+    </item>
+    
+  </channel>
+</rss>

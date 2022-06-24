@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Model Selection | Rafael Izbicki | PhD</title>
+    <link>http://www.rizbicki.ufscar.br/tag/model-selection/</link>
+      <atom:link href="http://www.rizbicki.ufscar.br/tag/model-selection/index.xml" rel="self" type="application/rss+xml" />
+    <description>Model Selection</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Thu, 02 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>http://www.rizbicki.ufscar.br/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_3.png</url>
+      <title>Model Selection</title>
+      <link>http://www.rizbicki.ufscar.br/tag/model-selection/</link>
+    </image>
+    
+    <item>
+      <title>The NN-Stacking: Feature weighted linear stacking through neural networks</title>
+      <link>http://www.rizbicki.ufscar.br/publication/meta_learning/</link>
+      <pubDate>Thu, 02 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/meta_learning/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

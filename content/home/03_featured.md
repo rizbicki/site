@@ -10,7 +10,7 @@ headless: true
 weight: 30
 
 title: Featured Publications
-subtitle: ''
+subtitle: 'See all my publications [here]({{< ref "/publication/_index.md" >}}).'
 
 content:
   # Page type to display. E.g. post, talk, publication...
@@ -33,4 +33,5 @@ design:
   #   3 = Card
   #   4 = Citation (publication only)
   view: 2
+    
 ---

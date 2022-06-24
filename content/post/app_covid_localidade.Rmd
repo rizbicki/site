@@ -1,0 +1,23 @@
+---
+title: "Evolução da Covid-19 no Brasil"
+author: "Rafael Izbicki"
+date: '2020-05-02'
+output: html_document
+tags:
+- Portuguese
+- covid-19
+- Dashboard
+categories:
+- Blog Post
+editor_options: 
+  chunk_output_type: console
+---
+
+Fiz um dashboard que mostra a evolução do coronavírus por município e estado brasileiro, pois senti falta de alguns gráficos para descrever essa dinâmica de forma mais localizada:
+
+Ele é útil não só para ver cada município separadamente, mas também para entender como o vírus está se espalhando no Brasil.
+Ele também mostra a evolução por semana, que acho ser mais robusta por remover o efeito que os finais de semana têm no sistema de notificação. Além disso, também inclui a evolução normalizada por data de início (medida pelo dia do 15º óbito). Adicionei também informação sobre a variação no número de casos/óbitos por município.
+
+Ele está disponível em https://rizbicki.shinyapps.io/covid_por_localidade/
+
+![](../img/mapa.jpg)

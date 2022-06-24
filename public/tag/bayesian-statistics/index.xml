@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bayesian Statistics | Rafael Izbicki | PhD</title>
+    <link>http://www.rizbicki.ufscar.br/tag/bayesian-statistics/</link>
+      <atom:link href="http://www.rizbicki.ufscar.br/tag/bayesian-statistics/index.xml" rel="self" type="application/rss+xml" />
+    <description>Bayesian Statistics</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 01 Jan 2021 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>http://www.rizbicki.ufscar.br/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_3.png</url>
+      <title>Bayesian Statistics</title>
+      <link>http://www.rizbicki.ufscar.br/tag/bayesian-statistics/</link>
+    </image>
+    
+    <item>
+      <title>What if the forecaster knew? Assessing forecast reliability via simulation</title>
+      <link>http://www.rizbicki.ufscar.br/publication/fifa/</link>
+      <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/fifa/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Comparing probabilistic predictive models applied to football</title>
+      <link>http://www.rizbicki.ufscar.br/publication/football/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/football/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A Bayesian Look at Nonidentifiability: a Simple Example</title>
+      <link>http://www.rizbicki.ufscar.br/publication/tas_identif/</link>
+      <pubDate>Fri, 01 Nov 2013 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/tas_identif/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Testing Allele Homogeneity: The Problem of Nested Hypotheses</title>
+      <link>http://www.rizbicki.ufscar.br/publication/nested/</link>
+      <pubDate>Thu, 01 Nov 2012 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/nested/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

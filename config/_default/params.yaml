@@ -18,7 +18,7 @@ marketing:
     site_type: Person
     local_business_type: ''
     org_name: ''
-    description: 'Personal site for Rafael Bassi Stern.'
+    description: 'Personal site for Rafael Bassi Izbicki.'
   analytics:
     google_analytics: 'UA-114310932-1'
     google_tag_manager: 'G-9ZYJWCKLZE'
@@ -42,7 +42,7 @@ header:
 
 footer:
   copyright:
-    notice: '© {2022} Rafael B. Stern.'
+    notice: '© {2022} Rafael B. Izbicki.'
     license:
       enable: true
       allow_derivatives: false
@@ -69,7 +69,7 @@ features:
   privacy_pack:
     enable: false
   repository:
-    url: 'https://github.com/rbstern/site'
+    url: 'https://github.com/rizbicki/site'
     content_dir: content
     branch: master
   avatar:

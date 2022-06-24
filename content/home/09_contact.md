@@ -16,7 +16,7 @@ content:
   autolink: false
 
   # Contact details (edit or remove options as required)
-  email: rbstern at gmail dot com
+  email: rafaelizbicki at gmail dot com
 
 design:
   columns: '2'

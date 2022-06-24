@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Likelihood Estimation | Rafael Izbicki | PhD</title>
+    <link>http://www.rizbicki.ufscar.br/tag/likelihood-estimation/</link>
+      <atom:link href="http://www.rizbicki.ufscar.br/tag/likelihood-estimation/index.xml" rel="self" type="application/rss+xml" />
+    <description>Likelihood Estimation</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 05 Feb 2019 00:03:00 +0000</lastBuildDate>
+    <image>
+      <url>http://www.rizbicki.ufscar.br/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_3.png</url>
+      <title>Likelihood Estimation</title>
+      <link>http://www.rizbicki.ufscar.br/tag/likelihood-estimation/</link>
+    </image>
+    
+    <item>
+      <title>ABC-CDE: Toward Approximate Bayesian Computation with Complex High-Dimensional Data and Limited Simulations</title>
+      <link>http://www.rizbicki.ufscar.br/publication/2019_abccde/</link>
+      <pubDate>Tue, 05 Feb 2019 00:03:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/2019_abccde/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>High-Dimensional density ratio estimation with extensions to approximate likelihood computation</title>
+      <link>http://www.rizbicki.ufscar.br/publication/aistats_2014/</link>
+      <pubDate>Mon, 01 Dec 2014 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/aistats_2014/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

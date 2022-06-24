@@ -1,0 +1,230 @@
+---
+title: "Aprendizado de Máquina Estatístico"
+author: "Rafael Izbicki - UFSCar"
+output: 
+  ioslides_presentation: 
+    incremental: yes
+    widescreen: yes
+    css: temp.css
+runtime: shiny
+---
+
+
+## Modelo especificado corretamente é melhor?
+
+
+```{r,echo=FALSE,message=FALSE,warning=FALSE, include=FALSE}
+library(gridExtra)
+library(grid)
+library(tidyverse)
+library(grid)
+library(shiny)
+library(ggplot2)
+theme = theme_set(theme_gray(base_size = 20))
+theme = theme_update(legend.position="top",
+                     panel.border = element_rect(colour = "black", fill=NA, 
+                                                 size=0.5),
+                     axis.text.y = element_text(colour="black",size=13), axis.text.x = element_text(size=13),
+                     axis.ticks.y= element_line(colour="black"))+   theme_update(axis.ticks.length=unit(.15, "cm"),panel.spacing = unit(1.5, "lines"))
+
+gerar.modelo=function(n,beta)
+{
+  # X1 ~ U(0,1) (unica covariavel)
+  # y=(X1,X1^2,...,X1^d)'*beta+N(0,1), com d=length(beta)
+  
+  # unica covariavel:
+  x=as.matrix(runif(n)) 
+  # calcular polinomios: X=(X1,X1^2,...,X1^d), com d=length(beta):
+  X=t(apply(x,1,function(xx)xx^(1:length(beta))))
+  
+  y=X%*%beta+rnorm(n)
+  return(list(x=x,y=y))
+}
+ajustar.modelo=function(x,y,d)
+{
+  # ajusta polinomio de grau d
+  return(lm(y~poly(x,degree = d,raw=TRUE)))
+}
+predizer.observacoes=function(ajuste,x)
+{
+  x=as.data.frame(x)
+  colnames(x)="x"
+  return(predict(ajuste,newdata=x))
+}
+generate.models <- function(input) {
+  set.seed(input$goButton)
+  
+  beta=c(input$beta.0,input$beta.1,input$beta.2,input$beta.3,
+         input$beta.4,input$beta.5)
+  dados.treinamento=gerar.modelo(input$n,beta)
+  
+  grid.x=seq(0,1,length.out = 1000)
+  data <- data.frame(cbind(grid.x,poly(grid.x,degree = length(beta),raw=TRUE)%*%beta),"Regressão Real")
+  colnames(data)=c("x","y","Método")
+  
+  modelo.5=ajustar.modelo(dados.treinamento$x,dados.treinamento$y,
+                          d=5)
+  predito.modelo.5=predizer.observacoes(modelo.5,grid.x)
+  
+  
+  data.5=data.frame(cbind(data.frame(grid.x,predito.modelo.5)),"Grau 5")
+  colnames(data.5)=c("x","y","Método")
+  data <- rbind(data,data.5)
+  modelo.2=ajustar.modelo(dados.treinamento$x,dados.treinamento$y,
+                          d=2)
+  predito.modelo.2=predizer.observacoes(modelo.2,grid.x)
+  
+  
+  dados.teste=gerar.modelo(1e5,beta) #
+  data.2=cbind(data.frame(grid.x,predito.modelo.2),"Grau 2")
+  colnames(data.2)=c("x","y","Método")
+  data <- rbind(data,data.2)
+  return(list(data=data,
+         beta=beta,
+         dados.treinamento=dados.treinamento,modelo.2=modelo.2,
+         modelo.5=modelo.5,
+         dados.teste=dados.teste))
+}
+```
+
+ Geramos $n$ observações de 
+
+$$Y_k=\beta_0 + \sum_{i=1}^5 \beta_i x_k^i+\epsilon_k,$$
+com $\epsilon_k \sim N(0,1)$ e $X_{k} \sim U(0,1)$, $i=1,\ldots,n$.
+
+## Modelo especificado corretamente é melhor?
+
+
+```{r, echo = FALSE}
+shinyApp(
+  ui = fluidPage(
+    
+    fluidRow(
+      column(2,
+             sliderInput("n", label = "Valor de n:",
+                         min = 1, max = 500, value=13,step = 1),
+             br(),
+             actionButton("goButton","Gerar outro Conjunto")
+      ),
+      column(2, offset = 1,
+             sliderInput("beta.0", label = "Valor de beta.0:",
+                         min = -10, max = 10, value = 0, step = 0.01),
+             
+             sliderInput("beta.1", label = "Valor de beta.1:",
+                         min = -10, max = 10, value = 3, step = 0.01)
+             
+             
+      ),
+      column(2, offset = 0,
+             sliderInput("beta.2", label = "Valor de beta.2:",
+                         min = -10, max = 10, value = 2, step = 0.01),
+             sliderInput("beta.3", label = "Valor de beta.3:",
+                         min = -10, max = 10, value = 0.2, step = 0.01)
+      ),
+      column(2, offset = 0,
+             sliderInput("beta.4", label = "Valor de beta.4:",
+                         min = -10, max = 10, value = 0.1, step = 0.01),
+             sliderInput("beta.5", label = "Valor de beta.5:",
+                         min = -10, max = 10, value = 0.1, step = 0.01)
+      ),
+      mainPanel(
+        plotOutput("distPlot")
+      )
+    )
+    
+  ),
+  
+  server = function(input, output) {
+    
+    generate.models.r=reactive({
+      generate.models(input)
+    })
+    
+    output$distPlot <- renderPlot({
+      
+      results=generate.models.r()
+      g1=ggplot()+geom_line(data=results$data,aes(x=x,y=y,linetype=Método,color=Método),size=2)+
+        geom_point(data=as.data.frame(results$dados.treinamento),aes(x=x,y=y),size=1.2,alpha=0.5)+
+        scale_linetype_discrete("")+
+        scale_color_discrete("")+ theme(legend.key.width=unit(1.2,"cm"))
+      
+       predito.modelo.5=predizer.observacoes(results$modelo.5,results$dados.teste$x)
+      risco.modelo.5=mean((predito.modelo.5-results$dados.teste$y)^2)
+      predito.modelo.2=predizer.observacoes(results$modelo.2,results$dados.teste$x)
+      risco.modelo.2=mean((predito.modelo.2-results$dados.teste$y)^2)
+      
+      
+      data=data.frame("Risco"=c(risco.modelo.2,risco.modelo.5),"Modelo"=c("Grau 2","Grau 5"))
+      
+      g2=ggplot(data=data, aes(x=Modelo, y=Risco)) +
+  geom_bar(stat="identity")
+      
+       ptlist <- list(g1,g2)
+      grid.arrange(grobs=ptlist,widths=c(0.7,0.3),ncol=2)
+    })
+    
+    
+  },
+  
+  options = list(width="100%", height="100%")
+)
+```
+
+## Lasso  
+
+Geramos $n=50$ observações de 
+
+$$Y_k=0.5 X_{k,1}-0.75X_{k,2}+0.5X_{k,3}-0.75X_{k,4}+X_{k,5}+\sum_{i=6}^{30}0X_{k,i}+\epsilon_k,$$
+com $\epsilon_k \sim N(0,0.5^2)$ e $X_{k,i} \sim N(0,1)$, $i=1,\ldots,30$ independentes.
+
+## Lasso
+
+```{r, echo=FALSE,warning=FALSE,message=FALSE,fig.width=40}
+# Gerar dados
+library(glmnet)
+set.seed(400)
+
+n=50
+p=30
+x=matrix(rnorm(n*p,0,1),n,p)
+y=0.5*x[,1]-0.75*x[,2]+0.5*x[,3]-0.75*x[,4]+1*x[,5]+rnorm(n,0,0.5)
+
+nTest=1000
+xTest=matrix(rnorm(nTest*p,0,1),nTest,p)
+yTest=0.4*xTest[,1]-0.75*xTest[,2]+0.3*xTest[,3]-0.5*xTest[,4]+1*xTest[,5]+rnorm(nTest,0,0.5)
+
+
+inputPanel(
+  sliderInput("lambda", label = "Valor de lambda:",
+              min = 0, max = 0.8, value = 0, step = 0.01,animate=animationOptions(interval=350)) 
+)
+
+lasso.mod = glmnet(x,y,alpha =1,lambda=seq(0,0.8,0.01))
+
+total=length(lasso.mod$lambda)
+erro=rep(NA,total)
+for(i in 1:total)
+{
+  predictTest = predict(lasso.mod , s = lasso.mod$lambda[total-i+1] , newx = xTest)
+  erro[i]=mean((predictTest-yTest)^2) #  0.2526897
+}
+
+renderPlot({
+  mar.default <- c(5,4,4,2) + 0.1
+  par(mar = mar.default + c(0, 4, 0, 0)) 
+  par(mfrow=c(1,2))
+  coefs=coefficients(lasso.mod)[,which.min(abs(input$lambda-lasso.mod$lambda))]
+  minY=min(coefficients(lasso.mod)[,length(lasso.mod$lambda)])
+  maxY=max(coefficients(lasso.mod)[,length(lasso.mod$lambda)])
+  plot(1:length(coefs), coefs,pch=NA,xlab=expression(j),ylab=expression(beta[j]),cex.lab=1.9,cex=1.1,bty = "l",ylim=c(minY,maxY),main=bquote(paste(lambda," = ",.(input$lambda),sep="")),cex.main=2)
+  for(i in 1:length(coefs))
+  {
+    lines(c(i,i),c(0,coefs[i]),pch=NA,col=2,lwd=6)
+  }
+  
+  howMany=which.min(abs(sort(lasso.mod$lambda)-input$lambda)) 
+  plot(sort(lasso.mod$lambda)[1:howMany], erro[1:howMany],pch=16,type="b",xlab=expression(lambda),ylab=expression(R(g[lambda])),cex.lab=1.9,cex=1.1,bty = "l",cex.main=2,lwd=3,ylim=c(min(erro),max(erro)),xlim=c(min(lasso.mod$lambda),max(lasso.mod$lambda)))
+  
+})
+
+```

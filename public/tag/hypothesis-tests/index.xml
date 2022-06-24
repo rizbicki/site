@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hypothesis Tests | Rafael Izbicki | PhD</title>
+    <link>http://www.rizbicki.ufscar.br/tag/hypothesis-tests/</link>
+      <atom:link href="http://www.rizbicki.ufscar.br/tag/hypothesis-tests/index.xml" rel="self" type="application/rss+xml" />
+    <description>Hypothesis Tests</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sat, 09 Apr 2022 00:03:00 +0000</lastBuildDate>
+    <image>
+      <url>http://www.rizbicki.ufscar.br/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_3.png</url>
+      <title>Hypothesis Tests</title>
+      <link>http://www.rizbicki.ufscar.br/tag/hypothesis-tests/</link>
+    </image>
+    
+    <item>
+      <title>Likelihood-Free Frequentist Inference: Confidence Sets with Correct Conditional Coverage</title>
+      <link>http://www.rizbicki.ufscar.br/publication/bff/</link>
+      <pubDate>Sat, 09 Apr 2022 00:03:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/bff/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Identifying Distributional Differences in Convective Evolution Prior to Rapid Intensification in Tropical Cyclones</title>
+      <link>http://www.rizbicki.ufscar.br/publication/cyclones/</link>
+      <pubDate>Tue, 09 Feb 2021 00:03:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/cyclones/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Coherent hypothesis testing</title>
+      <link>http://www.rizbicki.ufscar.br/publication/tas_coherent/</link>
+      <pubDate>Fri, 01 Sep 2017 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/tas_coherent/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A Bayesian Decision-Theoretic Approach to Logically-Consistent Hypothesis Testing</title>
+      <link>http://www.rizbicki.ufscar.br/publication/entropy_bayes_consist/</link>
+      <pubDate>Tue, 01 Mar 2016 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/entropy_bayes_consist/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The Logical Consistency of Simultaneous Agnostic Hypothesis Tests</title>
+      <link>http://www.rizbicki.ufscar.br/publication/entropy_consist/</link>
+      <pubDate>Tue, 01 Mar 2016 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/entropy_consist/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Logical consistency in simultaneous statistical test procedures</title>
+      <link>http://www.rizbicki.ufscar.br/publication/igpl_consist/</link>
+      <pubDate>Sun, 01 Mar 2015 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/igpl_consist/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Testing Allele Homogeneity: The Problem of Nested Hypotheses</title>
+      <link>http://www.rizbicki.ufscar.br/publication/nested/</link>
+      <pubDate>Thu, 01 Nov 2012 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/nested/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Disequilibrium Coefficient: A Bayesian Perspective</title>
+      <link>http://www.rizbicki.ufscar.br/publication/disequilibrium/</link>
+      <pubDate>Tue, 01 Nov 2011 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/disequilibrium/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

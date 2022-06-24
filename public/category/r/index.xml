@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>R | Rafael Izbicki | PhD</title>
+    <link>http://www.rizbicki.ufscar.br/category/r/</link>
+      <atom:link href="http://www.rizbicki.ufscar.br/category/r/index.xml" rel="self" type="application/rss+xml" />
+    <description>R</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sun, 29 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>http://www.rizbicki.ufscar.br/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_3.png</url>
+      <title>R</title>
+      <link>http://www.rizbicki.ufscar.br/category/r/</link>
+    </image>
+    
+    <item>
+      <title>Covid-19 Einstein Analysis</title>
+      <link>http://www.rizbicki.ufscar.br/post/einstein/analysis/</link>
+      <pubDate>Sun, 29 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/post/einstein/analysis/</guid>
+      <description>
+
+
+&lt;p&gt;In this post I analyse the covid-19 data from
+&lt;a href=&#34;https://www.kaggle.com/einsteindata4u/covid19&#34; class=&#34;uri&#34;&gt;https://www.kaggle.com/einsteindata4u/covid19&lt;/a&gt;, which contains
+information about patients from Albert Einstein’s Hospital, in São Paulo (Brazil).&lt;/p&gt;
+&lt;p&gt;My main assumptions in the following analysis are that:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;The goal is to provide a &lt;strong&gt;screening&lt;/strong&gt; protocol that will reduce the number of patients in which the covid-19 PCR is applied to. Thus, a large &lt;strong&gt;sensitivity&lt;/strong&gt; (probability of correctly identifying a true positive) is more important than a large &lt;strong&gt;specificity&lt;/strong&gt; (probability of correctly identifying a true negative).&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;I’m assuming that blood count exams and exams for detecting the presence of other virus were applied at random to each patient, i.e., they are not applied according to relevant factors related to covid-19. This is a STRONG assumption.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;I’m assuming that all data provided is about suspect cases.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;I’m assuming that blood count exams are fast and cheap, while exams for detecting the presence of other virus/bacteria are more expensive.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In short, the approach I’ll take consists in&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;&lt;p&gt;Provide a screening technique using only the blood count exam and age. This will already remove about half of the patients from the list of suspects IF THE ASSUMPTIONS ARE CORRECT and the prevalence of covid-19 patients that go to the hospital does not change. As this prevalence is expected to increase, this protocol will probably be able to screen-out less patients every day.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Apply exams for detecting the presence of other virus/bacteria for patients that are not removed in step 1. Step 2 will only be useful if the cost/time to apply these exams is smaller than that to apply covid-19 PCR.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div id=&#34;data-preprocessing&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Data preprocessing&lt;/h1&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(tidyverse)
+library(readxl)
+library(naniar)
+library(randomForest)
+library(glmnet)
+library(ggpubr)
+library(plotROC)
+library(pROC)
+
+set.seed(0)
+data &amp;lt;- read_xlsx(&amp;quot;dataset.xlsx&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;As there are many variables with missing data, I’ll start
+by removing those that have only been applied to less than
+250 patients.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;keep_cols &amp;lt;- apply(data,2,function(x)sum(!is.na(x)))&amp;gt;=250
+data &amp;lt;- data[,keep_cols]&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;vis_miss(data)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;http://www.rizbicki.ufscar.br/post/Einstein/analysis_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Given the missing patter (which consists of blocks of covariates), for
+simplicity we will keep only (i) age, (ii) the results from the complete blood count and (iii) the results for detecting other virus/bacteria.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;screening-based-on-blood-count&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Screening based on blood count&lt;/h1&gt;
+&lt;p&gt;First, let’s extract the data
+from the blood count exam and the age of the patient.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;data_blood_count &amp;lt;- data %&amp;gt;% 
+  select(`Patient ID`,`SARS-Cov-2 exam result`,`Patient age quantile`,Hematocrit:`Red blood cell distribution width (RDW)`)
+
+data_blood_count &amp;lt;- data_blood_count[complete.cases(data_blood_count),]&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We will now split the sample into train/test.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;split &amp;lt;- sample(c(&amp;quot;Train&amp;quot;,&amp;quot;Test&amp;quot;),nrow(data_blood_count),prob = c(0.7,0.3),replace = TRUE)
+
+covariates_train &amp;lt;- data_blood_count %&amp;gt;% 
+  filter(split==&amp;quot;Train&amp;quot;) %&amp;gt;% 
+  select(-c(`Patient ID`,`SARS-Cov-2 exam result`))
+covariates_test &amp;lt;- data_blood_count %&amp;gt;% 
+  filter(split==&amp;quot;Test&amp;quot;) %&amp;gt;% 
+  select(-c(`Patient ID`,`SARS-Cov-2 exam result`))
+response_train &amp;lt;- data_blood_count%&amp;gt;% 
+  filter(split==&amp;quot;Train&amp;quot;) %&amp;gt;% 
+  select(`SARS-Cov-2 exam result`) %&amp;gt;% 
+  pull()==&amp;quot;positive&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We will apply two probabilistic classifiers:
+(i) a random forest, which fully nonparametric and therefore is able to handle complex interactions between the covariates and
+(ii) a logistic regression with penalization, which is parametric and easier to be applies by practitioners. The
+penalization is important because of the small sample size. We will then compute ROC curves
+so that we can choose cutoffs that lead to reasonable sensitivity/specificity values for this application. Notice that accuracy (1-proportion of mistakes) is &lt;strong&gt;not&lt;/strong&gt; a good measure for our goal.&lt;/p&gt;
+&lt;div id=&#34;random-forest&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Random forest&lt;/h2&gt;
+&lt;p&gt;First we fit the random forest and show the importance of each feature.
+Leukocytes, platets and eosinophils seem to be the most important features among those obtained in the blood count exam.
+Notice that we are treating this as a regression problem so that we can get a score between 0 and 1; the high imbalance of the classes would lead a naive classification forest to give results that are not useful for screening (because they assume a 0-1 loss function).&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;fit_rf &amp;lt;- randomForest(x=covariates_train,
+                       y=response_train)
+varImpPlot(fit_rf)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;http://www.rizbicki.ufscar.br/post/Einstein/analysis_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;pred_rf &amp;lt;- predict(fit_rf,newdata = covariates_test)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;logistic-regression-with-l1-penalization&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Logistic regression with L1 penalization&lt;/h2&gt;
+&lt;p&gt;Next, let’s apply the logistic regression.
+If we use the magnitude of the fitted coefficients are a measure of their importance (which is reasonable because all features are scaled), we get again that the most important
+features are leukocytes, platets and eosinophils.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;fit_logistic_l1 &amp;lt;- cv.glmnet(x=covariates_train %&amp;gt;%as.matrix(),
+                             y=response_train,
+                             family=&amp;quot;binomial&amp;quot;)
+
+pred_logistic_l1 &amp;lt;- predict(fit_logistic_l1,newx = covariates_test%&amp;gt;%
+                              as.matrix(), s=fit_logistic_l1$lambda.min,
+                            type=&amp;quot;response&amp;quot;)
+
+coefficients(fit_logistic_l1,s=fit_logistic_l1$lambda.min)  &lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## 16 x 1 sparse Matrix of class &amp;quot;dgCMatrix&amp;quot;
+##                                                             1
+## (Intercept)                                      -3.814016733
+## Patient age quantile                              0.092543471
+## Hematocrit                                        .          
+## Hemoglobin                                        .          
+## Platelets                                        -0.432712609
+## Mean platelet volume                              .          
+## Red blood Cells                                   0.377461642
+## Lymphocytes                                       .          
+## Mean corpuscular hemoglobin concentration (MCHC)  .          
+## Leukocytes                                       -0.969690632
+## Basophils                                         .          
+## Mean corpuscular hemoglobin (MCH)                 .          
+## Eosinophils                                      -1.178823971
+## Mean corpuscular volume (MCV)                    -0.010821012
+## Monocytes                                         0.009846832
+## Red blood cell distribution width (RDW)          -0.232861777&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;predictive-performance&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Predictive performance&lt;/h2&gt;
+&lt;p&gt;Now let’s compare both methods using a ROC
+curve.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;roc_data &amp;lt;- data.frame(Response=data_blood_count%&amp;gt;% 
+                         filter(split==&amp;quot;Test&amp;quot;) %&amp;gt;% 
+                         select(`SARS-Cov-2 exam result`) %&amp;gt;% 
+                         pull()==&amp;quot;positive&amp;quot;,
+                       Predictor=c(pred_rf,pred_logistic_l1),
+                       Model=rep(c(&amp;quot;Random Forest&amp;quot;,
+                                   &amp;quot;Logistic&amp;quot;),each=sum(split==&amp;quot;Test&amp;quot;)))
+
+
+g1 &amp;lt;- ggplot(data=roc_data,aes(m=Predictor,d=Response,color=Model,fill=Model))+
+  geom_roc()+
+  theme_bw()+
+  xlab(&amp;quot;1-Specificity&amp;quot;)+
+  ylab(&amp;quot;Sensitivity&amp;quot;)+
+  geom_abline(slope = 1,intercept = 0)
+print(g1)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;http://www.rizbicki.ufscar.br/post/Einstein/analysis_files/figure-html/unnamed-chunk-8-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;We are interested in screening only, so we want a large sensitivity value.
+Random forest seems to have better specificity when the cutoffs are such that the sensitivity value is between
+0.75 and 0.95. However, if we take a closer look into that regime and plot confidence regions, it’s hard to say that
+random forests in indeed better.
+Thus, we choose to use a logistic regression because it is easier for practitioners to apply.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;print(g1+coord_cartesian(ylim=c(0.6,1))+
+        geom_rocci(ci.at=c(0.05,0.1,0.15)))&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;http://www.rizbicki.ufscar.br/post/Einstein/analysis_files/figure-html/unnamed-chunk-9-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Now, the following plot shows that almost all patients have a small probability of having covid-19. This is because (i) the prevalance of covid-19 is small in this sample and (ii) the blood count exam is
+not informative enough. That’s OK; we are only going to use it for screening.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ggplot(data.frame(Probability=c(pred_logistic_l1)),aes(x=Probability))+
+  geom_density(fill=&amp;quot;blue&amp;quot;)+
+  theme_bw()+
+  ylab(&amp;quot;Density&amp;quot;)+
+  xlab(&amp;quot;Probability of covid-19 (according to logistic regression based on blood count only)&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;http://www.rizbicki.ufscar.br/post/Einstein/analysis_files/figure-html/unnamed-chunk-10-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;We will choose a cutoff that
+leads to 95% of sensitivity.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;roc_logistic &amp;lt;- roc(as.numeric(data_blood_count%&amp;gt;% 
+                                 filter(split==&amp;quot;Test&amp;quot;) %&amp;gt;% 
+                                 select(`SARS-Cov-2 exam result`) %&amp;gt;% 
+                                 pull()==&amp;quot;positive&amp;quot;),pred_logistic_l1)
+
+optimal_cutoff &amp;lt;- max(roc_logistic$thresholds[roc_logistic$sensitivities&amp;gt;0.95])
+print(round(optimal_cutoff,3))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 0.056&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;That is, patients that have probability of covid-19 larger than 5.57% will still be trated as suspect cases.
+Using this cutoff, we obtain the following
+performance on the test data:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;Decision &amp;lt;- ifelse(pred_logistic_l1&amp;gt;optimal_cutoff,&amp;quot;Follow-up&amp;quot;,&amp;quot;No follow-up&amp;quot;)
+Truth &amp;lt;- ifelse(data_blood_count%&amp;gt;% 
+                  filter(split==&amp;quot;Test&amp;quot;) %&amp;gt;% 
+                  select(`SARS-Cov-2 exam result`) %&amp;gt;% 
+                  pull()==&amp;quot;positive&amp;quot;,&amp;quot;Has covid-19&amp;quot;,&amp;quot;Does not have covid-19&amp;quot;)
+table_screening &amp;lt;- table(Decision,Truth)
+table_screening&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##               Truth
+## Decision       Does not have covid-19 Has covid-19
+##   Follow-up                        73           24
+##   No follow-up                     80            1&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;With this decision rule, we are able to avoid
+applying more exams on
+45.51% of the patients.
+Moreover, only 1 out of the 81 patients we decide not to follow-up has covid-19.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;second-step-looking-for-other-virusbacteria&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Second step: looking for other virus/bacteria&lt;/h1&gt;
+&lt;p&gt;On the second step, we may follow-up
+by checking for other virus/bacteria besides
+covid-19. Again, we are assuming this is cheaper and/or faster than applying the covid-19 PCR, which of course depends on the hospital’s infrastructure.&lt;/p&gt;
+&lt;p&gt;For simplicity and because of the small sample size, we will compute the results using all data points to which we have data about other virus/bacteria, i.e., we will &lt;strong&gt;not&lt;/strong&gt; elimiate
+patients with could have been eliminated using the logistic regression.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;data_virus &amp;lt;- data %&amp;gt;% 
+  select(`Patient ID`,`SARS-Cov-2 exam result`,`Respiratory Syncytial Virus`:`Parainfluenza 2`)
+
+data_virus &amp;lt;- data_virus[complete.cases(data_virus),]&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now, let’s compute how many positive results
+for other virus/bacteria each patient has.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;how_many_other_virus &amp;lt;- apply(data_virus %&amp;gt;% select(`Respiratory Syncytial Virus`:`Parainfluenza 2`),1,function(xx)sum(xx==&amp;quot;detected&amp;quot;))
+
+other_vs_covid &amp;lt;- table(how_many_other_virus,data_virus$`SARS-Cov-2 exam result`)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The following table shows that almost all patients that are positive for covid-19 (89.29%) have negative results for other virus/bacteria. Thus,
+if we choose to apply covid-19 PCR for patients that are negative for all other virus/bacteria, we would miss 12 out the 112 that are positive for covid-19. We would however
+apply
+the covid-19 PCR to only
+48.89% of the patients.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;other_vs_covid&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##                     
+## how_many_other_virus negative positive
+##                    0      561      100
+##                    1      604       11
+##                    2       67        1
+##                    3        8        0&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;If we want to be more conservative, we can choose to apply covid-19 PCR for patients that are positive to at most one of these exams. In this case we would only miss 1 out the 112 that are positive for covid-19. We would however still need to apply
+the covid-19 PCR to
+94.38% of the patients.&lt;/p&gt;
+&lt;p&gt;We finish by noticing that there are only four virus/bacteria
+that occur at the same time as covid-19:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;data_covid_and_more &amp;lt;- data_virus[how_many_other_virus&amp;gt;0&amp;amp;data_virus$`SARS-Cov-2 exam result`==&amp;quot;positive&amp;quot;,] %&amp;gt;% select(`Respiratory Syncytial Virus`:`Parainfluenza 2`)
+
+how_many_positives_other &amp;lt;- apply(data_covid_and_more,2,function(xx)sum(xx==&amp;quot;detected&amp;quot;))
+how_many_positives_other[how_many_positives_other&amp;gt;0]&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##            Influenza B        CoronavirusNL63 Rhinovirus/Enterovirus 
+##                      3                      3                      6 
+##        Coronavirus229E 
+##                      1&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Thus, it may be enough to test for them.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;conclusions-and-other-variations&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Conclusions and other variations&lt;/h1&gt;
+&lt;p&gt;I’ve shown some ways in which selected features (according to my assumption on how easy it is to obtained them in practice) can be applied for screening. All procedures inevitably need to make strong assumptions about the data collection procedure. These assumptions need to be validated by doctors and other specialists. Finally, the main assumption of standard machine learning methods is that new data will behave in the same way as past data (the i.i.d assumption), which certainly is not the case during a pandemic. It is therefore important to constantly re-evaluate any procedure as new data comes.&lt;/p&gt;
+&lt;p&gt;Some incremental mofications that can be made to the approach I’ve laid out:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Include other covariates that are also cheap but I’ve left out from the analysis, such as Urea, Sodium etc (which are also available)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Simple decision trees are even easier to apply in practice; one could check if they have similar predictive performance as logistic regression&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Redo the analysis in step 2. using only patients filtered according to step 1.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Thanks to Dr. Meyer Izbicki for the discussion.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

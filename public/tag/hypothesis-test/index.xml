@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hypothesis Test | Rafael Izbicki | PhD</title>
+    <link>http://www.rizbicki.ufscar.br/tag/hypothesis-test/</link>
+      <atom:link href="http://www.rizbicki.ufscar.br/tag/hypothesis-test/index.xml" rel="self" type="application/rss+xml" />
+    <description>Hypothesis Test</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 01 May 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>http://www.rizbicki.ufscar.br/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_3.png</url>
+      <title>Hypothesis Test</title>
+      <link>http://www.rizbicki.ufscar.br/tag/hypothesis-test/</link>
+    </image>
+    
+    <item>
+      <title>Agnostic tests can control the type I and type II errors simultaneously</title>
+      <link>http://www.rizbicki.ufscar.br/publication/2020_agnostic_error/</link>
+      <pubDate>Fri, 01 May 2020 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/2020_agnostic_error/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pragmatic hypotheses in the evolution of Science</title>
+      <link>http://www.rizbicki.ufscar.br/publication/2019_pragmatic/</link>
+      <pubDate>Sun, 01 Sep 2019 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/2019_pragmatic/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Logically-consistent hypothesis testing and the hexagon of oppositions</title>
+      <link>http://www.rizbicki.ufscar.br/publication/2017_hexagon/</link>
+      <pubDate>Thu, 01 Jun 2017 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/2017_hexagon/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The Logical Consistency of Simultaneous Agnostic Hypothesis Tests</title>
+      <link>http://www.rizbicki.ufscar.br/publication/2016_agnostic/</link>
+      <pubDate>Fri, 01 Jul 2016 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/2016_agnostic/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

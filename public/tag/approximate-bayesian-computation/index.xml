@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Approximate Bayesian Computation | Rafael Izbicki | PhD</title>
+    <link>http://www.rizbicki.ufscar.br/tag/approximate-bayesian-computation/</link>
+      <atom:link href="http://www.rizbicki.ufscar.br/tag/approximate-bayesian-computation/index.xml" rel="self" type="application/rss+xml" />
+    <description>Approximate Bayesian Computation</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 05 Feb 2019 00:03:00 +0000</lastBuildDate>
+    <image>
+      <url>http://www.rizbicki.ufscar.br/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_3.png</url>
+      <title>Approximate Bayesian Computation</title>
+      <link>http://www.rizbicki.ufscar.br/tag/approximate-bayesian-computation/</link>
+    </image>
+    
+    <item>
+      <title>ABC-CDE: Toward Approximate Bayesian Computation with Complex High-Dimensional Data and Limited Simulations</title>
+      <link>http://www.rizbicki.ufscar.br/publication/2019_abccde/</link>
+      <pubDate>Tue, 05 Feb 2019 00:03:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/2019_abccde/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,1541 @@
+<!DOCTYPE html><html lang="en-us" >
+
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Wowchemy 5.5.0 for Hugo" />
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
+    
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+    
+  
+  <meta name="description" content="In this post I analyse the covid-19 data from https://www.kaggle.com/einsteindata4u/covid19, which contains information about patients from Albert Einstein’s Hospital, in São Paulo (Brazil).
+My main assumptions in the following analysis are that:" />
+
+  
+  <link rel="alternate" hreflang="en-us" href="http://www.rizbicki.ufscar.br/post/einstein/analysis/" />
+
+  
+  
+  
+    <meta name="theme-color" content="#1565c0" />
+  
+
+  
+  
+    
+    <script src="/js/mathjax-config.js"></script>
+  
+
+  
+
+  <link rel="stylesheet" href="/css/vendor-bundle.min.c7b8d9abd591ba2253ea42747e3ac3f5.css" media="print" onload="this.media='all'">
+
+  
+  
+  
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha512-W0xM4mr6dEP9nREo7Z9z+9X70wytKvMGeDsj7ps2+xg5QPrEBXC8tAW1IFnzjR6eoJ90JmCnFzerQJTLzIEHjA==" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/github.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
+        
+      
+    
+
+    
+    
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+  
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.1052fab8b7700a3dc49ee23683097d66.css" />
+
+  
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114310932-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-114310932-1', {});
+  gtag('set', {'cookie_flags': 'SameSite=None;Secure'});
+
+  
+  document.addEventListener('click', onClickCallback, false);
+</script>
+
+
+  
+
+<script>
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','G-9ZYJWCKLZE');
+</script>
+
+
+  
+
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+    <link rel="manifest" href="/manifest.webmanifest" />
+  
+
+  <link rel="icon" type="image/png" href="/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_32x32_fill_lanczos_center_3.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_180x180_fill_lanczos_center_3.png" />
+
+  <link rel="canonical" href="http://www.rizbicki.ufscar.br/post/einstein/analysis/" />
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+
+  
+  
+    
+    
+  
+  <meta property="twitter:card" content="summary" />
+  
+  <meta property="og:site_name" content="Rafael Izbicki | PhD" />
+  <meta property="og:url" content="http://www.rizbicki.ufscar.br/post/einstein/analysis/" />
+  <meta property="og:title" content="Covid-19 Einstein Analysis | Rafael Izbicki | PhD" />
+  <meta property="og:description" content="In this post I analyse the covid-19 data from https://www.kaggle.com/einsteindata4u/covid19, which contains information about patients from Albert Einstein’s Hospital, in São Paulo (Brazil).
+My main assumptions in the following analysis are that:" /><meta property="og:image" content="http://www.rizbicki.ufscar.br/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_3.png" />
+    <meta property="twitter:image" content="http://www.rizbicki.ufscar.br/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
+  
+    
+      <meta
+        property="article:published_time"
+        content="2020-03-29T00:00:00&#43;00:00"
+      />
+    
+    <meta property="article:modified_time" content="2020-03-29T00:00:00&#43;00:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://www.rizbicki.ufscar.br/post/einstein/analysis/"
+  },
+  "headline": "Covid-19 Einstein Analysis",
+  
+  "datePublished": "2020-03-29T00:00:00Z",
+  "dateModified": "2020-03-29T00:00:00Z",
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Rafael Izbicki | PhD",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://www.rizbicki.ufscar.br/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_192x192_fill_lanczos_center_3.png"
+    }
+  },
+  "description": "In this post I analyse the covid-19 data from https://www.kaggle.com/einsteindata4u/covid19, which contains information about patients from Albert Einstein’s Hospital, in São Paulo (Brazil).\nMy main assumptions in the following analysis are that:"
+}
+</script>
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+  <title>Covid-19 Einstein Analysis | Rafael Izbicki | PhD</title>
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="a7b9de64f742165961fc5314ea09cee8" >
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.2ed908358299dd7ab553faae685c746c.js"></script>
+
+  
+
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Search...">
+        
+      </div>
+
+      
+      
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+  <div class="page-header">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="header--fixed">
+  <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+    <div class="container-xl">
+
+      
+      <div class="d-none d-lg-inline-flex">
+        <a class="navbar-brand" href="/">Rafael Izbicki | PhD</a>
+      </div>
+      
+
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
+      <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+      
+      <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+        <a class="navbar-brand" href="/">Rafael Izbicki | PhD</a>
+      </div>
+      
+
+      
+      
+      <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+        
+        <ul class="navbar-nav d-md-inline-flex">
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#01_about"><span>Home</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#03_featured"><span>Featured Publications</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#lecture_notes"><span>Lecture Notes</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#teaching"><span>Teaching</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#talks"><span>Talks</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#posts"><span>Posts</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#students"><span>Students</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#09_contact"><span>Contact</span></a>
+          </li>
+
+          
+          
+
+        
+
+          
+        </ul>
+      </div>
+
+      <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+        
+        
+
+        
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+        
+        
+        <li class="nav-item dropdown theme-dropdown">
+          <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Display preferences">
+            <i class="fas fa-moon" aria-hidden="true"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="#" class="dropdown-item js-set-theme-light">
+              <span>Light</span>
+            </a>
+            <a href="#" class="dropdown-item js-set-theme-dark">
+              <span>Dark</span>
+            </a>
+            <a href="#" class="dropdown-item js-set-theme-auto">
+              <span>Automatic</span>
+            </a>
+          </div>
+        </li>
+        
+
+        
+        
+
+      </ul>
+
+    </div>
+  </nav>
+</header>
+
+
+  </div>
+
+  <div class="page-body">
+    
+    
+    
+
+    <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>Covid-19 Einstein Analysis</h1>
+
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Mar 29, 2020
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    8 min read
+  </span>
+  
+
+  
+  
+  
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder mr-1"></i><a href="/category/r/">R</a>, <a href="/category/machine-learning/">machine learning</a>, <a href="/category/blog-post/">Blog Post</a></span>
+  
+
+</div>
+
+    
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      
+
+
+<p>In this post I analyse the covid-19 data from
+<a href="https://www.kaggle.com/einsteindata4u/covid19" class="uri">https://www.kaggle.com/einsteindata4u/covid19</a>, which contains
+information about patients from Albert Einstein’s Hospital, in São Paulo (Brazil).</p>
+<p>My main assumptions in the following analysis are that:</p>
+<ul>
+<li><p>The goal is to provide a <strong>screening</strong> protocol that will reduce the number of patients in which the covid-19 PCR is applied to. Thus, a large <strong>sensitivity</strong> (probability of correctly identifying a true positive) is more important than a large <strong>specificity</strong> (probability of correctly identifying a true negative).</p></li>
+<li><p>I’m assuming that blood count exams and exams for detecting the presence of other virus were applied at random to each patient, i.e., they are not applied according to relevant factors related to covid-19. This is a STRONG assumption.</p></li>
+<li><p>I’m assuming that all data provided is about suspect cases.</p></li>
+<li><p>I’m assuming that blood count exams are fast and cheap, while exams for detecting the presence of other virus/bacteria are more expensive.</p></li>
+</ul>
+<p>In short, the approach I’ll take consists in</p>
+<ol style="list-style-type: decimal">
+<li><p>Provide a screening technique using only the blood count exam and age. This will already remove about half of the patients from the list of suspects IF THE ASSUMPTIONS ARE CORRECT and the prevalence of covid-19 patients that go to the hospital does not change. As this prevalence is expected to increase, this protocol will probably be able to screen-out less patients every day.</p></li>
+<li><p>Apply exams for detecting the presence of other virus/bacteria for patients that are not removed in step 1. Step 2 will only be useful if the cost/time to apply these exams is smaller than that to apply covid-19 PCR.</p></li>
+</ol>
+<div id="data-preprocessing" class="section level1">
+<h1>Data preprocessing</h1>
+<pre class="r"><code>library(tidyverse)
+library(readxl)
+library(naniar)
+library(randomForest)
+library(glmnet)
+library(ggpubr)
+library(plotROC)
+library(pROC)
+
+set.seed(0)
+data &lt;- read_xlsx(&quot;dataset.xlsx&quot;)</code></pre>
+<p>As there are many variables with missing data, I’ll start
+by removing those that have only been applied to less than
+250 patients.</p>
+<pre class="r"><code>keep_cols &lt;- apply(data,2,function(x)sum(!is.na(x)))&gt;=250
+data &lt;- data[,keep_cols]</code></pre>
+<pre class="r"><code>vis_miss(data)</code></pre>
+<p><img src="/post/Einstein/analysis_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p>Given the missing patter (which consists of blocks of covariates), for
+simplicity we will keep only (i) age, (ii) the results from the complete blood count and (iii) the results for detecting other virus/bacteria.</p>
+</div>
+<div id="screening-based-on-blood-count" class="section level1">
+<h1>Screening based on blood count</h1>
+<p>First, let’s extract the data
+from the blood count exam and the age of the patient.</p>
+<pre class="r"><code>data_blood_count &lt;- data %&gt;% 
+  select(`Patient ID`,`SARS-Cov-2 exam result`,`Patient age quantile`,Hematocrit:`Red blood cell distribution width (RDW)`)
+
+data_blood_count &lt;- data_blood_count[complete.cases(data_blood_count),]</code></pre>
+<p>We will now split the sample into train/test.</p>
+<pre class="r"><code>split &lt;- sample(c(&quot;Train&quot;,&quot;Test&quot;),nrow(data_blood_count),prob = c(0.7,0.3),replace = TRUE)
+
+covariates_train &lt;- data_blood_count %&gt;% 
+  filter(split==&quot;Train&quot;) %&gt;% 
+  select(-c(`Patient ID`,`SARS-Cov-2 exam result`))
+covariates_test &lt;- data_blood_count %&gt;% 
+  filter(split==&quot;Test&quot;) %&gt;% 
+  select(-c(`Patient ID`,`SARS-Cov-2 exam result`))
+response_train &lt;- data_blood_count%&gt;% 
+  filter(split==&quot;Train&quot;) %&gt;% 
+  select(`SARS-Cov-2 exam result`) %&gt;% 
+  pull()==&quot;positive&quot;</code></pre>
+<p>We will apply two probabilistic classifiers:
+(i) a random forest, which fully nonparametric and therefore is able to handle complex interactions between the covariates and
+(ii) a logistic regression with penalization, which is parametric and easier to be applies by practitioners. The
+penalization is important because of the small sample size. We will then compute ROC curves
+so that we can choose cutoffs that lead to reasonable sensitivity/specificity values for this application. Notice that accuracy (1-proportion of mistakes) is <strong>not</strong> a good measure for our goal.</p>
+<div id="random-forest" class="section level2">
+<h2>Random forest</h2>
+<p>First we fit the random forest and show the importance of each feature.
+Leukocytes, platets and eosinophils seem to be the most important features among those obtained in the blood count exam.
+Notice that we are treating this as a regression problem so that we can get a score between 0 and 1; the high imbalance of the classes would lead a naive classification forest to give results that are not useful for screening (because they assume a 0-1 loss function).</p>
+<pre class="r"><code>fit_rf &lt;- randomForest(x=covariates_train,
+                       y=response_train)
+varImpPlot(fit_rf)</code></pre>
+<p><img src="/post/Einstein/analysis_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<pre class="r"><code>pred_rf &lt;- predict(fit_rf,newdata = covariates_test)</code></pre>
+</div>
+<div id="logistic-regression-with-l1-penalization" class="section level2">
+<h2>Logistic regression with L1 penalization</h2>
+<p>Next, let’s apply the logistic regression.
+If we use the magnitude of the fitted coefficients are a measure of their importance (which is reasonable because all features are scaled), we get again that the most important
+features are leukocytes, platets and eosinophils.</p>
+<pre class="r"><code>fit_logistic_l1 &lt;- cv.glmnet(x=covariates_train %&gt;%as.matrix(),
+                             y=response_train,
+                             family=&quot;binomial&quot;)
+
+pred_logistic_l1 &lt;- predict(fit_logistic_l1,newx = covariates_test%&gt;%
+                              as.matrix(), s=fit_logistic_l1$lambda.min,
+                            type=&quot;response&quot;)
+
+coefficients(fit_logistic_l1,s=fit_logistic_l1$lambda.min)  </code></pre>
+<pre><code>## 16 x 1 sparse Matrix of class &quot;dgCMatrix&quot;
+##                                                             1
+## (Intercept)                                      -3.814016733
+## Patient age quantile                              0.092543471
+## Hematocrit                                        .          
+## Hemoglobin                                        .          
+## Platelets                                        -0.432712609
+## Mean platelet volume                              .          
+## Red blood Cells                                   0.377461642
+## Lymphocytes                                       .          
+## Mean corpuscular hemoglobin concentration (MCHC)  .          
+## Leukocytes                                       -0.969690632
+## Basophils                                         .          
+## Mean corpuscular hemoglobin (MCH)                 .          
+## Eosinophils                                      -1.178823971
+## Mean corpuscular volume (MCV)                    -0.010821012
+## Monocytes                                         0.009846832
+## Red blood cell distribution width (RDW)          -0.232861777</code></pre>
+</div>
+<div id="predictive-performance" class="section level2">
+<h2>Predictive performance</h2>
+<p>Now let’s compare both methods using a ROC
+curve.</p>
+<pre class="r"><code>roc_data &lt;- data.frame(Response=data_blood_count%&gt;% 
+                         filter(split==&quot;Test&quot;) %&gt;% 
+                         select(`SARS-Cov-2 exam result`) %&gt;% 
+                         pull()==&quot;positive&quot;,
+                       Predictor=c(pred_rf,pred_logistic_l1),
+                       Model=rep(c(&quot;Random Forest&quot;,
+                                   &quot;Logistic&quot;),each=sum(split==&quot;Test&quot;)))
+
+
+g1 &lt;- ggplot(data=roc_data,aes(m=Predictor,d=Response,color=Model,fill=Model))+
+  geom_roc()+
+  theme_bw()+
+  xlab(&quot;1-Specificity&quot;)+
+  ylab(&quot;Sensitivity&quot;)+
+  geom_abline(slope = 1,intercept = 0)
+print(g1)</code></pre>
+<p><img src="/post/Einstein/analysis_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p>We are interested in screening only, so we want a large sensitivity value.
+Random forest seems to have better specificity when the cutoffs are such that the sensitivity value is between
+0.75 and 0.95. However, if we take a closer look into that regime and plot confidence regions, it’s hard to say that
+random forests in indeed better.
+Thus, we choose to use a logistic regression because it is easier for practitioners to apply.</p>
+<pre class="r"><code>print(g1+coord_cartesian(ylim=c(0.6,1))+
+        geom_rocci(ci.at=c(0.05,0.1,0.15)))</code></pre>
+<p><img src="/post/Einstein/analysis_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p>Now, the following plot shows that almost all patients have a small probability of having covid-19. This is because (i) the prevalance of covid-19 is small in this sample and (ii) the blood count exam is
+not informative enough. That’s OK; we are only going to use it for screening.</p>
+<pre class="r"><code>ggplot(data.frame(Probability=c(pred_logistic_l1)),aes(x=Probability))+
+  geom_density(fill=&quot;blue&quot;)+
+  theme_bw()+
+  ylab(&quot;Density&quot;)+
+  xlab(&quot;Probability of covid-19 (according to logistic regression based on blood count only)&quot;)</code></pre>
+<p><img src="/post/Einstein/analysis_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p>We will choose a cutoff that
+leads to 95% of sensitivity.</p>
+<pre class="r"><code>roc_logistic &lt;- roc(as.numeric(data_blood_count%&gt;% 
+                                 filter(split==&quot;Test&quot;) %&gt;% 
+                                 select(`SARS-Cov-2 exam result`) %&gt;% 
+                                 pull()==&quot;positive&quot;),pred_logistic_l1)
+
+optimal_cutoff &lt;- max(roc_logistic$thresholds[roc_logistic$sensitivities&gt;0.95])
+print(round(optimal_cutoff,3))</code></pre>
+<pre><code>## [1] 0.056</code></pre>
+<p>That is, patients that have probability of covid-19 larger than 5.57% will still be trated as suspect cases.
+Using this cutoff, we obtain the following
+performance on the test data:</p>
+<pre class="r"><code>Decision &lt;- ifelse(pred_logistic_l1&gt;optimal_cutoff,&quot;Follow-up&quot;,&quot;No follow-up&quot;)
+Truth &lt;- ifelse(data_blood_count%&gt;% 
+                  filter(split==&quot;Test&quot;) %&gt;% 
+                  select(`SARS-Cov-2 exam result`) %&gt;% 
+                  pull()==&quot;positive&quot;,&quot;Has covid-19&quot;,&quot;Does not have covid-19&quot;)
+table_screening &lt;- table(Decision,Truth)
+table_screening</code></pre>
+<pre><code>##               Truth
+## Decision       Does not have covid-19 Has covid-19
+##   Follow-up                        73           24
+##   No follow-up                     80            1</code></pre>
+<p>With this decision rule, we are able to avoid
+applying more exams on
+45.51% of the patients.
+Moreover, only 1 out of the 81 patients we decide not to follow-up has covid-19.</p>
+</div>
+</div>
+<div id="second-step-looking-for-other-virusbacteria" class="section level1">
+<h1>Second step: looking for other virus/bacteria</h1>
+<p>On the second step, we may follow-up
+by checking for other virus/bacteria besides
+covid-19. Again, we are assuming this is cheaper and/or faster than applying the covid-19 PCR, which of course depends on the hospital’s infrastructure.</p>
+<p>For simplicity and because of the small sample size, we will compute the results using all data points to which we have data about other virus/bacteria, i.e., we will <strong>not</strong> elimiate
+patients with could have been eliminated using the logistic regression.</p>
+<pre class="r"><code>data_virus &lt;- data %&gt;% 
+  select(`Patient ID`,`SARS-Cov-2 exam result`,`Respiratory Syncytial Virus`:`Parainfluenza 2`)
+
+data_virus &lt;- data_virus[complete.cases(data_virus),]</code></pre>
+<p>Now, let’s compute how many positive results
+for other virus/bacteria each patient has.</p>
+<pre class="r"><code>how_many_other_virus &lt;- apply(data_virus %&gt;% select(`Respiratory Syncytial Virus`:`Parainfluenza 2`),1,function(xx)sum(xx==&quot;detected&quot;))
+
+other_vs_covid &lt;- table(how_many_other_virus,data_virus$`SARS-Cov-2 exam result`)</code></pre>
+<p>The following table shows that almost all patients that are positive for covid-19 (89.29%) have negative results for other virus/bacteria. Thus,
+if we choose to apply covid-19 PCR for patients that are negative for all other virus/bacteria, we would miss 12 out the 112 that are positive for covid-19. We would however
+apply
+the covid-19 PCR to only
+48.89% of the patients.</p>
+<pre class="r"><code>other_vs_covid</code></pre>
+<pre><code>##                     
+## how_many_other_virus negative positive
+##                    0      561      100
+##                    1      604       11
+##                    2       67        1
+##                    3        8        0</code></pre>
+<p>If we want to be more conservative, we can choose to apply covid-19 PCR for patients that are positive to at most one of these exams. In this case we would only miss 1 out the 112 that are positive for covid-19. We would however still need to apply
+the covid-19 PCR to
+94.38% of the patients.</p>
+<p>We finish by noticing that there are only four virus/bacteria
+that occur at the same time as covid-19:</p>
+<pre class="r"><code>data_covid_and_more &lt;- data_virus[how_many_other_virus&gt;0&amp;data_virus$`SARS-Cov-2 exam result`==&quot;positive&quot;,] %&gt;% select(`Respiratory Syncytial Virus`:`Parainfluenza 2`)
+
+how_many_positives_other &lt;- apply(data_covid_and_more,2,function(xx)sum(xx==&quot;detected&quot;))
+how_many_positives_other[how_many_positives_other&gt;0]</code></pre>
+<pre><code>##            Influenza B        CoronavirusNL63 Rhinovirus/Enterovirus 
+##                      3                      3                      6 
+##        Coronavirus229E 
+##                      1</code></pre>
+<p>Thus, it may be enough to test for them.</p>
+</div>
+<div id="conclusions-and-other-variations" class="section level1">
+<h1>Conclusions and other variations</h1>
+<p>I’ve shown some ways in which selected features (according to my assumption on how easy it is to obtained them in practice) can be applied for screening. All procedures inevitably need to make strong assumptions about the data collection procedure. These assumptions need to be validated by doctors and other specialists. Finally, the main assumption of standard machine learning methods is that new data will behave in the same way as past data (the i.i.d assumption), which certainly is not the case during a pandemic. It is therefore important to constantly re-evaluate any procedure as new data comes.</p>
+<p>Some incremental mofications that can be made to the approach I’ve laid out:</p>
+<ul>
+<li><p>Include other covariates that are also cheap but I’ve left out from the analysis, such as Urea, Sodium etc (which are also available)</p></li>
+<li><p>Simple decision trees are even easier to apply in practice; one could check if they have similar predictive performance as logistic regression</p></li>
+<li><p>Redo the analysis in step 2. using only patients filtered according to step 1.</p></li>
+</ul>
+<p>Thanks to Dr. Meyer Izbicki for the discussion.</p>
+</div>
+
+    </div>
+
+    
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tag/r/">R</a>
+  
+  <a class="badge badge-light" href="/tag/machine-learning/">machine learning</a>
+  
+  <a class="badge badge-light" href="/tag/covid-19/">covid-19</a>
+  
+</div>
+
+
+
+<div class="share-box">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=http://www.rizbicki.ufscar.br/post/einstein/analysis/&amp;text=Covid-19%20Einstein%20Analysis" target="_blank" rel="noopener" class="share-btn-twitter" aria-label="twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=http://www.rizbicki.ufscar.br/post/einstein/analysis/&amp;t=Covid-19%20Einstein%20Analysis" target="_blank" rel="noopener" class="share-btn-facebook" aria-label="facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Covid-19%20Einstein%20Analysis&amp;body=http://www.rizbicki.ufscar.br/post/einstein/analysis/" target="_blank" rel="noopener" class="share-btn-email" aria-label="envelope">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=http://www.rizbicki.ufscar.br/post/einstein/analysis/&amp;title=Covid-19%20Einstein%20Analysis" target="_blank" rel="noopener" class="share-btn-linkedin" aria-label="linkedin-in">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=Covid-19%20Einstein%20Analysis%20http://www.rizbicki.ufscar.br/post/einstein/analysis/" target="_blank" rel="noopener" class="share-btn-whatsapp" aria-label="whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=http://www.rizbicki.ufscar.br/post/einstein/analysis/&amp;title=Covid-19%20Einstein%20Analysis" target="_blank" rel="noopener" class="share-btn-weibo" aria-label="weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+</article>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+
+  
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+    
+  
+  
+    
+  
+
+  
+
+  
+  <p class="powered-by copyright-license-text">
+    © {2022} Rafael B. Izbicki.
+  </p>
+  
+
+  <p class="powered-by footer-license-icons">
+    <a href="https://creativecommons.org/licenses/by-nc-nd/4.0" rel="noopener noreferrer" target="_blank" aria-label="Creative Commons">
+      <i class="fab fa-creative-commons fa-2x" aria-hidden="true"></i>
+      <i class="fab fa-creative-commons-by fa-2x" aria-hidden="true"></i>
+      
+        <i class="fab fa-creative-commons-nc fa-2x" aria-hidden="true"></i>
+      
+      
+        <i class="fab fa-creative-commons-nd fa-2x" aria-hidden="true"></i>
+      
+    </a>
+  </p>
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+      
+      
+      
+      
+      
+      
+      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-themes" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
+    
+  </p>
+</footer>
+
+    </div>
+    
+  </div>
+
+      
+
+    
+    <script src="/js/vendor-bundle.min.46271ef31da3f018e9cd1b59300aa265.js"></script>
+
+    
+    
+    
+      
+
+      
+      
+
+      
+
+      
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/highlight.min.js" integrity="sha512-Ypjm0o7jOxAd4hpdoppSEN0TQOC19UtPAqD+4s5AlXmUvbmmS/YMxYqAqarQYyxTnB6/rqip9qcxlNB/3U9Wdg==" crossorigin="anonymous"></script>
+        
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/r.min.js" crossorigin="anonymous"></script>
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/latex.min.js" crossorigin="anonymous"></script>
+        
+      
+
+    
+
+    
+    
+    
+
+    
+    
+
+    
+    
+    
+      
+      <script id="search-hit-fuse-template" type="text/x-template">
+        <div class="search-hit" id="summary-{{key}}">
+          <div class="search-hit-content">
+            <div class="search-hit-name">
+              <a href="{{relpermalink}}">{{title}}</a>
+              <div class="article-metadata search-hit-type">{{type}}</div>
+              <p class="search-hit-description">{{snippet}}</p>
+            </div>
+          </div>
+        </div>
+      </script>
+      
+        <script src="https://cdn.jsdelivr.net/gh/krisk/Fuse@v3.2.1/dist/fuse.min.js" integrity="sha512-o38bmzBGX+hD3JHWUFCDA09btWaqrNmoJ3RXLlrysA7PP01Kgs4UlE4MhelE1v5dJR3+cxlR4qQlotsW7jKsnw==" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/gh/julmot/mark.js@8.11.1/dist/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+      
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+      
+      
+      
+      
+      
+      
+      
+    
+
+    
+
+    
+    
+    
+    <script id="page-data" type="application/json">{"use_headroom":true}</script>
+
+    
+    
+      <script src="/js/wowchemy-headroom.c251366b4128fd5e6b046d4c97a62a51.js" type="module"></script>
+    
+    
+    
+    
+    
+    
+    
+      
+      
+    
+    
+    <script src="/en/js/wowchemy.min.3239609ca7abe02ed52d76ffcb22af1d.js"></script>
+
+    
+    
+    
+    
+    
+    
+      
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      <script src="/js/wowchemy-publication.68f8d7090562ca65fc6d3cb3f8f2d2cb.js" type="module"></script>
+
+
+
+
+
+
+</body>
+</html>

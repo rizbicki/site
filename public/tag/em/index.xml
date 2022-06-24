@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>EM | Rafael Izbicki | PhD</title>
+    <link>http://www.rizbicki.ufscar.br/tag/em/</link>
+      <atom:link href="http://www.rizbicki.ufscar.br/tag/em/index.xml" rel="self" type="application/rss+xml" />
+    <description>EM</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sat, 01 Jun 2013 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>http://www.rizbicki.ufscar.br/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_3.png</url>
+      <title>EM</title>
+      <link>http://www.rizbicki.ufscar.br/tag/em/</link>
+    </image>
+    
+    <item>
+      <title>Learning with many experts: Model selection and sparsity</title>
+      <link>http://www.rizbicki.ufscar.br/publication/2013_crowdsourcing/</link>
+      <pubDate>Sat, 01 Jun 2013 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/2013_crowdsourcing/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

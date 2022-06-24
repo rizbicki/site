@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>UMP Test | Rafael Izbicki | PhD</title>
+    <link>http://www.rizbicki.ufscar.br/tag/ump-test/</link>
+      <atom:link href="http://www.rizbicki.ufscar.br/tag/ump-test/index.xml" rel="self" type="application/rss+xml" />
+    <description>UMP Test</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 01 May 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>http://www.rizbicki.ufscar.br/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_3.png</url>
+      <title>UMP Test</title>
+      <link>http://www.rizbicki.ufscar.br/tag/ump-test/</link>
+    </image>
+    
+    <item>
+      <title>Agnostic tests can control the type I and type II errors simultaneously</title>
+      <link>http://www.rizbicki.ufscar.br/publication/2020_agnostic_error/</link>
+      <pubDate>Fri, 01 May 2020 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/2020_agnostic_error/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,287 @@
+---
+title: "Covid-19 Einstein Analysis"
+author: "Rafael Izbicki"
+date: '2020-03-29'
+output: html_document
+tags:
+- R
+- machine learning
+- covid-19
+categories:
+- R
+- machine learning
+- Blog Post
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,warning = FALSE,message = FALSE,cache=TRUE)
+```
+
+
+In this post I analyse the covid-19 data from 
+https://www.kaggle.com/einsteindata4u/covid19, which contains
+information about patients from Albert Einstein's Hospital, in São Paulo (Brazil).
+
+My main assumptions in the following analysis are that:
+
+* The goal is to provide a **screening** protocol that will reduce the number of patients in which the covid-19 PCR  is applied to. Thus, a large **sensitivity** (probability of correctly identifying a true positive) is more important than a large **specificity** (probability of correctly identifying a true negative).
+
+* I'm assuming that blood count exams and exams for detecting the presence of other virus were applied at random to each patient, i.e., they are not applied according to relevant factors related to covid-19. This is a STRONG assumption.
+
+* I'm assuming that all data provided is about suspect cases.
+
+* I'm assuming that blood count exams are fast and cheap, while exams for detecting the presence of other virus/bacteria are more expensive.
+
+In short, the approach I'll take consists in
+
+1. Provide a screening technique using only the blood count exam and age. This will already remove about half of the patients from the list of suspects IF THE ASSUMPTIONS ARE CORRECT and the prevalence of covid-19 patients that go to the hospital does not change. As this prevalence is expected to increase, this protocol will probably be able to screen-out less patients every day.
+
+2. Apply exams for detecting the presence of other virus/bacteria for patients that are not removed in step 1. Step 2 will only be useful if the cost/time to apply these exams is smaller than that to apply covid-19 PCR.
+
+
+
+# Data preprocessing
+
+```{r}
+library(tidyverse)
+library(readxl)
+library(naniar)
+library(randomForest)
+library(glmnet)
+library(ggpubr)
+library(plotROC)
+library(pROC)
+
+set.seed(0)
+data <- read_xlsx("dataset.xlsx")
+```
+
+
+As there are many variables with missing data, I'll start
+by removing those that have only been applied to less than
+250 patients.
+
+```{r}
+keep_cols <- apply(data,2,function(x)sum(!is.na(x)))>=250
+data <- data[,keep_cols]
+```
+
+
+```{r}
+vis_miss(data)
+```
+
+Given the missing patter (which consists of blocks of covariates), for
+simplicity we will keep only (i) age, (ii) the results from the complete blood count and (iii) the results for detecting other virus/bacteria.
+
+# Screening based on blood count
+
+First, let's extract the data
+from the blood count exam and the age of the patient. 
+
+```{r}
+data_blood_count <- data %>% 
+  select(`Patient ID`,`SARS-Cov-2 exam result`,`Patient age quantile`,Hematocrit:`Red blood cell distribution width (RDW)`)
+
+data_blood_count <- data_blood_count[complete.cases(data_blood_count),]
+```
+
+We will now split the sample into train/test.
+
+```{r}
+split <- sample(c("Train","Test"),nrow(data_blood_count),prob = c(0.7,0.3),replace = TRUE)
+
+covariates_train <- data_blood_count %>% 
+  filter(split=="Train") %>% 
+  select(-c(`Patient ID`,`SARS-Cov-2 exam result`))
+covariates_test <- data_blood_count %>% 
+  filter(split=="Test") %>% 
+  select(-c(`Patient ID`,`SARS-Cov-2 exam result`))
+response_train <- data_blood_count%>% 
+  filter(split=="Train") %>% 
+  select(`SARS-Cov-2 exam result`) %>% 
+  pull()=="positive"
+```
+
+
+We will apply two probabilistic classifiers:
+(i) a random forest, which fully nonparametric and therefore is able to handle complex interactions between the covariates and
+(ii) a logistic regression with penalization, which is parametric and easier to be applies by practitioners. The
+penalization is important because of the small sample size. We will then compute ROC curves
+so that we can choose cutoffs that lead to reasonable sensitivity/specificity values for this application. Notice that accuracy (1-proportion of mistakes) is **not** a good measure for our goal.
+
+## Random forest
+
+First we fit the random forest and show the importance of each feature.
+Leukocytes, platets and eosinophils seem to be the most important features among those obtained in the blood count exam.
+Notice that we are treating this as a regression problem so that we can get a score between 0 and 1; the high imbalance of the classes would lead a naive classification forest to give results that are not useful for screening (because they assume a 0-1 loss function).
+
+```{r}
+fit_rf <- randomForest(x=covariates_train,
+                       y=response_train)
+varImpPlot(fit_rf)
+
+pred_rf <- predict(fit_rf,newdata = covariates_test)
+```
+
+
+## Logistic regression with L1 penalization
+
+Next, let's apply the logistic regression.
+If we use the magnitude of the fitted coefficients are a measure of their importance (which is reasonable because all features are scaled), we get again that the most important
+features are leukocytes, platets and eosinophils.
+
+```{r}
+fit_logistic_l1 <- cv.glmnet(x=covariates_train %>%as.matrix(),
+                             y=response_train,
+                             family="binomial")
+
+pred_logistic_l1 <- predict(fit_logistic_l1,newx = covariates_test%>%
+                              as.matrix(), s=fit_logistic_l1$lambda.min,
+                            type="response")
+
+coefficients(fit_logistic_l1,s=fit_logistic_l1$lambda.min)  
+```
+
+## Predictive performance
+
+Now let's compare both methods using a ROC
+curve.
+
+```{r}
+roc_data <- data.frame(Response=data_blood_count%>% 
+                         filter(split=="Test") %>% 
+                         select(`SARS-Cov-2 exam result`) %>% 
+                         pull()=="positive",
+                       Predictor=c(pred_rf,pred_logistic_l1),
+                       Model=rep(c("Random Forest",
+                                   "Logistic"),each=sum(split=="Test")))
+
+
+g1 <- ggplot(data=roc_data,aes(m=Predictor,d=Response,color=Model,fill=Model))+
+  geom_roc()+
+  theme_bw()+
+  xlab("1-Specificity")+
+  ylab("Sensitivity")+
+  geom_abline(slope = 1,intercept = 0)
+print(g1)
+```
+
+We are interested in screening only, so we want a large sensitivity value.
+Random forest seems to have better specificity when the cutoffs are such that  the sensitivity value is between
+0.75 and 0.95. However, if we take a closer look into that regime and plot confidence regions, it's hard to say that 
+random forests in indeed better.
+Thus, we choose to use a logistic regression because it is easier for practitioners to apply.
+
+```{r}
+print(g1+coord_cartesian(ylim=c(0.6,1))+
+        geom_rocci(ci.at=c(0.05,0.1,0.15)))
+```
+
+Now, the following plot shows that almost all patients have a small probability of having covid-19. This is because (i) the prevalance of covid-19 is small in this sample and (ii) the blood count exam is 
+not informative enough. That's OK; we are only going to use it for screening.
+```{r}
+ggplot(data.frame(Probability=c(pred_logistic_l1)),aes(x=Probability))+
+  geom_density(fill="blue")+
+  theme_bw()+
+  ylab("Density")+
+  xlab("Probability of covid-19 (according to logistic regression based on blood count only)")
+```
+
+We will choose a cutoff that
+leads to 95% of sensitivity.
+```{r}
+roc_logistic <- roc(as.numeric(data_blood_count%>% 
+                                 filter(split=="Test") %>% 
+                                 select(`SARS-Cov-2 exam result`) %>% 
+                                 pull()=="positive"),pred_logistic_l1)
+
+optimal_cutoff <- max(roc_logistic$thresholds[roc_logistic$sensitivities>0.95])
+print(round(optimal_cutoff,3))
+```
+
+That is, patients that have probability of covid-19 larger than `r paste0(round(100*optimal_cutoff,2),"%")` will still be trated as suspect cases.
+Using this cutoff, we obtain the following 
+performance on the test data:
+
+```{r}
+Decision <- ifelse(pred_logistic_l1>optimal_cutoff,"Follow-up","No follow-up")
+Truth <- ifelse(data_blood_count%>% 
+                  filter(split=="Test") %>% 
+                  select(`SARS-Cov-2 exam result`) %>% 
+                  pull()=="positive","Has covid-19","Does not have covid-19")
+table_screening <- table(Decision,Truth)
+table_screening
+```
+
+With this decision rule, we are able to avoid 
+applying more exams on
+`r paste0(round(100*sum(table_screening[2,])/sum(table_screening),2),"%")` of the patients.
+Moreover, only  `r table_screening[2,2]` out of the  `r sum(table_screening[2,])` patients we decide not to follow-up has covid-19.
+
+# Second step: looking for other virus/bacteria
+
+On the second step, we may follow-up
+by checking for other virus/bacteria besides
+covid-19. Again, we are assuming this is cheaper and/or faster than applying the covid-19 PCR, which of course depends on the hospital's infrastructure.
+
+For simplicity and because of the small sample size, we will compute the results using all data points to which we have data about other virus/bacteria, i.e., we will **not** elimiate
+patients with could have been eliminated using the logistic regression.
+
+```{r}
+data_virus <- data %>% 
+  select(`Patient ID`,`SARS-Cov-2 exam result`,`Respiratory Syncytial Virus`:`Parainfluenza 2`)
+
+data_virus <- data_virus[complete.cases(data_virus),]
+```
+
+Now, let's compute how many positive results
+for other virus/bacteria each patient has.
+```{r}
+how_many_other_virus <- apply(data_virus %>% select(`Respiratory Syncytial Virus`:`Parainfluenza 2`),1,function(xx)sum(xx=="detected"))
+
+other_vs_covid <- table(how_many_other_virus,data_virus$`SARS-Cov-2 exam result`)
+```
+
+
+The following table shows that almost all patients that are positive for covid-19 (`r paste0(round(100*sum(other_vs_covid[1,2])/sum(other_vs_covid[,2]),2),"%")`) have negative results for other virus/bacteria. Thus,
+if we choose to apply covid-19 PCR for patients that are negative for all other virus/bacteria, we would  miss `r sum(other_vs_covid[-c(1),2])` out the `r sum(other_vs_covid[,2])` that are positive for covid-19. We would however 
+apply
+the covid-19 PCR to  only
+`r paste0(round(100*sum(other_vs_covid[1,])/sum(other_vs_covid),2),"%")` of the patients.
+
+
+
+```{r}
+other_vs_covid
+```
+
+If we want to be more conservative,  we can choose to apply covid-19 PCR for patients that are positive to at most one of these exams. In this case we would only miss `r sum(other_vs_covid[-c(1:2),2])` out the `r sum(other_vs_covid[,2])` that are positive for covid-19. We would however still need to apply
+the covid-19 PCR to 
+`r paste0(round(100*sum(other_vs_covid[1:2,])/sum(other_vs_covid),2),"%")` of the patients.
+
+We finish by noticing that there are only four  virus/bacteria
+that occur at the same time as covid-19:
+```{r}
+data_covid_and_more <- data_virus[how_many_other_virus>0&data_virus$`SARS-Cov-2 exam result`=="positive",] %>% select(`Respiratory Syncytial Virus`:`Parainfluenza 2`)
+
+how_many_positives_other <- apply(data_covid_and_more,2,function(xx)sum(xx=="detected"))
+how_many_positives_other[how_many_positives_other>0]
+```
+Thus, it may be enough to test for them.
+
+# Conclusions and other variations
+
+I've shown some ways in which selected features (according to my assumption on how easy it is to obtained them in practice) can be applied for screening. All procedures inevitably need to make strong assumptions about the data collection procedure. These assumptions need to be validated by doctors and other specialists. Finally, the main assumption of standard machine learning methods is that new data will behave in the same way as past data (the i.i.d assumption), which certainly is not the case during a pandemic. It is therefore important to constantly re-evaluate any procedure as new data comes.
+
+Some incremental mofications that can be made to the approach I've laid out:
+
+* Include other covariates that are also cheap but I've left out from the analysis, such as Urea, Sodium etc (which are also available)
+
+* Simple decision trees are even easier to apply in practice; one could check if they have similar predictive performance as logistic regression
+
+* Redo the analysis in step 2. using only patients filtered according to step 1.
+
+Thanks to Dr.  Meyer Izbicki for the discussion.

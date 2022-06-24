@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>1 | Rafael Izbicki | PhD</title>
+    <link>http://www.rizbicki.ufscar.br/publication-type/1/</link>
+      <atom:link href="http://www.rizbicki.ufscar.br/publication-type/1/index.xml" rel="self" type="application/rss+xml" />
+    <description>1</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Thu, 09 Sep 2021 00:03:00 +0000</lastBuildDate>
+    <image>
+      <url>http://www.rizbicki.ufscar.br/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_3.png</url>
+      <title>1</title>
+      <link>http://www.rizbicki.ufscar.br/publication-type/1/</link>
+    </image>
+    
+    <item>
+      <title>Diagnostics for Conditional Density Models and Bayesian Inference Algorithms</title>
+      <link>http://www.rizbicki.ufscar.br/publication/alp/</link>
+      <pubDate>Thu, 09 Sep 2021 00:03:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/alp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Identifying Distributional Differences in Convective Evolution Prior to Rapid Intensification in Tropical Cyclones</title>
+      <link>http://www.rizbicki.ufscar.br/publication/cyclones/</link>
+      <pubDate>Tue, 09 Feb 2021 00:03:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/cyclones/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Flexible distribution-free conditional predictive bands using density estimators</title>
+      <link>http://www.rizbicki.ufscar.br/publication/2020_cdsplit_aistats/</link>
+      <pubDate>Wed, 01 Apr 2020 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/2020_cdsplit_aistats/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Confidence Sets and Hypothesis Testing in a Likelihood-Free Inference Setting</title>
+      <link>http://www.rizbicki.ufscar.br/publication/2020_confidence_likelihood_free/</link>
+      <pubDate>Wed, 05 Feb 2020 00:03:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/2020_confidence_likelihood_free/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Validation of Approximate Likelihood and Emulator Models for Computationally Intensive Simulations</title>
+      <link>http://www.rizbicki.ufscar.br/publication/validation/</link>
+      <pubDate>Sun, 05 Jan 2020 00:03:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/validation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ABC-CDE: Toward Approximate Bayesian Computation with Complex High-Dimensional Data and Limited Simulations</title>
+      <link>http://www.rizbicki.ufscar.br/publication/2019_abccde/</link>
+      <pubDate>Tue, 05 Feb 2019 00:03:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/2019_abccde/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Conditional density estimation using Fourier series and neural networks</title>
+      <link>http://www.rizbicki.ufscar.br/publication/flexcode_nnets/</link>
+      <pubDate>Mon, 28 May 2018 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/flexcode_nnets/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Converting High-Dimensional Regression to High-Dimensional Conditional Density Estimation</title>
+      <link>http://www.rizbicki.ufscar.br/publication/2017_flexcode/</link>
+      <pubDate>Sun, 05 Nov 2017 00:03:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/2017_flexcode/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Prior Shift Using the Ratio Estimator</title>
+      <link>http://www.rizbicki.ufscar.br/publication/2017_quantification_maxent/</link>
+      <pubDate>Mon, 01 May 2017 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/2017_quantification_maxent/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Photo-z estimation: An example of nonparametric conditional density estimation under selection bias</title>
+      <link>http://www.rizbicki.ufscar.br/publication/2017_photo_z/</link>
+      <pubDate>Sun, 05 Feb 2017 00:03:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/2017_photo_z/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>High-Dimensional density ratio estimation with extensions to approximate likelihood computation</title>
+      <link>http://www.rizbicki.ufscar.br/publication/aistats_2014/</link>
+      <pubDate>Mon, 01 Dec 2014 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/aistats_2014/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

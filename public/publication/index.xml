@@ -1,0 +1,488 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Publications | Rafael Izbicki | PhD</title>
+    <link>http://www.rizbicki.ufscar.br/publication/</link>
+      <atom:link href="http://www.rizbicki.ufscar.br/publication/index.xml" rel="self" type="application/rss+xml" />
+    <description>Publications</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sun, 01 May 2022 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>http://www.rizbicki.ufscar.br/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_3.png</url>
+      <title>Publications</title>
+      <link>http://www.rizbicki.ufscar.br/publication/</link>
+    </image>
+    
+    <item>
+      <title>CD-split and HPD-split: Efficient conformal regions in high dimensions</title>
+      <link>http://www.rizbicki.ufscar.br/publication/2022_cdsplit/</link>
+      <pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/2022_cdsplit/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Likelihood-Free Frequentist Inference: Confidence Sets with Correct Conditional Coverage</title>
+      <link>http://www.rizbicki.ufscar.br/publication/bff/</link>
+      <pubDate>Sat, 09 Apr 2022 00:03:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/bff/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Diagnostics for Conditional Density Models and Bayesian Inference Algorithms</title>
+      <link>http://www.rizbicki.ufscar.br/publication/alp/</link>
+      <pubDate>Thu, 09 Sep 2021 00:03:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/alp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Causas de desaparecimento no estado de São Paulo entre 2013 e 2014: uma análise automatizada de boletins de ocorrência</title>
+      <link>http://www.rizbicki.ufscar.br/publication/2021_desaparecimento/</link>
+      <pubDate>Fri, 19 Feb 2021 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/2021_desaparecimento/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Identifying Distributional Differences in Convective Evolution Prior to Rapid Intensification in Tropical Cyclones</title>
+      <link>http://www.rizbicki.ufscar.br/publication/cyclones/</link>
+      <pubDate>Tue, 09 Feb 2021 00:03:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/cyclones/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The Latent Dirichlet Allocation model with covariates (LDAcov): a case study on the effect of fire on species composition in Amazonian forests</title>
+      <link>http://www.rizbicki.ufscar.br/publication/lda/</link>
+      <pubDate>Mon, 01 Feb 2021 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/lda/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Distance assessment and analysis of high-dimensional samples using variational autoencoders</title>
+      <link>http://www.rizbicki.ufscar.br/publication/vae_test/</link>
+      <pubDate>Fri, 01 Jan 2021 00:20:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/vae_test/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>How many hospitalizations has the COVID-19 vaccination already prevented in São Paulo?</title>
+      <link>http://www.rizbicki.ufscar.br/publication/vaccine_sao_paulo/</link>
+      <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/vaccine_sao_paulo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>What if the forecaster knew? Assessing forecast reliability via simulation</title>
+      <link>http://www.rizbicki.ufscar.br/publication/fifa/</link>
+      <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/fifa/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sensitivity and specificity in prevalence studies: the importance of considering uncertainty</title>
+      <link>http://www.rizbicki.ufscar.br/publication/covid_prevalence/</link>
+      <pubDate>Thu, 01 Oct 2020 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/covid_prevalence/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Agnostic tests can control the type I and type II errors simultaneously</title>
+      <link>http://www.rizbicki.ufscar.br/publication/2020_agnostic_error/</link>
+      <pubDate>Fri, 01 May 2020 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/2020_agnostic_error/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Flexible distribution-free conditional predictive bands using density estimators</title>
+      <link>http://www.rizbicki.ufscar.br/publication/2020_cdsplit_aistats/</link>
+      <pubDate>Wed, 01 Apr 2020 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/2020_cdsplit_aistats/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Confidence Sets and Hypothesis Testing in a Likelihood-Free Inference Setting</title>
+      <link>http://www.rizbicki.ufscar.br/publication/2020_confidence_likelihood_free/</link>
+      <pubDate>Wed, 05 Feb 2020 00:03:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/2020_confidence_likelihood_free/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Validation of Approximate Likelihood and Emulator Models for Computationally Intensive Simulations</title>
+      <link>http://www.rizbicki.ufscar.br/publication/validation/</link>
+      <pubDate>Sun, 05 Jan 2020 00:03:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/validation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Conditional Density Estimation Tools in Python and R with Applications to Photometric Redshifts and Likelihood-Free Cosmological Inference</title>
+      <link>http://www.rizbicki.ufscar.br/publication/cde_tools/</link>
+      <pubDate>Thu, 02 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/cde_tools/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The NN-Stacking: Feature weighted linear stacking through neural networks</title>
+      <link>http://www.rizbicki.ufscar.br/publication/meta_learning/</link>
+      <pubDate>Thu, 02 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/meta_learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>WIKS: A general Bayesian nonparametric index for quantifying differences between two populations</title>
+      <link>http://www.rizbicki.ufscar.br/publication/wiks/</link>
+      <pubDate>Wed, 01 Jan 2020 10:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/wiks/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Evaluation of probabilistic photometric redshift estimation approaches for The Rubin Observatory Legacy Survey of Space and Time (LSST)</title>
+      <link>http://www.rizbicki.ufscar.br/publication/desc/</link>
+      <pubDate>Wed, 01 Jan 2020 01:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/desc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Schrödinger&#39;s phenotypes: herbarium specimens show two-dimensional images are both good and (not so) bad sources of morphological data</title>
+      <link>http://www.rizbicki.ufscar.br/publication/digital_morphology/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:03 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/digital_morphology/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Combinando métodos de aprendizado supervisionado para a melhoria da previsão do redshift de galáxia</title>
+      <link>http://www.rizbicki.ufscar.br/publication/combinando/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/combinando/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Local Interpretation Methods to Machine Learning Using the Domain of the Feature Space</title>
+      <link>http://www.rizbicki.ufscar.br/publication/local_interpretation/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/local_interpretation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pragmatic hypotheses in the evolution of Science</title>
+      <link>http://www.rizbicki.ufscar.br/publication/2019_pragmatic/</link>
+      <pubDate>Sun, 01 Sep 2019 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/2019_pragmatic/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Quantification under prior probability shift: the ratio estimator and its extensions</title>
+      <link>http://www.rizbicki.ufscar.br/publication/2019_quantification/</link>
+      <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/2019_quantification/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ABC-CDE: Toward Approximate Bayesian Computation with Complex High-Dimensional Data and Limited Simulations</title>
+      <link>http://www.rizbicki.ufscar.br/publication/2019_abccde/</link>
+      <pubDate>Tue, 05 Feb 2019 00:03:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/2019_abccde/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Machine learning para análises preditivas em saúde: exemplo de aplicação para predizer óbito em idosos de São Paulo</title>
+      <link>http://www.rizbicki.ufscar.br/publication/obitos/</link>
+      <pubDate>Fri, 01 Feb 2019 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/obitos/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Avian haemosporidians in the cattle egret (Bubulcus ibis) from central-western and southern Africa: high diversity and prevalence</title>
+      <link>http://www.rizbicki.ufscar.br/publication/africa/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:01 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/africa/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Comparing probabilistic predictive models applied to football</title>
+      <link>http://www.rizbicki.ufscar.br/publication/football/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/football/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Comparing two populations using Bayesian Fourier series density estimation</title>
+      <link>http://www.rizbicki.ufscar.br/publication/density_fourier/</link>
+      <pubDate>Sun, 01 Jul 2018 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/density_fourier/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Conditional density estimation using Fourier series and neural networks</title>
+      <link>http://www.rizbicki.ufscar.br/publication/flexcode_nnets/</link>
+      <pubDate>Mon, 28 May 2018 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/flexcode_nnets/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Considerations for monitoring population trends of colonial waterbirds using the effective number of breeders and census estimates </title>
+      <link>http://www.rizbicki.ufscar.br/publication/water_birds/</link>
+      <pubDate>Sun, 01 Apr 2018 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/water_birds/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hypertension is associated with frailty in older adults</title>
+      <link>http://www.rizbicki.ufscar.br/publication/aprahamian_pulgrossi/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/aprahamian_pulgrossi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Monitoramento online da dengue: usando o Google para predizer epidemias.</title>
+      <link>http://www.rizbicki.ufscar.br/publication/dengue/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/dengue/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Teaching Decision Theory proof strategies using a crowdsourcing problem</title>
+      <link>http://www.rizbicki.ufscar.br/publication/2018_teaching_minimax/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/2018_teaching_minimax/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Converting High-Dimensional Regression to High-Dimensional Conditional Density Estimation</title>
+      <link>http://www.rizbicki.ufscar.br/publication/2017_flexcode/</link>
+      <pubDate>Sun, 05 Nov 2017 00:03:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/2017_flexcode/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A unified framework for constructing, tuning and assessing photometric redshift density estimates in a selection bias setting</title>
+      <link>http://www.rizbicki.ufscar.br/publication/mnras_bias/</link>
+      <pubDate>Mon, 30 Oct 2017 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/mnras_bias/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Coherent hypothesis testing</title>
+      <link>http://www.rizbicki.ufscar.br/publication/tas_coherent/</link>
+      <pubDate>Fri, 01 Sep 2017 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/tas_coherent/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Logically-consistent hypothesis testing and the hexagon of oppositions</title>
+      <link>http://www.rizbicki.ufscar.br/publication/2017_hexagon/</link>
+      <pubDate>Thu, 01 Jun 2017 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/2017_hexagon/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Prior Shift Using the Ratio Estimator</title>
+      <link>http://www.rizbicki.ufscar.br/publication/2017_quantification_maxent/</link>
+      <pubDate>Mon, 01 May 2017 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/2017_quantification_maxent/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Photo-z estimation: An example of nonparametric conditional density estimation under selection bias</title>
+      <link>http://www.rizbicki.ufscar.br/publication/2017_photo_z/</link>
+      <pubDate>Sun, 05 Feb 2017 00:03:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/2017_photo_z/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title> Screening for frailty with the FRAIL scale: a comparison with the phenotype criteria</title>
+      <link>http://www.rizbicki.ufscar.br/publication/aprahamian_frail/</link>
+      <pubDate>Wed, 01 Feb 2017 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/aprahamian_frail/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Frailty in older adults with aMCI due to AD: a comparison of two models of frailty characterization</title>
+      <link>http://www.rizbicki.ufscar.br/publication/aprahamian_frail2/</link>
+      <pubDate>Wed, 01 Feb 2017 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/aprahamian_frail2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Classificação morfológica de galáxias em conjuntos de dados desbalanceados.</title>
+      <link>http://www.rizbicki.ufscar.br/publication/desbalanceados/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/desbalanceados/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nonparametric Conditional Density Estimation in a High-Dimensional Regression Setting.</title>
+      <link>http://www.rizbicki.ufscar.br/publication/spec_series_cde/</link>
+      <pubDate>Wed, 02 Nov 2016 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/spec_series_cde/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A Spectral Series Approach to High-Dimensional Nonparametric Regression.</title>
+      <link>http://www.rizbicki.ufscar.br/publication/spec_series_reg/</link>
+      <pubDate>Tue, 01 Nov 2016 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/spec_series_reg/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The Logical Consistency of Simultaneous Agnostic Hypothesis Tests</title>
+      <link>http://www.rizbicki.ufscar.br/publication/2016_agnostic/</link>
+      <pubDate>Fri, 01 Jul 2016 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/2016_agnostic/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A Bayesian Decision-Theoretic Approach to Logically-Consistent Hypothesis Testing</title>
+      <link>http://www.rizbicki.ufscar.br/publication/entropy_bayes_consist/</link>
+      <pubDate>Tue, 01 Mar 2016 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/entropy_bayes_consist/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The Logical Consistency of Simultaneous Agnostic Hypothesis Tests</title>
+      <link>http://www.rizbicki.ufscar.br/publication/entropy_consist/</link>
+      <pubDate>Tue, 01 Mar 2016 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/entropy_consist/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A subtest analysis of the Montreal cognitive assessment (MoCA): which subtests can best discriminate between healthy controls, mild cognitive impairment and Alzheimer’s disease?</title>
+      <link>http://www.rizbicki.ufscar.br/publication/aprahamian_moca/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/aprahamian_moca/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Logical consistency in simultaneous statistical test procedures</title>
+      <link>http://www.rizbicki.ufscar.br/publication/igpl_consist/</link>
+      <pubDate>Sun, 01 Mar 2015 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/igpl_consist/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>High-Dimensional density ratio estimation with extensions to approximate likelihood computation</title>
+      <link>http://www.rizbicki.ufscar.br/publication/aistats_2014/</link>
+      <pubDate>Mon, 01 Dec 2014 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/aistats_2014/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>New image statistics for detecting disturbed galaxy morphologies at high redshift</title>
+      <link>http://www.rizbicki.ufscar.br/publication/mnras_mergers/</link>
+      <pubDate>Sun, 01 Dec 2013 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/mnras_mergers/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A Bayesian Look at Nonidentifiability: a Simple Example</title>
+      <link>http://www.rizbicki.ufscar.br/publication/tas_identif/</link>
+      <pubDate>Fri, 01 Nov 2013 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/tas_identif/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Religion as a protective factor against drug use among Brazilian university students: a national survey</title>
+      <link>http://www.rizbicki.ufscar.br/publication/gomes/</link>
+      <pubDate>Fri, 01 Nov 2013 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/gomes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Learning with many experts: Model selection and sparsity</title>
+      <link>http://www.rizbicki.ufscar.br/publication/2013_crowdsourcing/</link>
+      <pubDate>Sat, 01 Jun 2013 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/2013_crowdsourcing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Testing Allele Homogeneity: The Problem of Nested Hypotheses</title>
+      <link>http://www.rizbicki.ufscar.br/publication/nested/</link>
+      <pubDate>Thu, 01 Nov 2012 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/nested/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Disequilibrium Coefficient: A Bayesian Perspective</title>
+      <link>http://www.rizbicki.ufscar.br/publication/disequilibrium/</link>
+      <pubDate>Tue, 01 Nov 2011 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/disequilibrium/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Depressive morbidity and gender in community-dwelling Brazilian elderly: systematic review and meta-analysis</title>
+      <link>http://www.rizbicki.ufscar.br/publication/meta_analysis/</link>
+      <pubDate>Mon, 01 Nov 2010 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/meta_analysis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Can the CAMCOG be a good cognitive test for patients with Alzheimer’s disease with low levels of education?</title>
+      <link>http://www.rizbicki.ufscar.br/publication/aprahamian_camcog/</link>
+      <pubDate>Fri, 01 Oct 2010 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/aprahamian_camcog/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Optimizing the CAMCOG test in the screening for mild cognitive impairment and incipient dementia: saving time with relevant domains</title>
+      <link>http://www.rizbicki.ufscar.br/publication/aprahamian_camcog2/</link>
+      <pubDate>Fri, 01 Oct 2010 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/aprahamian_camcog2/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Conditional Density | Rafael Izbicki | PhD</title>
+    <link>http://www.rizbicki.ufscar.br/tag/conditional-density/</link>
+      <atom:link href="http://www.rizbicki.ufscar.br/tag/conditional-density/index.xml" rel="self" type="application/rss+xml" />
+    <description>Conditional Density</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Thu, 09 Sep 2021 00:03:00 +0000</lastBuildDate>
+    <image>
+      <url>http://www.rizbicki.ufscar.br/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_3.png</url>
+      <title>Conditional Density</title>
+      <link>http://www.rizbicki.ufscar.br/tag/conditional-density/</link>
+    </image>
+    
+    <item>
+      <title>Diagnostics for Conditional Density Models and Bayesian Inference Algorithms</title>
+      <link>http://www.rizbicki.ufscar.br/publication/alp/</link>
+      <pubDate>Thu, 09 Sep 2021 00:03:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/alp/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

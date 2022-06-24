@@ -1,0 +1,1225 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rafael Izbicki | PhD</title>
+    <link>http://www.rizbicki.ufscar.br/</link>
+      <atom:link href="http://www.rizbicki.ufscar.br/index.xml" rel="self" type="application/rss+xml" />
+    <description>Rafael Izbicki | PhD</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sun, 01 May 2022 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>http://www.rizbicki.ufscar.br/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_3.png</url>
+      <title>Rafael Izbicki | PhD</title>
+      <link>http://www.rizbicki.ufscar.br/</link>
+    </image>
+    
+    <item>
+      <title>CD-split and HPD-split: Efficient conformal regions in high dimensions</title>
+      <link>http://www.rizbicki.ufscar.br/publication/2022_cdsplit/</link>
+      <pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/2022_cdsplit/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Likelihood-Free Frequentist Inference: Confidence Sets with Correct Conditional Coverage</title>
+      <link>http://www.rizbicki.ufscar.br/publication/bff/</link>
+      <pubDate>Sat, 09 Apr 2022 00:03:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/bff/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Base rate fallacy</title>
+      <link>http://www.rizbicki.ufscar.br/post/base_rate_fallacy/</link>
+      <pubDate>Wed, 26 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/post/base_rate_fallacy/</guid>
+      <description>&lt;h3 id=&#34;quase-todo-mundo-que-está-hospitalizado-é-vacinado-vacinas-não-funcionam-&#34;&gt;&lt;em&gt;&amp;ldquo;Quase todo mundo que está hospitalizado é vacinado. Vacinas não funcionam =(&amp;rdquo;&lt;/em&gt;&lt;/h3&gt;
+&lt;p&gt;Esse pensamento passa na cabeça de muita gente e é muito usado por anti-vacinas. Mas o argumento é correto?
+&lt;strong&gt;NÃO!&lt;/strong&gt; Essa falácia é chamada de &lt;strong&gt;base rate fallacy&lt;/strong&gt;. Mostro aqui o porquê.&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;img/baserate.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+{style=&amp;ldquo;display: block; margin: 0 auto&amp;rdquo;}&lt;/p&gt;
+&lt;p&gt;Vamos começar com um exemplo simples: como todas as vacinas têm uma chance de falhar, se todo mundo fosse vacinado, os poucos casos de internações necessariamente ocorreriam em vacinados. Isso daria a impressão que a vacina não funciona.
+O mesmo vale em um cenário mais realista. Por exemplo, essa figura mostra quantos internados vacinados esperamos observar em uma população com cobertura 95% de uma vacina com eficácia 90%. A maioria dos internados é vacinado.&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;img/comvacina.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+{style=&amp;ldquo;display: block; margin: 0 auto&amp;rdquo;}&lt;/p&gt;
+&lt;p&gt;A conta para avaliar essa proporção vem do Teorema de Bayes e é dada pela seguinte equação, em que eᵥ denota a eficácia da vacina e P(Vacinado) é a proporção de vacinados.&lt;/p&gt;
+&lt;p align=&#34;center&#34;&gt;
+&lt;img width=&#34;250&#34; height=&#34;100&#34; src=&#34;img/equacaovacina.png&#34;&gt;
+&lt;/p&gt;
+&lt;h3 id=&#34;ué-mas-cadê-a-vacina-funcionando&#34;&gt;&lt;em&gt;&amp;ldquo;Ué, mas cadê a vacina funcionando?&amp;rdquo;&lt;/em&gt;&lt;/h3&gt;
+&lt;p&gt;Aí vem o interessante: o número total internados é que diminuiu com a vacinação. Essencialmente, a eficácia da vacina pode ser pensada em termos de quantas hospitalizações foram evitadas. Veja como a comparação fica para os números acima.&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;img/comesemvacina.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+{style=&amp;ldquo;display: block; margin: 0 auto&amp;rdquo;}
+&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;Fiz aqui um app para quem quiser brincar com os valores de eficácia/cobertura vacinal para ver o que acontece em termos de hospitalizações observadas e evitadas: &lt;a href=&#34;https://t.co/nEDshfptsW&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://t.co/nEDshfptsW&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;mas-se-não-observamos-o-que-teria-acontecido-sem-as-vacinas-como-conseguimos-estimar-sua-eficácia&#34;&gt;&lt;em&gt;&amp;ldquo;Mas se não observamos o que teria acontecido sem as vacinas, como conseguimos estimar sua eficácia?&amp;rdquo;&lt;/em&gt;&lt;/h3&gt;
+&lt;p&gt;Para isso precisamos de experimentos e/ou modelos mais complexos.
+Por exemplo, na fase 3 do desenvolvimento de uma vacina, sorteamos quem recebe vacina ou placebo.&lt;/p&gt;
+&lt;br&gt;
+&lt;p align=&#34;center&#34;&gt;
+&lt;img width=&#34;230&#34; height=&#34;300&#34; src=&#34;img/RCT.png&#34;&gt;
+&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;Com isso conseguimos avaliar quantas internações ocorreram a mais em um grupo que no outro.
+Avaliar as vacinas em funcionamento com dados reais observados em hospitais é mais complexo e exige modelos estatísticos mais elaborados e com mais suposições.&lt;/p&gt;
+&lt;p align=&#34;center&#34;&gt;
+&lt;img width=&#34;300&#34; height=&#34;300&#34; src=&#34;img/confounder.png&#34;&gt;
+&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;Por exemplo, em &lt;a href=&#34;https://pubmed.ncbi.nlm.nih.gov/34495082/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://pubmed.ncbi.nlm.nih.gov/34495082/&lt;/a&gt;, utilizamos um grupo etário não vacinado para avaliar o efeito da vacina em idosos em São Paulo:&lt;/p&gt;
+&lt;p align=&#34;center&#34;&gt;
+&lt;img width=&#34;600&#34; height=&#34;400&#34; src=&#34;img/saopaulo.png&#34;&gt;
+&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;Para estimar a eficácia a partir de dados observados (e não controlados por um experimento) precisamos saber mais do que a proporção de vacinados na população. Esse é um assunto complexo e fica para outro post.
+&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;img/control.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+{style=&amp;ldquo;display: block; margin: 0 auto&amp;rdquo;}&lt;/p&gt;
+&lt;h3 id=&#34;resumindo&#34;&gt;Resumindo:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Haver muitos vacinados entre internados não mostra que a vacina não funciona. Isso é uma falácia.&lt;/li&gt;
+&lt;li&gt;Para avaliar adequadamente a eficácia de uma vacina, precisamos de experimentos mais complexos (como os de fase 3) e/ou modelos estatísticos mais elaborados&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Diagnostics for Conditional Density Models and Bayesian Inference Algorithms</title>
+      <link>http://www.rizbicki.ufscar.br/publication/alp/</link>
+      <pubDate>Thu, 09 Sep 2021 00:03:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/alp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Indemnity for a lost chance</title>
+      <link>http://www.rizbicki.ufscar.br/talk/indemnity-for-a-lost-chance/</link>
+      <pubDate>Tue, 01 Jun 2021 13:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/talk/indemnity-for-a-lost-chance/</guid>
+      <description>
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/ZvsyHgo_eXs&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+</description>
+    </item>
+    
+    <item>
+      <title>Causas de desaparecimento no estado de São Paulo entre 2013 e 2014: uma análise automatizada de boletins de ocorrência</title>
+      <link>http://www.rizbicki.ufscar.br/publication/2021_desaparecimento/</link>
+      <pubDate>Fri, 19 Feb 2021 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/2021_desaparecimento/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Identifying Distributional Differences in Convective Evolution Prior to Rapid Intensification in Tropical Cyclones</title>
+      <link>http://www.rizbicki.ufscar.br/publication/cyclones/</link>
+      <pubDate>Tue, 09 Feb 2021 00:03:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/cyclones/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The Latent Dirichlet Allocation model with covariates (LDAcov): a case study on the effect of fire on species composition in Amazonian forests</title>
+      <link>http://www.rizbicki.ufscar.br/publication/lda/</link>
+      <pubDate>Mon, 01 Feb 2021 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/lda/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Distance assessment and analysis of high-dimensional samples using variational autoencoders</title>
+      <link>http://www.rizbicki.ufscar.br/publication/vae_test/</link>
+      <pubDate>Fri, 01 Jan 2021 00:20:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/vae_test/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>How many hospitalizations has the COVID-19 vaccination already prevented in São Paulo?</title>
+      <link>http://www.rizbicki.ufscar.br/publication/vaccine_sao_paulo/</link>
+      <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/vaccine_sao_paulo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>What if the forecaster knew? Assessing forecast reliability via simulation</title>
+      <link>http://www.rizbicki.ufscar.br/publication/fifa/</link>
+      <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/fifa/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sensitivity and specificity in prevalence studies: the importance of considering uncertainty</title>
+      <link>http://www.rizbicki.ufscar.br/publication/covid_prevalence/</link>
+      <pubDate>Thu, 01 Oct 2020 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/covid_prevalence/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://www.rizbicki.ufscar.br/ame/</link>
+      <pubDate>Tue, 28 Jul 2020 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/ame/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;../AME.pdf&#34;&gt;&lt;img src=&#34;../img/ame.png&#34; alt=&#34;Book cover&#34;   width=&#34;500px&#34; style=&#34;float: center&#34; border=&#34;3&#34;/&gt;&lt;/a&gt;
+&lt;a href=&#34;../AME.pdf&#34;&gt;&lt;strong&gt;Aqui&lt;/strong&gt;&lt;/a&gt; você pode baixar o livro
+&lt;a href=&#34;../AME.pdf&#34;&gt;Aprendizado de máquina: uma abordagem estatística&lt;/a&gt;, escrito por mim e pelo &lt;a href=&#34;https://www.tiagoms.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Tiago Mendonça&lt;/a&gt; (ISBN 978-65-00-02410-4). A capa do livro foi feita pelos incríveis &lt;a href=&#34;http://aquitemcaqui.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Leonardo M. Borges&lt;/a&gt; e &lt;a href=&#34;http://www.kaorinagata.net/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Kaori Nagata&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Caso queira &lt;strong&gt;imprimir&lt;/strong&gt; o livro,
+utilize a versão
+&lt;a href=&#34;../AME_impressao.pdf&#34;&gt;deste link&lt;/a&gt;, que possui sinalização de onde ele deve ser cortado. Sugerimos utilizar uma resolução de ao menos 500dpi.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Citação&lt;/strong&gt;: Izbicki, R. e Santos, T. M. dos. &lt;em&gt;Aprendizado de máquina: uma abordagem estatística&lt;/em&gt;. 1ᵃ edição. 2020. 272 páginas. ISBN: 978-65-00-02410-4.
+Para a entrada em &lt;strong&gt;bibtex&lt;/strong&gt;, &lt;a href=&#34;../citacao.bib&#34;&gt;clique aqui&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;vídeos-em-desenvolvimento&#34;&gt;Vídeos (em desenvolvimento)&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Playlist:&lt;/strong&gt;&lt;/p&gt;
+  &lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/videoseries?list=PLMZwWwAgHhmAB8-qg5HWkdB5VDr8ROeyj&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;p&gt;&lt;strong&gt;Vídeos de cada capítulo:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Capítulos 1 e 2
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://youtu.be/DayjLIje9to&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Introdução&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=q2wb4tvEwpw&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Elementos de um problema de predição e regressão linear&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=QfpW4ZEiGLg&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Overfitting&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://youtu.be/_UaAxnzkRkA&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Seleção de modelos&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://youtu.be/J6J2eQWIYYI&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Mais sobre data-splitting&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Mais sobre o risco&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Capítulo 3
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://youtu.be/NP9mVewUVSw&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Lasso e seleção de variáveis&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=CVwVTJ3JW7c&amp;amp;t=1315s&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Mais sobre penalização&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Capítulo 4
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://youtu.be/p7tQ_cqfLBk&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;KNN, Nadaraya-Watson, Séries Ortogonais&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://youtu.be/80hT0_8LTGU&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Árvores, Bagging e Florestas Aleatórias&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://youtu.be/b73pxvFvTV0&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Redes Neurais e Deep Learning&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=vhXfUj0Wy3k&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;RKHS, SVR e KRR&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://youtu.be/97b3vLMBcuc&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Truque do Kernel&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Teoria&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Capítulo 5
+&lt;ul&gt;
+&lt;li&gt;Maldição da dimensionalidade&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Capítulo 6
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://youtu.be/12OkqR9FdA8&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Interpretabilidade/ExplainableML&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://youtu.be/UIr8H2A2x0I&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Inferência conformal&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=zROykZaxx3s&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Estimação de densidades condicionais&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Capítulos 7 e 8
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://youtu.be/8Gz7Bz_Cs5E&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Risco, regressão logística e classificação via regressão&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://youtu.be/hIrJAG9hp0g&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Seleção de modelos, outras medidas de desempenho e desbalanceamento&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://youtu.be/LUtkIamL6sw&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Outros classificadores plugin: Bayes ingênuo e análise discriminante&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;SVM&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://youtu.be/1UQ6jhH10Iw&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;KNN, árvores, florestas e redes neurais&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Boosting&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Capítulo 9
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://youtu.be/hIrJAG9hp0g&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Assimetria na função de perda e dados desbalanceados&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Dataset shift e viés de seleção&lt;/li&gt;
+&lt;li&gt;Combinando classificadores&lt;/li&gt;
+&lt;li&gt;Teoria VC&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Capítulo 10
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://youtu.be/X3qpViqVs6I&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;PCA, KPCA e projeções aleatórias&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Autoencoders&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Capítulo 11
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://youtu.be/1PFlutsdjGM&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;K-medias, clustering espectral e agrupamento hierárquico&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Capítulo 12
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://youtu.be/S1Jey3_SmfU&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Regras de associação&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Capítulo 13
+&lt;ul&gt;
+&lt;li&gt;Sistemas de recomendação&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Apêndice
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://youtu.be/hS8yMYS36ko&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Manipulando textos e imagens&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;bancos-de-dados&#34;&gt;Bancos de dados&lt;/h2&gt;
+&lt;p&gt;Estes são os bancos de dados usados no livro:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.kaggle.com/snap/amazon-fine-food-reviews&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Amazon Fine Food reviews&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../dados/hour.csv&#34;&gt;Hour&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../dados/indicadores_ssp.csv&#34;&gt;Indicadores SSP&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../dados/prostate.data&#34;&gt;Prostate&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../dados/worldDevelopmentIndicators.csv&#34;&gt;World Development Indicators&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../dados/spam.txt&#34;&gt;Spam&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Evolução da Covid-19 no Brasil</title>
+      <link>http://www.rizbicki.ufscar.br/post/app_covid_localidade/</link>
+      <pubDate>Sat, 02 May 2020 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/post/app_covid_localidade/</guid>
+      <description>
+
+
+&lt;p&gt;Fiz um dashboard que mostra a evolução do coronavírus por município e estado brasileiro, pois senti falta de alguns gráficos para descrever essa dinâmica de forma mais localizada:&lt;/p&gt;
+&lt;p&gt;Ele é útil não só para ver cada município separadamente, mas também para entender como o vírus está se espalhando no Brasil.
+Ele também mostra a evolução por semana, que acho ser mais robusta por remover o efeito que os finais de semana têm no sistema de notificação. Além disso, também inclui a evolução normalizada por data de início (medida pelo dia do 15º óbito). Adicionei também informação sobre a variação no número de casos/óbitos por município.&lt;/p&gt;
+&lt;p&gt;Ele está disponível em &lt;a href=&#34;https://rizbicki.shinyapps.io/covid_por_localidade/&#34; class=&#34;uri&#34;&gt;https://rizbicki.shinyapps.io/covid_por_localidade/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../img/mapa.jpg&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Agnostic tests can control the type I and type II errors simultaneously</title>
+      <link>http://www.rizbicki.ufscar.br/publication/2020_agnostic_error/</link>
+      <pubDate>Fri, 01 May 2020 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/2020_agnostic_error/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Flexible distribution-free conditional predictive bands using density estimators</title>
+      <link>http://www.rizbicki.ufscar.br/publication/2020_cdsplit_aistats/</link>
+      <pubDate>Wed, 01 Apr 2020 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/2020_cdsplit_aistats/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Covid-19 Einstein Analysis</title>
+      <link>http://www.rizbicki.ufscar.br/post/einstein/analysis/</link>
+      <pubDate>Sun, 29 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/post/einstein/analysis/</guid>
+      <description>
+
+
+&lt;p&gt;In this post I analyse the covid-19 data from
+&lt;a href=&#34;https://www.kaggle.com/einsteindata4u/covid19&#34; class=&#34;uri&#34;&gt;https://www.kaggle.com/einsteindata4u/covid19&lt;/a&gt;, which contains
+information about patients from Albert Einstein’s Hospital, in São Paulo (Brazil).&lt;/p&gt;
+&lt;p&gt;My main assumptions in the following analysis are that:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;The goal is to provide a &lt;strong&gt;screening&lt;/strong&gt; protocol that will reduce the number of patients in which the covid-19 PCR is applied to. Thus, a large &lt;strong&gt;sensitivity&lt;/strong&gt; (probability of correctly identifying a true positive) is more important than a large &lt;strong&gt;specificity&lt;/strong&gt; (probability of correctly identifying a true negative).&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;I’m assuming that blood count exams and exams for detecting the presence of other virus were applied at random to each patient, i.e., they are not applied according to relevant factors related to covid-19. This is a STRONG assumption.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;I’m assuming that all data provided is about suspect cases.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;I’m assuming that blood count exams are fast and cheap, while exams for detecting the presence of other virus/bacteria are more expensive.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In short, the approach I’ll take consists in&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;&lt;p&gt;Provide a screening technique using only the blood count exam and age. This will already remove about half of the patients from the list of suspects IF THE ASSUMPTIONS ARE CORRECT and the prevalence of covid-19 patients that go to the hospital does not change. As this prevalence is expected to increase, this protocol will probably be able to screen-out less patients every day.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Apply exams for detecting the presence of other virus/bacteria for patients that are not removed in step 1. Step 2 will only be useful if the cost/time to apply these exams is smaller than that to apply covid-19 PCR.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div id=&#34;data-preprocessing&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Data preprocessing&lt;/h1&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(tidyverse)
+library(readxl)
+library(naniar)
+library(randomForest)
+library(glmnet)
+library(ggpubr)
+library(plotROC)
+library(pROC)
+
+set.seed(0)
+data &amp;lt;- read_xlsx(&amp;quot;dataset.xlsx&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;As there are many variables with missing data, I’ll start
+by removing those that have only been applied to less than
+250 patients.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;keep_cols &amp;lt;- apply(data,2,function(x)sum(!is.na(x)))&amp;gt;=250
+data &amp;lt;- data[,keep_cols]&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;vis_miss(data)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;http://www.rizbicki.ufscar.br/post/Einstein/analysis_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Given the missing patter (which consists of blocks of covariates), for
+simplicity we will keep only (i) age, (ii) the results from the complete blood count and (iii) the results for detecting other virus/bacteria.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;screening-based-on-blood-count&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Screening based on blood count&lt;/h1&gt;
+&lt;p&gt;First, let’s extract the data
+from the blood count exam and the age of the patient.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;data_blood_count &amp;lt;- data %&amp;gt;% 
+  select(`Patient ID`,`SARS-Cov-2 exam result`,`Patient age quantile`,Hematocrit:`Red blood cell distribution width (RDW)`)
+
+data_blood_count &amp;lt;- data_blood_count[complete.cases(data_blood_count),]&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We will now split the sample into train/test.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;split &amp;lt;- sample(c(&amp;quot;Train&amp;quot;,&amp;quot;Test&amp;quot;),nrow(data_blood_count),prob = c(0.7,0.3),replace = TRUE)
+
+covariates_train &amp;lt;- data_blood_count %&amp;gt;% 
+  filter(split==&amp;quot;Train&amp;quot;) %&amp;gt;% 
+  select(-c(`Patient ID`,`SARS-Cov-2 exam result`))
+covariates_test &amp;lt;- data_blood_count %&amp;gt;% 
+  filter(split==&amp;quot;Test&amp;quot;) %&amp;gt;% 
+  select(-c(`Patient ID`,`SARS-Cov-2 exam result`))
+response_train &amp;lt;- data_blood_count%&amp;gt;% 
+  filter(split==&amp;quot;Train&amp;quot;) %&amp;gt;% 
+  select(`SARS-Cov-2 exam result`) %&amp;gt;% 
+  pull()==&amp;quot;positive&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We will apply two probabilistic classifiers:
+(i) a random forest, which fully nonparametric and therefore is able to handle complex interactions between the covariates and
+(ii) a logistic regression with penalization, which is parametric and easier to be applies by practitioners. The
+penalization is important because of the small sample size. We will then compute ROC curves
+so that we can choose cutoffs that lead to reasonable sensitivity/specificity values for this application. Notice that accuracy (1-proportion of mistakes) is &lt;strong&gt;not&lt;/strong&gt; a good measure for our goal.&lt;/p&gt;
+&lt;div id=&#34;random-forest&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Random forest&lt;/h2&gt;
+&lt;p&gt;First we fit the random forest and show the importance of each feature.
+Leukocytes, platets and eosinophils seem to be the most important features among those obtained in the blood count exam.
+Notice that we are treating this as a regression problem so that we can get a score between 0 and 1; the high imbalance of the classes would lead a naive classification forest to give results that are not useful for screening (because they assume a 0-1 loss function).&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;fit_rf &amp;lt;- randomForest(x=covariates_train,
+                       y=response_train)
+varImpPlot(fit_rf)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;http://www.rizbicki.ufscar.br/post/Einstein/analysis_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;pred_rf &amp;lt;- predict(fit_rf,newdata = covariates_test)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;logistic-regression-with-l1-penalization&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Logistic regression with L1 penalization&lt;/h2&gt;
+&lt;p&gt;Next, let’s apply the logistic regression.
+If we use the magnitude of the fitted coefficients are a measure of their importance (which is reasonable because all features are scaled), we get again that the most important
+features are leukocytes, platets and eosinophils.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;fit_logistic_l1 &amp;lt;- cv.glmnet(x=covariates_train %&amp;gt;%as.matrix(),
+                             y=response_train,
+                             family=&amp;quot;binomial&amp;quot;)
+
+pred_logistic_l1 &amp;lt;- predict(fit_logistic_l1,newx = covariates_test%&amp;gt;%
+                              as.matrix(), s=fit_logistic_l1$lambda.min,
+                            type=&amp;quot;response&amp;quot;)
+
+coefficients(fit_logistic_l1,s=fit_logistic_l1$lambda.min)  &lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## 16 x 1 sparse Matrix of class &amp;quot;dgCMatrix&amp;quot;
+##                                                             1
+## (Intercept)                                      -3.814016733
+## Patient age quantile                              0.092543471
+## Hematocrit                                        .          
+## Hemoglobin                                        .          
+## Platelets                                        -0.432712609
+## Mean platelet volume                              .          
+## Red blood Cells                                   0.377461642
+## Lymphocytes                                       .          
+## Mean corpuscular hemoglobin concentration (MCHC)  .          
+## Leukocytes                                       -0.969690632
+## Basophils                                         .          
+## Mean corpuscular hemoglobin (MCH)                 .          
+## Eosinophils                                      -1.178823971
+## Mean corpuscular volume (MCV)                    -0.010821012
+## Monocytes                                         0.009846832
+## Red blood cell distribution width (RDW)          -0.232861777&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;predictive-performance&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Predictive performance&lt;/h2&gt;
+&lt;p&gt;Now let’s compare both methods using a ROC
+curve.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;roc_data &amp;lt;- data.frame(Response=data_blood_count%&amp;gt;% 
+                         filter(split==&amp;quot;Test&amp;quot;) %&amp;gt;% 
+                         select(`SARS-Cov-2 exam result`) %&amp;gt;% 
+                         pull()==&amp;quot;positive&amp;quot;,
+                       Predictor=c(pred_rf,pred_logistic_l1),
+                       Model=rep(c(&amp;quot;Random Forest&amp;quot;,
+                                   &amp;quot;Logistic&amp;quot;),each=sum(split==&amp;quot;Test&amp;quot;)))
+
+
+g1 &amp;lt;- ggplot(data=roc_data,aes(m=Predictor,d=Response,color=Model,fill=Model))+
+  geom_roc()+
+  theme_bw()+
+  xlab(&amp;quot;1-Specificity&amp;quot;)+
+  ylab(&amp;quot;Sensitivity&amp;quot;)+
+  geom_abline(slope = 1,intercept = 0)
+print(g1)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;http://www.rizbicki.ufscar.br/post/Einstein/analysis_files/figure-html/unnamed-chunk-8-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;We are interested in screening only, so we want a large sensitivity value.
+Random forest seems to have better specificity when the cutoffs are such that the sensitivity value is between
+0.75 and 0.95. However, if we take a closer look into that regime and plot confidence regions, it’s hard to say that
+random forests in indeed better.
+Thus, we choose to use a logistic regression because it is easier for practitioners to apply.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;print(g1+coord_cartesian(ylim=c(0.6,1))+
+        geom_rocci(ci.at=c(0.05,0.1,0.15)))&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;http://www.rizbicki.ufscar.br/post/Einstein/analysis_files/figure-html/unnamed-chunk-9-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Now, the following plot shows that almost all patients have a small probability of having covid-19. This is because (i) the prevalance of covid-19 is small in this sample and (ii) the blood count exam is
+not informative enough. That’s OK; we are only going to use it for screening.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ggplot(data.frame(Probability=c(pred_logistic_l1)),aes(x=Probability))+
+  geom_density(fill=&amp;quot;blue&amp;quot;)+
+  theme_bw()+
+  ylab(&amp;quot;Density&amp;quot;)+
+  xlab(&amp;quot;Probability of covid-19 (according to logistic regression based on blood count only)&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;http://www.rizbicki.ufscar.br/post/Einstein/analysis_files/figure-html/unnamed-chunk-10-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;We will choose a cutoff that
+leads to 95% of sensitivity.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;roc_logistic &amp;lt;- roc(as.numeric(data_blood_count%&amp;gt;% 
+                                 filter(split==&amp;quot;Test&amp;quot;) %&amp;gt;% 
+                                 select(`SARS-Cov-2 exam result`) %&amp;gt;% 
+                                 pull()==&amp;quot;positive&amp;quot;),pred_logistic_l1)
+
+optimal_cutoff &amp;lt;- max(roc_logistic$thresholds[roc_logistic$sensitivities&amp;gt;0.95])
+print(round(optimal_cutoff,3))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 0.056&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;That is, patients that have probability of covid-19 larger than 5.57% will still be trated as suspect cases.
+Using this cutoff, we obtain the following
+performance on the test data:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;Decision &amp;lt;- ifelse(pred_logistic_l1&amp;gt;optimal_cutoff,&amp;quot;Follow-up&amp;quot;,&amp;quot;No follow-up&amp;quot;)
+Truth &amp;lt;- ifelse(data_blood_count%&amp;gt;% 
+                  filter(split==&amp;quot;Test&amp;quot;) %&amp;gt;% 
+                  select(`SARS-Cov-2 exam result`) %&amp;gt;% 
+                  pull()==&amp;quot;positive&amp;quot;,&amp;quot;Has covid-19&amp;quot;,&amp;quot;Does not have covid-19&amp;quot;)
+table_screening &amp;lt;- table(Decision,Truth)
+table_screening&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##               Truth
+## Decision       Does not have covid-19 Has covid-19
+##   Follow-up                        73           24
+##   No follow-up                     80            1&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;With this decision rule, we are able to avoid
+applying more exams on
+45.51% of the patients.
+Moreover, only 1 out of the 81 patients we decide not to follow-up has covid-19.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;second-step-looking-for-other-virusbacteria&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Second step: looking for other virus/bacteria&lt;/h1&gt;
+&lt;p&gt;On the second step, we may follow-up
+by checking for other virus/bacteria besides
+covid-19. Again, we are assuming this is cheaper and/or faster than applying the covid-19 PCR, which of course depends on the hospital’s infrastructure.&lt;/p&gt;
+&lt;p&gt;For simplicity and because of the small sample size, we will compute the results using all data points to which we have data about other virus/bacteria, i.e., we will &lt;strong&gt;not&lt;/strong&gt; elimiate
+patients with could have been eliminated using the logistic regression.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;data_virus &amp;lt;- data %&amp;gt;% 
+  select(`Patient ID`,`SARS-Cov-2 exam result`,`Respiratory Syncytial Virus`:`Parainfluenza 2`)
+
+data_virus &amp;lt;- data_virus[complete.cases(data_virus),]&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now, let’s compute how many positive results
+for other virus/bacteria each patient has.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;how_many_other_virus &amp;lt;- apply(data_virus %&amp;gt;% select(`Respiratory Syncytial Virus`:`Parainfluenza 2`),1,function(xx)sum(xx==&amp;quot;detected&amp;quot;))
+
+other_vs_covid &amp;lt;- table(how_many_other_virus,data_virus$`SARS-Cov-2 exam result`)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The following table shows that almost all patients that are positive for covid-19 (89.29%) have negative results for other virus/bacteria. Thus,
+if we choose to apply covid-19 PCR for patients that are negative for all other virus/bacteria, we would miss 12 out the 112 that are positive for covid-19. We would however
+apply
+the covid-19 PCR to only
+48.89% of the patients.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;other_vs_covid&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##                     
+## how_many_other_virus negative positive
+##                    0      561      100
+##                    1      604       11
+##                    2       67        1
+##                    3        8        0&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;If we want to be more conservative, we can choose to apply covid-19 PCR for patients that are positive to at most one of these exams. In this case we would only miss 1 out the 112 that are positive for covid-19. We would however still need to apply
+the covid-19 PCR to
+94.38% of the patients.&lt;/p&gt;
+&lt;p&gt;We finish by noticing that there are only four virus/bacteria
+that occur at the same time as covid-19:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;data_covid_and_more &amp;lt;- data_virus[how_many_other_virus&amp;gt;0&amp;amp;data_virus$`SARS-Cov-2 exam result`==&amp;quot;positive&amp;quot;,] %&amp;gt;% select(`Respiratory Syncytial Virus`:`Parainfluenza 2`)
+
+how_many_positives_other &amp;lt;- apply(data_covid_and_more,2,function(xx)sum(xx==&amp;quot;detected&amp;quot;))
+how_many_positives_other[how_many_positives_other&amp;gt;0]&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##            Influenza B        CoronavirusNL63 Rhinovirus/Enterovirus 
+##                      3                      3                      6 
+##        Coronavirus229E 
+##                      1&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Thus, it may be enough to test for them.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;conclusions-and-other-variations&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Conclusions and other variations&lt;/h1&gt;
+&lt;p&gt;I’ve shown some ways in which selected features (according to my assumption on how easy it is to obtained them in practice) can be applied for screening. All procedures inevitably need to make strong assumptions about the data collection procedure. These assumptions need to be validated by doctors and other specialists. Finally, the main assumption of standard machine learning methods is that new data will behave in the same way as past data (the i.i.d assumption), which certainly is not the case during a pandemic. It is therefore important to constantly re-evaluate any procedure as new data comes.&lt;/p&gt;
+&lt;p&gt;Some incremental mofications that can be made to the approach I’ve laid out:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Include other covariates that are also cheap but I’ve left out from the analysis, such as Urea, Sodium etc (which are also available)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Simple decision trees are even easier to apply in practice; one could check if they have similar predictive performance as logistic regression&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Redo the analysis in step 2. using only patients filtered according to step 1.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Thanks to Dr. Meyer Izbicki for the discussion.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Confidence Sets and Hypothesis Testing in a Likelihood-Free Inference Setting</title>
+      <link>http://www.rizbicki.ufscar.br/publication/2020_confidence_likelihood_free/</link>
+      <pubDate>Wed, 05 Feb 2020 00:03:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/2020_confidence_likelihood_free/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Validation of Approximate Likelihood and Emulator Models for Computationally Intensive Simulations</title>
+      <link>http://www.rizbicki.ufscar.br/publication/validation/</link>
+      <pubDate>Sun, 05 Jan 2020 00:03:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/validation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Conditional Density Estimation Tools in Python and R with Applications to Photometric Redshifts and Likelihood-Free Cosmological Inference</title>
+      <link>http://www.rizbicki.ufscar.br/publication/cde_tools/</link>
+      <pubDate>Thu, 02 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/cde_tools/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The NN-Stacking: Feature weighted linear stacking through neural networks</title>
+      <link>http://www.rizbicki.ufscar.br/publication/meta_learning/</link>
+      <pubDate>Thu, 02 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/meta_learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>WIKS: A general Bayesian nonparametric index for quantifying differences between two populations</title>
+      <link>http://www.rizbicki.ufscar.br/publication/wiks/</link>
+      <pubDate>Wed, 01 Jan 2020 10:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/wiks/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Evaluation of probabilistic photometric redshift estimation approaches for The Rubin Observatory Legacy Survey of Space and Time (LSST)</title>
+      <link>http://www.rizbicki.ufscar.br/publication/desc/</link>
+      <pubDate>Wed, 01 Jan 2020 01:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/desc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Schrödinger&#39;s phenotypes: herbarium specimens show two-dimensional images are both good and (not so) bad sources of morphological data</title>
+      <link>http://www.rizbicki.ufscar.br/publication/digital_morphology/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:03 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/digital_morphology/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Combinando métodos de aprendizado supervisionado para a melhoria da previsão do redshift de galáxia</title>
+      <link>http://www.rizbicki.ufscar.br/publication/combinando/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/combinando/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Local Interpretation Methods to Machine Learning Using the Domain of the Feature Space</title>
+      <link>http://www.rizbicki.ufscar.br/publication/local_interpretation/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/local_interpretation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pragmatic hypotheses in the evolution of Science</title>
+      <link>http://www.rizbicki.ufscar.br/publication/2019_pragmatic/</link>
+      <pubDate>Sun, 01 Sep 2019 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/2019_pragmatic/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Quantification under prior probability shift: the ratio estimator and its extensions</title>
+      <link>http://www.rizbicki.ufscar.br/publication/2019_quantification/</link>
+      <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/2019_quantification/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ABC-CDE: Toward Approximate Bayesian Computation with Complex High-Dimensional Data and Limited Simulations</title>
+      <link>http://www.rizbicki.ufscar.br/publication/2019_abccde/</link>
+      <pubDate>Tue, 05 Feb 2019 00:03:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/2019_abccde/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Slides</title>
+      <link>http://www.rizbicki.ufscar.br/slides/example/</link>
+      <pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/slides/example/</guid>
+      <description>&lt;h1 id=&#34;create-slides-in-markdown-with-wowchemy&#34;&gt;Create slides in Markdown with Wowchemy&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://wowchemy.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Wowchemy&lt;/a&gt; | &lt;a href=&#34;https://owchemy.com/docs/managing-content/#create-slides&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;features&#34;&gt;Features&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Efficiently write slides in Markdown&lt;/li&gt;
+&lt;li&gt;3-in-1: Create, Present, and Publish your slides&lt;/li&gt;
+&lt;li&gt;Supports speaker notes&lt;/li&gt;
+&lt;li&gt;Mobile friendly slides&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;controls&#34;&gt;Controls&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Next: &lt;code&gt;Right Arrow&lt;/code&gt; or &lt;code&gt;Space&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Previous: &lt;code&gt;Left Arrow&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Start: &lt;code&gt;Home&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Finish: &lt;code&gt;End&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Overview: &lt;code&gt;Esc&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Speaker notes: &lt;code&gt;S&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Fullscreen: &lt;code&gt;F&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Zoom: &lt;code&gt;Alt + Click&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/hakimel/reveal.js#pdf-export&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;PDF Export&lt;/a&gt;: &lt;code&gt;E&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;code-highlighting&#34;&gt;Code Highlighting&lt;/h2&gt;
+&lt;p&gt;Inline code: &lt;code&gt;variable&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Code block:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;porridge&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;blueberry&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;porridge&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;blueberry&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nb&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;Eating...&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id=&#34;math&#34;&gt;Math&lt;/h2&gt;
+&lt;p&gt;In-line math: $x + y = z$&lt;/p&gt;
+&lt;p&gt;Block math:&lt;/p&gt;
+&lt;p&gt;$$
+f\left( x \right) = ;\frac{{2\left( {x + 4} \right)\left( {x - 4} \right)}}{{\left( {x + 4} \right)\left( {x + 1} \right)}}
+$$&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;fragments&#34;&gt;Fragments&lt;/h2&gt;
+&lt;p&gt;Make content appear incrementally&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;{{% fragment %}} One {{% /fragment %}}
+{{% fragment %}} **Two** {{% /fragment %}}
+{{% fragment %}} Three {{% /fragment %}}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Press &lt;code&gt;Space&lt;/code&gt; to play!&lt;/p&gt;
+&lt;span class=&#34;fragment &#34; &gt;
+  One
+&lt;/span&gt;
+&lt;span class=&#34;fragment &#34; &gt;
+  &lt;strong&gt;Two&lt;/strong&gt;
+&lt;/span&gt;
+&lt;span class=&#34;fragment &#34; &gt;
+  Three
+&lt;/span&gt;
+&lt;hr&gt;
+&lt;p&gt;A fragment can accept two optional parameters:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;class&lt;/code&gt;: use a custom style (requires definition in custom CSS)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;weight&lt;/code&gt;: sets the order in which a fragment appears&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;speaker-notes&#34;&gt;Speaker Notes&lt;/h2&gt;
+&lt;p&gt;Add speaker notes to your presentation&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;{{% speaker_note %}}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;-&lt;/span&gt; Only the speaker can read these notes
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;-&lt;/span&gt; Press &lt;span class=&#34;sb&#34;&gt;`S`&lt;/span&gt; key to view
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  {{% /speaker_note %}}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Press the &lt;code&gt;S&lt;/code&gt; key to view the speaker notes!&lt;/p&gt;
+&lt;aside class=&#34;notes&#34;&gt;
+  &lt;ul&gt;
+&lt;li&gt;Only the speaker can read these notes&lt;/li&gt;
+&lt;li&gt;Press &lt;code&gt;S&lt;/code&gt; key to view&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/aside&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;themes&#34;&gt;Themes&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;black: Black background, white text, blue links (default)&lt;/li&gt;
+&lt;li&gt;white: White background, black text, blue links&lt;/li&gt;
+&lt;li&gt;league: Gray background, white text, blue links&lt;/li&gt;
+&lt;li&gt;beige: Beige background, dark text, brown links&lt;/li&gt;
+&lt;li&gt;sky: Blue background, thin dark text, blue links&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;night: Black background, thick white text, orange links&lt;/li&gt;
+&lt;li&gt;serif: Cappuccino background, gray text, brown links&lt;/li&gt;
+&lt;li&gt;simple: White background, black text, blue links&lt;/li&gt;
+&lt;li&gt;solarized: Cream-colored background, dark green text, blue links&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+
+&lt;section data-noprocess data-shortcode-slide
+  
+      
+      data-background-image=&#34;/media/boards.jpg&#34;
+  &gt;
+
+&lt;h2 id=&#34;custom-slide&#34;&gt;Custom Slide&lt;/h2&gt;
+&lt;p&gt;Customize the slide style and background&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;{{&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;nt&#34;&gt;slide&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;background-image&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;/media/boards.jpg&amp;#34;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;}}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;{{&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;nt&#34;&gt;slide&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;background-color&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;#0000FF&amp;#34;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;}}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;{{&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;nt&#34;&gt;slide&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;class&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;my-style&amp;#34;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;}}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id=&#34;custom-css-example&#34;&gt;Custom CSS Example&lt;/h2&gt;
+&lt;p&gt;Let&amp;rsquo;s make headers navy colored.&lt;/p&gt;
+&lt;p&gt;Create &lt;code&gt;assets/css/reveal_custom.css&lt;/code&gt; with:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-css&#34; data-lang=&#34;css&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nc&#34;&gt;reveal&lt;/span&gt; &lt;span class=&#34;nt&#34;&gt;section&lt;/span&gt; &lt;span class=&#34;nt&#34;&gt;h1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nc&#34;&gt;reveal&lt;/span&gt; &lt;span class=&#34;nt&#34;&gt;section&lt;/span&gt; &lt;span class=&#34;nt&#34;&gt;h2&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nc&#34;&gt;reveal&lt;/span&gt; &lt;span class=&#34;nt&#34;&gt;section&lt;/span&gt; &lt;span class=&#34;nt&#34;&gt;h3&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;k&#34;&gt;color&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;navy&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h1 id=&#34;questions&#34;&gt;Questions?&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/wowchemy/wowchemy-hugo-modules/discussions&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Ask&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://wowchemy.com/docs/managing-content/#create-slides&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Machine learning para análises preditivas em saúde: exemplo de aplicação para predizer óbito em idosos de São Paulo</title>
+      <link>http://www.rizbicki.ufscar.br/publication/obitos/</link>
+      <pubDate>Fri, 01 Feb 2019 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/obitos/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Avian haemosporidians in the cattle egret (Bubulcus ibis) from central-western and southern Africa: high diversity and prevalence</title>
+      <link>http://www.rizbicki.ufscar.br/publication/africa/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:01 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/africa/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Comparing probabilistic predictive models applied to football</title>
+      <link>http://www.rizbicki.ufscar.br/publication/football/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/football/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://www.rizbicki.ufscar.br/minicurso_sml/</link>
+      <pubDate>Fri, 07 Dec 2018 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/minicurso_sml/</guid>
+      <description>&lt;p&gt;Material usado no minicurso &lt;em&gt;Statistical Machine Learning&lt;/em&gt;.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../sml.pdf&#34;&gt;Machine Learning sob a ótica estatística&lt;/a&gt;: Uma abordagem preditivista para estatística com exemplos em R, com Tiago Mendonça
+dos Santos.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../img/sml//minicurso_SML.pdf&#34;&gt;Slides&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../img/sml/analises_SML.html&#34;&gt;Análises Amazon&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../img/sml/shiny_SML.Rmd&#34;&gt;Shiny Modelo Correto/Lasso&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Comparing two populations using Bayesian Fourier series density estimation</title>
+      <link>http://www.rizbicki.ufscar.br/publication/density_fourier/</link>
+      <pubDate>Sun, 01 Jul 2018 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/density_fourier/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Conditional density estimation using Fourier series and neural networks</title>
+      <link>http://www.rizbicki.ufscar.br/publication/flexcode_nnets/</link>
+      <pubDate>Mon, 28 May 2018 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/flexcode_nnets/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Considerations for monitoring population trends of colonial waterbirds using the effective number of breeders and census estimates </title>
+      <link>http://www.rizbicki.ufscar.br/publication/water_birds/</link>
+      <pubDate>Sun, 01 Apr 2018 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/water_birds/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Recomendações para meus orientandos</title>
+      <link>http://www.rizbicki.ufscar.br/post/dicas_alunos/</link>
+      <pubDate>Sat, 13 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/post/dicas_alunos/</guid>
+      <description>&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;O trabalho é de sua responsabilidade&lt;/strong&gt;.  Sempre que você precisar, estarei disponível para ajudar, mas eu não vou cobrar você.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Fique atento a prazos&lt;/strong&gt;, eles também são de sua responsabilidade.&lt;/li&gt;
+&lt;li&gt;Ao escrever seu texto, sempre &lt;strong&gt;se coloque no papel de quem o está lendo pela primeira vez&lt;/strong&gt;. Pense em quem você quer que consiga entender o documento (outros alunos? Professores da área específica de seu trabalho? Professores da estatística? Médicos?). Com base nisso, você terá uma ideia melhor sobre o que assumir que a pessoa já sabe e o que deve ser explicado em detalhes.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Cuidado com o ponto cego do especialista&lt;/strong&gt;: Depois de trabalhar em um projeto por algum tempo, muitos tópicos se tornam triviais para você, embora não o sejam para quem não é especialista. Pense nisso na hora de escrever o texto e apresentar o trabalho. Em particular, cuidado com notação.&lt;/li&gt;
+&lt;li&gt;Seja preciso e &lt;strong&gt;entenda a fundo cada frase que você escrever&lt;/strong&gt;. Obviamente, entenda muito bem seu problema e a solução que você está propondo.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Cuidado com o Português/Inglês&lt;/strong&gt;; em caso de dúvida, use o Google. Uma linguagem incorreta tira a credibilidade de seu texto. Em particular, cuidado com o uso de vírgulas: muitos erram isso frequentemente. Não separe sujeito de predicado!&lt;/li&gt;
+&lt;li&gt;Ao escrever seu texto, &lt;strong&gt;não copie textos de outras pessoas&lt;/strong&gt; sem as devidas referências. O ideal é sempre ler sobre o assunto, fechar os livros e só então escrever seu texto usando suas próprias palavras.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Não deixe nada para a última hora&lt;/strong&gt;. Em particular, escrever um bom texto leva muito tempo, e &lt;strong&gt;é escrevendo que você organiza as ideias na sua cabeça. Antes de me mandar seu documento, releia-o algumas vezes&lt;/strong&gt;. É uma boa prática ficar pelo menos algumas horas sem olhá-lo antes de relê-lo.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Não me envie um texto para que eu o revise um dia antes da entrega do trabalho.&lt;/strong&gt; Eu levo um tempo para ler, e gosto de lê-lo novamente depois da revisão ter sido feita.&lt;/li&gt;
+&lt;li&gt;Durante nossas reuniões, &lt;strong&gt;sempre anote o que conversamos para não esquecer&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Durante uma apresentação, sempre lembre o público como o que você está falando se relaciona com o todo do trabalho. Isso ajuda a plateia a entendê-lo melhor.&lt;/li&gt;
+&lt;li&gt;Coloque &lt;strong&gt;pouco texto no slides e ensaie muitas vezes sua apresentação&lt;/strong&gt;. É só ensaiando que você percebe que muitas vezes é mais natural trocar a ordem de alguns slides.&lt;/li&gt;
+&lt;li&gt;No dia da apresentação, leve uma cópia impressa do seu trabalho, assim como &lt;strong&gt;caneta e papel para anotar sugestões.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Sempre, sempre faça backup de seus documentos.&lt;/strong&gt; Recomendo usar o Dropbox, Google Drive ou Github.&lt;/li&gt;
+&lt;li&gt;Sempre &lt;strong&gt;deixe suas pastas no computador bem organizadas e documentadas&lt;/strong&gt;. O que é cada arquivo pode parecer óbvio agora, mas não o será daqui a um mês.&lt;/li&gt;
+&lt;li&gt;Sempre &lt;strong&gt;dê nomes informativos aos arquivos criados&lt;/strong&gt; (nada de novo_v3_final.R).&lt;/li&gt;
+&lt;li&gt;Caso esteja fazendo/participando comigo de um &lt;strong&gt;projeto de pesquisa&lt;/strong&gt;, lembre-se que atrasos afetam diretamente a mim e a outros colaboradores. Seja responsável e evite prejudicar outras pessoas e a si mesmo.&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Hypertension is associated with frailty in older adults</title>
+      <link>http://www.rizbicki.ufscar.br/publication/aprahamian_pulgrossi/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/aprahamian_pulgrossi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Monitoramento online da dengue: usando o Google para predizer epidemias.</title>
+      <link>http://www.rizbicki.ufscar.br/publication/dengue/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/dengue/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Teaching Decision Theory proof strategies using a crowdsourcing problem</title>
+      <link>http://www.rizbicki.ufscar.br/publication/2018_teaching_minimax/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/2018_teaching_minimax/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Converting High-Dimensional Regression to High-Dimensional Conditional Density Estimation</title>
+      <link>http://www.rizbicki.ufscar.br/publication/2017_flexcode/</link>
+      <pubDate>Sun, 05 Nov 2017 00:03:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/2017_flexcode/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A unified framework for constructing, tuning and assessing photometric redshift density estimates in a selection bias setting</title>
+      <link>http://www.rizbicki.ufscar.br/publication/mnras_bias/</link>
+      <pubDate>Mon, 30 Oct 2017 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/mnras_bias/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Coherent hypothesis testing</title>
+      <link>http://www.rizbicki.ufscar.br/publication/tas_coherent/</link>
+      <pubDate>Fri, 01 Sep 2017 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/tas_coherent/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A model for the evolution of languages</title>
+      <link>http://www.rizbicki.ufscar.br/talk/a-model-for-the-evolution-of-languages/</link>
+      <pubDate>Thu, 01 Jun 2017 13:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/talk/a-model-for-the-evolution-of-languages/</guid>
+      <description>
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/lw95--eb1FM&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+</description>
+    </item>
+    
+    <item>
+      <title>Teoria da decisão e aplicações ao Direito</title>
+      <link>http://www.rizbicki.ufscar.br/talk/teoria-da-decisao-e-aplicacoes-ao-direito/</link>
+      <pubDate>Thu, 01 Jun 2017 13:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/talk/teoria-da-decisao-e-aplicacoes-ao-direito/</guid>
+      <description>
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/AmOisEZZPZ8&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+</description>
+    </item>
+    
+    <item>
+      <title>Logically-consistent hypothesis testing and the hexagon of oppositions</title>
+      <link>http://www.rizbicki.ufscar.br/publication/2017_hexagon/</link>
+      <pubDate>Thu, 01 Jun 2017 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/2017_hexagon/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Prior Shift Using the Ratio Estimator</title>
+      <link>http://www.rizbicki.ufscar.br/publication/2017_quantification_maxent/</link>
+      <pubDate>Mon, 01 May 2017 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/2017_quantification_maxent/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Photo-z estimation: An example of nonparametric conditional density estimation under selection bias</title>
+      <link>http://www.rizbicki.ufscar.br/publication/2017_photo_z/</link>
+      <pubDate>Sun, 05 Feb 2017 00:03:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/2017_photo_z/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title> Screening for frailty with the FRAIL scale: a comparison with the phenotype criteria</title>
+      <link>http://www.rizbicki.ufscar.br/publication/aprahamian_frail/</link>
+      <pubDate>Wed, 01 Feb 2017 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/aprahamian_frail/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Frailty in older adults with aMCI due to AD: a comparison of two models of frailty characterization</title>
+      <link>http://www.rizbicki.ufscar.br/publication/aprahamian_frail2/</link>
+      <pubDate>Wed, 01 Feb 2017 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/aprahamian_frail2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Classificação morfológica de galáxias em conjuntos de dados desbalanceados.</title>
+      <link>http://www.rizbicki.ufscar.br/publication/desbalanceados/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/desbalanceados/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nonparametric Conditional Density Estimation in a High-Dimensional Regression Setting.</title>
+      <link>http://www.rizbicki.ufscar.br/publication/spec_series_cde/</link>
+      <pubDate>Wed, 02 Nov 2016 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/spec_series_cde/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A Spectral Series Approach to High-Dimensional Nonparametric Regression.</title>
+      <link>http://www.rizbicki.ufscar.br/publication/spec_series_reg/</link>
+      <pubDate>Tue, 01 Nov 2016 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/spec_series_reg/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The Logical Consistency of Simultaneous Agnostic Hypothesis Tests</title>
+      <link>http://www.rizbicki.ufscar.br/publication/2016_agnostic/</link>
+      <pubDate>Fri, 01 Jul 2016 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/2016_agnostic/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Example Project</title>
+      <link>http://www.rizbicki.ufscar.br/resource/example/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/resource/example/</guid>
+      <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.&lt;/p&gt;
+&lt;p&gt;Nullam vel molestie justo. Curabitur vitae efficitur leo. In hac habitasse platea dictumst. Sed pulvinar mauris dui, eget varius purus congue ac. Nulla euismod, lorem vel elementum dapibus, nunc justo porta mi, sed tempus est est vel tellus. Nam et enim eleifend, laoreet sem sit amet, elementum sem. Morbi ut leo congue, maximus velit ut, finibus arcu. In et libero cursus, rutrum risus non, molestie leo. Nullam congue quam et volutpat malesuada. Sed risus tortor, pulvinar et dictum nec, sodales non mi. Phasellus lacinia commodo laoreet. Nam mollis, erat in feugiat consectetur, purus eros egestas tellus, in auctor urna odio at nibh. Mauris imperdiet nisi ac magna convallis, at rhoncus ligula cursus.&lt;/p&gt;
+&lt;p&gt;Cras aliquam rhoncus ipsum, in hendrerit nunc mattis vitae. Duis vitae efficitur metus, ac tempus leo. Cras nec fringilla lacus. Quisque sit amet risus at ipsum pharetra commodo. Sed aliquam mauris at consequat eleifend. Praesent porta, augue sed viverra bibendum, neque ante euismod ante, in vehicula justo lorem ac eros. Suspendisse augue libero, venenatis eget tincidunt ut, malesuada at lorem. Donec vitae bibendum arcu. Aenean maximus nulla non pretium iaculis. Quisque imperdiet, nulla in pulvinar aliquet, velit quam ultrices quam, sit amet fringilla leo sem vel nunc. Mauris in lacinia lacus.&lt;/p&gt;
+&lt;p&gt;Suspendisse a tincidunt lacus. Curabitur at urna sagittis, dictum ante sit amet, euismod magna. Sed rutrum massa id tortor commodo, vitae elementum turpis tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus turpis, venenatis a ullamcorper nec, tincidunt et massa. Integer posuere quam rutrum arcu vehicula imperdiet. Mauris ullamcorper quam vitae purus congue, quis euismod magna eleifend. Vestibulum semper vel augue eget tincidunt. Fusce eget justo sodales, dapibus odio eu, ultrices lorem. Duis condimentum lorem id eros commodo, in facilisis mauris scelerisque. Morbi sed auctor leo. Nullam volutpat a lacus quis pharetra. Nulla congue rutrum magna a ornare.&lt;/p&gt;
+&lt;p&gt;Aliquam in turpis accumsan, malesuada nibh ut, hendrerit justo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque sed erat nec justo posuere suscipit. Donec ut efficitur arcu, in malesuada neque. Nunc dignissim nisl massa, id vulputate nunc pretium nec. Quisque eget urna in risus suscipit ultricies. Pellentesque odio odio, tincidunt in eleifend sed, posuere a diam. Nam gravida nisl convallis semper elementum. Morbi vitae felis faucibus, vulputate orci placerat, aliquet nisi. Aliquam erat volutpat. Maecenas sagittis pulvinar purus, sed porta quam laoreet at.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>A Bayesian Decision-Theoretic Approach to Logically-Consistent Hypothesis Testing</title>
+      <link>http://www.rizbicki.ufscar.br/publication/entropy_bayes_consist/</link>
+      <pubDate>Tue, 01 Mar 2016 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/entropy_bayes_consist/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The Logical Consistency of Simultaneous Agnostic Hypothesis Tests</title>
+      <link>http://www.rizbicki.ufscar.br/publication/entropy_consist/</link>
+      <pubDate>Tue, 01 Mar 2016 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/entropy_consist/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A subtest analysis of the Montreal cognitive assessment (MoCA): which subtests can best discriminate between healthy controls, mild cognitive impairment and Alzheimer’s disease?</title>
+      <link>http://www.rizbicki.ufscar.br/publication/aprahamian_moca/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/aprahamian_moca/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Logical consistency in simultaneous statistical test procedures</title>
+      <link>http://www.rizbicki.ufscar.br/publication/igpl_consist/</link>
+      <pubDate>Sun, 01 Mar 2015 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/igpl_consist/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>High-Dimensional density ratio estimation with extensions to approximate likelihood computation</title>
+      <link>http://www.rizbicki.ufscar.br/publication/aistats_2014/</link>
+      <pubDate>Mon, 01 Dec 2014 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/aistats_2014/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>New image statistics for detecting disturbed galaxy morphologies at high redshift</title>
+      <link>http://www.rizbicki.ufscar.br/publication/mnras_mergers/</link>
+      <pubDate>Sun, 01 Dec 2013 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/mnras_mergers/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A Bayesian Look at Nonidentifiability: a Simple Example</title>
+      <link>http://www.rizbicki.ufscar.br/publication/tas_identif/</link>
+      <pubDate>Fri, 01 Nov 2013 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/tas_identif/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Religion as a protective factor against drug use among Brazilian university students: a national survey</title>
+      <link>http://www.rizbicki.ufscar.br/publication/gomes/</link>
+      <pubDate>Fri, 01 Nov 2013 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/gomes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Learning with many experts: Model selection and sparsity</title>
+      <link>http://www.rizbicki.ufscar.br/publication/2013_crowdsourcing/</link>
+      <pubDate>Sat, 01 Jun 2013 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/2013_crowdsourcing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Testing Allele Homogeneity: The Problem of Nested Hypotheses</title>
+      <link>http://www.rizbicki.ufscar.br/publication/nested/</link>
+      <pubDate>Thu, 01 Nov 2012 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/nested/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Disequilibrium Coefficient: A Bayesian Perspective</title>
+      <link>http://www.rizbicki.ufscar.br/publication/disequilibrium/</link>
+      <pubDate>Tue, 01 Nov 2011 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/disequilibrium/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Depressive morbidity and gender in community-dwelling Brazilian elderly: systematic review and meta-analysis</title>
+      <link>http://www.rizbicki.ufscar.br/publication/meta_analysis/</link>
+      <pubDate>Mon, 01 Nov 2010 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/meta_analysis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Can the CAMCOG be a good cognitive test for patients with Alzheimer’s disease with low levels of education?</title>
+      <link>http://www.rizbicki.ufscar.br/publication/aprahamian_camcog/</link>
+      <pubDate>Fri, 01 Oct 2010 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/aprahamian_camcog/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Optimizing the CAMCOG test in the screening for mild cognitive impairment and incipient dementia: saving time with relevant domains</title>
+      <link>http://www.rizbicki.ufscar.br/publication/aprahamian_camcog2/</link>
+      <pubDate>Fri, 01 Oct 2010 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/aprahamian_camcog2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://www.rizbicki.ufscar.br/admin/config.yml</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/admin/config.yml</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

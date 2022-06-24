@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Quantification | Rafael Izbicki | PhD</title>
+    <link>http://www.rizbicki.ufscar.br/tag/quantification/</link>
+      <atom:link href="http://www.rizbicki.ufscar.br/tag/quantification/index.xml" rel="self" type="application/rss+xml" />
+    <description>Quantification</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 19 Feb 2021 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>http://www.rizbicki.ufscar.br/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_3.png</url>
+      <title>Quantification</title>
+      <link>http://www.rizbicki.ufscar.br/tag/quantification/</link>
+    </image>
+    
+    <item>
+      <title>Causas de desaparecimento no estado de São Paulo entre 2013 e 2014: uma análise automatizada de boletins de ocorrência</title>
+      <link>http://www.rizbicki.ufscar.br/publication/2021_desaparecimento/</link>
+      <pubDate>Fri, 19 Feb 2021 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/2021_desaparecimento/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Quantification under prior probability shift: the ratio estimator and its extensions</title>
+      <link>http://www.rizbicki.ufscar.br/publication/2019_quantification/</link>
+      <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/2019_quantification/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Prior Shift Using the Ratio Estimator</title>
+      <link>http://www.rizbicki.ufscar.br/publication/2017_quantification_maxent/</link>
+      <pubDate>Mon, 01 May 2017 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/2017_quantification_maxent/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -7,23 +7,23 @@ main:
   - name: Home
     url: '#01_about'
     weight: 10
-  - name: Publications
+  - name: Featured Publications
     url: '#03_featured'
     weight: 30
+  - name: Lecture Notes
+    url: '#lecture_notes'
+    weight: 35
   - name: Teaching
-    url: '#04_teaching'
+    url: '#teaching'
     weight: 40
-  - name: Courses
-    url: courses/
-    weight: 50
   - name: Talks
-    url: '#06_talks'
+    url: '#talks'
     weight: 60
   - name: Posts
-    url: '#07_posts'
+    url: '#posts'
     weight: 70
   - name: Students
-    url: '#08_students'
+    url: '#students'
     weight: 80
   - name: Contact
     url: '#09_contact'

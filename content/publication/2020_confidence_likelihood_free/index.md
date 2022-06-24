@@ -39,14 +39,13 @@ featured: true
 #   E.g. `projects = ["deep-learning"]` references `content/project/deep-learning.md`.
 #   Otherwise, set `projects = []`.
 # projects = ["example-external-project"]
-categories : ["paper"]
 
 # Tags (optional).
 #   Set `tags = []` for no tags, or use the form `tags = ["A Tag", "Another Tag"]` for one or more tags.
 tags : ["Approximate Likelihood","Confidence Intervals","Machine Learning"]
 
 # Links (optional).
-#url_pdf = ""
+url_pdf : "https://dl.acm.org/doi/abs/10.5555/3524938.3525155"
 url_preprint : "https://arxiv.org/pdf/2002.10399.pdf"
 #url_code = ""
 #url_dataset = "#"

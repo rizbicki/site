@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bayesian Inference | Rafael Izbicki | PhD</title>
+    <link>http://www.rizbicki.ufscar.br/tag/bayesian-inference/</link>
+      <atom:link href="http://www.rizbicki.ufscar.br/tag/bayesian-inference/index.xml" rel="self" type="application/rss+xml" />
+    <description>Bayesian Inference</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Wed, 01 Jan 2020 10:00:00 +0000</lastBuildDate>
+    <image>
+      <url>http://www.rizbicki.ufscar.br/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_3.png</url>
+      <title>Bayesian Inference</title>
+      <link>http://www.rizbicki.ufscar.br/tag/bayesian-inference/</link>
+    </image>
+    
+    <item>
+      <title>WIKS: A general Bayesian nonparametric index for quantifying differences between two populations</title>
+      <link>http://www.rizbicki.ufscar.br/publication/wiks/</link>
+      <pubDate>Wed, 01 Jan 2020 10:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/wiks/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Comparing two populations using Bayesian Fourier series density estimation</title>
+      <link>http://www.rizbicki.ufscar.br/publication/density_fourier/</link>
+      <pubDate>Sun, 01 Jul 2018 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/density_fourier/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Disequilibrium Coefficient: A Bayesian Perspective</title>
+      <link>http://www.rizbicki.ufscar.br/publication/disequilibrium/</link>
+      <pubDate>Tue, 01 Nov 2011 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/disequilibrium/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

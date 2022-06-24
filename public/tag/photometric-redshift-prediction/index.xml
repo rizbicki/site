@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Photometric Redshift Prediction | Rafael Izbicki | PhD</title>
+    <link>http://www.rizbicki.ufscar.br/tag/photometric-redshift-prediction/</link>
+      <atom:link href="http://www.rizbicki.ufscar.br/tag/photometric-redshift-prediction/index.xml" rel="self" type="application/rss+xml" />
+    <description>Photometric Redshift Prediction</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Thu, 02 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>http://www.rizbicki.ufscar.br/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_3.png</url>
+      <title>Photometric Redshift Prediction</title>
+      <link>http://www.rizbicki.ufscar.br/tag/photometric-redshift-prediction/</link>
+    </image>
+    
+    <item>
+      <title>Conditional Density Estimation Tools in Python and R with Applications to Photometric Redshifts and Likelihood-Free Cosmological Inference</title>
+      <link>http://www.rizbicki.ufscar.br/publication/cde_tools/</link>
+      <pubDate>Thu, 02 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/cde_tools/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Evaluation of probabilistic photometric redshift estimation approaches for The Rubin Observatory Legacy Survey of Space and Time (LSST)</title>
+      <link>http://www.rizbicki.ufscar.br/publication/desc/</link>
+      <pubDate>Wed, 01 Jan 2020 01:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/desc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A unified framework for constructing, tuning and assessing photometric redshift density estimates in a selection bias setting</title>
+      <link>http://www.rizbicki.ufscar.br/publication/mnras_bias/</link>
+      <pubDate>Mon, 30 Oct 2017 00:00:00 +0000</pubDate>
+      <guid>http://www.rizbicki.ufscar.br/publication/mnras_bias/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
